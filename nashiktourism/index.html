@@ -3,114 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nashik Tourism – Kumbh Mela 2027, Temples, Wine & Travel Guide</title>
-  <meta name="description" content="Complete guide to Nashik tourism. Plan your Kumbh Mela 2027 trip, Trimbakeshwar temple, Sula Vineyards, Panchavati. Hotels, travel tips, Amrit Snan dates." />
+  <title>Nashik Tourism – Kumbh Mela 2027, Temples, Wine &amp; Travel Guide</title>
+  <meta name="description" content="Complete guide to Nashik tourism. Plan your Kumbh Mela 2027 trip, Trimbakeshwar temple, Sula Vineyards, Panchavati and more." />
   <link rel="canonical" href="https://nashiktourism.com/" />
-  <meta property="og:title" content="Nashik Tourism – Kumbh Mela 2027 & Travel Guide" />
-  <meta property="og:description" content="Plan your Nashik trip. Kumbh Mela 2027 dates, temples, wine tours, hotels and complete travel guide." />
-  <meta property="og:url" content="https://nashiktourism.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://nashiktourism.com/logo-purple.png" />
   <link rel="icon" type="image/png" href="/logo-purple.png" />
   <link rel="apple-touch-icon" href="/logo-purple.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristDestination","name":"Nashik","description":"Sacred city on the Godavari river. Home to Kumbh Mela 2027, Trimbakeshwar Jyotirlinga and Sula Vineyards.","url":"https://nashiktourism.com","touristType":["Religious tourism","Wine tourism","Heritage tourism"]}</script>
+  <meta property="og:title" content="Nashik Tourism – Kumbh Mela 2027" />
+  <meta property="og:url" content="https://nashiktourism.com/" />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristDestination","name":"Nashik","url":"https://nashiktourism.com","touristType":["Religious tourism","Wine tourism","Heritage tourism"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
   <style>
-    /* ── HOME-ONLY STYLES ── */
-    .hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: url('https://res.cloudinary.com/duhuxaukd/image/upload/v1775450543/rishu-bhosale-LO0KOsgTEA0-unsplash_hqa4n3.jpg') center/cover no-repeat; transform: scale(1.04); transition: transform 7s ease; }
-    .hero-bg.loaded { transform: scale(1); }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,10,30,0.15) 0%, rgba(15,10,30,0.05) 35%, rgba(15,10,30,0.7) 70%, rgba(15,10,30,0.96) 100%); }
-    .hero-content { position: relative; z-index: 2; padding: 0 6vw 9vh; max-width: 860px; }
-    .hero-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(201,146,42,0.18); border: 1px solid rgba(201,146,42,0.35); backdrop-filter: blur(8px); color: var(--accent-warm); font-family: 'Montserrat',sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1.25rem; }
-    .hero-pill::before { content: '✦'; font-size: 0.55rem; }
-    .hero h1 { font-family: 'Montserrat',sans-serif; font-size: clamp(3rem,7.5vw,7rem); font-weight: 900; color: white; line-height: 1.0; letter-spacing: -0.025em; margin-bottom: 1.1rem; }
-    .hero h1 .gold { color: var(--accent-warm); display: block; }
-    .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 480px; margin-bottom: 2.25rem; font-weight: 300; line-height: 1.75; }
-    .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
-    .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.3); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'Montserrat',sans-serif; animation: bob 2.2s infinite; }
-    .scroll-hint::after { content: ''; display: block; width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); }
-    @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)} }
+  /* HOME PAGE PREMIUM */
+  .hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1561361058-c24e02f6d130?w=1800&q=90') center/cover no-repeat;transform:scale(1.08);transition:transform 9s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+  .hero-bg.loaded{transform:scale(1)}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,10,30,.75) 0%,rgba(15,10,30,.2) 60%,rgba(15,10,30,.05) 100%),linear-gradient(to bottom,rgba(15,10,30,.1) 0%,rgba(15,10,30,.05) 30%,rgba(15,10,30,.65) 70%,rgba(15,10,30,.98) 100%)}
+  .hero-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(45,27,105,.35) 0%,transparent 70%);bottom:-100px;left:-100px;pointer-events:none}
+  .hero-content{position:relative;z-index:2;padding:0 6vw 8vh;max-width:860px}
+  .hero-hindi{font-family:'Tiro Devanagari Hindi',serif;font-size:.95rem;color:rgba(255,255,255,.45);letter-spacing:.05em;margin-bottom:.4rem;display:block;opacity:0;transform:translateY(10px);animation:fuSlide .8s .3s forwards}
+  .hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,146,42,.15);border:1px solid rgba(201,146,42,.3);backdrop-filter:blur(10px);color:var(--accent-warm);font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1.5rem;opacity:0;animation:fuSlide .8s .5s forwards}
+  .hero-pill::before{content:'\2736';font-size:.55rem}
+  .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(3.2rem,8vw,7.5rem);font-weight:900;color:white;line-height:1;letter-spacing:-.03em;margin-bottom:1.25rem}
+  .hero-line{display:block;overflow:hidden}
+  .hero-line-inner{display:block;transform:translateY(100%);animation:slideUp .9s cubic-bezier(.16,1,.3,1) forwards}
+  .hero-line:nth-child(1) .hero-line-inner{animation-delay:.6s}
+  .hero-line:nth-child(2) .hero-line-inner{animation-delay:.75s}
+  .hero-line:nth-child(3) .hero-line-inner{animation-delay:.9s;color:var(--accent-warm)}
+  @keyframes slideUp{to{transform:translateY(0)}}
+  @keyframes fuSlide{to{opacity:1;transform:translateY(0)}}
+  .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:460px;margin-bottom:2.5rem;font-weight:300;line-height:1.8;opacity:0;animation:fuSlide .8s 1.1s forwards}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fuSlide .8s 1.3s forwards}
+  .scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.3);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;font-family:'Montserrat',sans-serif;opacity:0;animation:fuSlide 1s 1.8s forwards}
+  .scroll-mouse{width:22px;height:34px;border:1.5px solid rgba(255,255,255,.25);border-radius:11px;display:flex;justify-content:center;padding-top:5px}
+  .scroll-mouse::before{content:'';width:3px;height:6px;background:rgba(255,255,255,.4);border-radius:3px;animation:scrollDot 1.8s infinite}
+  @keyframes scrollDot{0%{transform:translateY(0);opacity:1}100%{transform:translateY(10px);opacity:0}}
 
-    /* Dates strip */
-    .dates-strip { background: var(--primary-dark); padding: 1.4rem 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; border-top: 3px solid var(--accent); }
-    .dates-strip h2 { font-family: 'Montserrat',sans-serif; font-size: 0.95rem; font-weight: 800; color: white; }
-    .dates-strip p { font-size: 0.78rem; color: rgba(255,255,255,0.42); margin-top: 0.15rem; }
-    .snan-pills { display: flex; gap: 0.65rem; flex-wrap: wrap; }
-    .snan-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,146,42,0.28); border-radius: 6px; padding: 0.55rem 1rem; text-align: center; }
-    .snan-pill .sp-date { font-family: 'Montserrat',sans-serif; font-size: 0.88rem; font-weight: 800; color: var(--accent-warm); }
-    .snan-pill .sp-lbl { font-size: 0.6rem; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.1rem; }
-    .snan-pill-link { border-color: rgba(232,98,26,0.4); cursor: pointer; transition: background 0.2s; }
-    .snan-pill-link:hover { background: rgba(232,98,26,0.12); }
-    .snan-pill-link .sp-date { color: #f07040; }
+  /* COUNTDOWN */
+  .countdown-section{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+  .countdown-left{flex:1;min-width:200px}
+  .countdown-eyebrow{font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--saffron);margin-bottom:.3rem}
+  .countdown-left h2{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:white}
+  .countdown-left p{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:.15rem}
+  .countdown-timer{display:flex;gap:.5rem;align-items:center}
+  .countdown-unit{text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.75rem 1rem;min-width:72px}
+  .countdown-num{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:var(--accent-warm);line-height:1;display:block;letter-spacing:-.02em}
+  .countdown-lbl{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.3rem;display:block}
+  .countdown-sep{font-size:1.8rem;font-weight:900;color:rgba(255,255,255,.15);line-height:1;align-self:flex-start;padding-top:.4rem}
 
-    /* Explore grid */
-    .explore-sec { background: var(--cream); }
-    .explore-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.9rem; }
-    .xcard { position: relative; overflow: hidden; border-radius: 10px; display: block; color: white; }
-    .xcard:nth-child(1) { grid-column: 1/3; height: 400px; }
-    .xcard:nth-child(2) { height: 400px; }
-    .xcard:nth-child(3),.xcard:nth-child(4),.xcard:nth-child(5) { height: 270px; }
-    .xcard img { width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease; }
-    .xcard:hover img { transform: scale(1.07); }
-    .xcard-ov { position:absolute; inset:0; background: linear-gradient(to top, rgba(10,5,25,0.88) 0%, rgba(10,5,25,0.08) 55%); transition: background 0.3s; }
-    .xcard:hover .xcard-ov { background: linear-gradient(to top, rgba(45,27,105,0.92) 0%, rgba(45,27,105,0.18) 55%); }
-    .xcard-body { position:absolute; bottom:0; left:0; right:0; padding: 1.25rem 1.4rem; }
-    .xtag { display:inline-block; background: rgba(201,146,42,0.22); border: 1px solid rgba(201,146,42,0.38); color: var(--accent-warm); font-family:'Montserrat',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding: 0.2rem 0.65rem; border-radius: 50px; margin-bottom: 0.45rem; }
-    .xcard h3 { font-family:'Montserrat',sans-serif; font-size:1.15rem; font-weight:800; line-height:1.2; letter-spacing:-0.01em; }
-    .xcard:nth-child(1) h3, .xcard:nth-child(2) h3 { font-size:1.55rem; }
-    .xcard p { font-size:0.82rem; color:rgba(255,255,255,0.65); margin-top:0.35rem; line-height:1.5; display:none; }
-    .xcard:nth-child(1) p,.xcard:nth-child(2) p { display:block; }
-    .xarrow { display:inline-flex; align-items:center; gap:0.35rem; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; color:var(--accent-warm); letter-spacing:0.06em; text-transform:uppercase; margin-top:0.65rem; opacity:0; transform:translateY(4px); transition: opacity 0.22s, transform 0.22s; }
-    .xcard:hover .xarrow { opacity:1; transform:translateY(0); }
+  /* DATES STRIP */
+  .dates-strip{background:var(--primary-dark);padding:1.25rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:3px solid var(--accent)}
+  .dates-strip h3{font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:800;color:white}
+  .dates-strip p{font-size:.73rem;color:rgba(255,255,255,.38);margin-top:.1rem}
+  .snan-pills{display:flex;gap:.6rem;flex-wrap:wrap}
+  .snan-pill{background:rgba(255,255,255,.05);border:1px solid rgba(201,146,42,.25);border-radius:6px;padding:.5rem .9rem;text-align:center;text-decoration:none;transition:background .2s,border-color .2s}
+  .snan-pill:hover{background:rgba(201,146,42,.12);border-color:rgba(201,146,42,.5)}
+  .snan-pill .sp-date{font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:800;color:var(--accent-warm);display:block}
+  .snan-pill .sp-lbl{font-size:.58rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-top:.1rem;display:block}
+  .snan-pill-cta{border-color:rgba(232,98,26,.35)}
+  .snan-pill-cta .sp-date{color:#f07040}
 
-    /* Kumbh section */
-    .kumbh-sec { background: var(--dark); position: relative; overflow: hidden; }
-    .kumbh-sec::after { content:'KUMBH'; position:absolute; right:-2vw; top:50%; transform:translateY(-50%); font-family:'Montserrat',sans-serif; font-size:clamp(6rem,17vw,18rem); font-weight:900; color:rgba(255,255,255,0.02); line-height:1; pointer-events:none; letter-spacing:-0.04em; }
-    .kumbh-inner { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; position:relative; z-index:1; }
-    .kumbh-sec .section-eyebrow { color:var(--accent); }
-    .kumbh-sec .section-title { color:white; }
-    .kumbh-sec .section-sub { color:rgba(255,255,255,0.45); }
-    .kstats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,0.07); border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.07); }
-    .kstat { background:rgba(255,255,255,0.03); padding:1.6rem 1.4rem; transition:background 0.2s; }
-    .kstat:hover { background:rgba(45,27,105,0.45); }
-    .kstat-num { font-family:'Montserrat',sans-serif; font-size:2rem; font-weight:900; color:var(--accent-warm); line-height:1; margin-bottom:0.35rem; }
-    .kstat-desc { font-size:0.8rem; color:rgba(255,255,255,0.38); line-height:1.45; }
-    .kumbh-btns { display:flex; gap:0.9rem; flex-wrap:wrap; margin-top:2rem; }
+  /* EXPLORE */
+  .explore-sec{background:var(--cream)}
+  .explore-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:380px 260px;gap:.85rem}
+  .xcard{position:relative;overflow:hidden;border-radius:12px;display:block;color:white;text-decoration:none}
+  .xcard:nth-child(1){grid-column:1/3;grid-row:1}
+  .xcard:nth-child(2){grid-column:3;grid-row:1}
+  .xcard:nth-child(3){grid-column:1;grid-row:2}
+  .xcard:nth-child(4){grid-column:2;grid-row:2}
+  .xcard:nth-child(5){grid-column:3;grid-row:2}
+  .xcard img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+  .xcard:hover img{transform:scale(1.08)}
+  .xcard-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,5,25,.92) 0%,rgba(10,5,25,.3) 50%,rgba(10,5,25,.05) 100%);transition:background .4s}
+  .xcard:hover .xcard-ov{background:linear-gradient(to top,rgba(45,27,105,.95) 0%,rgba(45,27,105,.35) 50%,rgba(45,27,105,.08) 100%)}
+  .xcard-body{position:absolute;bottom:0;left:0;right:0;padding:1.4rem 1.5rem}
+  .xtag{display:inline-block;background:rgba(201,146,42,.2);border:1px solid rgba(201,146,42,.4);color:var(--accent-warm);font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .65rem;border-radius:50px;margin-bottom:.5rem}
+  .xcard h3{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;line-height:1.2;letter-spacing:-.01em}
+  .xcard:nth-child(1) h3,.xcard:nth-child(2) h3{font-size:1.65rem}
+  .xcard p{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:.35rem;line-height:1.5;max-width:400px;display:none}
+  .xcard:nth-child(1) p,.xcard:nth-child(2) p{display:block}
+  .xarrow{display:inline-flex;align-items:center;gap:.35rem;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;color:var(--accent-warm);letter-spacing:.06em;text-transform:uppercase;margin-top:.75rem;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s}
+  .xcard:hover .xarrow{opacity:1;transform:translateY(0)}
 
-    /* Blog section */
-    .blog-sec { background: var(--light); }
-    .blog-hdr { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:2rem; }
-    .blog-hdr .section-sub { margin-bottom:0; }
-    .view-all { font-family:'Montserrat',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--primary); display:inline-flex; align-items:center; gap:0.35rem; white-space:nowrap; transition:gap 0.2s; }
-    .view-all:hover { gap:0.6rem; }
-    .blog-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:1.1rem; }
-    .bcard { background:white; border-radius:10px; overflow:hidden; display:block; color:var(--ink); border:1px solid var(--border); transition:transform 0.22s, box-shadow 0.22s; }
-    .bcard:hover { transform:translateY(-5px); box-shadow:0 18px 45px rgba(45,27,105,0.12); }
-    .bcard-img { overflow:hidden; }
-    .bcard:nth-child(1) .bcard-img { height:240px; }
-    .bcard:nth-child(2) .bcard-img,.bcard:nth-child(3) .bcard-img { height:170px; }
-    .bcard-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
-    .bcard:hover .bcard-img img { transform:scale(1.06); }
-    .bcard-body { padding:1.35rem; }
-    .bmeta { display:flex; align-items:center; gap:0.55rem; font-size:0.68rem; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; margin-bottom:0.65rem; }
-    .bcat { background:rgba(232,98,26,0.1); color:var(--saffron); padding:0.18rem 0.55rem; border-radius:50px; }
-    .bcard h3 { font-family:'Montserrat',sans-serif; font-size:0.98rem; font-weight:800; line-height:1.38; letter-spacing:-0.01em; margin-bottom:0.45rem; }
-    .bcard:nth-child(1) h3 { font-size:1.15rem; }
-    .bcard p { font-size:0.83rem; color:var(--muted); line-height:1.6; }
-    .rlink { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.85rem; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; color:var(--primary); letter-spacing:0.05em; text-transform:uppercase; transition:gap 0.2s; }
-    .rlink:hover { gap:0.5rem; }
+  /* KUMBH */
+  .kumbh-sec{background:var(--dark);position:relative;overflow:hidden}
+  .kumbh-sec::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(45,27,105,.4) 0%,transparent 70%);pointer-events:none}
+  .kumbh-bg-text{position:absolute;right:-2vw;top:50%;transform:translateY(-50%);font-family:'Montserrat',sans-serif;font-size:clamp(7rem,18vw,20rem);font-weight:900;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;letter-spacing:-.04em;user-select:none}
+  .kumbh-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+  .kumbh-sec .section-eyebrow{color:var(--accent)}
+  .kumbh-sec .section-title{color:white}
+  .kumbh-sec .section-sub{color:rgba(255,255,255,.45)}
+  .kstats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.06)}
+  .kstat{background:rgba(255,255,255,.02);padding:1.75rem 1.5rem;transition:background .3s;cursor:default}
+  .kstat:hover{background:rgba(45,27,105,.5)}
+  .kstat-num{font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:900;color:var(--accent-warm);line-height:1;margin-bottom:.4rem;display:block}
+  .kstat-desc{font-size:.8rem;color:rgba(255,255,255,.38);line-height:1.5}
+  .kumbh-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2.25rem}
 
-    /* Hotel CTA */
-    .hotel-cta { background:linear-gradient(135deg, var(--primary) 0%, #180c3e 100%); padding:5.5rem 5vw; text-align:center; position:relative; overflow:hidden; }
-    .hotel-cta::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=50') center/cover; opacity:0.12; }
-    .hotel-cta-inner { position:relative; z-index:1; }
-    .hotel-cta h2 { font-family:'Montserrat',sans-serif; font-size:clamp(1.7rem,3.5vw,2.8rem); font-weight:900; color:white; letter-spacing:-0.02em; margin-bottom:0.9rem; }
-    .hotel-cta p { font-size:1rem; color:rgba(255,255,255,0.65); max-width:460px; margin:0 auto 2rem; line-height:1.7; }
-    .hotel-cta-btns { display:flex; gap:0.9rem; justify-content:center; flex-wrap:wrap; }
+  /* BLOG */
+  .blog-sec{background:var(--light)}
+  .blog-hdr{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
+  .blog-hdr .section-sub{margin-bottom:0}
+  .view-all{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary);display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;transition:gap .2s}
+  .view-all:hover{gap:.6rem}
+  .blog-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1.1rem}
+  .bcard{background:white;border-radius:12px;overflow:hidden;display:block;color:var(--ink);border:1px solid var(--border);transition:transform .25s,box-shadow .25s;text-decoration:none}
+  .bcard:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(45,27,105,.14)}
+  .bcard-img{overflow:hidden}
+  .bcard:nth-child(1) .bcard-img{height:240px}
+  .bcard:nth-child(2) .bcard-img,.bcard:nth-child(3) .bcard-img{height:170px}
+  .bcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .bcard:hover .bcard-img img{transform:scale(1.07)}
+  .bcard-body{padding:1.4rem}
+  .bmeta{display:flex;align-items:center;gap:.55rem;font-size:.68rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:600;margin-bottom:.65rem}
+  .bcat{background:rgba(232,98,26,.1);color:var(--saffron);padding:.18rem .55rem;border-radius:50px;font-size:.65rem}
+  .bcard h3{font-family:'Montserrat',sans-serif;font-size:.98rem;font-weight:800;line-height:1.38;letter-spacing:-.01em;margin-bottom:.45rem;color:var(--ink)}
+  .bcard:nth-child(1) h3{font-size:1.15rem}
+  .bcard p{font-size:.83rem;color:var(--muted);line-height:1.6}
+  .rlink{display:inline-flex;align-items:center;gap:.3rem;margin-top:.85rem;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;color:var(--primary);letter-spacing:.05em;text-transform:uppercase;transition:gap .2s}
+  .rlink:hover{gap:.5rem}
 
-    @media(max-width:1024px){.explore-grid{grid-template-columns:1fr 1fr;}.xcard:nth-child(1){grid-column:1/3;}.blog-grid{grid-template-columns:1fr 1fr;}.bcard:nth-child(3){display:none;}}
-    @media(max-width:768px){.explore-grid{grid-template-columns:1fr;}.xcard:nth-child(1){grid-column:1;height:300px;}.xcard:nth-child(2){height:240px;}.xcard:nth-child(3),.xcard:nth-child(4),.xcard:nth-child(5){height:210px;}.kumbh-inner{grid-template-columns:1fr;}.blog-grid{grid-template-columns:1fr;}.bcard:nth-child(3){display:block;}.dates-strip{flex-direction:column;}}
+  /* HOTEL CTA */
+  .hotel-cta{background:var(--primary-dark);padding:5rem 5vw;position:relative;overflow:hidden}
+  .hotel-cta-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=60') center/cover;opacity:.1}
+  .hotel-cta-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;max-width:1100px;margin:0 auto}
+  .hotel-cta h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:900;color:white;letter-spacing:-.02em;margin-bottom:.75rem}
+  .hotel-cta p{font-size:.95rem;color:rgba(255,255,255,.55);max-width:440px;line-height:1.7}
+  .hotel-cta-btns{display:flex;flex-direction:column;gap:.75rem;min-width:220px}
+  .hotel-cta-btns .btn{justify-content:center;padding:.85rem 1.5rem}
+
+  /* FOOTER LOGO */
+  .footer-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+  .footer-logo-wrap img{height:52px;width:52px;object-fit:contain}
+  .footer-logo-name{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:white;line-height:1.1}
+  .footer-logo-tagline{font-family:'Tiro Devanagari Hindi',serif;font-size:.8rem;color:rgba(255,255,255,.3);display:block;margin-top:.1rem}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    .explore-grid{grid-template-columns:1fr 1fr;grid-template-rows:340px 260px}
+    .xcard:nth-child(1){grid-column:1/3}.xcard:nth-child(2){grid-column:1;grid-row:2}.xcard:nth-child(3){grid-column:2;grid-row:2}.xcard:nth-child(4),.xcard:nth-child(5){display:none}
+    .blog-grid{grid-template-columns:1fr 1fr}.bcard:nth-child(3){display:none}
+    .kumbh-inner{gap:3rem}
+    .hotel-cta-inner{grid-template-columns:1fr}.hotel-cta-btns{flex-direction:row;min-width:auto}
+  }
+  @media(max-width:768px){
+    .explore-grid{grid-template-columns:1fr;grid-template-rows:auto}
+    .xcard{height:280px!important}.xcard:nth-child(1),.xcard:nth-child(2),.xcard:nth-child(3){grid-column:1;grid-row:auto;display:block}.xcard:nth-child(4),.xcard:nth-child(5){display:none}
+    .kumbh-inner{grid-template-columns:1fr}
+    .blog-grid{grid-template-columns:1fr}.bcard:nth-child(3){display:block}
+    .dates-strip,.countdown-section{flex-direction:column;align-items:flex-start}
+    .hotel-cta-btns{flex-direction:column}.hotel-cta-inner{grid-template-columns:1fr}
+    .countdown-timer{flex-wrap:wrap}
+  }
   </style>
 </head>
 <body>
@@ -118,12 +165,12 @@
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="/logo-white.png" alt="Nashik Tourism" />
+      <img src="/logo-white.png" alt="Nashik Tourism" style="height:46px;width:46px;object-fit:contain" />
       <div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div>
     </a>
     <ul class="nav-menu">
       <li>
-        <a href="/kumbh-mela-2027/">Kumbh Mela 2027 <span class="chevron">▾</span></a>
+        <a href="/kumbh-mela-2027/">Kumbh Mela 2027 <span class="chevron">&#9660;</span></a>
         <div class="dropdown">
           <a href="/kumbh-mela-2027/">Complete Guide</a>
           <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
@@ -132,19 +179,20 @@
         </div>
       </li>
       <li>
-        <a href="/discover-nashik/">Discover Nashik <span class="chevron">▾</span></a>
+        <a href="/discover-nashik/">Discover Nashik <span class="chevron">&#9660;</span></a>
         <div class="dropdown">
           <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-          <a href="/discover-nashik/panchavati/">Panchavati & Ramkund</a>
+          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
           <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
           <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+          <a href="/discover-nashik/kalaram-temple/">Kalaram Temple</a>
         </div>
       </li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
       <li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="nav-book">Book Hotels</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -158,131 +206,150 @@
   <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
   <a href="/blog/">Travel Blog</a>
   <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="mob-book">🏨 Book Hotels Now</a>
+  <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="mob-book">&#127968; Book Hotels Now</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
+  <div class="hero-orb"></div>
   <div class="hero-content">
-    <div class="hero-pill">Simhastha Kumbh Mela 2027 · Nashik · Trimbakeshwar</div>
-    <h1>Sacred, Soulful<span class="gold">&amp; Nashik.</span></h1>
-    <p class="hero-sub">Godavari ghats, the Kumbh Mela 2027, ancient temples, and India's finest vineyards — all in one extraordinary city.</p>
+    <span class="hero-hindi">&#2346;&#2357;&#2367;&#2340;&#2381;&#2352; &#2344;&#2327;&#2352;&#2368; &#2344;&#2366;&#2358;&#2367;&#2325; &#2350;&#2375;&#2306; &#2310;&#2346;&#2325;&#2366; &#2360;&#2381;&#2357;&#2366;&#2327;&#2340; &#2361;&#2376;</span>
+    <div class="hero-pill">Simhastha Kumbh Mela 2027 &middot; Nashik &middot; Trimbakeshwar</div>
+    <h1>
+      <span class="hero-line"><span class="hero-line-inner">Sacred,</span></span>
+      <span class="hero-line"><span class="hero-line-inner">Soulful</span></span>
+      <span class="hero-line"><span class="hero-line-inner">&amp; Nashik.</span></span>
+    </h1>
+    <p class="hero-sub">Godavari ghats, the Kumbh Mela 2027, ancient temples, and India&#39;s finest vineyards &mdash; all in one extraordinary city.</p>
     <div class="hero-actions">
-      <a href="/kumbh-mela-2027/" class="btn btn-primary">Kumbh Mela 2027 Guide →</a>
+      <a href="/kumbh-mela-2027/" class="btn btn-primary">Kumbh Mela 2027 Guide &rarr;</a>
       <a href="/discover-nashik/" class="btn btn-secondary">Explore Nashik</a>
     </div>
   </div>
-  <div class="scroll-hint">Scroll</div>
+  <div class="scroll-hint"><div class="scroll-mouse"></div>Scroll</div>
 </section>
 
-<!-- DATES STRIP -->
-<div class="dates-strip">
-  <div>
-    <h2>Simhastha Kumbh Mela 2027 — Amrit Snan Dates</h2>
-    <p>Holy bathing dates at Ramkund, Nashik &amp; Kushavarta, Trimbakeshwar</p>
+<div class="countdown-section">
+  <div class="countdown-left">
+    <div class="countdown-eyebrow">First Amrit Snan &mdash; 2 August 2027</div>
+    <h2>Countdown to Kumbh Mela 2027</h2>
+    <p>Simhastha Kumbh Mela &middot; Nashik &amp; Trimbakeshwar</p>
   </div>
-  <div class="snan-pills">
-    <div class="snan-pill"><div class="sp-date">2 Aug 2027</div><div class="sp-lbl">1st Amrit Snan</div></div>
-    <div class="snan-pill"><div class="sp-date">31 Aug 2027</div><div class="sp-lbl">2nd Amrit Snan</div></div>
-    <div class="snan-pill"><div class="sp-date">11–12 Sep 2027</div><div class="sp-lbl">3rd Amrit Snan</div></div>
-    <a href="/kumbh-mela-2027/" class="snan-pill snan-pill-link"><div class="sp-date">Full Guide</div><div class="sp-lbl">All 45+ Dates →</div></a>
+  <div class="countdown-timer">
+    <div class="countdown-unit"><span class="countdown-num" id="cd-days">---</span><span class="countdown-lbl">Days</span></div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-lbl">Hours</span></div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-lbl">Minutes</span></div>
+    <div class="countdown-sep">:</div>
+    <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-lbl">Seconds</span></div>
   </div>
 </div>
 
-<!-- EXPLORE -->
+<div class="dates-strip">
+  <div>
+    <h3>Simhastha Kumbh Mela 2027 &mdash; Amrit Snan Dates</h3>
+    <p>Holy bathing at Ramkund, Nashik &amp; Kushavarta Kund, Trimbakeshwar</p>
+  </div>
+  <div class="snan-pills">
+    <a href="/kumbh-mela-2027/#dates" class="snan-pill"><span class="sp-date">2 Aug 2027</span><span class="sp-lbl">1st Amrit Snan</span></a>
+    <a href="/kumbh-mela-2027/#dates" class="snan-pill"><span class="sp-date">31 Aug 2027</span><span class="sp-lbl">2nd Amrit Snan</span></a>
+    <a href="/kumbh-mela-2027/#dates" class="snan-pill"><span class="sp-date">11&ndash;12 Sep 2027</span><span class="sp-lbl">3rd Amrit Snan</span></a>
+    <a href="/kumbh-mela-2027/" class="snan-pill snan-pill-cta"><span class="sp-date">Full Guide</span><span class="sp-lbl">All 45+ Dates &rarr;</span></a>
+  </div>
+</div>
+
 <section class="explore-sec">
   <p class="section-eyebrow">Where to Go</p>
   <h2 class="section-title">Explore Nashik</h2>
-  <p class="section-sub">From sacred ghats to sunlit vineyards — Nashik is unlike anywhere else in India.</p>
+  <p class="section-sub">From sacred ghats to sunlit vineyards &mdash; Nashik is unlike anywhere else in India.</p>
   <div class="explore-grid">
     <a href="/discover-nashik/trimbakeshwar/" class="xcard fade-up">
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1775379429/steptodown.com223977_zhfdrg.jpg" alt="Trimbakeshwar Jyotirlinga Temple Nashik" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=900&q=85" alt="Trimbakeshwar Temple Nashik Kumbh Mela" loading="lazy" />
       <div class="xcard-ov"></div>
       <div class="xcard-body">
-        <div class="xtag">Jyotirlinga · Spiritual</div>
+        <div class="xtag">Jyotirlinga &middot; Spiritual</div>
         <h3>Trimbakeshwar Temple</h3>
-        <p>One of the 12 Jyotirlingas and the sacred Kumbh Mela site. Source of the holy Godavari.</p>
-        <div class="xarrow">Discover more →</div>
+        <p>One of the 12 Jyotirlingas and the sacred Kumbh Mela site. Source of the holy Godavari river.</p>
+        <div class="xarrow">Discover more &rarr;</div>
       </div>
     </a>
     <a href="/discover-nashik/panchavati/" class="xcard fade-up">
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1775367941/steptodown.com803697_wj0xe2.jpg" alt="Panchavati Ramkund Nashik" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1561361058-c24e02f6d130?w=700&q=85" alt="Panchavati Ramkund Nashik bathing ghat" loading="lazy" />
       <div class="xcard-ov"></div>
       <div class="xcard-body">
-        <div class="xtag">Heritage · Kumbh</div>
+        <div class="xtag">Heritage &middot; Kumbh</div>
         <h3>Panchavati &amp; Ramkund</h3>
-        <p>Lord Ram's exile grove. The primary Kumbh bathing ghat for Vaishnava pilgrims.</p>
-        <div class="xarrow">Discover more →</div>
+        <p>Lord Ram&#39;s sacred exile grove. The primary Kumbh Mela bathing ghat for Vaishnava pilgrims.</p>
+        <div class="xarrow">Discover more &rarr;</div>
       </div>
     </a>
     <a href="/discover-nashik/sula-vineyards/" class="xcard fade-up">
       <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&q=80" alt="Sula Vineyards Nashik wine" loading="lazy" />
       <div class="xcard-ov"></div>
-      <div class="xcard-body"><div class="xtag">Wine · Leisure</div><h3>Sula Vineyards</h3><div class="xarrow">Discover more →</div></div>
+      <div class="xcard-body"><div class="xtag">Wine &middot; Leisure</div><h3>Sula Vineyards</h3><div class="xarrow">Discover more &rarr;</div></div>
     </a>
     <a href="/discover-nashik/pandavleni-caves/" class="xcard fade-up">
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80" alt="Pandavleni Caves Nashik ancient Buddhist" loading="lazy" />
       <div class="xcard-ov"></div>
-      <div class="xcard-body"><div class="xtag">History · Heritage</div><h3>Pandavleni Caves</h3><div class="xarrow">Discover more →</div></div>
+      <div class="xcard-body"><div class="xtag">History &middot; Heritage</div><h3>Pandavleni Caves</h3><div class="xarrow">Discover more &rarr;</div></div>
     </a>
     <a href="/discover-nashik/igatpuri/" class="xcard fade-up">
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg" alt="Igatpuri Bhandardara nature Nashik" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&q=80" alt="Igatpuri Sahyadri hills Nashik nature" loading="lazy" />
       <div class="xcard-ov"></div>
-      <div class="xcard-body"><div class="xtag">Nature · Weekend</div><h3>Igatpuri &amp; Bhandardara</h3><div class="xarrow">Discover more →</div></div>
+      <div class="xcard-body"><div class="xtag">Nature &middot; Weekend</div><h3>Igatpuri &amp; Bhandardara</h3><div class="xarrow">Discover more &rarr;</div></div>
     </a>
   </div>
 </section>
 
-<!-- KUMBH MELA -->
 <section class="kumbh-sec">
+  <div class="kumbh-bg-text" aria-hidden="true">KUMBH</div>
   <div class="kumbh-inner">
     <div>
       <p class="section-eyebrow">Once Every 12 Years</p>
       <h2 class="section-title">Simhastha Kumbh<br>Mela 2027</h2>
-      <p class="section-sub">The world's largest spiritual gathering returns to the Godavari. 150–200 million devotees, 13 Akharas, 45+ holy bathing dates across 21 months.</p>
+      <p class="section-sub">The world&#39;s largest spiritual gathering returns to the banks of the Godavari. 150&ndash;200 million devotees, 13 Akharas, 45+ holy bathing dates across 21 extraordinary months.</p>
       <div class="kumbh-btns">
-        <a href="/kumbh-mela-2027/" class="btn btn-primary">Complete Guide →</a>
+        <a href="/kumbh-mela-2027/" class="btn btn-primary">Complete Guide &rarr;</a>
         <a href="/blog/how-to-reach-nashik-for-kumbh-mela/" class="btn btn-secondary">How to Reach</a>
       </div>
     </div>
     <div class="kstats">
-      <div class="kstat"><div class="kstat-num">15–20 Cr</div><div class="kstat-desc">Devotees expected over the full Mela period</div></div>
-      <div class="kstat"><div class="kstat-num">21 Months</div><div class="kstat-desc">Full Mela duration Oct 2026–Jul 2028</div></div>
-      <div class="kstat"><div class="kstat-num">13</div><div class="kstat-desc">Akharas leading Amrit Snan processions</div></div>
-      <div class="kstat"><div class="kstat-num">₹4,000 Cr</div><div class="kstat-desc">Government infrastructure investment</div></div>
+      <div class="kstat"><span class="kstat-num" data-target="20" data-suffix=" Cr+">0</span><div class="kstat-desc">Devotees expected over the full Mela period</div></div>
+      <div class="kstat"><span class="kstat-num" data-target="21" data-suffix=" Months">0</span><div class="kstat-desc">Full Mela duration Oct 2026 to Jul 2028</div></div>
+      <div class="kstat"><span class="kstat-num" data-target="13" data-suffix="">0</span><div class="kstat-desc">Akharas leading Amrit Snan processions</div></div>
+      <div class="kstat"><span class="kstat-num" data-target="4000" data-prefix="&#8377;" data-suffix=" Cr">0</span><div class="kstat-desc">Government infrastructure investment</div></div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
 <section class="blog-sec">
   <div class="blog-hdr">
     <div>
       <p class="section-eyebrow">Travel Guides</p>
-      <h2 class="section-title" style="margin-bottom:0.2rem;">Latest Guides &amp; Tips</h2>
+      <h2 class="section-title" style="margin-bottom:.2rem">Latest Guides &amp; Tips</h2>
       <p class="section-sub">Plan your Nashik trip with our expert guides.</p>
     </div>
-    <a href="/blog/" class="view-all">View all guides →</a>
+    <a href="/blog/" class="view-all">View all guides &rarr;</a>
   </div>
   <div class="blog-grid">
     <a href="/blog/nashik-kumbh-mela-2027-complete-guide/" class="bcard fade-up">
-      <div class="bcard-img"><img src="https://images.unsplash.com/photo-1561361058-c24e02f6d130?w=800&q=80" alt="Nashik Kumbh Mela 2027 guide" loading="lazy" /></div>
+      <div class="bcard-img"><img src="https://images.unsplash.com/photo-1561361058-c24e02f6d130?w=800&q=80" alt="Nashik Kumbh Mela 2027 complete guide" loading="lazy" /></div>
       <div class="bcard-body">
         <div class="bmeta"><span class="bcat">Kumbh Mela</span><span>April 2026</span></div>
-        <h3>Nashik Kumbh Mela 2027: The Complete Pilgrim's Guide</h3>
-        <p>Everything you need — Amrit Snan dates, ghats, how to reach, where to stay, and what to expect.</p>
-        <span class="rlink">Read Guide →</span>
+        <h3>Nashik Kumbh Mela 2027: The Complete Pilgrim&#39;s Guide</h3>
+        <p>Everything you need &mdash; Amrit Snan dates, ghats, how to reach, where to stay, and what to expect.</p>
+        <span class="rlink">Read Guide &rarr;</span>
       </div>
     </a>
     <a href="/blog/how-to-reach-nashik-for-kumbh-mela/" class="bcard fade-up">
-      <div class="bcard-img"><img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80" alt="How to reach Nashik train bus flight" loading="lazy" /></div>
+      <div class="bcard-img"><img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80" alt="How to reach Nashik Kumbh Mela train bus flight" loading="lazy" /></div>
       <div class="bcard-body">
         <div class="bmeta"><span class="bcat">Travel Tips</span><span>April 2026</span></div>
         <h3>How to Reach Nashik for Kumbh Mela 2027</h3>
-        <p>Train, bus, flight — complete routes from Mumbai, Pune and Delhi.</p>
-        <span class="rlink">Read Guide →</span>
+        <p>Train, bus, flight &mdash; complete routes from Mumbai, Pune and Delhi.</p>
+        <span class="rlink">Read Guide &rarr;</span>
       </div>
     </a>
     <a href="/blog/where-to-stay-nashik-kumbh-mela/" class="bcard fade-up">
@@ -290,21 +357,24 @@
       <div class="bcard-body">
         <div class="bmeta"><span class="bcat">Hotels</span><span>April 2026</span></div>
         <h3>Where to Stay in Nashik During Kumbh Mela 2027</h3>
-        <p>Budget to luxury — hotels, dharamshalas near Ramkund.</p>
-        <span class="rlink">Read Guide →</span>
+        <p>Budget to luxury &mdash; hotels and dharamshalas near Ramkund.</p>
+        <span class="rlink">Read Guide &rarr;</span>
       </div>
     </a>
   </div>
 </section>
 
-<!-- HOTEL CTA -->
 <div class="hotel-cta">
+  <div class="hotel-cta-bg"></div>
   <div class="hotel-cta-inner">
-    <h2>Book Your Nashik Stay Early</h2>
-    <p>Kumbh Mela 2027 will bring millions of pilgrims. Hotels near Ramkund and Trimbakeshwar will sell out months in advance.</p>
+    <div>
+      <h2>Book Your Nashik Stay Early</h2>
+      <p>Kumbh Mela 2027 will bring millions of pilgrims to Nashik. Hotels near Ramkund and Trimbakeshwar sell out months in advance.</p>
+    </div>
     <div class="hotel-cta-btns">
-      <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="btn btn-white">Search on MakeMyTrip</a>
-      <a href="https://www.goibibo.com/hotels/hotels-in-nashik/" target="_blank" rel="noopener" class="btn btn-outline-white">Search on Goibibo</a>
+      <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="btn btn-primary">Search on MakeMyTrip</a>
+      <a href="https://www.goibibo.com/hotels/hotels-in-nashik/" target="_blank" rel="noopener" class="btn btn-gold">Search on Goibibo</a>
+      <a href="https://www.irctc.co.in" target="_blank" rel="noopener" class="btn btn-outline-white">Book Trains (IRCTC)</a>
     </div>
   </div>
 </div>
@@ -312,28 +382,69 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="/logo-white.png" alt="Nashik Tourism" />
-      <h3>Nashik Tourism</h3>
-      <p>Your complete guide to Nashik — Kumbh Mela 2027, temples, vineyards and travel tips.</p>
+      <div class="footer-logo-wrap">
+        <img src="/logo-white.png" alt="Nashik Tourism" />
+        <div>
+          <div class="footer-logo-name">Nashik Tourism</div>
+          <span class="footer-logo-tagline">&#2344;&#2366;&#2358;&#2367;&#2325; &#2342;&#2352;&#2381;&#2358;&#2344; &middot; Official Guide</span>
+        </div>
+      </div>
+      <p>Your complete guide to Nashik &mdash; Kumbh Mela 2027, Trimbakeshwar, Sula Vineyards, temples and travel tips.</p>
     </div>
     <div class="footer-col"><h4>Kumbh Mela 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
-    <div class="footer-col"><h4>Discover Nashik</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li></ul></div>
+    <div class="footer-col"><h4>Discover Nashik</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li><li><a href="/discover-nashik/kalaram-temple/">Kalaram Temple</a></li></ul></div>
     <div class="footer-col"><h4>Plan Your Trip</h4><ul><li><a href="/blog/">Travel Blog</a></li><li><a href="/plan-your-trip/">Trip Planner</a></li><li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener">Book Hotels (MMT)</a></li><li><a href="https://www.goibibo.com/hotels/hotels-in-nashik/" target="_blank" rel="noopener">Book Hotels (Goibibo)</a></li><li><a href="https://www.irctc.co.in" target="_blank" rel="noopener">Book Trains (IRCTC)</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 NashikTourism.com — Independent travel guide. Not affiliated with any government body.</span>
-    <span>Made with ♥ for Nashik</span>
+    <span>&copy; 2026 NashikTourism.com &mdash; Independent travel guide. Not affiliated with any government body.</span>
+    <span>Made with &hearts; for Nashik</span>
   </div>
 </footer>
 
 <script>
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-  const hb = document.getElementById('hamburger'), mm = document.getElementById('mobileMenu');
-  hb.addEventListener('click', () => { hb.classList.toggle('open'); mm.classList.toggle('open'); document.body.style.overflow = mm.classList.contains('open') ? 'hidden' : ''; });
-  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hb.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow = ''; }));
-  window.addEventListener('load', () => document.getElementById('heroBg').classList.add('loaded'));
-  document.querySelectorAll('.fade-up').forEach(el => new IntersectionObserver((e) => { e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); } }); }, {threshold:0.1}).observe(el));
+// Nav scroll
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>80)},{passive:true});
+
+// Hamburger
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';}));
+
+// Hero parallax
+const heroBg=document.getElementById('heroBg');
+window.addEventListener('load',()=>heroBg.classList.add('loaded'));
+window.addEventListener('scroll',()=>{if(window.scrollY<window.innerHeight)heroBg.style.transform=`scale(1) translateY(${window.scrollY*.25}px)`;},{passive:true});
+
+// Countdown to 2 Aug 2027 1st Amrit Snan
+function tick(){
+  const t=new Date('2027-08-02T04:00:00+05:30').getTime()-Date.now();
+  if(t<=0){['days','hours','mins','secs'].forEach(k=>document.getElementById('cd-'+k).textContent='0');return;}
+  const d=Math.floor(t/864e5),h=Math.floor(t%864e5/36e5),m=Math.floor(t%36e5/6e4),s=Math.floor(t%6e4/1e3);
+  document.getElementById('cd-days').textContent=String(d).padStart(3,'0');
+  document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+// Animated counters
+function animCount(el){
+  const tgt=parseInt(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+  const dur=2000,t0=performance.now();
+  (function step(now){
+    const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);
+    el.textContent=pre+Math.round(e*tgt).toLocaleString('en-IN')+suf;
+    if(p<1)requestAnimationFrame(step);
+  })(t0);
+}
+new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.querySelectorAll('[data-target]').forEach(animCount);}});
+},{threshold:.3}).observe(document.querySelector('.kstats'));
+
+// Fade-up
+const fo=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');fo.unobserve(x.target);}});},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>fo.observe(el));
 </script>
 </body>
 </html>
