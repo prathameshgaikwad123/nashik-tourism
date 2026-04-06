@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Nashik – Temples, Heritage, Vineyards & Nature</title>
+  <meta name="description" content="Discover Nashik's top places: Trimbakeshwar, Panchavati, Sula Vineyards, Pandavleni Caves and Igatpuri." />
+  <link rel="icon" type="image/png" href="../logo-purple.png" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<nav class="nav solid" id="mainNav"><div class="nav-inner"><a href="/" class="nav-logo"><img src="../logo-white.png" alt="Nashik Tourism" /><div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div></a><ul class="nav-menu"><li><a href="/kumbh-mela-2027/">Kumbh Mela 2027</a></li><li><a href="/discover-nashik/" class="active">Discover Nashik</a></li><li><a href="/blog/">Blog</a></li><li><a href="/plan-your-trip/">Plan Your Trip</a></li><li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="nav-book">Book Hotels</a></li></ul><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/kumbh-mela-2027/">Kumbh Mela 2027</a><a href="/discover-nashik/">Discover Nashik</a><a href="/blog/">Blog</a><a href="/plan-your-trip/">Plan Your Trip</a><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="mob-book">Book Hotels</a></div>
+
+<div class="page-hero">
+  <div>
+    <div class="breadcrumb"><a href="/">Home</a> <span>›</span> Discover Nashik</div>
+    <h1>Discover Nashik</h1>
+    <p>Explore Nashik's sacred temples, heritage landmarks, vineyards and hill getaways.</p>
+  </div>
+</div>
+
+<section>
+  <p class="section-eyebrow">Top Places</p>
+  <h2 class="section-title">Where to Visit in Nashik</h2>
+  <p class="section-sub">Start with these curated destination pages and plan your day-wise itinerary.</p>
+  <div class="blog-grid">
+    <a href="/discover-nashik/trimbakeshwar/" class="bcard"><div class="bcard-body"><h3>Trimbakeshwar Temple</h3><p>One of the 12 Jyotirlingas and source region of Godavari.</p><span class="rlink">Open page →</span></div></a>
+    <a href="/discover-nashik/panchavati/" class="bcard"><div class="bcard-body"><h3>Panchavati & Ramkund</h3><p>The spiritual heart of Nashik and key Kumbh bathing zone.</p><span class="rlink">Open page →</span></div></a>
+    <a href="/discover-nashik/sula-vineyards/" class="bcard"><div class="bcard-body"><h3>Sula Vineyards</h3><p>Wine tours, tastings and sunset views near Gangapur.</p><span class="rlink">Open page →</span></div></a>
+    <a href="/discover-nashik/pandavleni-caves/" class="bcard"><div class="bcard-body"><h3>Pandavleni Caves</h3><p>Ancient rock-cut caves with history and city viewpoints.</p><span class="rlink">Open page →</span></div></a>
+    <a href="/discover-nashik/igatpuri/" class="bcard"><div class="bcard-body"><h3>Igatpuri & Bhandardara</h3><p>Monsoon landscapes, waterfalls and weekend nature escapes.</p><span class="rlink">Open page →</span></div></a>
+  </div>
+</section>
+
+<footer><div class="footer-top"><div class="footer-brand"><img src="../logo-white.png" alt="Nashik Tourism" /><h3>Nashik Tourism</h3><p>Your complete guide to Nashik — Kumbh Mela 2027, temples, vineyards and travel tips.</p></div><div class="footer-col"><h4>Kumbh Mela 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li></ul></div><div class="footer-col"><h4>Discover Nashik</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li></ul></div><div class="footer-col"><h4>Plan Your Trip</h4><ul><li><a href="/blog/">Travel Blog</a></li><li><a href="/plan-your-trip/">Trip Planner</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 NashikTourism.com</span><span>Made with ♥ for Nashik</span></div></footer>
+<script>
+  const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';}));
+
+  // Swap navbar logo based on dark vs light navbar background.
+  const nav=document.getElementById('mainNav');
+  const logoImg=nav ? (nav.querySelector('.nav-logo img') || nav.querySelector('img')) : null;
+  if(nav && logoImg){
+    const currentSrc=logoImg.getAttribute('src')||'';
+    const basePath=currentSrc.replace(/logo-(?:white|purple)\.png$/,'');
+    const applyLogo=()=>{const navIsDark=nav.classList.contains('scrolled')||nav.classList.contains('solid');logoImg.src=navIsDark?`${basePath}logo-white.png`:`${basePath}logo-purple.png`;};
+    window.addEventListener('scroll',applyLogo,{passive:true});
+    applyLogo();
+  }
+</script>
+</body>
+</html>

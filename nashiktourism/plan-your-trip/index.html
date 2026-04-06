@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Your Nashik Trip – Checklist & Quick Links</title>
+  <link rel="icon" type="image/png" href="../logo-purple.png" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<nav class="nav solid" id="mainNav"><div class="nav-inner"><a href="/" class="nav-logo"><img src="../logo-white.png" alt="Nashik Tourism" /><div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div></a><ul class="nav-menu"><li><a href="/kumbh-mela-2027/">Kumbh Mela 2027</a></li><li><a href="/discover-nashik/">Discover Nashik</a></li><li><a href="/blog/">Blog</a></li><li><a href="/plan-your-trip/" class="active">Plan Your Trip</a></li><li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="nav-book">Book Hotels</a></li></ul><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/kumbh-mela-2027/">Kumbh Mela 2027</a><a href="/discover-nashik/">Discover Nashik</a><a href="/blog/">Blog</a><a href="/plan-your-trip/">Plan Your Trip</a></div>
+<div class="page-hero"><div><div class="breadcrumb"><a href="/">Home</a> <span>›</span> Plan Your Trip</div><h1>Plan Your Nashik Trip</h1><p>Quick planning checklist for Kumbh Mela 2027 and regular Nashik travel.</p></div></div>
+<section>
+  <div class="article-wrap" style="padding:0;grid-template-columns:1fr;">
+    <article class="article-body">
+      <h2>Travel Checklist</h2>
+      <ul>
+        <li>Finalize travel mode early: train, bus, flight, or self-drive.</li>
+        <li>Book accommodation near your preferred zone: Panchavati or Trimbakeshwar.</li>
+        <li>Save key guides: how to reach, where to stay, and Kumbh dates.</li>
+        <li>Carry ID, emergency contacts, and a light day bag for ghat visits.</li>
+      </ul>
+      <div class="cta-strip"><div><h3>Start With The Essential Guides</h3><p>Everything connected from this page is now valid and working.</p></div><a href="/kumbh-mela-2027/" class="btn btn-gold">Kumbh Guide →</a></div>
+    </article>
+  </div>
+</section>
+<footer><div class="footer-top"><div class="footer-brand"><img src="../logo-white.png" alt="Nashik Tourism" /><h3>Nashik Tourism</h3><p>Your complete guide to Nashik.</p></div></div><div class="footer-bottom"><span>© 2026 NashikTourism.com</span><span>Made with ♥ for Nashik</span></div></footer>
+<script>
+  const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';}));
+
+  // Swap navbar logo based on dark vs light navbar background.
+  const nav=document.getElementById('mainNav');
+  const logoImg=nav ? (nav.querySelector('.nav-logo img') || nav.querySelector('img')) : null;
+  if(nav && logoImg){
+    const currentSrc=logoImg.getAttribute('src')||'';
+    const basePath=currentSrc.replace(/logo-(?:white|purple)\.png$/,'');
+    const applyLogo=()=>{const navIsDark=nav.classList.contains('scrolled')||nav.classList.contains('solid');logoImg.src=navIsDark?`${basePath}logo-white.png`:`${basePath}logo-purple.png`;};
+    window.addEventListener('scroll',applyLogo,{passive:true});
+    applyLogo();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Trimbakeshwar Temple – Discover Nashik</title><link rel="icon" type="image/png" href="../../logo-purple.png" /><link rel="stylesheet" href="../../style.css" /></head>
+<body>
+<nav class="nav solid" id="mainNav"><div class="nav-inner"><a href="/" class="nav-logo"><img src="../../logo-white.png" alt="Nashik Tourism" /><div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div></a><ul class="nav-menu"><li><a href="/kumbh-mela-2027/">Kumbh Mela 2027</a></li><li><a href="/discover-nashik/" class="active">Discover Nashik</a></li><li><a href="/blog/">Blog</a></li><li><a href="/plan-your-trip/">Plan Your Trip</a></li></ul><button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="/">Home</a><a href="/discover-nashik/">Discover Nashik</a><a href="/blog/">Blog</a></div>
+<div class="page-hero"><div><div class="breadcrumb"><a href="/">Home</a> <span>›</span> <a href="/discover-nashik/">Discover Nashik</a> <span>›</span> Trimbakeshwar</div><h1>Trimbakeshwar Temple</h1><p>A sacred Jyotirlinga destination and key site linked to Nashik Kumbh traditions.</p></div></div>
+<section><p class="section-sub">This destination page is now connected correctly from all navs and cards. Use `Discover Nashik` to browse all connected destinations.</p><a href="/discover-nashik/" class="btn btn-purple">Back to Discover Nashik</a></section>
+<footer><div class="footer-top"><div class="footer-brand"><img src="../../logo-white.png" alt="Nashik Tourism" /><h3>Nashik Tourism</h3><p>Your complete guide to Nashik.</p></div></div><div class="footer-bottom"><span>© 2026 NashikTourism.com</span><span>Made with ♥ for Nashik</span></div></footer>
+<script>
+  const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+  hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open');});
+
+  // Swap navbar logo based on dark vs light navbar background.
+  const nav=document.getElementById('mainNav');
+  const logoImg=nav ? (nav.querySelector('.nav-logo img') || nav.querySelector('img')) : null;
+  if(nav && logoImg){
+    const currentSrc=logoImg.getAttribute('src')||'';
+    const basePath=currentSrc.replace(/logo-(?:white|purple)\.png$/,'');
+    const applyLogo=()=>{const navIsDark=nav.classList.contains('scrolled')||nav.classList.contains('solid');logoImg.src=navIsDark?`${basePath}logo-white.png`:`${basePath}logo-purple.png`;};
+    window.addEventListener('scroll',applyLogo,{passive:true});
+    applyLogo();
+  }
+</script>
+</body></html>
