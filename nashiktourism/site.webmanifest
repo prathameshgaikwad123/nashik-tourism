@@ -1,0 +1,13 @@
+{
+  "name": "Nashik Tourism",
+  "short_name": "NashikTourism",
+  "description": "Your complete guide to Nashik — Kumbh Mela 2027, temples, vineyards and travel tips",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0A1E",
+  "theme_color": "#2D1B69",
+  "icons": [
+    { "src": "/logo-purple.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
