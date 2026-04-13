@@ -2,40 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nashik Travel Blog – Kumbh Mela 2027 Guides & Tips | NashikTourism.com</title>
-  <meta name="description" content="Travel guides and tips about Nashik tourism. Kumbh Mela 2027 complete guide, how to reach, where to stay, temples, wine tours and more." />
+  <title>Nashik Travel Blog – Kumbh Mela 2027 Guides, Tips & Articles</title>
+  <meta name="description" content="Nashik travel blog with guides and tips for Kumbh Mela 2027, Trimbakeshwar, Sula Vineyards and all Nashik attractions. Plan your trip with expert advice." />
   <link rel="canonical" href="https://nashiktourism.com/blog/" />
-  <link rel="icon" type="image/png" href="/logo-purple.png" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta property="og:title" content="Nashik Travel Blog – Kumbh Mela 2027 Guides & Tips" />
+  <meta property="og:url" content="https://nashiktourism.com/blog/" />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Nashik Tourism Blog","url":"https://nashiktourism.com/blog/","publisher":{"@type":"Organization","name":"NashikTourism.com"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
   <style>
-    .blog-header-sec { background: var(--dark); padding: 8rem 5vw 4rem; }
-    .blog-header-sec h1 { font-family:'Montserrat',sans-serif; font-size:clamp(2.2rem,5vw,4rem); font-weight:900; color:var(--accent-warm); letter-spacing:-0.02em; margin-bottom:0.6rem; }
-    .blog-header-sec p { color:rgba(255,255,255,0.45); max-width:480px; font-size:1rem; }
-    .blog-wrap { max-width:1100px; margin:0 auto; padding:4rem 5vw; }
-    .blog-grid-full { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.25rem; }
-    .bcard { background:white; border-radius:10px; overflow:hidden; display:block; color:var(--ink); border:1px solid var(--border); transition:transform 0.22s, box-shadow 0.22s; }
-    .bcard:hover { transform:translateY(-5px); box-shadow:0 18px 45px rgba(45,27,105,0.12); }
-    .bcard-img { overflow:hidden; height:200px; }
-    .bcard-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
-    .bcard:hover .bcard-img img { transform:scale(1.06); }
-    .bcard-body { padding:1.35rem; }
-    .bmeta { display:flex; align-items:center; gap:0.55rem; font-size:0.68rem; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; margin-bottom:0.65rem; }
-    .bcat { background:rgba(232,98,26,0.1); color:var(--saffron); padding:0.18rem 0.55rem; border-radius:50px; }
-    .bcard h2 { font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:800; line-height:1.38; letter-spacing:-0.01em; margin-bottom:0.45rem; }
-    .bcard p { font-size:0.83rem; color:var(--muted); line-height:1.6; }
-    .rlink { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.85rem; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; color:var(--primary); letter-spacing:0.05em; text-transform:uppercase; transition:gap 0.2s; }
-    .rlink:hover { gap:0.5rem; }
-    @media(max-width:768px){.blog-grid-full{grid-template-columns:1fr;}}
+    .blog-header-sec{background:var(--dark);padding:8rem 5vw 4rem}
+    .blog-header-sec h1{font-family:"Montserrat",sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--accent-warm);letter-spacing:-.02em;margin-bottom:.6rem}
+    .blog-header-sec p{color:rgba(255,255,255,.45);max-width:480px;font-size:1rem}
+
+    /* Filter bar */
+    .filter-bar{background:white;border-bottom:1px solid var(--border);padding:.75rem 5vw;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;position:sticky;top:72px;z-index:50}
+    .filter-btn{font-family:"Montserrat",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;border:1.5px solid var(--border);background:white;color:var(--muted);cursor:pointer;transition:all .2s}
+    .filter-btn:hover,.filter-btn.active{background:var(--primary);color:white;border-color:var(--primary)}
+    .filter-count{font-size:.65rem;opacity:.6;margin-left:.2rem}
+
+    /* Blog grid */
+    .blog-wrap{max-width:1200px;margin:0 auto;padding:3rem 5vw 5rem}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+
+    /* Cards */
+    .bcard{background:white;border-radius:12px;overflow:hidden;display:block;color:var(--ink);border:1px solid var(--border);transition:transform .22s,box-shadow .22s;text-decoration:none;cursor:pointer}
+    .bcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(45,27,105,.13)}
+    .bcard-img{overflow:hidden;height:200px;background:var(--light);position:relative}
+    .bcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
+    .bcard:hover .bcard-img img{transform:scale(1.06)}
+    .bcard-featured-badge{position:absolute;top:.75rem;left:.75rem;background:var(--saffron);color:white;font-family:"Montserrat",sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:50px}
+    .bcard-body{padding:1.4rem}
+    .bmeta{display:flex;align-items:center;gap:.55rem;font-size:.68rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-family:"Montserrat",sans-serif;font-weight:600;margin-bottom:.65rem}
+    .bcat{border-radius:50px;font-size:.65rem;padding:.18rem .55rem}
+    .bcard h2{font-family:"Montserrat",sans-serif;font-size:1rem;font-weight:800;line-height:1.38;letter-spacing:-.01em;margin-bottom:.45rem;color:var(--ink)}
+    .bcard p{font-size:.83rem;color:var(--muted);line-height:1.6;margin:0}
+    .rlink{display:inline-flex;align-items:center;gap:.3rem;margin-top:.85rem;font-family:"Montserrat",sans-serif;font-size:.72rem;font-weight:700;color:var(--primary);letter-spacing:.05em;text-transform:uppercase;transition:gap .2s}
+    .rlink:hover{gap:.5rem}
+
+    /* Category colours */
+    .cat-kumbh{background:rgba(232,98,26,.12);color:var(--saffron)}
+    .cat-travel{background:rgba(45,27,105,.1);color:var(--primary)}
+    .cat-hotels{background:rgba(22,163,74,.1);color:#16a34a}
+    .cat-planning{background:rgba(201,146,42,.12);color:var(--accent)}
+    .cat-nashik{background:rgba(99,102,241,.1);color:#6366f1}
+    .cat-default{background:var(--light);color:var(--muted)}
+
+    /* Loading & empty states */
+    .loading-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+    .skeleton{background:white;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+    .skeleton-img{height:200px;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
+    .skeleton-body{padding:1.4rem}
+    .skeleton-line{height:.75rem;border-radius:4px;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;margin-bottom:.75rem}
+    .skeleton-line.short{width:40%}
+    .skeleton-line.medium{width:70%}
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .no-results{text-align:center;padding:4rem 1rem;color:var(--muted)}
+    .no-results h3{font-family:"Montserrat",sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+
+    /* Search */
+    .search-wrap{flex:1;max-width:300px;position:relative}
+    .search-input{width:100%;padding:.4rem 1rem .4rem 2.25rem;border:1.5px solid var(--border);border-radius:50px;font-family:"Montserrat",sans-serif;font-size:.78rem;outline:none;transition:border-color .2s;background:white}
+    .search-input:focus{border-color:var(--primary)}
+    .search-icon{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.8rem;pointer-events:none}
+
+    /* Post count */
+    .post-count{font-family:"Montserrat",sans-serif;font-size:.75rem;color:var(--muted);padding:.75rem 5vw;max-width:1200px;margin:0 auto}
+    .post-count span{font-weight:700;color:var(--primary)}
+
+    @media(max-width:768px){.blog-grid{grid-template-columns:1fr}.filter-bar{top:64px}}
   </style>
 </head>
 <body>
 
 <nav class="nav solid" id="mainNav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo-white.png" alt="Nashik Tourism" /><div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div></a>
+    <a href="/" class="nav-logo"><img src="/logo-white.png" alt="Nashik Tourism" style="height:40px;width:40px;object-fit:contain" /><div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div></a>
     <ul class="nav-menu">
-      <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 <span class="chevron">▾</span></a><div class="dropdown"><a href="/kumbh-mela-2027/">Complete Guide</a><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></div></li>
-      <li><a href="/discover-nashik/">Discover Nashik <span class="chevron">▾</span></a><div class="dropdown"><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a><a href="/discover-nashik/panchavati/">Panchavati & Ramkund</a><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></div></li>
+      <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 <span class="chevron">&#9660;</span></a><div class="dropdown"><a href="/kumbh-mela-2027/">Complete Guide</a><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></div></li>
+      <li><a href="/discover-nashik/">Discover Nashik <span class="chevron">&#9660;</span></a><div class="dropdown"><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></div></li>
       <li><a href="/blog/" class="active">Blog</a></li>
       <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
       <li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="nav-book">Book Hotels</a></li>
@@ -45,44 +93,39 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="/">Home</a><a href="/kumbh-mela-2027/">Kumbh Mela 2027</a><a href="/blog/">Blog</a><a href="/discover-nashik/">Discover Nashik</a><a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="mob-book">🏨 Book Hotels Now</a>
+  <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="mob-book">&#127968; Book Hotels Now</a>
 </div>
 
 <div class="blog-header-sec">
-  <div class="breadcrumb"><a href="/">Home</a> <span>›</span> Blog</div>
+  <div class="breadcrumb"><a href="/">Home</a> <span>&#8250;</span> Blog</div>
   <h1>Nashik Travel Blog</h1>
   <p>Guides, tips and everything you need to plan your Nashik trip and Kumbh Mela 2027 pilgrimage.</p>
 </div>
 
+<!-- Filter bar — populated by JS -->
+<div class="filter-bar" id="filterBar">
+  <div class="search-wrap">
+    <span class="search-icon">&#128269;</span>
+    <input class="search-input" id="searchInput" type="text" placeholder="Search articles..." autocomplete="off" />
+  </div>
+  <!-- Category filter buttons injected here by JS -->
+</div>
+
+<!-- Post count -->
+<div class="post-count" id="postCount"></div>
+
+<!-- Blog grid — populated by JS -->
 <div class="blog-wrap">
-  <div class="blog-grid-full">
-    <a href="/blog/nashik-kumbh-mela-2027-complete-guide/" class="bcard fade-up">
-      <div class="bcard-img"><img src="https://images.unsplash.com/photo-1561361058-c24e02f6d130?w=700&q=80" alt="Nashik Kumbh Mela 2027 complete guide" loading="lazy" /></div>
-      <div class="bcard-body">
-        <div class="bmeta"><span class="bcat">Kumbh Mela</span><span>April 2026</span></div>
-        <h2>Nashik Kumbh Mela 2027: The Complete Pilgrim's Guide</h2>
-        <p>Everything you need — dates, ghats, how to reach, where to stay, what to expect on Amrit Snan days.</p>
-        <span class="rlink">Read Guide →</span>
-      </div>
-    </a>
-    <a href="/blog/how-to-reach-nashik-for-kumbh-mela/" class="bcard fade-up">
-      <div class="bcard-img"><img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=700&q=80" alt="How to reach Nashik train bus flight" loading="lazy" /></div>
-      <div class="bcard-body">
-        <div class="bmeta"><span class="bcat">Travel Tips</span><span>April 2026</span></div>
-        <h2>How to Reach Nashik for Kumbh Mela 2027 — Train, Bus & Flight</h2>
-        <p>Step by step guide from Mumbai, Pune, Delhi and all major cities to Nashik.</p>
-        <span class="rlink">Read Guide →</span>
-      </div>
-    </a>
-    <a href="/blog/where-to-stay-nashik-kumbh-mela/" class="bcard fade-up">
-      <div class="bcard-img"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80" alt="Where to stay Nashik Kumbh Mela hotels" loading="lazy" /></div>
-      <div class="bcard-body">
-        <div class="bmeta"><span class="bcat">Hotels</span><span>April 2026</span></div>
-        <h2>Where to Stay in Nashik During Kumbh Mela 2027 — Hotels & Dharamshalas</h2>
-        <p>Budget to luxury — best places to stay near Ramkund and Trimbakeshwar during the Mela.</p>
-        <span class="rlink">Read Guide →</span>
-      </div>
-    </a>
+  <!-- Loading skeletons shown while JS fetches posts.json -->
+  <div class="loading-grid" id="loadingGrid">
+    <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+    <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+    <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+  </div>
+  <div class="blog-grid" id="blogGrid" style="display:none"></div>
+  <div class="no-results" id="noResults" style="display:none">
+    <h3>No articles found</h3>
+    <p>Try a different search term or category filter.</p>
   </div>
 </div>
 
@@ -91,16 +134,148 @@
     <div class="footer-brand"><img src="/logo-white.png" alt="Nashik Tourism" /><h3>Nashik Tourism</h3><p>Your complete guide to Nashik — Kumbh Mela 2027, temples, vineyards and travel tips.</p></div>
     <div class="footer-col"><h4>Kumbh Mela 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
     <div class="footer-col"><h4>Discover Nashik</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li></ul></div>
-    <div class="footer-col"><h4>Plan Your Trip</h4><ul><li><a href="/blog/">Travel Blog</a></li><li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener">Book Hotels (MMT)</a></li><li><a href="https://www.irctc.co.in" target="_blank" rel="noopener">Book Trains (IRCTC)</a></li></ul></div>
+    <div class="footer-col"><h4>Plan Your Trip</h4><ul><li><a href="/plan-your-trip/">Trip Planner</a></li><li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener">Book Hotels (MMT)</a></li><li><a href="https://www.irctc.co.in" target="_blank" rel="noopener">Book Trains (IRCTC)</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 NashikTourism.com — Independent travel guide</span><span>Made with ♥ for Nashik</span></div>
+  <div class="footer-bottom"><span>&copy; 2026 NashikTourism.com &mdash; Independent travel guide</span><span>Made with &hearts; for Nashik</span></div>
 </footer>
 
 <script>
-  const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
-  hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
-  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';}));
-  document.querySelectorAll('.fade-up').forEach(el=>new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1}).observe(el));
+// ── Nav
+const nav=document.getElementById("mainNav");
+const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
+hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");document.body.style.overflow=mm.classList.contains("open")?"hidden":"";});
+mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");document.body.style.overflow="";}));
+
+// ── Category colour mapping
+const catColours = {
+  "Kumbh Mela": "cat-kumbh",
+  "Travel Tips": "cat-travel",
+  "Hotels": "cat-hotels",
+  "Planning": "cat-planning",
+  "Nashik Guides": "cat-nashik"
+};
+
+function catClass(cat) {
+  return catColours[cat] || "cat-default";
+}
+
+// ── Format date nicely
+function fmtDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleDateString("en-IN", { day:"numeric", month:"long", year:"numeric" });
+}
+
+// ── Build a single card
+function buildCard(post) {
+  return `<a href="/blog/${post.slug}/" class="bcard fade-up">
+    <div class="bcard-img">
+      <img src="${post.image}" alt="${post.title}" loading="lazy" />
+      ${post.featured ? '<span class="bcard-featured-badge">Featured</span>' : ""}
+    </div>
+    <div class="bcard-body">
+      <div class="bmeta">
+        <span class="bcat ${catClass(post.category)}">${post.category}</span>
+        <span>${fmtDate(post.date)}</span>
+      </div>
+      <h2>${post.title}</h2>
+      <p>${post.excerpt}</p>
+      <span class="rlink">Read Guide &rarr;</span>
+    </div>
+  </a>`;
+}
+
+// ── State
+let allPosts = [];
+let activeFilter = "All";
+let searchQuery = "";
+
+// ── Render grid
+function render() {
+  const grid = document.getElementById("blogGrid");
+  const noRes = document.getElementById("noResults");
+  const count = document.getElementById("postCount");
+
+  let filtered = allPosts.filter(p => {
+    const matchCat = activeFilter === "All" || p.category === activeFilter;
+    const matchSearch = searchQuery === "" ||
+      p.title.toLowerCase().includes(searchQuery) ||
+      p.excerpt.toLowerCase().includes(searchQuery) ||
+      p.category.toLowerCase().includes(searchQuery);
+    return matchCat && matchSearch;
+  });
+
+  // Sort: featured first, then by date desc
+  filtered.sort((a,b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  count.innerHTML = `Showing <span>${filtered.length}</span> of ${allPosts.length} articles`;
+
+  if (filtered.length === 0) {
+    grid.style.display = "none";
+    noRes.style.display = "block";
+  } else {
+    noRes.style.display = "none";
+    grid.innerHTML = filtered.map(buildCard).join("");
+    grid.style.display = "grid";
+
+    // Trigger fade-up animations
+    grid.querySelectorAll(".fade-up").forEach((el,i) => {
+      el.style.transitionDelay = (i * 0.05) + "s";
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add("visible")));
+    });
+  }
+}
+
+// ── Build filter buttons
+function buildFilters(posts) {
+  const bar = document.getElementById("filterBar");
+  const cats = ["All", ...new Set(posts.map(p => p.category))];
+  const counts = {};
+  posts.forEach(p => { counts[p.category] = (counts[p.category]||0)+1; });
+
+  const btns = cats.map(cat => {
+    const c = cat === "All" ? posts.length : (counts[cat]||0);
+    return `<button class="filter-btn ${cat==="All"?"active":""}" data-cat="${cat}">${cat}<span class="filter-count">(${c})</span></button>`;
+  }).join("");
+
+  // Insert after search box
+  bar.insertAdjacentHTML("beforeend", btns);
+
+  bar.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      bar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilter = btn.dataset.cat;
+      render();
+    });
+  });
+}
+
+// ── Search
+document.getElementById("searchInput").addEventListener("input", e => {
+  searchQuery = e.target.value.toLowerCase().trim();
+  render();
+});
+
+// ── Fetch posts.json and boot
+(async () => {
+  try {
+    const res = await fetch("/posts.json?v=" + Date.now());
+    if (!res.ok) throw new Error("Failed");
+    allPosts = await res.json();
+
+    document.getElementById("loadingGrid").style.display = "none";
+    buildFilters(allPosts);
+    render();
+  } catch(e) {
+    document.getElementById("loadingGrid").innerHTML =
+      "<p style='color:var(--muted);padding:2rem'>Could not load articles. Please refresh.</p>";
+    console.error("posts.json fetch error:", e);
+  }
+})();
 </script>
 </body>
 </html>
