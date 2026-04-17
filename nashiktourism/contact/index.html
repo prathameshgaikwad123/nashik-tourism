@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – NashikTourism.com</title>
+  <meta name="description" content="Contact NashikTourism.com for travel queries, Kumbh Mela 2027 information, advertising, partnerships or listing your Nashik business on our site."/>
+  <link rel="canonical" href="https://nashiktourism.com/contact/"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <meta property="og:title" content="Contact Us – NashikTourism.com"/>
+  <meta property="og:url" content="https://nashiktourism.com/contact/"/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css"/>
+  <style>
+    .contact-hero{background:var(--dark);padding:8rem 5vw 4rem}
+    .contact-hero h1{font-family:"Montserrat",sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--accent-warm);letter-spacing:-.02em;margin-bottom:.6rem}
+    .contact-hero p{color:rgba(255,255,255,.45);max-width:500px;font-size:1rem}
+
+    .contact-wrap{max-width:1000px;margin:0 auto;padding:4rem 5vw;display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start}
+
+    /* Left — info cards */
+    .contact-info{display:flex;flex-direction:column;gap:1.25rem}
+    .contact-card{background:white;border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+    .contact-card .icon{font-size:1.5rem;margin-bottom:.75rem}
+    .contact-card h3{font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.4rem}
+    .contact-card p{font-size:.875rem;color:var(--muted);line-height:1.6;margin:0}
+    .contact-card a{color:var(--primary);font-weight:600;text-decoration:none}
+    .contact-card a:hover{color:var(--saffron)}
+
+    /* Right — form */
+    .contact-form-wrap{background:white;border:1px solid var(--border);border-radius:10px;padding:2rem}
+    .contact-form-wrap h2{font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:800;color:var(--ink);margin-bottom:1.5rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-family:"Montserrat",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:6px;font-family:"Lato",sans-serif;font-size:.9rem;color:var(--ink);outline:none;transition:border-color .2s;background:white;-webkit-appearance:none}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary)}
+    .form-group textarea{resize:vertical;min-height:120px}
+    .form-group select{cursor:pointer}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .submit-btn{width:100%;padding:.9rem;background:var(--primary);color:white;border:none;border-radius:6px;font-family:"Montserrat",sans-serif;font-size:.875rem;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:background .2s,transform .2s}
+    .submit-btn:hover{background:var(--primary-light);transform:translateY(-1px)}
+    .form-success{display:none;text-align:center;padding:2rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;margin-top:1rem}
+    .form-success h3{font-family:"Montserrat",sans-serif;color:#16a34a;font-size:1rem;font-weight:800;margin-bottom:.4rem}
+    .form-success p{font-size:.875rem;color:var(--muted);margin:0}
+
+    @media(max-width:768px){
+      .contact-wrap{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav solid" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="/logo-white.png" alt="Nashik Tourism" style="height:40px;width:40px;object-fit:contain"/><div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div></a>
+    <ul class="nav-menu">
+      <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 <span class="chevron">&#9660;</span></a><div class="dropdown"><a href="/kumbh-mela-2027/">Complete Guide</a><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></div></li>
+      <li><a href="/discover-nashik/">Discover Nashik <span class="chevron">&#9660;</span></a><div class="dropdown"><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></div></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+      <li><a href="/contact/" class="nav-book active">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
+  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
+  <a href="/discover-nashik/">Discover Nashik</a>
+  <a href="/blog/">Blog</a>
+  <a href="/plan-your-trip/">Plan Your Trip</a>
+  <a href="/contact/" class="mob-book">&#9993;&#65039; Contact Us</a>
+</div>
+
+<div class="contact-hero">
+  <div class="breadcrumb"><a href="/">Home</a> <span>&#8250;</span> Contact Us</div>
+  <h1>Contact Us</h1>
+  <p>Questions about Nashik, Kumbh Mela 2027, partnerships or listing your business? We'd love to hear from you.</p>
+</div>
+
+<div class="contact-wrap">
+
+  <!-- Info cards -->
+  <div class="contact-info">
+    <div class="contact-card">
+      <div class="icon">&#9993;&#65039;</div>
+      <h3>General Enquiries</h3>
+      <p>For travel questions, Kumbh Mela 2027 information, or anything about Nashik — use the contact form and we'll respond within 24&ndash;48 hours.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">&#127968;</div>
+      <h3>List Your Business</h3>
+      <p>Are you a hotel, guest house, dharamshala, tour operator or local business in Nashik? Get featured on NashikTourism.com and reach pilgrims and tourists planning their Kumbh Mela 2027 visit.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">&#128227;</div>
+      <h3>Advertising &amp; Partnerships</h3>
+      <p>Interested in sponsored content, banner advertising or a travel partnership? Select "Advertising" in the enquiry type and tell us about your brand.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">&#9989;</div>
+      <h3>Content &amp; Corrections</h3>
+      <p>Spotted an error or have updated information about Nashik or Kumbh Mela 2027? We appreciate corrections and always credit contributors.</p>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="contact-form-wrap">
+    <h2>Send Us a Message</h2>
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="first_name" placeholder="Prathamesh" required/>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="last_name" placeholder="Gaikwad"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone (Optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210"/>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Enquiry Type</label>
+        <select id="subject" name="subject" required>
+          <option value="" disabled selected>Select a topic</option>
+          <option value="travel_query">Travel / Kumbh Mela 2027 Query</option>
+          <option value="business_listing">List My Business</option>
+          <option value="advertising">Advertising &amp; Partnership</option>
+          <option value="content">Content / Corrections</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+      </div>
+
+      <!-- Honeypot spam protection -->
+      <input type="text" name="_gotcha" style="display:none"/>
+      <input type="hidden" name="_subject" value="New message from NashikTourism.com"/>
+
+      <button type="submit" class="submit-btn">Send Message &#8594;</button>
+    </form>
+
+    <div class="form-success" id="formSuccess">
+      <h3>&#10003; Message Sent!</h3>
+      <p>Thank you for reaching out. We'll get back to you within 24&ndash;48 hours.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><img src="/logo-white.png" alt="Nashik Tourism"/><h3>Nashik Tourism</h3><p>Your complete guide to Nashik &mdash; Kumbh Mela 2027, temples, vineyards and travel tips.</p></div>
+    <div class="footer-col"><h4>Kumbh Mela 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
+    <div class="footer-col"><h4>Discover Nashik</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li></ul></div>
+    <div class="footer-col"><h4>Site</h4><ul><li><a href="/blog/">Travel Blog</a></li><li><a href="/plan-your-trip/">Plan Your Trip</a></li><li><a href="/contact/">Contact Us</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 NashikTourism.com &mdash; Independent travel guide</span><span>Made with &hearts; for Nashik</span></div>
+</footer>
+
+<script>
+// Nav
+const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
+hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");document.body.style.overflow=mm.classList.contains("open")?"hidden":"";});
+mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");document.body.style.overflow="";}));
+
+// Form submit handler (works with Formspree)
+const form = document.getElementById("contactForm");
+const success = document.getElementById("formSuccess");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector(".submit-btn");
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+    if (res.ok) {
+      form.style.display = "none";
+      success.style.display = "block";
+    } else {
+      btn.textContent = "Send Message →";
+      btn.disabled = false;
+      alert("Something went wrong. Please try again.");
+    }
+  } catch {
+    btn.textContent = "Send Message →";
+    btn.disabled = false;
+    alert("Network error. Please try again.");
+  }
+});
+</script>
+</body>
+</html>
