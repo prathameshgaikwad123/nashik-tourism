@@ -60,7 +60,7 @@
     "category": "Travel Tips",
     "date": "2026-04-12",
     "image": "https://res.cloudinary.com/duhuxaukd/image/upload/v1776064195/AZ2Fq7tSelXiNIJZJrVHQw-AZ2Fq7tS8de_ja1raH8iMw_ubkukq.jpg",
-    "featured": false
+    "featured": true
   },
   {
     "slug": "kumbh-mela-2027-all-snan-dates",
@@ -116,6 +116,15 @@
     "image": "https://res.cloudinary.com/duhuxaukd/image/upload/v1776315124/AZ2Umt07BEIJ-7Q_ufzPsg-AZ2Umt07FsclNegMlAH-eA_ictvsn.jpg",
     "featured": true
   },
+  {
+    "slug": "is-nashik-worth-visiting",
+    "title": "Is Nashik Worth Visiting in 2026? Honest Travel Guide",
+    "excerpt": "Is Nashik worth visiting? Discover temples, vineyards, wine tourism and real travel insights before planning your trip.",
+    "category": "Travel Guide",
+    "date": "2026-05-05",
+    "image": "https://res.cloudinary.com/duhuxaukd/image/upload/v1777961597/ChatGPT_Image_May_5_2026_11_43_01_AM_xzuxj2.png",
+    "featured": true
+   },
   {
     "slug": "what-to-eat-near-ramkund-nashik-food-guide",
     "title": "What to Eat Near Ramkund Nashik – Best Food in Panchavati",
