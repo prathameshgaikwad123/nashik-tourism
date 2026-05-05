@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15 Best Places to Visit in Nashik (2026 Guide + Hidden Gems)</title>
   <meta name="description" content="Discover the best places to visit in Nashik including temples, vineyards, caves & hidden gems. Complete 2026 travel guide with local tips." />
   <link rel="canonical" href="https://nashiktourism.com/blog/best-places-to-visit-in-nashik/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"15 Best Places to Visit in Nashik (2026 Guide + Hidden Gems)","datePublished":"2026-05-05","author":{"@type":"Organization","name":"NashikTourism.com"}}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
   <style>
+    /* ---------- Existing styles (from original template) ---------- */
     .route-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
     .route-card{background:white;border:1px solid var(--border);border-radius:8px;padding:1.25rem;text-align:center}
     .route-card .icon{font-size:1.75rem;margin-bottom:.5rem}
@@ -20,8 +22,97 @@
     .fact-strip{background:var(--primary);color:white;padding:1.5rem 2rem;border-radius:8px;margin:1.5rem 0;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
     .fact{text-align:center}.fact .num{font-family:"Montserrat",sans-serif;font-size:1.8rem;font-weight:900;color:var(--accent-warm)}.fact .lbl{font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
     @media(max-width:768px){.route-cards{grid-template-columns:1fr 1fr}.fact-strip{gap:1rem}}
-    .place-section{margin-bottom:3rem}
-    .place-section img{max-width:100%;border-radius:8px;margin:1rem 0;display:block}
+
+    /* ---------- Gallery Carousel ---------- */
+    .gallery {
+      position: relative;
+      margin: 1.5rem 0;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #f0f0f0;
+      touch-action: pan-y pinch-zoom; /* allows vertical scroll */
+    }
+    .gallery-track {
+      display: flex;
+      transition: transform 0.3s ease;
+      will-change: transform;
+    }
+    .gallery-track img {
+      width: 100%;
+      flex-shrink: 0;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;   /* uniform height – adjust or remove if images vary a lot */
+    }
+
+    /* Dots */
+    .gallery-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+    .gallery-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s;
+    }
+    .gallery-dot.active {
+      background: var(--primary, #c96b2c);
+    }
+
+    /* Arrows */
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .gallery:hover .gallery-arrow,
+    .gallery:focus-within .gallery-arrow {
+      opacity: 1;
+    }
+    .gallery-arrow.prev { left: 8px; }
+    .gallery-arrow.next { right: 8px; }
+
+    /* Mobile – always show arrows slightly */
+    @media (hover: none) {
+      .gallery-arrow { opacity: 0.7; }
+    }
+
+    /* Fallback if JS disabled (images stack) */
+    .gallery-track.no-js {
+      flex-wrap: wrap;
+    }
+    .gallery-track.no-js img {
+      width: 100%;
+      aspect-ratio: auto;
+    }
+
+    /* Place sections spacing */
+    .place-section {
+      margin-bottom: 3rem;
+    }
   </style>
 </head>
 <body>
@@ -58,11 +149,15 @@
     <!-- Place 1: Trimbakeshwar Temple -->
     <div class="place-section">
       <h2>🛕 1. Trimbakeshwar Temple</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_1_ohlk16.png" alt="Trimbakeshwar Temple" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_46_zcrix3.png" alt="Trimbakeshwar Temple" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_47_rfq2vp.png" alt="Trimbakeshwar Temple" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965697/Picture_20_jfun1l.jpg" alt="Trimbakeshwar Temple" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965697/Picture_1_luwtag.jpg" alt="Trimbakeshwar Temple" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_1_ohlk16.png" alt="Trimbakeshwar Temple" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_46_zcrix3.png" alt="Trimbakeshwar Temple" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_47_rfq2vp.png" alt="Trimbakeshwar Temple" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965697/Picture_20_jfun1l.jpg" alt="Trimbakeshwar Temple" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965697/Picture_1_luwtag.jpg" alt="Trimbakeshwar Temple" loading="lazy" />
+        </div>
+      </div>
       <p>One of the 12 Jyotirlingas of Lord Shiva, this is the spiritual heart of Nashik. The unique three-faced Shiva linga and the temple’s deep connection to Kumbh Mela make it unmissable.</p>
       <p><strong>Tip:</strong> Visit early morning (before 7 AM) to avoid crowds and experience the peaceful rituals.</p>
     </div>
@@ -70,146 +165,203 @@
     <!-- Place 2: Ramkund -->
     <div class="place-section">
       <h2>🌊 2. Ramkund</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966036/Picture_48_bntn75.png" alt="Ramkund Ghat Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966030/Picture_50_feltpj.png" alt="Ramkund Ghat Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966029/Picture_14_ckbpa1.jpg" alt="Ramkund Ghat Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966030/Picture_49_senehm.png" alt="Ramkund Ghat Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966029/Picture_13_vzj3j0.jpg" alt="Ramkund Ghat Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966028/Picture_4_t2bkcl.jpg" alt="Ramkund Ghat Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966036/Picture_48_bntn75.png" alt="Ramkund Ghat Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966030/Picture_50_feltpj.png" alt="Ramkund Ghat Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966029/Picture_14_ckbpa1.jpg" alt="Ramkund Ghat Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966030/Picture_49_senehm.png" alt="Ramkund Ghat Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966029/Picture_13_vzj3j0.jpg" alt="Ramkund Ghat Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966028/Picture_4_t2bkcl.jpg" alt="Ramkund Ghat Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>The sacred bathing ghat on the Godavari River, central to Kumbh Mela. Even outside festival time, the evening aarti here is deeply moving.</p>
     </div>
 
     <!-- Place 3: Sula Vineyards -->
     <div class="place-section">
       <h2>🍷 3. Sula Vineyards</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966239/Picture_51_dv0a9a.png" alt="Sula Vineyards Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_26_riiwou.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_25_cg35ei.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_12_e7kosk.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_52_ipr2bl.png" alt="Sula Vineyards Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966234/Picture_10_wzetub.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966239/Picture_51_dv0a9a.png" alt="Sula Vineyards Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_26_riiwou.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_25_cg35ei.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_12_e7kosk.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_52_ipr2bl.png" alt="Sula Vineyards Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966234/Picture_10_wzetub.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>The reason Nashik is called the <strong>Wine Capital of India</strong>. Wine tasting tours, scenic vineyard views, and a relaxed vibe — perfect for couples and friends.</p>
     </div>
 
     <!-- Place 4: Pandavleni Caves -->
     <div class="place-section">
       <h2>🏞️ 4. Pandavleni Caves</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966469/Picture_19_xib2vq.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966470/Picture_54_itiy3g.png" alt="Pandavleni Caves Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966468/Picture_22_p10saj.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966468/Picture_6_u6rpel.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966470/Picture_56_cwpnsh.png" alt="Pandavleni Caves Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966472/Picture_55_hebfhs.png" alt="Pandavleni Caves Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966469/Picture_18_rz059w.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966469/Picture_19_xib2vq.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966470/Picture_54_itiy3g.png" alt="Pandavleni Caves Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966468/Picture_22_p10saj.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966468/Picture_6_u6rpel.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966470/Picture_56_cwpnsh.png" alt="Pandavleni Caves Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966472/Picture_55_hebfhs.png" alt="Pandavleni Caves Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>Ancient Buddhist caves carved into rock, offering a small trek and panoramic city views. Far less crowded than major attractions.</p>
     </div>
 
     <!-- Place 5: Anjneri Hill -->
     <div class="place-section">
       <h2>🌿 5. Anjneri Hill</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966649/Picture_57_tcfdph.png" alt="Anjneri Hill Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966649/Picture_58_pcotz9.png" alt="Anjneri Hill Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966650/Picture_59_jlmwi5.png" alt="Anjneri Hill Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966648/Picture_2_onvx70.jpg" alt="Anjneri Hill Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966649/Picture_57_tcfdph.png" alt="Anjneri Hill Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966649/Picture_58_pcotz9.png" alt="Anjneri Hill Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966650/Picture_59_jlmwi5.png" alt="Anjneri Hill Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966648/Picture_2_onvx70.jpg" alt="Anjneri Hill Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>Believed birthplace of Lord Hanuman. The easy trek rewards you with stunning greenery and a spiritual-adventure mix.</p>
     </div>
 
     <!-- Place 6: Brahmagiri Hills -->
     <div class="place-section">
       <h2>🌄 6. Brahmagiri Hills</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966650/Picture_60_jibk8q.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967125/Picture_5_ndkgrw.jpg" alt="Brahmagiri Hills Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967126/Picture_71_ogcje2.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967135/Picture_61_fh5zsr.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966650/Picture_60_jibk8q.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967125/Picture_5_ndkgrw.jpg" alt="Brahmagiri Hills Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967126/Picture_71_ogcje2.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967135/Picture_61_fh5zsr.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>The source of the Godavari River. A scenic trek with mythological importance — especially magnificent during monsoon.</p>
     </div>
 
     <!-- Place 7: Kalaram Temple -->
     <div class="place-section">
       <h2>🛕 7. Kalaram Temple</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967244/Picture_63_sarc7q.png" alt="Kalaram Temple Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967243/Picture_64_k4nexw.png" alt="Kalaram Temple Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967244/Picture_65_vpntba.png" alt="Kalaram Temple Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967242/Picture_21_lhfrwl.jpg" alt="Kalaram Temple Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967244/Picture_63_sarc7q.png" alt="Kalaram Temple Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967243/Picture_64_k4nexw.png" alt="Kalaram Temple Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967244/Picture_65_vpntba.png" alt="Kalaram Temple Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967242/Picture_21_lhfrwl.jpg" alt="Kalaram Temple Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>Famous for its black stone idol of Lord Rama. A must-visit for its architecture and tranquil atmosphere.</p>
     </div>
 
     <!-- Place 8: Sita Gufa -->
     <div class="place-section">
       <h2>🌳 8. Sita Gufa</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967422/Picture_18_ulzjrm.jpg" alt="Sita Gufa Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967429/Picture_67_ze5m0t.png" alt="Sita Gufa Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967425/Picture_66_zagcxb.png" alt="Sita Gufa Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967421/Picture_3_tjlk65.jpg" alt="Sita Gufa Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967430/Picture_68_gpdwqm.png" alt="Sita Gufa Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967422/Picture_18_ulzjrm.jpg" alt="Sita Gufa Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967429/Picture_67_ze5m0t.png" alt="Sita Gufa Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967425/Picture_66_zagcxb.png" alt="Sita Gufa Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967421/Picture_3_tjlk65.jpg" alt="Sita Gufa Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967430/Picture_68_gpdwqm.png" alt="Sita Gufa Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>A small cave linked to the Ramayana, where Sita is said to have stayed. Located in Panchavati, close to Ramkund.</p>
     </div>
 
     <!-- Place 9: Dudhsagar Falls Nashik -->
     <div class="place-section">
       <h2>🌊 9. Dudhsagar Falls Nashik</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967868/01_udf7xb.jpg" alt="Dudhsagar Falls Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967695/Picture_69_mztiqq.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967699/Picture_71_menxgq.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967693/Picture_70_w1jmit.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967868/01_udf7xb.jpg" alt="Dudhsagar Falls Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967695/Picture_69_mztiqq.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967699/Picture_71_menxgq.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967693/Picture_70_w1jmit.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>Best during monsoon, these falls are a quick nature escape from the city. Carry a raincoat and enjoy the mist.</p>
     </div>
 
     <!-- Place 10: Someshwar Temple -->
     <div class="place-section">
       <h2>🛕 10. Someshwar Temple</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968021/Picture_72_lbvv5j.png" alt="Someshwar Temple Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968020/Picture_9_xnykgx.jpg" alt="Someshwar Temple Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968021/Picture_73_xlybe6.png" alt="Someshwar Temple Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968021/Picture_72_lbvv5j.png" alt="Someshwar Temple Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968020/Picture_9_xnykgx.jpg" alt="Someshwar Temple Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968021/Picture_73_xlybe6.png" alt="Someshwar Temple Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>A peaceful Shiva temple beside a flowing river, away from the main tourist circuit. Perfect for quiet reflection.</p>
     </div>
 
     <!-- Place 11: Harihar Fort -->
     <div class="place-section">
       <h2>🌄 11. Harihar Fort</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968120/Picture_75_f1htik.png" alt="Harihar Fort Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968122/Picture_77_yrny5c.png" alt="Harihar Fort Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968120/Picture_76_rqkyac.png" alt="Harihar Fort Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968119/Picture_23_vexg4g.jpg" alt="Harihar Fort Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968120/Picture_75_f1htik.png" alt="Harihar Fort Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968122/Picture_77_yrny5c.png" alt="Harihar Fort Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968120/Picture_76_rqkyac.png" alt="Harihar Fort Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968119/Picture_23_vexg4g.jpg" alt="Harihar Fort Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>Famous for its near-vertical stairs. A challenging but rewarding trek with incredible views from the top.</p>
     </div>
 
     <!-- Place 12: Saraf Bazaar -->
     <div class="place-section">
       <h2>🛍️ 12. Saraf Bazaar</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968205/Picture_80_ivmiss.png" alt="Saraf Bazaar Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968204/Picture_79_lwwf49.png" alt="Saraf Bazaar Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968203/Picture_11_geqcdt.jpg" alt="Saraf Bazaar Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968205/Picture_80_ivmiss.png" alt="Saraf Bazaar Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968204/Picture_79_lwwf49.png" alt="Saraf Bazaar Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968203/Picture_11_geqcdt.jpg" alt="Saraf Bazaar Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>Nashik's traditional market for local shopping — brassware, spices, and silver jewellery. Go in the evening for the best energy.</p>
     </div>
 
     <!-- Place 13: York Winery -->
     <div class="place-section">
       <h2>🍇 13. York Winery</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970422/Picture_81_wq0vy3.png" alt="York Winery Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970416/Picture_82_rhloyq.png" alt="York Winery Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970418/Picture_83_zwfu4b.png" alt="York Winery Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970414/Picture_12_uu29ar.jpg" alt="York Winery Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970414/Picture_53_xr8snv.png" alt="York Winery Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970422/Picture_81_wq0vy3.png" alt="York Winery Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970416/Picture_82_rhloyq.png" alt="York Winery Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970418/Picture_83_zwfu4b.png" alt="York Winery Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970414/Picture_12_uu29ar.jpg" alt="York Winery Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970414/Picture_53_xr8snv.png" alt="York Winery Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>A less crowded alternative to Sula, with excellent wines and a relaxed lakeside tasting room.</p>
     </div>
 
     <!-- Place 14: Gangapur Dam -->
     <div class="place-section">
       <h2>🌅 14. Gangapur Dam</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970566/Picture_84_lps5et.png" alt="Gangapur Dam Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970567/Picture_85_vajkyl.png" alt="Gangapur Dam Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970564/Picture_24_ashuh5.jpg" alt="Gangapur Dam Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970567/Picture_86_vnhqhy.png" alt="Gangapur Dam Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970566/Picture_84_lps5et.png" alt="Gangapur Dam Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970567/Picture_85_vajkyl.png" alt="Gangapur Dam Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970564/Picture_24_ashuh5.jpg" alt="Gangapur Dam Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970567/Picture_86_vnhqhy.png" alt="Gangapur Dam Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>Great for sunsets and relaxed evenings. Locals come here for walks and to unwind.</p>
     </div>
 
     <!-- Place 15: Vaitarna Lake -->
     <div class="place-section">
       <h2>🌄 15. Vaitarna Lake</h2>
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970654/Picture_87_e8lcpu.png" alt="Vaitarna Lake Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970655/Picture_88_c3wz2l.png" alt="Vaitarna Lake Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970652/Picture_7_mfjlzp.jpg" alt="Vaitarna Lake Nashik" loading="lazy" />
-      <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970656/Picture_89_ark5uu.png" alt="Vaitarna Lake Nashik" loading="lazy" />
+      <div class="gallery">
+        <div class="gallery-track">
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970654/Picture_87_e8lcpu.png" alt="Vaitarna Lake Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970655/Picture_88_c3wz2l.png" alt="Vaitarna Lake Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970652/Picture_7_mfjlzp.jpg" alt="Vaitarna Lake Nashik" loading="lazy" />
+          <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970656/Picture_89_ark5uu.png" alt="Vaitarna Lake Nashik" loading="lazy" />
+        </div>
+      </div>
       <p>A true hidden gem near Nashik, perfect for a quiet day trip. Surrounded by hills and rarely mentioned in mainstream guides.</p>
     </div>
 
@@ -252,8 +404,89 @@
   <div class="footer-bottom"><span>&copy; 2026 NashikTourism.com</span><span>Made with &hearts; for Nashik</span></div>
 </footer>
 <script>
-const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
-hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");});
-mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");}));
+  // Hamburger menu
+  const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
+  hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");});
+  mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");}));
+
+  // ---------- Image Carousel ----------
+  function initGallery(gallery) {
+    const track = gallery.querySelector('.gallery-track');
+    if (!track) return;
+    const images = track.querySelectorAll('img');
+    if (images.length <= 1) return;
+
+    // Disable fallback stacking
+    track.classList.remove('no-js');
+
+    // Create dots
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'gallery-dots';
+    gallery.appendChild(dotsContainer);
+    let dots = [];
+    for (let i = 0; i < images.length; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Image ' + (i+1));
+      dot.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); });
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    }
+
+    // Create arrows
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'gallery-arrow prev';
+    prevBtn.innerHTML = '&#10094;';
+    prevBtn.setAttribute('aria-label', 'Previous');
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'gallery-arrow next';
+    nextBtn.innerHTML = '&#10095;';
+    nextBtn.setAttribute('aria-label', 'Next');
+    gallery.appendChild(prevBtn);
+    gallery.appendChild(nextBtn);
+
+    let current = 0;
+    function goTo(index) {
+      if (index < 0) index = images.length - 1;
+      if (index >= images.length) index = 0;
+      current = index;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
+
+    // Touch swipe
+    let startX = 0, startY = 0, swiped = false;
+    gallery.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      swiped = false;
+    }, {passive: true});
+    gallery.addEventListener('touchend', (e) => {
+      if (!swiped) return;
+      const diffX = e.changedTouches[0].clientX - startX;
+      const diffY = e.changedTouches[0].clientY - startY;
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+        if (diffX < -30) goTo(current + 1);
+        else if (diffX > 30) goTo(current - 1);
+      }
+    });
+    gallery.addEventListener('touchmove', (e) => {
+      swiped = true;
+    }, {passive: true});
+
+    // Keyboard navigation
+    gallery.setAttribute('tabindex', '0');
+    gallery.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+    });
+  }
+
+  // Initialize all galleries
+  document.querySelectorAll('.gallery').forEach(g => initGallery(g));
 </script>
-</body></html>
+</body>
+</html>
