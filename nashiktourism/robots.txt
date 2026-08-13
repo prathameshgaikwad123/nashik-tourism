@@ -1,3 +1,87 @@
+# ==========================================================
+# nashiktourism.com — robots.txt
+# Nashik Tourism
+# Policy: Open to search engines + AI crawlers
+# Block only private / utility / duplicate URL paths
+# ==========================================================
+
+# ---------- Default ----------
 User-agent: *
 Allow: /
+
+# ---------- Private / Utility ----------
+Disallow: /login
+Disallow: /admin
+Disallow: /account
+Disallow: /user
+Disallow: /checkout
+Disallow: /cart
+
+# ---------- Search / Filter / Duplicate URLs ----------
+Disallow: /*?search=
+Disallow: /*?sort=
+Disallow: /*?order=
+Disallow: /*?orderby=
+Disallow: /*?page=
+Disallow: /*?filter=
+Disallow: /*?utm_
+
+# ---------- Search Engines ----------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ---------- AI: Live Retrieval / Citation Engines ----------
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# ---------- AI: Training / Grounding ----------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ---------- Sitemap ----------
 Sitemap: https://nashiktourism.com/sitemap.xml
