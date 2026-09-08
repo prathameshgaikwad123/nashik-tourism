@@ -1,20 +1,58 @@
-<!-- ══ SHARED NAV ══ -->
-<!-- Include after <body> on every page -->
-<!-- Usage: copy the nav + mobile-menu + script blocks below -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Developer reference — shared navigation markup</title>
+</head>
+<body>
 <!--
-NAV (paste at top of every page body):
+  ══════════════════════════════════════════════════════════════════════════
+  DEVELOPER REFERENCE ONLY — not a public page.
 
-<nav class="nav solid" id="mainNav">
+  This file is marked noindex so search engines drop it. It stays crawlable
+  on purpose: a robots.txt Disallow would stop crawlers reading the noindex.
+
+  SOURCE OF TRUTH
+  ---------------
+  The nav, footer and page scripts for the Discover Nashik section, the
+  Plan Your Trip hub and 404.html are generated from:
+
+      tools/build-destinations.py   (nav_html(), FOOTER, SCRIPT)
+
+  Change the chrome there and re-run:
+
+      python3 tools/build-destinations.py
+      python3 tools/build-home-guides.py
+      python3 tools/build-sitemap.py
+
+  index.html, /about/, /contact/, /kumbh-mela-2027/ and the blog posts still
+  carry their nav inline. When editing those by hand, match the markup below.
+
+  ACCESSIBILITY CONTRACT — do not drop these when copying:
+    * <a class="skip-link" href="#main"> as the first element in <body>
+    * <header>, <nav aria-label="Primary">, <main id="main">, <footer>
+    * dropdowns need the separate .chevron-btn toggle carrying
+      aria-expanded + aria-controls. Hover alone is not keyboard accessible.
+    * the hamburger needs aria-expanded + aria-controls="mobileMenu"
+    * "Independent Travel Guide" under the logo — never "Official". This site
+      is not a government or official tourism body.
+  ══════════════════════════════════════════════════════════════════════════
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+<nav class="nav solid" id="mainNav" aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="/logo-purple.png" alt="Nashik Tourism" />
-      <div class="nav-logo-text">Nashik Tourism<small>Official Travel Guide</small></div>
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
+      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
     </a>
     <ul class="nav-menu">
       <li>
-        <a href="/kumbh-mela-2027/">Kumbh Mela 2027 <span class="chevron">▾</span></a>
-        <div class="dropdown">
+        <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-kumbh">
           <a href="/kumbh-mela-2027/">Complete Guide</a>
           <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
           <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
@@ -22,112 +60,35 @@ NAV (paste at top of every page body):
         </div>
       </li>
       <li>
-        <a href="/discover-nashik/">Discover Nashik <span class="chevron">▾</span></a>
-        <div class="dropdown">
+        <a href="/discover-nashik/">Discover Nashik</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-discover">
           <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-          <a href="/discover-nashik/panchavati/">Panchavati & Ramkund</a>
+          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
           <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
           <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
         </div>
       </li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/blog/">Blog</a></li>
       <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="nav-book">Book Hotels</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/" class="nav-book">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach Nashik</a>
-  <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
   <a href="/discover-nashik/">Discover Nashik</a>
-  <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-  <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Travel Blog</a>
   <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="mob-book">🏨 Book Hotels Now</a>
+  <a href="/blog/">Travel Blog</a>
+  <a href="/about/">About</a>
+  <a href="/contact/" class="mob-book">Contact Us</a>
 </div>
-
-FOOTER (paste before </body>):
-
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <img src="/logo-white.png" alt="Nashik Tourism" />
-      <h3>Nashik Tourism</h3>
-      <p>Your complete guide to Nashik — Kumbh Mela 2027, temples, vineyards and travel tips.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Kumbh Mela 2027</h4>
-      <ul>
-        <li><a href="/kumbh-mela-2027/">Complete Guide</a></li>
-        <li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li>
-        <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li>
-        <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Discover Nashik</h4>
-      <ul>
-        <li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li>
-        <li><a href="/discover-nashik/panchavati/">Panchavati</a></li>
-        <li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li>
-        <li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Plan Your Trip</h4>
-      <ul>
-        <li><a href="/blog/">Travel Blog</a></li>
-        <li><a href="/plan-your-trip/">Trip Planner</a></li>
-        <li><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener">Book Hotels (MMT)</a></li>
-        <li><a href="https://www.goibibo.com/hotels/hotels-in-nashik/" target="_blank" rel="noopener">Book Hotels (Goibibo)</a></li>
-        <li><a href="https://www.irctc.co.in" target="_blank" rel="noopener">Book Trains (IRCTC)</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 NashikTourism.com — Independent travel guide. Not affiliated with any government body.</span>
-    <span>Made with ♥ for Nashik</span>
-  </div>
-</footer>
-
-SCRIPT (paste before </body> on every page):
-
-<script>
-  const nav = document.getElementById('mainNav');
-  if (nav && !nav.classList.contains('solid')) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-  }
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-  document.querySelectorAll('.fade-up').forEach(el => {
-    new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.1 }).observe(el);
-  });
-</script>
+</header>
 -->
+<p>Developer reference file. See the HTML source comment for the shared navigation markup.</p>
+</body>
+</html>
