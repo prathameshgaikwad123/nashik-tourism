@@ -112,12 +112,17 @@ CATEGORY_LABELS = {
     "nature": "Nature",
     "wine": "Wine",
 }
+# Each assignment is carried by the destination's own published kicker, with one
+# documented addition: Panchavati's kicker reads "Heritage / Ghats" but its lede
+# is about the Ramayana, the temples and the Kumbh bathing, so it is spiritual
+# too. Trimbakeshwar is NOT tagged heritage — its kicker claims "Spiritual /
+# Jyotirlinga" and nothing in its copy makes a heritage claim.
 DEST_CATEGORIES = {
-    "trimbakeshwar": ["spiritual", "heritage"],
-    "panchavati": ["spiritual", "heritage"],
-    "sula-vineyards": ["wine"],
-    "pandavleni-caves": ["heritage"],
-    "igatpuri": ["nature"],
+    "trimbakeshwar": ["spiritual"],          # kicker: Spiritual / Jyotirlinga
+    "panchavati": ["spiritual", "heritage"],  # kicker: Heritage / Ghats
+    "sula-vineyards": ["wine"],               # kicker: Wine / Leisure
+    "pandavleni-caves": ["heritage"],         # kicker: History / Heritage
+    "igatpuri": ["nature"],                   # kicker: Nature / Weekend
 }
 
 # Contextual next step per destination (brief section 14). Each points at the

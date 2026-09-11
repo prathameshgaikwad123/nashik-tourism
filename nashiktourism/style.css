@@ -291,7 +291,7 @@ section { padding: 5.5rem 5vw; }
 
 /* ── ARTICLE LAYOUT ── */
 .article-wrap { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; max-width: 1100px; margin: 0 auto; padding: 4rem 5vw; align-items: start; }
-.article-body h2 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 800; color: var(--ink); margin: 2.5rem 0 1rem; padding-top: 0.5rem; border-top: 2px solid rgba(45,27,105,0.1); letter-spacing: -0.01em; }
+.article-body h2 { scroll-margin-top: calc(var(--nav-h) + 24px); font-family: var(--font-display); font-size: 1.55rem; font-weight: 800; color: var(--ink); margin: 2.5rem 0 1rem; padding-top: 0.5rem; border-top: 2px solid rgba(45,27,105,0.1); letter-spacing: -0.01em; }
 .article-body h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin: 1.8rem 0 0.5rem; }
 .article-body p { margin-bottom: 1.1rem; font-size: 1rem; color: var(--body-clr); line-height: 1.85; }
 .article-body ul, .article-body ol { margin: 0.5rem 0 1.2rem 1.4rem; }
@@ -333,6 +333,31 @@ section { padding: 5.5rem 5vw; }
 .date-list .dl { color: var(--muted-strong); }
 .date-list .dv { font-weight: 700; color: var(--primary); font-family: var(--font-display); font-size: 0.8rem; }
 .sidebar .btn { display: block; text-align: center; margin-top: 0.6rem; padding: 0.75rem; font-size: 0.82rem; }
+
+/* ── READING PROGRESS ──
+   One element, one custom property, one passive scroll listener. Sits under the
+   fixed nav so it never covers content, and is purely decorative reinforcement
+   of a scrollbar the browser already draws. */
+.read-progress {
+  position: fixed; top: var(--nav-h); left: 0; right: 0; height: 3px;
+  z-index: calc(var(--z-nav) - 1); pointer-events: none; background: transparent;
+}
+.read-progress > span {
+  display: block; height: 100%; width: var(--progress, 0%);
+  background: var(--saffron-deep);
+}
+
+/* ── IN-ARTICLE CONTENTS ── */
+.toc-card { position: relative; }
+.toc-card .toc-list a { border-left: 2px solid var(--border); }
+.toc-list a.is-current {
+  color: var(--primary); border-left-color: var(--saffron-deep);
+  font-weight: 700; background: var(--light);
+}
+/* Long contents lists scroll inside the sticky card rather than pushing it. */
+@media (min-width: 901px) {
+  .toc-card .toc-list { max-height: 52vh; overflow-y: auto; }
+}
 
 /* ── FOOTER ──
    A navigation hub rather than a sign-off: six groups covering every section of

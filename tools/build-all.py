@@ -15,6 +15,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 STEPS = [
     ("build-destinations.py", "destination pages and the Discover / Plan hubs"),
     ("build-blog.py", "the static guide index"),
+    ("build-disclaimer.py", "the disclaimer / editorial policy page"),
+    ("build-article-nav.py", "in-article contents and reading progress"),
     ("apply-chrome.py", "shared header, footer and /site.js on every page"),
     ("build-home-guides.py", "the homepage's latest-guide cards"),
     ("build-sitemap.py", "sitemap.xml"),
