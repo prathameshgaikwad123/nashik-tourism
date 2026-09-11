@@ -18,6 +18,10 @@ Every fact-shaped statement is one this site already publishes elsewhere.
 Usage:  python3 tools/build-destinations.py
 """
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import chrome
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                      "..", "nashiktourism"))
@@ -231,131 +235,18 @@ def plain(text):
 
 
 def nav_html(active):
-    return """<nav class="nav solid" id="mainNav" aria-label="Primary">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
-      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
-    </a>
-    <ul class="nav-menu">
-      <li>
-        <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-kumbh">
-          <a href="/kumbh-mela-2027/">Complete Guide</a>
-          <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-          <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
-          <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
-        </div>
-      </li>
-      <li>
-        <a href="/discover-nashik/" class="active">Discover Nashik</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-discover">
-%s
-        </div>
-      </li>
-      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/contact/" class="nav-book">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/discover-nashik/">Discover Nashik</a>
-  <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-  <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="/blog/">Travel Blog</a>
-  <a href="/about/">About</a>
-  <a href="/contact/" class="mob-book">Contact Us</a>
-</div>""" % (
-        "\n".join('          <a href="/discover-nashik/%s/"%s>%s</a>'
-                  % (d["slug"], ' aria-current="page"' if d["slug"] == active else "", d["name"])
-                  for d in DESTINATIONS),
-    )
+    """Kept as a thin shim: the chrome itself now lives in tools/chrome.py so
+    every page on the site shares one definition, not just these nine."""
+    page = "/discover-nashik/%s/" % active if active not in ("__hub__", "__none__") else (
+        "/discover-nashik/" if active == "__hub__" else "/plan-your-trip/")
+    return chrome.nav_html(page)
 
 
-FOOTER = """<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
-      <h3>Nashik Tourism</h3>
-      <p>Your independent guide to Nashik &mdash; temples, vineyards, the Western Ghats and Kumbh Mela 2027.</p>
-    </div>
-    <div class="footer-col"><h4>Kumbh Mela 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
-    <div class="footer-col"><h4>Discover Nashik</h4><ul>%s</ul></div>
-    <div class="footer-col"><h4>Plan Your Trip</h4><ul><li><a href="/plan-your-trip/">Trip Planner</a></li><li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li><li><a href="/blog/nashik-2-day-itinerary/">2-Day Itinerary</a></li><li><a href="/blog/">All Travel Guides</a></li></ul></div>
-    <div class="footer-col"><h4>Site</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
-    <span>Made with &hearts; for Nashik</span>
-  </div>
-</footer>""" % "".join('<li><a href="/discover-nashik/%s/">%s</a></li>' % (d["slug"], d["name"])
-                       for d in DESTINATIONS)
+def footer_html(page):
+    return chrome.footer_html(page)
 
-SCRIPT = """<script>
-  (function () {
-    var hb = document.getElementById('hamburger');
-    var mm = document.getElementById('mobileMenu');
-    function setMenu(open) {
-      hb.classList.toggle('open', open);
-      mm.classList.toggle('open', open);
-      hb.setAttribute('aria-expanded', String(open));
-      hb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      document.body.style.overflow = open ? 'hidden' : '';
-    }
-    hb.addEventListener('click', function () { setMenu(!mm.classList.contains('open')); });
-    mm.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { setMenu(false); });
-    });
-    var openDd = null;
-    function closeDd() {
-      if (!openDd) return;
-      openDd.menu.classList.remove('open');
-      openDd.btn.setAttribute('aria-expanded', 'false');
-      openDd = null;
-    }
-    document.querySelectorAll('.chevron-btn').forEach(function (btn) {
-      var menu = document.getElementById(btn.getAttribute('aria-controls'));
-      if (!menu) return;
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var isOpen = menu.classList.contains('open');
-        closeDd();
-        if (!isOpen) {
-          menu.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          openDd = { btn: btn, menu: menu };
-        }
-      });
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeDd();
-        if (mm.classList.contains('open')) { setMenu(false); hb.focus(); }
-      }
-    });
-    document.addEventListener('click', function (e) {
-      if (openDd && !openDd.menu.contains(e.target) && !openDd.btn.contains(e.target)) closeDd();
-    });
-  })();
-</script>
 
-<!-- Deferred third-party: analytics loads last and never blocks rendering -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H04PTE8QL1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-H04PTE8QL1');
-</script>"""
+SCRIPT = chrome.SITE_JS + "\n\n" + chrome.GA
 
 
 def build(dest):
@@ -625,7 +516,7 @@ def build(dest):
         "pending_fees": PENDING["fees"].lower(),
         "pending_distance": PENDING["distance"],
         "pending_season": PENDING["season"],
-        "nav": nav_html(dest["slug"]), "footer": FOOTER, "script": SCRIPT,
+        "nav": nav_html(dest["slug"]), "footer": footer_html(url.replace(SITE, "")), "script": SCRIPT,
     }
 
 
@@ -709,34 +600,34 @@ def hub_page(title, meta, url, crumb, ogimg, css, nav, body):
     return (HUB_HEAD % {
         "title": title, "title_plain": plain(title), "meta": meta, "url": url,
         "crumb": crumb, "ogimg": ogimg, "site": SITE, "css": css, "nav": nav,
-    }) + body + "\n</main>\n\n" + FOOTER + "\n\n" + SCRIPT + "\n</body>\n</html>\n"
+    }) + body + "\n</main>\n\n" + footer_html(url.replace(SITE, "")) + "\n\n" + SCRIPT + "\n</body>\n</html>\n"
 
 
 DISCOVER_CSS = """    .hub-hero { background: var(--dark); padding: 9rem 5vw 3.5rem; }
-    .hub-hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
+    .hub-hero h1 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
     .hub-hero .lede { color: var(--on-dark); font-size:1.05rem; line-height:1.7; max-width:620px; }
     .dest-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.1rem; }
     .dest-card { display:block; background:white; border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:transform 0.22s, box-shadow 0.22s; }
     .dest-card:hover { transform:translateY(-5px); box-shadow:0 18px 45px rgba(45,27,105,0.12); }
     .dest-card img { width:100%; height:200px; object-fit:cover; }
     .dest-card-body { padding:1.3rem; }
-    .dest-card .dc-kicker { display:block; font-family:'Montserrat',sans-serif; font-size:0.62rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--saffron-deep); margin-bottom:0.4rem; }
-    .dest-card h2 { font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:800; color:var(--ink); line-height:1.3; letter-spacing:-0.01em; margin-bottom:0.4rem; }
+    .dest-card .dc-kicker { display:block; font-family:var(--font-display); font-size:0.62rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--saffron-deep); margin-bottom:0.4rem; }
+    .dest-card h2 { font-family:var(--font-display); font-size:1.1rem; font-weight:800; color:var(--ink); line-height:1.3; letter-spacing:-0.01em; margin-bottom:0.4rem; }
     .dest-card p { font-size:0.88rem; color:var(--muted-strong); line-height:1.6; }
-    .dest-card .rlink { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.9rem; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; color:var(--primary); letter-spacing:0.05em; text-transform:uppercase; transition:gap 0.2s; }
+    .dest-card .rlink { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.9rem; font-family:var(--font-display); font-size:0.72rem; font-weight:700; color:var(--primary); letter-spacing:0.05em; text-transform:uppercase; transition:gap 0.2s; }
     .dest-card:hover .rlink { gap:0.55rem; }
     @media(max-width:1024px){ .dest-cards{grid-template-columns:repeat(2,minmax(0,1fr));} }
     @media(max-width:640px){ .dest-cards{grid-template-columns:1fr;} .hub-hero{padding:7.5rem 5vw 2.5rem;} }"""
 
 PLAN_CSS = """    .hub-hero { background: var(--dark); padding: 9rem 5vw 3.5rem; }
-    .hub-hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
+    .hub-hero h1 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
     .hub-hero .lede { color: var(--on-dark); font-size:1.05rem; line-height:1.7; max-width:620px; }
     .plan-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; border-top:1px solid var(--border); max-width:1140px; }
     .prow { display:flex; align-items:baseline; gap:1rem; padding:1.2rem 0.5rem 1.2rem 0; border-bottom:1px solid var(--border); transition:background 0.18s, padding-left 0.18s; }
     .prow:hover { background:var(--light); padding-left:0.75rem; }
-    .prow-num { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:800; color:var(--saffron-deep); letter-spacing:0.06em; flex-shrink:0; min-width:1.6rem; }
+    .prow-num { font-family:var(--font-display); font-size:0.72rem; font-weight:800; color:var(--saffron-deep); letter-spacing:0.06em; flex-shrink:0; min-width:1.6rem; }
     .prow-txt { flex:1 1 auto; }
-    .prow-txt h3 { font-family:'Montserrat',sans-serif; font-size:1.02rem; font-weight:800; color:var(--ink); letter-spacing:-0.01em; margin-bottom:0.15rem; }
+    .prow-txt h3 { font-family:var(--font-display); font-size:1.02rem; font-weight:800; color:var(--ink); letter-spacing:-0.01em; margin-bottom:0.15rem; }
     .prow-txt p { font-size:0.88rem; color:var(--muted-strong); line-height:1.55; }
     .prow-go { margin-left:auto; align-self:center; color:var(--primary); font-size:1.1rem; flex-shrink:0; transition:transform 0.18s; }
     .prow:hover .prow-go { transform:translateX(4px); }

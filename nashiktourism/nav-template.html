@@ -15,19 +15,25 @@
 
   SOURCE OF TRUTH
   ---------------
-  The nav, footer and page scripts for the Discover Nashik section, the
-  Plan Your Trip hub and 404.html are generated from:
+  As of Phase 3 there is exactly one definition of the site chrome:
 
-      tools/build-destinations.py   (nav_html(), FOOTER, SCRIPT)
+      tools/chrome.py   (nav_html(), footer_html(), SITE_JS, GA)
 
-  Change the chrome there and re-run:
+  Every page's <header> and <footer> is rewritten from it. Change the chrome
+  there, then re-run the full build:
 
-      python3 tools/build-destinations.py
-      python3 tools/build-home-guides.py
-      python3 tools/build-sitemap.py
+      python3 tools/build-destinations.py   # /discover-nashik/*, /plan-your-trip/
+      python3 tools/build-blog.py           # /blog/ index
+      python3 tools/apply-chrome.py         # header/footer on every page
+      python3 tools/build-home-guides.py    # homepage guide cards
+      python3 tools/build-sitemap.py        # sitemap.xml
 
-  index.html, /about/, /contact/, /kumbh-mela-2027/ and the blog posts still
-  carry their nav inline. When editing those by hand, match the markup below.
+  Shared page behaviour lives in /site.js — one deferred, cached file. Do not
+  paste nav JavaScript back into a page; apply-chrome.py deletes inline blocks
+  it can prove are chrome-only, and keeps any it cannot (see SAFE_TOKENS).
+
+  The markup below is the historical Phase 1 reference. tools/chrome.py is
+  authoritative; this file is documentation only.
 
   ACCESSIBILITY CONTRACT — do not drop these when copying:
     * <a class="skip-link" href="#main"> as the first element in <body>
