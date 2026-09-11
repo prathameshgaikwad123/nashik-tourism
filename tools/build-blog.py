@@ -198,12 +198,15 @@ def build():
     <p class="lede">%d guides covering Simhastha Kumbh Mela 2027, the ghats and temples, the vineyards, the Western Ghats, and the practical business of getting to Nashik and finding somewhere to sleep.</p>
   </section>
 
-  <section aria-labelledby="featured-h" style="padding:var(--s-12) var(--gutter) var(--s-8);background:var(--stone);">
+  <div data-filter-group="guides">
+  <div data-filter-items>
+  <section aria-labelledby="featured-h" class="feature-band" data-tags="%s" data-search="%s"
+           style="padding:var(--s-12) var(--gutter) var(--s-8);background:var(--stone);">
     <div style="max-width:var(--wrap);margin:0 auto var(--s-6);">
       <p class="section-eyebrow">Start Here</p>
       <h2 class="section-title" id="featured-h" style="margin-bottom:0;">The guide most people need first</h2>
     </div>
-    <a class="feature" href="/blog/%s/" data-tags="%s" data-search="%s">
+    <a class="feature" href="/blog/%s/">
       <div class="feature-img">
         <img src="%s" srcset="%s 760w, %s 1520w" sizes="(max-width: 860px) 100vw, 52vw"
              width="760" height="570" alt="" loading="lazy" decoding="async" />
@@ -216,8 +219,9 @@ def build():
       </div>
     </a>
   </section>
+  </div>
 
-  <div class="guide-bar" data-filter-group="guides">
+  <div class="guide-bar">
     <div class="guide-bar-inner">
       <label class="guide-search">
         <span class="sr-only">Search the guides</span>
@@ -238,9 +242,10 @@ def build():
       </p>
     </div>
   </div>
-""" % (len(all_posts), featured["slug"],
+""" % (len(all_posts),
        P.CATEGORIES.get(featured.get("category", ""), ("", "", "", ""))[1],
        P.esc((featured["title"] + " " + featured["excerpt"]).lower()),
+       featured["slug"],
        f_img, f_img, f_img2, f_cls, P.esc(featured.get("category", "")),
        f_iso, f_pretty, '<span>%d min read</span>' % f_mins if f_mins else "",
        P.short_title(featured), P.trim(featured["excerpt"], 210),

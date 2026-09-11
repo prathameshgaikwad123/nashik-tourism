@@ -653,6 +653,93 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
 }
 .dest-nav a:hover { color: var(--primary); border-bottom-color: var(--primary); }
 
+/* ── FILTER CHIPS ──
+   Shared by the destination explorer and the guide index. Horizontally
+   scrollable on mobile rather than wrapping into a tall block, and never below
+   the 44px target. aria-pressed carries the state; no essential information is
+   behind hover. */
+.chips { display: flex; gap: var(--s-2); overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap;
+  min-height: var(--tap); padding: 0 var(--s-4);
+  border: 1.5px solid var(--border-strong); border-radius: var(--r-pill);
+  background: var(--white); color: var(--muted);
+  font-family: var(--font-display); font-size: var(--t-eyebrow); font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.chip:hover { border-color: var(--primary); color: var(--primary); }
+.chip[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+.chip .n { font-size: 0.65rem; opacity: 0.75; font-weight: 600; }
+
+.explorer-bar {
+  display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap;
+  margin-bottom: var(--s-6); scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+.explorer-count {
+  font-family: var(--font-display); font-size: var(--t-eyebrow); font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-strong);
+  white-space: nowrap;
+}
+.guide-empty { padding: var(--s-12) 0; text-align: center; color: var(--muted); }
+
+/* Where-is-it line on a destination card. */
+.dc-where {
+  font-family: var(--font-display); font-size: 0.7rem !important; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--stone-ink) !important; margin-top: var(--s-2);
+}
+
+/* Active section in the sticky in-page nav (set by /site.js). */
+.dest-nav a.is-current { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* ── QUICK FACTS ──
+   An information strip, not a card grid. Every row is a figure this site
+   publishes elsewhere and links to; rows we cannot source are simply absent. */
+.quick-facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0; margin-bottom: var(--s-10);
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+  background: var(--white); overflow: hidden;
+}
+.qf-item { padding: var(--s-5); border-right: 1px solid var(--border); }
+.qf-item:last-child { border-right: 0; }
+.quick-facts dt {
+  font-family: var(--font-display); font-size: 0.66rem; font-weight: 700;
+  letter-spacing: var(--ls-eyebrow); text-transform: uppercase;
+  color: var(--stone-ink); margin-bottom: var(--s-2);
+}
+.quick-facts dd { font-size: 0.95rem; color: var(--ink); line-height: 1.45; font-weight: 400; }
+.qf-src {
+  /* inline-flex + min-height keeps the hit area at 44px while the citation
+     itself stays visually small. */
+  display: inline-flex; align-items: center; min-height: var(--tap); margin-top: var(--s-1);
+  font-family: var(--font-display); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary);
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.qf-src:hover { color: var(--saffron-deep); }
+
+/* ── PLAN NEXT ──
+   One contextual next step per destination instead of a dead end. */
+.plan-next {
+  background: var(--stone); border-left: 3px solid var(--saffron-deep);
+  border-radius: 0 var(--r-lg) var(--r-lg) 0;
+  padding: var(--s-8) var(--s-8) var(--s-8) var(--s-6) !important;
+  margin-bottom: 0 !important;
+}
+.pn-eyebrow {
+  font-family: var(--font-display); font-size: 1.05rem; font-weight: 800;
+  color: var(--ink); margin-bottom: var(--s-2) !important; letter-spacing: var(--ls-heading);
+}
+.pn-lede { font-size: 0.95rem !important; color: var(--body-clr); max-width: 52ch; margin-bottom: var(--s-5) !important; }
+.pn-actions { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  .qf-item { border-right: 0; border-bottom: 1px solid var(--border); }
+  .qf-item:last-child { border-bottom: 0; }
+}
+
 /* Body layout */
 .dest-wrap {
   display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 3.5rem;

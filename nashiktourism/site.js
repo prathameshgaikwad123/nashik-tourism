@@ -222,9 +222,14 @@
   (function filters() {
     $$('[data-filter-group]').forEach(function (group) {
       var buttons = $$('[data-filter]', group);
-      var pool = $('[data-filter-items]', group);
-      if (!buttons.length || !pool) return;
-      var items = $$('[data-tags]', pool);
+      // A group may have more than one pool — the guide index keeps its
+      // featured guide in its own band above the chips, and it has to filter
+      // with everything else or a category view shows an off-category card.
+      var pools = $$('[data-filter-items]', group);
+      if (!buttons.length || !pools.length) return;
+      var items = pools.reduce(function (acc, pool) {
+        return acc.concat($$('[data-tags]', pool));
+      }, []);
       var empty = $('[data-filter-empty]', group);
       var status = $('[data-filter-status]', group);
       var search = $('[data-filter-search]', group);

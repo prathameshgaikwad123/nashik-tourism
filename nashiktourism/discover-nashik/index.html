@@ -172,62 +172,86 @@
     <p class="lede">Five very different places, all within reach of one city &mdash; a Jyotirlinga in the hills, an old riverside quarter, a vineyard estate, a hillside of rock-cut caves, and the Western Ghats.</p>
   </section>
 
-  <section aria-labelledby="places-h">
+  <section aria-labelledby="places-h" data-filter-group="dest">
     <p class="section-eyebrow">Where to Go</p>
     <h2 class="section-title" id="places-h" style="margin-bottom:0.4rem;">Places to visit in Nashik</h2>
     <p class="section-sub">Each guide covers why the place is worth your time, how it fits into a trip, and what to read next.</p>
-    <div class="dest-cards">
-    <a class="dest-card fade-up" href="/discover-nashik/trimbakeshwar/">
+
+    <div class="explorer-bar">
+      <div class="chips" role="group" aria-label="Filter destinations by the kind of place">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All <span class="n">5</span></button>
+        <button class="chip" type="button" id="cat-spiritual" data-filter="spiritual" aria-pressed="false">Spiritual <span class="n">2</span></button>
+        <button class="chip" type="button" id="cat-heritage" data-filter="heritage" aria-pressed="false">Heritage <span class="n">3</span></button>
+        <button class="chip" type="button" id="cat-nature" data-filter="nature" aria-pressed="false">Nature <span class="n">1</span></button>
+        <button class="chip" type="button" id="cat-wine" data-filter="wine" aria-pressed="false">Wine <span class="n">1</span></button>
+      </div>
+      <p class="explorer-count"><span data-filter-count>5</span> destination guides</p>
+      <p class="sr-only" data-filter-status role="status"></p>
+    </div>
+
+    <div class="dest-cards" data-filter-items>
+    <a class="dest-card fade-up" href="/discover-nashik/trimbakeshwar/"
+       data-tags="spiritual heritage" data-search="trimbakeshwar temple spiritual heritage trimbakeshwar is a temple town in the hills west of nashik, built around one of the twelve jyotirlingas. it stands near the source of the godavari, and during the simhastha kumbh mela it is one of the two centres of the bathing rituals — the other being the ghats in nashik city itself.">
       <img src="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775379429/steptodown.com223977_zhfdrg.jpg" srcset="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_400/v1775379429/steptodown.com223977_zhfdrg.jpg 400w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775379429/steptodown.com223977_zhfdrg.jpg 560w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_900/v1775379429/steptodown.com223977_zhfdrg.jpg 900w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
            width="560" height="373" alt="Trimbakeshwar Temple set against the hills west of Nashik" loading="lazy" decoding="async" />
       <div class="dest-card-body">
         <span class="dc-kicker">Spiritual &middot; Jyotirlinga</span>
         <h2>Trimbakeshwar Temple</h2>
         <p>Trimbakeshwar is a temple town in the hills west of Nashik, built around one of the twelve Jyotirlingas.</p>
-        <span class="rlink">Open guide <span aria-hidden="true">&rarr;</span></span>
+        <p class="dc-where">Trimbak, 28 km west of Nashik city</p>
+        <span class="rlink">Explore Trimbakeshwar <span aria-hidden="true">&rarr;</span></span>
       </div>
     </a>
-    <a class="dest-card fade-up" href="/discover-nashik/panchavati/">
+    <a class="dest-card fade-up" href="/discover-nashik/panchavati/"
+       data-tags="spiritual heritage" data-search="panchavati & ramkund spiritual heritage panchavati is the old quarter of nashik on the north bank of the godavari, and ramkund is the bathing ghat at its heart. it is the part of the city most closely tied to the ramayana, and it is where the nashik side of the kumbh mela takes place.">
       <img src="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775367941/steptodown.com803697_wj0xe2.jpg" srcset="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_400/v1775367941/steptodown.com803697_wj0xe2.jpg 400w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775367941/steptodown.com803697_wj0xe2.jpg 560w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_900/v1775367941/steptodown.com803697_wj0xe2.jpg 900w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
            width="560" height="373" alt="Steps leading down to the Godavari at Ramkund in Panchavati" loading="lazy" decoding="async" />
       <div class="dest-card-body">
         <span class="dc-kicker">Heritage &middot; Ghats</span>
         <h2>Panchavati &amp; Ramkund</h2>
         <p>Panchavati is the old quarter of Nashik on the north bank of the Godavari, and Ramkund is the bathing ghat at its heart.</p>
-        <span class="rlink">Open guide <span aria-hidden="true">&rarr;</span></span>
+        <p class="dc-where">North bank of the Godavari, Nashik city</p>
+        <span class="rlink">Discover Panchavati <span aria-hidden="true">&rarr;</span></span>
       </div>
     </a>
-    <a class="dest-card fade-up" href="/discover-nashik/sula-vineyards/">
+    <a class="dest-card fade-up" href="/discover-nashik/sula-vineyards/"
+       data-tags="wine" data-search="sula vineyards wine sula is the best-known name in indian wine and the estate that made nashik a wine destination. it sits in the hills outside the city, and it is open to visitors for vineyard tours and tastings.">
       <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=560&q=75&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=400&q=75&auto=format&fit=crop 400w, https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=560&q=75&auto=format&fit=crop 560w, https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=900&q=75&auto=format&fit=crop 900w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
            width="560" height="373" alt="Rows of vines on a vineyard estate in the hills near Nashik" loading="lazy" decoding="async" />
       <div class="dest-card-body">
         <span class="dc-kicker">Wine &middot; Leisure</span>
         <h2>Sula Vineyards</h2>
         <p>Sula is the best-known name in Indian wine and the estate that made Nashik a wine destination.</p>
-        <span class="rlink">Open guide <span aria-hidden="true">&rarr;</span></span>
+        <p class="dc-where">15 km from Nashik city</p>
+        <span class="rlink">Explore Nashik&rsquo;s vineyards <span aria-hidden="true">&rarr;</span></span>
       </div>
     </a>
-    <a class="dest-card fade-up" href="/discover-nashik/pandavleni-caves/">
+    <a class="dest-card fade-up" href="/discover-nashik/pandavleni-caves/"
+       data-tags="heritage" data-search="pandavleni caves heritage pandavleni is a group of caves cut into a hillside south of nashik city — chambers, halls and carved facades worked directly into the rock. it is the oldest thing you can visit in nashik, and the least crowded.">
       <img src="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg" srcset="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_400/v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg 400w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg 560w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_900/v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg 900w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
            width="560" height="373" alt="Rock-cut cave facades in the hillside at Pandavleni near Nashik" loading="lazy" decoding="async" />
       <div class="dest-card-body">
         <span class="dc-kicker">History &middot; Heritage</span>
         <h2>Pandavleni Caves</h2>
         <p>Pandavleni is a group of caves cut into a hillside south of Nashik city &mdash; chambers, halls and carved facades worked directly into the rock.</p>
-        <span class="rlink">Open guide <span aria-hidden="true">&rarr;</span></span>
+        <p class="dc-where">Trirashmi hill, 5 km from the city</p>
+        <span class="rlink">Explore Pandavleni Caves <span aria-hidden="true">&rarr;</span></span>
       </div>
     </a>
-    <a class="dest-card fade-up" href="/discover-nashik/igatpuri/">
+    <a class="dest-card fade-up" href="/discover-nashik/igatpuri/"
+       data-tags="nature" data-search="igatpuri & bhandardara nature igatpuri and bhandardara sit in the western ghats near nashik — hills, reservoirs and, through the monsoon, a great deal of water and green. this is the part of the district people come to for the landscape rather than the temples.">
       <img src="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg" srcset="https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_400/v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg 400w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_560/v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg 560w, https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_900/v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg 900w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
            width="560" height="373" alt="Green hills and low cloud in the Western Ghats near Igatpuri" loading="lazy" decoding="async" />
       <div class="dest-card-body">
         <span class="dc-kicker">Nature &middot; Weekend</span>
         <h2>Igatpuri &amp; Bhandardara</h2>
         <p>Igatpuri and Bhandardara sit in the Western Ghats near Nashik &mdash; hills, reservoirs and, through the monsoon, a great deal of water and green.</p>
-        <span class="rlink">Open guide <span aria-hidden="true">&rarr;</span></span>
+        <p class="dc-where">Western Ghats, west of Nashik</p>
+        <span class="rlink">Explore Igatpuri &amp; Bhandardara <span aria-hidden="true">&rarr;</span></span>
       </div>
     </a>
     </div>
+    <p class="guide-empty" data-filter-empty hidden>No destinations match that filter.</p>
   </section>
 
   <section style="background:var(--light);" aria-labelledby="next-h">
