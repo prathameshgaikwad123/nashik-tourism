@@ -60,17 +60,55 @@
   </script>
   <style>
     .hub-hero { background: var(--dark); padding: 9rem 5vw 3.5rem; }
-    .hub-hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
+    .hub-hero h1 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
     .hub-hero .lede { color: var(--on-dark); font-size:1.05rem; line-height:1.7; max-width:620px; }
     .plan-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; border-top:1px solid var(--border); max-width:1140px; }
     .prow { display:flex; align-items:baseline; gap:1rem; padding:1.2rem 0.5rem 1.2rem 0; border-bottom:1px solid var(--border); transition:background 0.18s, padding-left 0.18s; }
     .prow:hover { background:var(--light); padding-left:0.75rem; }
-    .prow-num { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:800; color:var(--saffron-deep); letter-spacing:0.06em; flex-shrink:0; min-width:1.6rem; }
+    .prow-num { font-family:var(--font-display); font-size:0.72rem; font-weight:800; color:var(--saffron-deep); letter-spacing:0.06em; flex-shrink:0; min-width:1.6rem; }
     .prow-txt { flex:1 1 auto; }
-    .prow-txt h3 { font-family:'Montserrat',sans-serif; font-size:1.02rem; font-weight:800; color:var(--ink); letter-spacing:-0.01em; margin-bottom:0.15rem; }
+    .prow-txt h3 { font-family:var(--font-display); font-size:1.02rem; font-weight:800; color:var(--ink); letter-spacing:-0.01em; margin-bottom:0.15rem; }
     .prow-txt p { font-size:0.88rem; color:var(--muted-strong); line-height:1.55; }
     .prow-go { margin-left:auto; align-self:center; color:var(--primary); font-size:1.1rem; flex-shrink:0; transition:transform 0.18s; }
     .prow:hover .prow-go { transform:translateX(4px); }
+    /* ── Trip planner ──
+       The itineraries are static HTML; these controls only narrow what is
+       shown. Nothing is revealed by script, so nothing is lost without it. */
+    .planner { background:var(--cream); }
+    .planner-controls { display:flex; flex-direction:column; gap:var(--s-5); margin-bottom:var(--s-10); padding:var(--s-6); background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); max-width:var(--wrap); }
+    .pc-group { display:flex; align-items:center; gap:var(--s-4); flex-wrap:wrap; }
+    .pc-label { font-family:var(--font-display); font-size:var(--t-eyebrow); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-ink); flex:0 0 190px; }
+    .pc-hint { font-size:0.82rem; color:var(--muted); }
+    .plans { display:flex; flex-direction:column; gap:var(--s-8); max-width:var(--wrap); }
+    .plan { background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); padding:var(--s-8); }
+    .plan-head { border-bottom:2px solid var(--border); padding-bottom:var(--s-4); margin-bottom:var(--s-6); }
+    .plan-kicker { font-family:var(--font-display); font-size:0.66rem; font-weight:700; letter-spacing:var(--ls-eyebrow); text-transform:uppercase; color:var(--saffron-deep); margin-bottom:var(--s-2); }
+    .plan-head h2 { font-family:var(--font-display); font-size:clamp(1.2rem,2.2vw,1.6rem); font-weight:800; color:var(--ink); letter-spacing:var(--ls-heading); margin-bottom:var(--s-3); }
+    .plan-note { font-size:0.92rem; color:var(--body-clr); line-height:var(--lh-body); max-width:72ch; }
+    .plan-note em { color:var(--ink); }
+    .itin-day { margin-bottom:var(--s-8); }
+    .itin-day:last-of-type { margin-bottom:0; }
+    .itin-day h3 { font-family:var(--font-display); font-size:1.05rem; font-weight:800; color:var(--ink); margin-bottom:var(--s-4); display:flex; align-items:baseline; gap:var(--s-3); }
+    .day-n { font-size:0.64rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#fff; background:var(--primary); border-radius:var(--r-sm); padding:0.25rem 0.5rem; }
+    .itin-part { display:grid; grid-template-columns:110px minmax(0,1fr); gap:var(--s-4); padding:var(--s-4) 0; border-top:1px solid var(--border); }
+    .itin-part h4 { font-family:var(--font-display); font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone-ink); padding-top:0.2rem; }
+    .itin-slots { list-style:none; margin:0; display:flex; flex-direction:column; gap:var(--s-4); }
+    .sl { margin:0; }
+    .sl-link { display:block; border-left:2px solid var(--border); padding-left:var(--s-4); margin-left:-2px; transition:border-color var(--dur) var(--ease); }
+    .sl-link:hover { border-left-color:var(--saffron-deep); }
+    .sl-when { font-family:var(--font-display); font-size:0.95rem; font-weight:800; color:var(--ink); margin-bottom:0.3rem !important; }
+    .sl-meta { display:flex; gap:var(--s-3); flex-wrap:wrap; font-family:var(--font-display); font-size:0.66rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted-strong); margin-bottom:0.35rem !important; }
+    .sl-cat { color:var(--saffron-deep); }
+    .sl-note { font-size:0.9rem !important; color:var(--body-clr); line-height:1.6; margin:0 !important; }
+    .sl-link .rlink { margin-top:var(--s-2); }
+    .plan-src { margin-top:var(--s-6); padding-top:var(--s-4); border-top:1px solid var(--border); font-size:0.85rem; color:var(--muted); }
+    .plan-src a { color:var(--primary); text-decoration:underline; text-underline-offset:2px; }
+    @media(max-width:760px){
+      .pc-label { flex:1 1 100%; }
+      .plan { padding:var(--s-5); }
+      .itin-part { grid-template-columns:1fr; gap:var(--s-2); padding:var(--s-5) 0; }
+    }
+
     .checklist { max-width:760px; }
     .checklist li { margin-bottom:0.7rem; color:var(--body-clr); line-height:1.7; }
     @media(min-width:769px){ .plan-list > .prow:nth-child(odd){padding-right:2.5rem;} .plan-list > .prow:nth-child(even){padding-left:2.5rem;} }
@@ -90,19 +128,10 @@
     </a>
     <ul class="nav-menu">
       <li>
-        <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-kumbh">
-          <a href="/kumbh-mela-2027/">Complete Guide</a>
-          <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-          <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
-          <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
-        </div>
-      </li>
-      <li>
-        <a href="/discover-nashik/" class="active">Discover Nashik</a>
+        <a href="/discover-nashik/">Discover</a>
         <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
         <div class="dropdown" id="dd-discover">
+          <a href="/discover-nashik/">All Destinations</a>
           <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
           <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
           <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
@@ -110,8 +139,38 @@
           <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
         </div>
       </li>
-      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="/blog/">Blog</a></li>
+      <li>
+        <a href="/plan-your-trip/" class="active" aria-current="page">Plan Your Trip</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-plan" aria-label="Plan Your Trip submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-plan">
+          <a href="/plan-your-trip/">Trip Planner</a>
+          <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a>
+          <a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a>
+          <a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a>
+        </div>
+      </li>
+      <li>
+        <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-kumbh">
+          <a href="/kumbh-mela-2027/">Complete Guide</a>
+          <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
+          <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
+          <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
+          <a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a>
+        </div>
+      </li>
+      <li>
+        <a href="/blog/">Guides</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-guides" aria-label="Guides submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-guides">
+          <a href="/blog/">All Travel Guides</a>
+          <a href="/blog/#kumbh-mela">Kumbh Mela Guides</a>
+          <a href="/blog/#planning">Planning &amp; Budget</a>
+          <a href="/blog/#nashik-guides">Nashik Place Guides</a>
+          <a href="/blog/#travel-tips">Getting There &amp; Around</a>
+        </div>
+      </li>
       <li><a href="/about/">About</a></li>
       <li><a href="/contact/" class="nav-book">Contact</a></li>
     </ul>
@@ -120,14 +179,23 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/discover-nashik/">Discover Nashik</a>
+  <p class="mm-heading">Discover</p>
+  <a href="/discover-nashik/">All destinations</a>
   <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+  <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
   <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="/blog/">Travel Blog</a>
-  <a href="/about/">About</a>
+  <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+  <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+  <p class="mm-heading">Plan</p>
+  <a href="/plan-your-trip/">Plan your trip</a>
+  <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-day itineraries</a>
+  <p class="mm-heading">Kumbh Mela 2027</p>
+  <a href="/kumbh-mela-2027/">Complete guide</a>
+  <a href="/kumbh-mela-2027/#dates">Amrit Snan dates</a>
+  <p class="mm-heading">Guides</p>
+  <a href="/blog/">All travel guides</a>
+  <p class="mm-heading">About</p>
+  <a href="/about/">About this site</a>
   <a href="/contact/" class="mob-book">Contact Us</a>
 </div>
 </header>
@@ -191,6 +259,359 @@
     </div>
   </section>
 
+  <section id="itineraries" class="planner" data-planner aria-labelledby="itin-h">
+    <p class="section-eyebrow">Plan Your Nashik Trip</p>
+    <h2 class="section-title" id="itin-h" style="margin-bottom:0.4rem;">How many days do you need in Nashik?</h2>
+    <p class="section-sub">Two days is the short answer. Our own itinerary puts it plainly: <em>&ldquo;Nashik rewards travellers who stay at least two nights. One day is enough to touch the surface.&rdquo;</em> Below are suggested itineraries for one, two and three days, all built from that published guide.</p>
+
+    <div class="planner-controls">
+      <div class="pc-group">
+        <p class="pc-label" id="pc-days">How long are you staying?</p>
+        <div class="chips" role="group" aria-labelledby="pc-days">
+          <button class="chip" type="button" id="day-1" data-days="1" aria-pressed="false">1 day</button>
+          <button class="chip" type="button" id="day-2" data-days="2" aria-pressed="false">2 days</button>
+          <button class="chip" type="button" id="day-3" data-days="3" aria-pressed="false">3 days</button>
+        </div>
+      </div>
+      <div class="pc-group">
+        <p class="pc-label" id="pc-int">What are you most interested in?</p>
+        <div class="chips" role="group" aria-labelledby="pc-int">
+          <button class="chip" type="button" data-interest="spiritual" aria-pressed="false">Spiritual</button>
+          <button class="chip" type="button" data-interest="heritage" aria-pressed="false">Heritage</button>
+          <button class="chip" type="button" data-interest="wine" aria-pressed="false">Wine</button>
+          <button class="chip" type="button" data-interest="nature" aria-pressed="false">Nature</button>
+        </div>
+      </div>
+      <p class="pc-hint">Every itinerary below stays on the page &mdash; choosing simply narrows what is shown.</p>
+      <p class="sr-only" data-planner-status role="status"></p>
+    </div>
+
+    <div class="plans">
+    <article class="plan" id="plan-1-sacred" data-plan data-plan-days="1" data-plan-interests="spiritual heritage">
+      <header class="plan-head">
+        <p class="plan-kicker">Suggested itinerary</p>
+        <h2>One day &mdash; the sacred city</h2>
+        <p class="plan-note">Our two-day itinerary is blunt about this: <em>&ldquo;Nashik rewards travellers who stay at least two nights. One day is enough to touch the surface.&rdquo;</em> If a single day is all you have, this is the day that shows you most of it.</p>
+      </header>
+      <div class="itin-day">
+        <h3><span class="day-n">Day 1</span> The sacred city</h3>
+        <div class="itin-part">
+          <h4>Morning</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">5:30 AM &middot; Ramkund Ghat at dawn</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>About 45 minutes</span></p>
+            <p class="sl-note">The 6 AM aarti, and the ghat at its most active.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">8:00 AM &middot; Kalaram Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>30&ndash;45 minutes</span></p>
+            <p class="sl-note">500 metres from Ramkund, through the Panchavati lanes.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl"><a class="sl-link" href="/discover-nashik/pandavleni-caves/">
+            <p class="sl-when">10:00 AM &middot; Pandavleni Caves</p>
+            <p class="sl-meta"><span class="sl-cat">Heritage</span><span>1&ndash;1.5 hours</span></p>
+            <p class="sl-note">5 km from the city, and around 200 steps up.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Afternoon</h4>
+          <ul class="itin-slots">
+          <li class="sl">
+            <p class="sl-when">12:30 PM &middot; Lunch in the old city</p>
+            <p class="sl-meta"><span class="sl-cat">Food</span><span>About an hour</span></p>
+            <p class="sl-note">Maharashtrian thali near the main chowk.</p>
+          </li>
+          <li class="sl">
+            <p class="sl-when">2:30 PM &middot; Muktidham Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>About 30 minutes</span></p>
+            <p class="sl-note">Marble replicas of all twelve Jyotirlingas under one roof.</p>
+          </li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Evening</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">7:00 PM &middot; Evening aarti at Ramkund</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>An hour or so</span></p>
+            <p class="sl-note">Diyas on the river, then the riverside lanes for dinner.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="plan-src">Built from our <a href="/blog/nashik-2-day-itinerary/">two-day Nashik itinerary</a>, which sets out each day hour by hour with transport notes and costs. Timings and arrangements change &mdash; confirm them close to your travel date.</p>
+    </article>
+    <article class="plan" id="plan-1-wine" data-plan data-plan-days="1" data-plan-interests="wine spiritual nature">
+      <header class="plan-head">
+        <p class="plan-kicker">Suggested itinerary</p>
+        <h2>One day &mdash; Trimbakeshwar and the vineyards</h2>
+        <p class="plan-note">Trimbakeshwar and the Panchavati ghats are planned as separate days throughout this site, so this one pairs the Jyotirlinga with the wine country instead of with the city ghats.</p>
+      </header>
+      <div class="itin-day">
+        <h3><span class="day-n">Day 1</span> Trimbakeshwar and the vineyards</h3>
+        <div class="itin-part">
+          <h4>Morning</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/trimbakeshwar/">
+            <p class="sl-when">6:00 AM &middot; Trimbakeshwar Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>Allow the morning</span></p>
+            <p class="sl-note">28 km and 45&ndash;60 minutes out; arrive before 8 AM for the shortest queues. Kushavarta Kund is beside it.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Afternoon</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/sula-vineyards/">
+            <p class="sl-when">11:30 AM &middot; Sula Vineyards</p>
+            <p class="sl-meta"><span class="sl-cat">Wine</span><span>2&ndash;3 hours</span></p>
+            <p class="sl-note">15 km from the city. A vineyard walk, a tasting and lunch on the estate.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl">
+            <p class="sl-when">3:00 PM &middot; Gangapur Dam</p>
+            <p class="sl-meta"><span class="sl-cat">Nature</span><span>An hour or so</span></p>
+            <p class="sl-note">A reservoir in the Sahyadri foothills, on the Trimbak road.</p>
+          </li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Evening</h4>
+          <ul class="itin-slots">
+          <li class="sl">
+            <p class="sl-when">5:00 PM &middot; MG Road</p>
+            <p class="sl-meta"><span class="sl-cat">Food</span><span>As long as you like</span></p>
+            <p class="sl-note">Copper and bronze, Maharashtrian textiles, Nashik sweets and local wine.</p>
+          </li>
+          </ul>
+        </div>
+      </div>
+      <p class="plan-src">Built from our <a href="/blog/nashik-2-day-itinerary/">two-day Nashik itinerary</a>, which sets out each day hour by hour with transport notes and costs. Timings and arrangements change &mdash; confirm them close to your travel date.</p>
+    </article>
+    <article class="plan" id="plan-2" data-plan data-plan-days="2" data-plan-interests="spiritual heritage wine nature">
+      <header class="plan-head">
+        <p class="plan-kicker">Suggested itinerary</p>
+        <h2>Two days &mdash; the full itinerary</h2>
+        <p class="plan-note">This is the itinerary we publish in full, hour by hour, with transport notes and costs.</p>
+      </header>
+      <div class="itin-day">
+        <h3><span class="day-n">Day 1</span> The sacred city</h3>
+        <div class="itin-part">
+          <h4>Morning</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">5:30 AM &middot; Ramkund Ghat at dawn</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>About 45 minutes</span></p>
+            <p class="sl-note">The 6 AM aarti, and the ghat at its most active.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">8:00 AM &middot; Kalaram Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>30&ndash;45 minutes</span></p>
+            <p class="sl-note">500 metres from Ramkund, through the Panchavati lanes.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl"><a class="sl-link" href="/discover-nashik/pandavleni-caves/">
+            <p class="sl-when">10:00 AM &middot; Pandavleni Caves</p>
+            <p class="sl-meta"><span class="sl-cat">Heritage</span><span>1&ndash;1.5 hours</span></p>
+            <p class="sl-note">5 km from the city, and around 200 steps up.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Afternoon</h4>
+          <ul class="itin-slots">
+          <li class="sl">
+            <p class="sl-when">12:30 PM &middot; Lunch in the old city</p>
+            <p class="sl-meta"><span class="sl-cat">Food</span><span>About an hour</span></p>
+            <p class="sl-note">Maharashtrian thali near the main chowk.</p>
+          </li>
+          <li class="sl">
+            <p class="sl-when">2:30 PM &middot; Muktidham Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>About 30 minutes</span></p>
+            <p class="sl-note">Marble replicas of all twelve Jyotirlingas under one roof.</p>
+          </li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Evening</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">7:00 PM &middot; Evening aarti at Ramkund</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>An hour or so</span></p>
+            <p class="sl-note">Diyas on the river, then the riverside lanes for dinner.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="itin-day">
+        <h3><span class="day-n">Day 2</span> Trimbakeshwar and the vineyards</h3>
+        <div class="itin-part">
+          <h4>Morning</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/trimbakeshwar/">
+            <p class="sl-when">6:00 AM &middot; Trimbakeshwar Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>Allow the morning</span></p>
+            <p class="sl-note">28 km and 45&ndash;60 minutes out; arrive before 8 AM for the shortest queues. Kushavarta Kund is beside it.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Afternoon</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/sula-vineyards/">
+            <p class="sl-when">11:30 AM &middot; Sula Vineyards</p>
+            <p class="sl-meta"><span class="sl-cat">Wine</span><span>2&ndash;3 hours</span></p>
+            <p class="sl-note">15 km from the city. A vineyard walk, a tasting and lunch on the estate.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl">
+            <p class="sl-when">3:00 PM &middot; Gangapur Dam</p>
+            <p class="sl-meta"><span class="sl-cat">Nature</span><span>An hour or so</span></p>
+            <p class="sl-note">A reservoir in the Sahyadri foothills, on the Trimbak road.</p>
+          </li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Evening</h4>
+          <ul class="itin-slots">
+          <li class="sl">
+            <p class="sl-when">5:00 PM &middot; MG Road</p>
+            <p class="sl-meta"><span class="sl-cat">Food</span><span>As long as you like</span></p>
+            <p class="sl-note">Copper and bronze, Maharashtrian textiles, Nashik sweets and local wine.</p>
+          </li>
+          </ul>
+        </div>
+      </div>
+      <p class="plan-src">Built from our <a href="/blog/nashik-2-day-itinerary/">two-day Nashik itinerary</a>, which sets out each day hour by hour with transport notes and costs. Timings and arrangements change &mdash; confirm them close to your travel date.</p>
+    </article>
+    <article class="plan" id="plan-3" data-plan data-plan-days="3" data-plan-interests="spiritual heritage wine nature">
+      <header class="plan-head">
+        <p class="plan-kicker">Suggested itinerary</p>
+        <h2>Three days &mdash; the city, the wine country and the Ghats</h2>
+        <p class="plan-note">The first two days are the published itinerary. The third is a suggestion drawn from our Igatpuri &amp; Bhandardara guide rather than a published day-by-day plan &mdash; we have no verified timings for the Ghats, so treat it as a shape for the day, not a schedule.</p>
+      </header>
+      <div class="itin-day">
+        <h3><span class="day-n">Day 1</span> The sacred city</h3>
+        <div class="itin-part">
+          <h4>Morning</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">5:30 AM &middot; Ramkund Ghat at dawn</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>About 45 minutes</span></p>
+            <p class="sl-note">The 6 AM aarti, and the ghat at its most active.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">8:00 AM &middot; Kalaram Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>30&ndash;45 minutes</span></p>
+            <p class="sl-note">500 metres from Ramkund, through the Panchavati lanes.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl"><a class="sl-link" href="/discover-nashik/pandavleni-caves/">
+            <p class="sl-when">10:00 AM &middot; Pandavleni Caves</p>
+            <p class="sl-meta"><span class="sl-cat">Heritage</span><span>1&ndash;1.5 hours</span></p>
+            <p class="sl-note">5 km from the city, and around 200 steps up.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Afternoon</h4>
+          <ul class="itin-slots">
+          <li class="sl">
+            <p class="sl-when">12:30 PM &middot; Lunch in the old city</p>
+            <p class="sl-meta"><span class="sl-cat">Food</span><span>About an hour</span></p>
+            <p class="sl-note">Maharashtrian thali near the main chowk.</p>
+          </li>
+          <li class="sl">
+            <p class="sl-when">2:30 PM &middot; Muktidham Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>About 30 minutes</span></p>
+            <p class="sl-note">Marble replicas of all twelve Jyotirlingas under one roof.</p>
+          </li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Evening</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/panchavati/">
+            <p class="sl-when">7:00 PM &middot; Evening aarti at Ramkund</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>An hour or so</span></p>
+            <p class="sl-note">Diyas on the river, then the riverside lanes for dinner.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="itin-day">
+        <h3><span class="day-n">Day 2</span> Trimbakeshwar and the vineyards</h3>
+        <div class="itin-part">
+          <h4>Morning</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/trimbakeshwar/">
+            <p class="sl-when">6:00 AM &middot; Trimbakeshwar Temple</p>
+            <p class="sl-meta"><span class="sl-cat">Spiritual</span><span>Allow the morning</span></p>
+            <p class="sl-note">28 km and 45&ndash;60 minutes out; arrive before 8 AM for the shortest queues. Kushavarta Kund is beside it.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Afternoon</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/sula-vineyards/">
+            <p class="sl-when">11:30 AM &middot; Sula Vineyards</p>
+            <p class="sl-meta"><span class="sl-cat">Wine</span><span>2&ndash;3 hours</span></p>
+            <p class="sl-note">15 km from the city. A vineyard walk, a tasting and lunch on the estate.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          <li class="sl">
+            <p class="sl-when">3:00 PM &middot; Gangapur Dam</p>
+            <p class="sl-meta"><span class="sl-cat">Nature</span><span>An hour or so</span></p>
+            <p class="sl-note">A reservoir in the Sahyadri foothills, on the Trimbak road.</p>
+          </li>
+          </ul>
+        </div>
+        <div class="itin-part">
+          <h4>Evening</h4>
+          <ul class="itin-slots">
+          <li class="sl">
+            <p class="sl-when">5:00 PM &middot; MG Road</p>
+            <p class="sl-meta"><span class="sl-cat">Food</span><span>As long as you like</span></p>
+            <p class="sl-note">Copper and bronze, Maharashtrian textiles, Nashik sweets and local wine.</p>
+          </li>
+          </ul>
+        </div>
+      </div>
+      <div class="itin-day">
+        <h3><span class="day-n">Day 3</span> Into the Western Ghats</h3>
+        <div class="itin-part">
+          <h4>All day</h4>
+          <ul class="itin-slots">
+          <li class="sl"><a class="sl-link" href="/discover-nashik/igatpuri/">
+            <p class="sl-when">Igatpuri &amp; Bhandardara</p>
+            <p class="sl-meta"><span class="sl-cat">Nature</span><span>A full day</span></p>
+            <p class="sl-note">Hill country and reservoirs west of the city. Our guide calls this a landscape rather than a list of sights &mdash; it rewards an unhurried pace, and it is greenest during and just after the monsoon.</p>
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="plan-src">Built from our <a href="/blog/nashik-2-day-itinerary/">two-day Nashik itinerary</a>, which sets out each day hour by hour with transport notes and costs. Timings and arrangements change &mdash; confirm them close to your travel date.</p>
+    </article>
+    </div>
+  </section>
+
   <section style="background:var(--light);" aria-labelledby="check-h">
     <p class="section-eyebrow">Before You Go</p>
     <h2 class="section-title" id="check-h">A short checklist</h2>
@@ -220,67 +641,62 @@
   <div class="footer-top">
     <div class="footer-brand">
       <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
-      <h3>Nashik Tourism</h3>
-      <p>Your independent guide to Nashik &mdash; temples, vineyards, the Western Ghats and Kumbh Mela 2027.</p>
+      <p class="footer-brand-name">Nashik Tourism</p>
+      <p>An independent guide to Nashik &mdash; the Godavari ghats, Trimbakeshwar, the vineyards, the Western Ghats and Simhastha Kumbh Mela 2027.</p>
     </div>
-    <div class="footer-col"><h4>Kumbh Mela 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
-    <div class="footer-col"><h4>Discover Nashik</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a></li><li><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li><li><a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a></li></ul></div>
-    <div class="footer-col"><h4>Plan Your Trip</h4><ul><li><a href="/plan-your-trip/">Trip Planner</a></li><li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li><li><a href="/blog/nashik-2-day-itinerary/">2-Day Itinerary</a></li><li><a href="/blog/">All Travel Guides</a></li></ul></div>
-    <div class="footer-col"><h4>Site</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
+    <nav class="footer-cols" aria-label="Footer">
+      <h2 class="sr-only">Site navigation</h2>
+      <div class="footer-col">
+        <h3>Discover</h3>
+        <ul><li><a href="/discover-nashik/">All Destinations</a></li><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a></li><li><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li><li><a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+          <li><a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a></li>
+          <li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li>
+          <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach Nashik</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">What It Costs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Kumbh Mela</h3>
+        <ul>
+          <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 Guide</a></li>
+          <li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li>
+          <li><a href="/blog/kumbh-mela-2027-all-snan-dates/">All Snan Dates</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-e-pass-registration-2027/">E-Pass &amp; Registration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="/blog/">All Travel Guides</a></li>
+          <li><a href="/blog/#kumbh-mela">Kumbh Mela Guides</a></li>
+          <li><a href="/blog/#planning">Planning &amp; Budget</a></li>
+          <li><a href="/blog/#nashik-guides">Nashik Place Guides</a></li>
+          <li><a href="/blog/#travel-tips">Getting There &amp; Around</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/about/">About This Site</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
     <span>Made with &hearts; for Nashik</span>
   </div>
 </footer>
-
-<script>
-  (function () {
-    var hb = document.getElementById('hamburger');
-    var mm = document.getElementById('mobileMenu');
-    function setMenu(open) {
-      hb.classList.toggle('open', open);
-      mm.classList.toggle('open', open);
-      hb.setAttribute('aria-expanded', String(open));
-      hb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      document.body.style.overflow = open ? 'hidden' : '';
-    }
-    hb.addEventListener('click', function () { setMenu(!mm.classList.contains('open')); });
-    mm.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { setMenu(false); });
-    });
-    var openDd = null;
-    function closeDd() {
-      if (!openDd) return;
-      openDd.menu.classList.remove('open');
-      openDd.btn.setAttribute('aria-expanded', 'false');
-      openDd = null;
-    }
-    document.querySelectorAll('.chevron-btn').forEach(function (btn) {
-      var menu = document.getElementById(btn.getAttribute('aria-controls'));
-      if (!menu) return;
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var isOpen = menu.classList.contains('open');
-        closeDd();
-        if (!isOpen) {
-          menu.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          openDd = { btn: btn, menu: menu };
-        }
-      });
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeDd();
-        if (mm.classList.contains('open')) { setMenu(false); hb.focus(); }
-      }
-    });
-    document.addEventListener('click', function (e) {
-      if (openDd && !openDd.menu.contains(e.target) && !openDd.btn.contains(e.target)) closeDd();
-    });
-  })();
-</script>
 
 <!-- Deferred third-party: analytics loads last and never blocks rendering -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H04PTE8QL1"></script>
@@ -290,5 +706,6 @@
   gtag('js', new Date());
   gtag('config', 'G-H04PTE8QL1');
 </script>
+<script src="/site.js" defer></script>
 </body>
 </html>

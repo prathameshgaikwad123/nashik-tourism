@@ -16,11 +16,11 @@
     .route-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
     .route-card{background:white;border:1px solid var(--border);border-radius:8px;padding:1.25rem;text-align:center}
     .route-card .icon{font-size:1.75rem;margin-bottom:.5rem}
-    .route-card .mode{font-family:"Montserrat",sans-serif;font-size:.78rem;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem}
-    .route-card .time{font-family:"Montserrat",sans-serif;font-size:1.3rem;font-weight:900;color:var(--ink)}
+    .route-card .mode{font-family:var(--font-display);font-size:.78rem;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem}
+    .route-card .time{font-family:var(--font-display);font-size:1.3rem;font-weight:900;color:var(--ink)}
     .route-card .cost{font-size:.82rem;color:var(--muted);margin-top:.25rem}
     .fact-strip{background:var(--primary);color:white;padding:1.5rem 2rem;border-radius:8px;margin:1.5rem 0;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
-    .fact{text-align:center}.fact .num{font-family:"Montserrat",sans-serif;font-size:1.8rem;font-weight:900;color:var(--accent-warm)}.fact .lbl{font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
+    .fact{text-align:center}.fact .num{font-family:var(--font-display);font-size:1.8rem;font-weight:900;color:var(--accent-warm)}.fact .lbl{font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
     @media(max-width:768px){.route-cards{grid-template-columns:1fr 1fr}.fact-strip{gap:1rem}}
   </style>
 </head>
@@ -31,8 +31,33 @@
 <header>
 <nav class="nav solid" id="mainNav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo-white-96.png" alt="Nashik Tourism"  width="48" height="48"/><div class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></div></a>
+    <a href="/" class="nav-logo">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
+      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
+    </a>
     <ul class="nav-menu">
+      <li>
+        <a href="/discover-nashik/">Discover</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-discover">
+          <a href="/discover-nashik/">All Destinations</a>
+          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
+          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
+          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        </div>
+      </li>
+      <li>
+        <a href="/plan-your-trip/">Plan Your Trip</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-plan" aria-label="Plan Your Trip submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-plan">
+          <a href="/plan-your-trip/">Trip Planner</a>
+          <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a>
+          <a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a>
+          <a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a>
+        </div>
+      </li>
       <li>
         <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
         <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
@@ -41,41 +66,51 @@
           <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
           <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
           <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
+          <a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a>
         </div>
       </li>
       <li>
-        <a href="/discover-nashik/">Discover Nashik</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-discover">
-          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
-          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
-          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        <a href="/blog/" class="active">Guides</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-guides" aria-label="Guides submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-guides">
+          <a href="/blog/">All Travel Guides</a>
+          <a href="/blog/#kumbh-mela">Kumbh Mela Guides</a>
+          <a href="/blog/#planning">Planning &amp; Budget</a>
+          <a href="/blog/#nashik-guides">Nashik Place Guides</a>
+          <a href="/blog/#travel-tips">Getting There &amp; Around</a>
         </div>
       </li>
-      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
       <li><a href="/about/">About</a></li>
       <li><a href="/contact/" class="nav-book">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/discover-nashik/">Discover Nashik</a>
+  <p class="mm-heading">Discover</p>
+  <a href="/discover-nashik/">All destinations</a>
   <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+  <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
   <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="/blog/">Travel Blog</a>
-  <a href="/about/">About</a>
+  <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+  <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+  <p class="mm-heading">Plan</p>
+  <a href="/plan-your-trip/">Plan your trip</a>
+  <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-day itineraries</a>
+  <p class="mm-heading">Kumbh Mela 2027</p>
+  <a href="/kumbh-mela-2027/">Complete guide</a>
+  <a href="/kumbh-mela-2027/#dates">Amrit Snan dates</a>
+  <p class="mm-heading">Guides</p>
+  <a href="/blog/">All travel guides</a>
+  <p class="mm-heading">About</p>
+  <a href="/about/">About this site</a>
   <a href="/contact/" class="mob-book">Contact Us</a>
 </div>
 </header>
 
 <main id="main">
+<div class="read-progress" data-reading-progress role="progressbar" aria-label="Article reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
 <div class="page-hero">
   <div>
     <div class="breadcrumb"><a href="/">Home</a> <span>&#8250;</span> <a href="/blog/">Blog</a> <span>&#8250;</span> Trimbakeshwar to Nashik</div>
@@ -85,7 +120,7 @@
   </div>
 </div>
 <div class="article-wrap">
-  <article class="article-body">
+  <article class="article-body" data-reading-body>
 
     <p>Nashik Kumbh Mela 2027 is unique among all Kumbh Melas — it is the only one celebrated at <strong>two separate sacred sites</strong>: Ramkund in Nashik city and Kushavarta Kund in Trimbakeshwar. Many pilgrims want to visit both. This guide tells you exactly how to travel between them, what it costs, and what to expect during the Kumbh period.</p>
 
@@ -96,10 +131,10 @@
       <div class="fact"><div class="num">&#8377;400–600</div><div class="lbl">Private cab one way</div></div>
     </div>
 
-    <h2>Distance from Trimbakeshwar to Nashik</h2>
+    <h2 id="distance-from-trimbakeshwar-to-nashik">Distance from Trimbakeshwar to Nashik</h2>
     <p>The distance from Trimbakeshwar to Nashik city centre (Panchavati area) is approximately <strong>28 kilometres</strong> via the main Nashik-Trimbak Road. The distance from Trimbakeshwar to Nashik Road Railway Station is approximately <strong>35 km</strong>.</p>
 
-    <h2>How to Travel Between Nashik and Trimbakeshwar</h2>
+    <h2 id="how-to-travel-between-nashik-and-trimbakeshwar">How to Travel Between Nashik and Trimbakeshwar</h2>
 
     <div class="route-cards">
       <div class="route-card">
@@ -134,7 +169,7 @@
     <h3>By Road (Self Drive)</h3>
     <p>The Nashik-Trimbak Road (Old Mumbai-Agra Road) is well maintained and clearly signed. Google Maps navigation works well on this route. Journey time is 35–45 minutes in normal traffic. During Kumbh, expect 90–120 minutes due to traffic restrictions near both sites on peak days.</p>
 
-    <h2>The Route — What You Pass On the Way</h2>
+    <h2 id="the-route-what-you-pass-on-the-way">The Route — What You Pass On the Way</h2>
     <p>The Nashik to Trimbakeshwar road passes through some beautiful Sahyadri terrain. Key landmarks on the route:</p>
     <ul>
       <li><strong>Gangapur Dam</strong> — 8 km from Nashik. The source of Nashik's water supply, with picturesque hills</li>
@@ -143,7 +178,7 @@
       <li><strong>Trimbak village</strong> — the last 2 km, a traditional pilgrim town with hundreds of flower and puja stalls</li>
     </ul>
 
-    <h2>During Kumbh Mela 2027 — What Changes</h2>
+    <h2 id="during-kumbh-mela-2027-what-changes">During Kumbh Mela 2027 — What Changes</h2>
     <p>The Nashik–Trimbakeshwar route will be heavily managed during Kumbh Mela 2027, especially on the three Amrit Snan dates:</p>
     <ul>
       <li><strong>Traffic restrictions:</strong> Private vehicles are restricted within 2–3 km of Trimbakeshwar on Amrit Snan days. You will walk or take shuttle from parking zones.</li>
@@ -154,7 +189,7 @@
 
     <div class="info-box"><div class="info-title">&#128161; Pro Tip for Kumbh</div><p>The <strong>Shaiva Akharas</strong> (followers of Lord Shiva) bathe at Kushavarta Kund in Trimbakeshwar. The <strong>Vaishnava Akharas</strong> bathe at Ramkund in Nashik. If you want to witness both Akhara processions, visit Nashik on September 11, 2027 and Trimbakeshwar on September 12, 2027 — the 3rd Amrit Snan is split across both sites on consecutive days.</p></div>
 
-    <h2>Which Should You Visit First — Nashik or Trimbakeshwar?</h2>
+    <h2 id="which-should-you-visit-first-nashik-or-trimbakeshwar">Which Should You Visit First — Nashik or Trimbakeshwar?</h2>
     <p>If you are visiting both, the typical pilgrim route is: <strong>Trimbakeshwar first, then Nashik</strong>. Trimbakeshwar is quieter and more intimate. The Jyotirlinga temple there is deeply sacred. After the spiritual intensity of Trimbakeshwar, the Ramkund area in Nashik (which is more urban and crowded) feels like a natural progression.</p>
     <p>However if you are arriving by train to Nashik Road station, it makes logistical sense to visit Nashik first, then take a shared jeep to Trimbakeshwar, and return to Nashik for your onward journey.</p>
 
@@ -163,7 +198,7 @@
       <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="btn btn-gold">Search Hotels</a>
     </div>
 
-    <h2>Frequently Asked Questions</h2>
+    <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
     <h3>How far is Trimbakeshwar from Nashik?</h3>
     <p>Trimbakeshwar is approximately 28 km from Nashik city centre (Panchavati area) and 35 km from Nashik Road Railway Station.</p>
     <h3>How long does it take to go from Nashik to Trimbakeshwar?</h3>
@@ -175,6 +210,20 @@
 
   </article>
   <aside class="sidebar">
+      <div class="sidebar-card toc-card">
+        <h4 id="on-this-page">On this page</h4>
+        <nav aria-labelledby="on-this-page" data-section-nav>
+          <ul class="toc-list">
+          <li><a href="#distance-from-trimbakeshwar-to-nashik">Distance from Trimbakeshwar to Nashik</a></li>
+          <li><a href="#how-to-travel-between-nashik-and-trimbakeshwar">How to Travel Between Nashik and Trimbakeshwar</a></li>
+          <li><a href="#the-route-what-you-pass-on-the-way">The Route — What You Pass On the Way</a></li>
+          <li><a href="#during-kumbh-mela-2027-what-changes">During Kumbh Mela 2027 — What Changes</a></li>
+          <li><a href="#which-should-you-visit-first-nashik-or-trimbakeshwar">Which Should You Visit First — Nashik or&hellip;</a></li>
+          <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+          </ul>
+        </nav>
+      </div>
+
     <div class="sidebar-card">
       <h4>Key Facts</h4>
       <ul class="date-list">
@@ -209,17 +258,63 @@
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><img src="/logo-white-96.png" alt="Nashik Tourism"  width="48" height="48"/><h3>Nashik Tourism</h3><p>Your complete guide to Nashik.</p></div>
-    <div class="footer-col"><h4>Kumbh 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li></ul></div>
-    <div class="footer-col"><h4>Discover</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati</a></li></ul></div>
-    <div class="footer-col"><h4>More Guides</h4><ul><li><a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a></li><li><a href="/blog/kumbh-mela-2027-all-snan-dates/">All Snan Dates</a></li></ul></div>
+    <div class="footer-brand">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
+      <p class="footer-brand-name">Nashik Tourism</p>
+      <p>An independent guide to Nashik &mdash; the Godavari ghats, Trimbakeshwar, the vineyards, the Western Ghats and Simhastha Kumbh Mela 2027.</p>
+    </div>
+    <nav class="footer-cols" aria-label="Footer">
+      <h2 class="sr-only">Site navigation</h2>
+      <div class="footer-col">
+        <h3>Discover</h3>
+        <ul><li><a href="/discover-nashik/">All Destinations</a></li><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a></li><li><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li><li><a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+          <li><a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a></li>
+          <li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li>
+          <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach Nashik</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">What It Costs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Kumbh Mela</h3>
+        <ul>
+          <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 Guide</a></li>
+          <li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li>
+          <li><a href="/blog/kumbh-mela-2027-all-snan-dates/">All Snan Dates</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-e-pass-registration-2027/">E-Pass &amp; Registration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="/blog/">All Travel Guides</a></li>
+          <li><a href="/blog/#kumbh-mela">Kumbh Mela Guides</a></li>
+          <li><a href="/blog/#planning">Planning &amp; Budget</a></li>
+          <li><a href="/blog/#nashik-guides">Nashik Place Guides</a></li>
+          <li><a href="/blog/#travel-tips">Getting There &amp; Around</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/about/">About This Site</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="footer-bottom"><span>&copy; 2026 NashikTourism.com</span><span>Made with &hearts; for Nashik</span></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
+    <span>Made with &hearts; for Nashik</span>
+  </div>
 </footer>
-<script>
-const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
-hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");});
-mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");}));
-</script>
-<script src="/nav.js" defer></script>
+<script src="/site.js" defer></script>
 </body></html>

@@ -17,7 +17,13 @@ Every fact-shaped statement is one this site already publishes elsewhere.
 
 Usage:  python3 tools/build-destinations.py
 """
+import json
 import os
+import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import chrome
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                      "..", "nashiktourism"))
@@ -35,9 +41,153 @@ PENDING = {
     "season": "Month-by-month conditions specific to this site",
 }
 
+# ─────────────────────────────────────────────────────────────────────────────
+# QUICK FACTS — verified, cited, and never invented.
+#
+# The brief asks for a facts strip; the house rule is that nothing factual is
+# published without a source. So each row below is a figure this site ALREADY
+# publishes on another page, and `src` is that page — rendered as a link next to
+# the strip. Destinations with no published figures (Igatpuri) get only the rows
+# that can be sourced from their own editorial copy.
+#
+# The "being verified" notes still render, but per destination and only for the
+# categories that destination genuinely still lacks — previously every page
+# claimed hours and distances were unverified while the blog published them.
+# ─────────────────────────────────────────────────────────────────────────────
+FACTS = {
+    "trimbakeshwar": {
+        "rows": [
+            ("Best for", "Jyotirlinga darshan &amp; Kumbh Mela bathing", None),
+            ("Distance", "28 km from Nashik city centre", "/blog/trimbakeshwar-to-nashik-distance-route/"),
+            ("Journey time", "45&ndash;60 minutes", "/blog/trimbakeshwar-to-nashik-distance-route/"),
+            ("Location", "Trimbak, Nashik district, Maharashtra", None),
+        ],
+        "pending": ["hours", "fees", "season"],
+    },
+    "panchavati": {
+        "rows": [
+            ("Best for", "River ghats, temples and the old city on foot", None),
+            ("Ramkund hours", "Approx. 5:30 AM &ndash; 9:30 PM, year round", "/blog/ramkund-ghat-nashik-guide/"),
+            ("Best time of day", "Morning, when the ghat is busiest", None),
+            ("Location", "North bank of the Godavari, Nashik city", None),
+        ],
+        "pending": ["fees", "season"],
+    },
+    "sula-vineyards": {
+        "rows": [
+            ("Best for", "Vineyard tours and tastings", None),
+            ("Distance", "15 km from Nashik city", "/blog/sula-vineyards-nashik-complete-guide/"),
+            ("Estate hours", "Mon&ndash;Sun, 11 AM &ndash; 10 PM", "/blog/sula-vineyards-nashik-complete-guide/"),
+            ("Entry", "No entry fee; tastings from &#8377;300", "/blog/sula-vineyards-nashik-complete-guide/"),
+            ("Time needed", "Half a day, once travel is counted", None),
+        ],
+        "pending": ["season"],
+    },
+    "pandavleni-caves": {
+        "rows": [
+            ("Best for", "Rock-cut heritage and the view over the city", None),
+            ("Distance", "5 km from the city", "/blog/nashik-2-day-itinerary/"),
+            ("Time needed", "1&ndash;1.5 hours", "/blog/nashik-2-day-itinerary/"),
+            ("Getting up", "Around 200 steps to climb", "/blog/nashik-2-day-itinerary/"),
+        ],
+        "pending": ["hours", "fees", "season"],
+    },
+    "igatpuri": {
+        "rows": [
+            ("Best for", "Western Ghats landscape and monsoon greenery", None),
+            ("Best season", "During and just after the monsoon", "/blog/best-time-to-visit-nashik/"),
+            ("Location", "Western Ghats near Nashik, Maharashtra", None),
+        ],
+        "pending": ["hours", "fees", "distance"],
+    },
+}
+
+# Categories used by the destination explorer. Only assigned where the
+# destination's own published copy supports it — see the note in
+# build_discover_hub(). Adventure and Weekend Getaway are deliberately absent:
+# the audit found zero and one supporting destination respectively.
+CATEGORY_LABELS = {
+    "spiritual": "Spiritual",
+    "heritage": "Heritage",
+    "nature": "Nature",
+    "wine": "Wine",
+}
+# Each assignment is carried by the destination's own published kicker, with one
+# documented addition: Panchavati's kicker reads "Heritage / Ghats" but its lede
+# is about the Ramayana, the temples and the Kumbh bathing, so it is spiritual
+# too. Trimbakeshwar is NOT tagged heritage — its kicker claims "Spiritual /
+# Jyotirlinga" and nothing in its copy makes a heritage claim.
+DEST_CATEGORIES = {
+    "trimbakeshwar": ["spiritual"],          # kicker: Spiritual / Jyotirlinga
+    "panchavati": ["spiritual", "heritage"],  # kicker: Heritage / Ghats
+    "sula-vineyards": ["wine"],               # kicker: Wine / Leisure
+    "pandavleni-caves": ["heritage"],         # kicker: History / Heritage
+    "igatpuri": ["nature"],                   # kicker: Nature / Weekend
+}
+
+# Contextual next step per destination (brief section 14). Each points at the
+# explorer chip for a category the destination genuinely belongs to; a hash is
+# not a separate URL, so no filter combination becomes indexable.
+PLAN_NEXT = {
+    "trimbakeshwar": ("Planning a spiritual trip?",
+                      "Trimbakeshwar and the Panchavati ghats are the two halves of spiritual Nashik &mdash; and the two centres of the Kumbh Mela.",
+                      "/discover-nashik/#cat-spiritual", "Explore Spiritual Nashik"),
+    "panchavati": ("Planning a spiritual trip?",
+                   "The ghats here and the Jyotirlinga at Trimbakeshwar are the two centres of the Nashik Kumbh Mela.",
+                   "/discover-nashik/#cat-spiritual", "Explore Spiritual Nashik"),
+    "sula-vineyards": ("Want to explore Nashik&rsquo;s wine country?",
+                       "The estate is the easiest way in, and the hills around it hold the rest of India&rsquo;s wine industry.",
+                       "/discover-nashik/#cat-wine", "Explore Wine Tourism"),
+    "pandavleni-caves": ("Looking for more places nearby?",
+                         "The caves sit alongside the city&rsquo;s older heritage and the hill country beyond it.",
+                         "/discover-nashik/#cat-heritage", "Explore Heritage Nashik"),
+    "igatpuri": ("Looking for more of the landscape?",
+                 "The Ghats are the green counterpart to the temples and vineyards on the plain.",
+                 "/discover-nashik/#cat-nature", "Explore Nature &amp; the Ghats"),
+}
+
+PENDING_COPY = {
+    "hours": "opening and darshan hours",
+    "fees": "entry and any special-darshan fees",
+    "distance": "verified distances and journey times",
+    "season": "month-by-month conditions specific to this site",
+}
+
+
+def facts_html(slug):
+    spec = FACTS.get(slug)
+    if not spec or not spec["rows"]:
+        return ""
+    rows = []
+    for label, value, src in spec["rows"]:
+        cite = ('<a class="qf-src" href="%s">Source</a>' % src) if src else ""
+        rows.append("""        <div class="qf-item">
+          <dt>%s</dt>
+          <dd>%s%s</dd>
+        </div>""" % (label, value, cite))
+    return """      <dl class="quick-facts" aria-label="Quick facts">
+%s
+      </dl>""" % "\n".join(rows)
+
+
+def pending_html(slug, keys):
+    """Render a 'being verified' note only for what this page actually lacks."""
+    spec = FACTS.get(slug, {})
+    outstanding = [k for k in keys if k in spec.get("pending", keys)]
+    if not outstanding:
+        return ""
+    what = ", ".join(PENDING_COPY[k] for k in outstanding)
+    return """        <div class="pending-note">
+          <p class="pending-title">Still being verified</p>
+          <p>We are confirming %s from official sources before publishing them here, rather than repeating figures we cannot stand behind. Please check current details close to your travel date.</p>
+        </div>""" % what
+
+
 DESTINATIONS = [
     {
         "slug": "trimbakeshwar",
+        "where": "Trimbak, 28 km west of Nashik city",
+        "cta": "Explore Trimbakeshwar",
         "name": "Trimbakeshwar Temple",
         "title": "Trimbakeshwar Temple, Nashik – Visitor Guide",
         "meta": "A guide to Trimbakeshwar, the Jyotirlinga temple town in the hills west of Nashik and one of the focal points of the Nashik Kumbh Mela.",
@@ -70,6 +220,8 @@ DESTINATIONS = [
     },
     {
         "slug": "panchavati",
+        "where": "North bank of the Godavari, Nashik city",
+        "cta": "Discover Panchavati",
         "name": "Panchavati &amp; Ramkund",
         "title": "Panchavati &amp; Ramkund, Nashik – Visitor Guide",
         "meta": "A guide to Panchavati, the old riverside quarter of Nashik, and Ramkund, its best-known bathing ghat on the Godavari.",
@@ -102,6 +254,8 @@ DESTINATIONS = [
     },
     {
         "slug": "sula-vineyards",
+        "where": "15 km from Nashik city",
+        "cta": "Explore Nashik&rsquo;s vineyards",
         "name": "Sula Vineyards",
         "title": "Sula Vineyards, Nashik – Visitor Guide",
         "meta": "A guide to visiting Sula Vineyards in the hills outside Nashik — what a vineyard visit involves and how it fits into a Nashik trip.",
@@ -135,6 +289,8 @@ DESTINATIONS = [
     },
     {
         "slug": "pandavleni-caves",
+        "where": "Trirashmi hill, 5 km from the city",
+        "cta": "Explore Pandavleni Caves",
         "name": "Pandavleni Caves",
         "title": "Pandavleni Caves, Nashik – Visitor Guide",
         "meta": "A guide to the Pandavleni Caves, the group of rock-cut chambers in the hillside south of Nashik city.",
@@ -167,6 +323,8 @@ DESTINATIONS = [
     },
     {
         "slug": "igatpuri",
+        "where": "Western Ghats, west of Nashik",
+        "cta": "Explore Igatpuri &amp; Bhandardara",
         "name": "Igatpuri &amp; Bhandardara",
         "title": "Igatpuri &amp; Bhandardara – Visitor Guide",
         "meta": "A guide to Igatpuri and Bhandardara, the Western Ghats hill country near Nashik and a common monsoon weekend trip from Mumbai and Pune.",
@@ -226,136 +384,28 @@ def og_img(dest):
     return "%s/f_auto,q_auto,c_fill,g_auto,w_1200,h_630/%s" % (CLD, dest["img"])
 
 
+def strip_tags(text):
+    """FAQ answers carry links; schema wants the prose, not the markup."""
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", text)).strip()
+
+
 def plain(text):
     return text.replace("&amp;", "&").replace("&middot;", "·").replace("&mdash;", "—")
 
 
 def nav_html(active):
-    return """<nav class="nav solid" id="mainNav" aria-label="Primary">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
-      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
-    </a>
-    <ul class="nav-menu">
-      <li>
-        <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-kumbh">
-          <a href="/kumbh-mela-2027/">Complete Guide</a>
-          <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-          <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
-          <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
-        </div>
-      </li>
-      <li>
-        <a href="/discover-nashik/" class="active">Discover Nashik</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-discover">
-%s
-        </div>
-      </li>
-      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/contact/" class="nav-book">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/discover-nashik/">Discover Nashik</a>
-  <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-  <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="/blog/">Travel Blog</a>
-  <a href="/about/">About</a>
-  <a href="/contact/" class="mob-book">Contact Us</a>
-</div>""" % (
-        "\n".join('          <a href="/discover-nashik/%s/"%s>%s</a>'
-                  % (d["slug"], ' aria-current="page"' if d["slug"] == active else "", d["name"])
-                  for d in DESTINATIONS),
-    )
+    """Kept as a thin shim: the chrome itself now lives in tools/chrome.py so
+    every page on the site shares one definition, not just these nine."""
+    page = "/discover-nashik/%s/" % active if active not in ("__hub__", "__none__") else (
+        "/discover-nashik/" if active == "__hub__" else "/plan-your-trip/")
+    return chrome.nav_html(page)
 
 
-FOOTER = """<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
-      <h3>Nashik Tourism</h3>
-      <p>Your independent guide to Nashik &mdash; temples, vineyards, the Western Ghats and Kumbh Mela 2027.</p>
-    </div>
-    <div class="footer-col"><h4>Kumbh Mela 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
-    <div class="footer-col"><h4>Discover Nashik</h4><ul>%s</ul></div>
-    <div class="footer-col"><h4>Plan Your Trip</h4><ul><li><a href="/plan-your-trip/">Trip Planner</a></li><li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li><li><a href="/blog/nashik-2-day-itinerary/">2-Day Itinerary</a></li><li><a href="/blog/">All Travel Guides</a></li></ul></div>
-    <div class="footer-col"><h4>Site</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
-    <span>Made with &hearts; for Nashik</span>
-  </div>
-</footer>""" % "".join('<li><a href="/discover-nashik/%s/">%s</a></li>' % (d["slug"], d["name"])
-                       for d in DESTINATIONS)
+def footer_html(page):
+    return chrome.footer_html(page)
 
-SCRIPT = """<script>
-  (function () {
-    var hb = document.getElementById('hamburger');
-    var mm = document.getElementById('mobileMenu');
-    function setMenu(open) {
-      hb.classList.toggle('open', open);
-      mm.classList.toggle('open', open);
-      hb.setAttribute('aria-expanded', String(open));
-      hb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      document.body.style.overflow = open ? 'hidden' : '';
-    }
-    hb.addEventListener('click', function () { setMenu(!mm.classList.contains('open')); });
-    mm.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { setMenu(false); });
-    });
-    var openDd = null;
-    function closeDd() {
-      if (!openDd) return;
-      openDd.menu.classList.remove('open');
-      openDd.btn.setAttribute('aria-expanded', 'false');
-      openDd = null;
-    }
-    document.querySelectorAll('.chevron-btn').forEach(function (btn) {
-      var menu = document.getElementById(btn.getAttribute('aria-controls'));
-      if (!menu) return;
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var isOpen = menu.classList.contains('open');
-        closeDd();
-        if (!isOpen) {
-          menu.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          openDd = { btn: btn, menu: menu };
-        }
-      });
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeDd();
-        if (mm.classList.contains('open')) { setMenu(false); hb.focus(); }
-      }
-    });
-    document.addEventListener('click', function (e) {
-      if (openDd && !openDd.menu.contains(e.target) && !openDd.btn.contains(e.target)) closeDd();
-    });
-  })();
-</script>
 
-<!-- Deferred third-party: analytics loads last and never blocks rendering -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H04PTE8QL1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-H04PTE8QL1');
-</script>"""
+SCRIPT = chrome.SITE_JS + "\n\n" + chrome.GA
 
 
 def build(dest):
@@ -392,6 +442,20 @@ def build(dest):
     sidebar_related = "".join(
         '<li><a href="%s">%s</a></li>' % (href, title)
         for _, title, _, href in dest["related"])
+
+    faq_schema = """{
+        "@type": "FAQPage",
+        "@id": "%s#faq",
+        "mainEntity": [
+%s
+        ]
+      }""" % (url, ",\n".join(
+        """          {
+            "@type": "Question",
+            "name": %s,
+            "acceptedAnswer": { "@type": "Answer", "text": %s }
+          }""" % (json.dumps(plain(q)), json.dumps(strip_tags(plain(a))))
+        for q, a in dest["faqs"]))
 
     breadcrumb_json = """{
         "@type": "BreadcrumbList",
@@ -455,6 +519,7 @@ def build(dest):
         "inLanguage": "en-IN"
       },
       %(breadcrumb)s,
+      %(faq_schema)s,
       {
         "@type": "TouristAttraction",
         "@id": "%(url)s#attraction",
@@ -498,7 +563,7 @@ def build(dest):
     </div>
   </section>
 
-  <nav class="dest-nav" aria-label="On this page">
+  <nav class="dest-nav" aria-label="On this page" data-section-nav>
     <ul>
       <li><a href="#why-visit">Why visit</a></li>
       <li><a href="#see-do">Things to see</a></li>
@@ -508,11 +573,14 @@ def build(dest):
       <li><a href="#tips">Travel tips</a></li>
       <li><a href="#nearby">Nearby</a></li>
       <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#plan-next">Plan next</a></li>
     </ul>
   </nav>
 
   <div class="dest-wrap">
     <article class="dest-body">
+
+%(facts)s
 
       <section id="why-visit">
         <h2>Why visit %(name)s</h2>
@@ -522,10 +590,7 @@ def build(dest):
       <section id="see-do">
         <h2>Things to see and do</h2>
         <p>%(see)s</p>
-        <div class="pending-note">
-          <p class="pending-title">Practical details being verified</p>
-          <p>We are confirming %(pending_hours)s and %(pending_fees)s from official sources before publishing them here, rather than repeating figures we cannot stand behind. Please check current details close to your travel date.</p>
-        </div>
+%(pending_seedo)s
       </section>
 
       <section id="significance">
@@ -536,19 +601,13 @@ def build(dest):
       <section id="getting-there">
         <h2>How to reach %(name)s</h2>
         <p>%(name)s is in Nashik district, Maharashtra. Nashik itself is reachable by train, bus, road and air, and our <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">how to reach Nashik guide</a> sets out the options from Mumbai, Pune and Delhi.</p>
-        <div class="pending-note">
-          <p class="pending-title">Local routes being verified</p>
-          <p>%(pending_distance)s for the last stretch of this journey are still being checked. We would rather leave this blank than publish a number that sends you the wrong way.</p>
-        </div>
+%(pending_route)s
       </section>
 
       <section id="best-time">
         <h2>Best time to visit</h2>
         <p>Nashik's year divides fairly clearly into the monsoon, the cool months that follow it, and a hot stretch before the rains return. Our <a href="/blog/best-time-to-visit-nashik/">month-by-month guide to Nashik</a> covers how that plays out across the district.</p>
-        <div class="pending-note">
-          <p class="pending-title">Site-specific timing being verified</p>
-          <p>%(pending_season)s &mdash; including festival dates and any seasonal closures &mdash; are still being confirmed.</p>
-        </div>
+%(pending_season_note)s
       </section>
 
       <section id="tips">
@@ -575,6 +634,15 @@ def build(dest):
       <section id="faqs">
         <h2>Frequently asked questions</h2>
 %(faqs)s
+      </section>
+
+      <section id="plan-next" class="plan-next">
+        <p class="pn-eyebrow">%(pn_q)s</p>
+        <p class="pn-lede">%(pn_lede)s</p>
+        <div class="pn-actions">
+          <a class="btn btn-purple" href="%(pn_href)s">%(pn_cta)s</a>
+          <a class="btn btn-outline" href="/plan-your-trip/#itineraries">See suggested itineraries</a>
+        </div>
       </section>
 
     </article>
@@ -621,11 +689,14 @@ def build(dest):
         "why": why, "see": dest["see"], "significance": dest["significance"],
         "tips": tips, "nearby": nearby, "related": related, "faqs": faqs,
         "sidebar_related": sidebar_related, "breadcrumb": breadcrumb_json,
-        "pending_hours": PENDING["hours"].lower(),
-        "pending_fees": PENDING["fees"].lower(),
-        "pending_distance": PENDING["distance"],
-        "pending_season": PENDING["season"],
-        "nav": nav_html(dest["slug"]), "footer": FOOTER, "script": SCRIPT,
+        "faq_schema": faq_schema,
+        "facts": facts_html(slug),
+        "pending_seedo": pending_html(slug, ["hours", "fees"]),
+        "pending_route": pending_html(slug, ["distance"]),
+        "pending_season_note": pending_html(slug, ["season"]),
+        "pn_q": PLAN_NEXT[slug][0], "pn_lede": PLAN_NEXT[slug][1],
+        "pn_href": PLAN_NEXT[slug][2], "pn_cta": PLAN_NEXT[slug][3],
+        "nav": nav_html(dest["slug"]), "footer": footer_html(url.replace(SITE, "")), "script": SCRIPT,
     }
 
 
@@ -709,41 +780,211 @@ def hub_page(title, meta, url, crumb, ogimg, css, nav, body):
     return (HUB_HEAD % {
         "title": title, "title_plain": plain(title), "meta": meta, "url": url,
         "crumb": crumb, "ogimg": ogimg, "site": SITE, "css": css, "nav": nav,
-    }) + body + "\n</main>\n\n" + FOOTER + "\n\n" + SCRIPT + "\n</body>\n</html>\n"
+    }) + body + "\n</main>\n\n" + footer_html(url.replace(SITE, "")) + "\n\n" + SCRIPT + "\n</body>\n</html>\n"
 
 
 DISCOVER_CSS = """    .hub-hero { background: var(--dark); padding: 9rem 5vw 3.5rem; }
-    .hub-hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
+    .hub-hero h1 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
     .hub-hero .lede { color: var(--on-dark); font-size:1.05rem; line-height:1.7; max-width:620px; }
     .dest-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.1rem; }
     .dest-card { display:block; background:white; border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:transform 0.22s, box-shadow 0.22s; }
     .dest-card:hover { transform:translateY(-5px); box-shadow:0 18px 45px rgba(45,27,105,0.12); }
     .dest-card img { width:100%; height:200px; object-fit:cover; }
     .dest-card-body { padding:1.3rem; }
-    .dest-card .dc-kicker { display:block; font-family:'Montserrat',sans-serif; font-size:0.62rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--saffron-deep); margin-bottom:0.4rem; }
-    .dest-card h2 { font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:800; color:var(--ink); line-height:1.3; letter-spacing:-0.01em; margin-bottom:0.4rem; }
+    .dest-card .dc-kicker { display:block; font-family:var(--font-display); font-size:0.62rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--saffron-deep); margin-bottom:0.4rem; }
+    .dest-card h2 { font-family:var(--font-display); font-size:1.1rem; font-weight:800; color:var(--ink); line-height:1.3; letter-spacing:-0.01em; margin-bottom:0.4rem; }
     .dest-card p { font-size:0.88rem; color:var(--muted-strong); line-height:1.6; }
-    .dest-card .rlink { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.9rem; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; color:var(--primary); letter-spacing:0.05em; text-transform:uppercase; transition:gap 0.2s; }
+    .dest-card .rlink { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.9rem; font-family:var(--font-display); font-size:0.72rem; font-weight:700; color:var(--primary); letter-spacing:0.05em; text-transform:uppercase; transition:gap 0.2s; }
     .dest-card:hover .rlink { gap:0.55rem; }
     @media(max-width:1024px){ .dest-cards{grid-template-columns:repeat(2,minmax(0,1fr));} }
     @media(max-width:640px){ .dest-cards{grid-template-columns:1fr;} .hub-hero{padding:7.5rem 5vw 2.5rem;} }"""
 
 PLAN_CSS = """    .hub-hero { background: var(--dark); padding: 9rem 5vw 3.5rem; }
-    .hub-hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
+    .hub-hero h1 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:white; letter-spacing:-0.025em; line-height:1.08; margin:0.4rem 0 0.9rem; }
     .hub-hero .lede { color: var(--on-dark); font-size:1.05rem; line-height:1.7; max-width:620px; }
     .plan-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; border-top:1px solid var(--border); max-width:1140px; }
     .prow { display:flex; align-items:baseline; gap:1rem; padding:1.2rem 0.5rem 1.2rem 0; border-bottom:1px solid var(--border); transition:background 0.18s, padding-left 0.18s; }
     .prow:hover { background:var(--light); padding-left:0.75rem; }
-    .prow-num { font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:800; color:var(--saffron-deep); letter-spacing:0.06em; flex-shrink:0; min-width:1.6rem; }
+    .prow-num { font-family:var(--font-display); font-size:0.72rem; font-weight:800; color:var(--saffron-deep); letter-spacing:0.06em; flex-shrink:0; min-width:1.6rem; }
     .prow-txt { flex:1 1 auto; }
-    .prow-txt h3 { font-family:'Montserrat',sans-serif; font-size:1.02rem; font-weight:800; color:var(--ink); letter-spacing:-0.01em; margin-bottom:0.15rem; }
+    .prow-txt h3 { font-family:var(--font-display); font-size:1.02rem; font-weight:800; color:var(--ink); letter-spacing:-0.01em; margin-bottom:0.15rem; }
     .prow-txt p { font-size:0.88rem; color:var(--muted-strong); line-height:1.55; }
     .prow-go { margin-left:auto; align-self:center; color:var(--primary); font-size:1.1rem; flex-shrink:0; transition:transform 0.18s; }
     .prow:hover .prow-go { transform:translateX(4px); }
+    /* ── Trip planner ──
+       The itineraries are static HTML; these controls only narrow what is
+       shown. Nothing is revealed by script, so nothing is lost without it. */
+    .planner { background:var(--cream); }
+    .planner-controls { display:flex; flex-direction:column; gap:var(--s-5); margin-bottom:var(--s-10); padding:var(--s-6); background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); max-width:var(--wrap); }
+    .pc-group { display:flex; align-items:center; gap:var(--s-4); flex-wrap:wrap; }
+    .pc-label { font-family:var(--font-display); font-size:var(--t-eyebrow); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-ink); flex:0 0 190px; }
+    .pc-hint { font-size:0.82rem; color:var(--muted); }
+    .plans { display:flex; flex-direction:column; gap:var(--s-8); max-width:var(--wrap); }
+    .plan { background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); padding:var(--s-8); }
+    .plan-head { border-bottom:2px solid var(--border); padding-bottom:var(--s-4); margin-bottom:var(--s-6); }
+    .plan-kicker { font-family:var(--font-display); font-size:0.66rem; font-weight:700; letter-spacing:var(--ls-eyebrow); text-transform:uppercase; color:var(--saffron-deep); margin-bottom:var(--s-2); }
+    .plan-head h2 { font-family:var(--font-display); font-size:clamp(1.2rem,2.2vw,1.6rem); font-weight:800; color:var(--ink); letter-spacing:var(--ls-heading); margin-bottom:var(--s-3); }
+    .plan-note { font-size:0.92rem; color:var(--body-clr); line-height:var(--lh-body); max-width:72ch; }
+    .plan-note em { color:var(--ink); }
+    .itin-day { margin-bottom:var(--s-8); }
+    .itin-day:last-of-type { margin-bottom:0; }
+    .itin-day h3 { font-family:var(--font-display); font-size:1.05rem; font-weight:800; color:var(--ink); margin-bottom:var(--s-4); display:flex; align-items:baseline; gap:var(--s-3); }
+    .day-n { font-size:0.64rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#fff; background:var(--primary); border-radius:var(--r-sm); padding:0.25rem 0.5rem; }
+    .itin-part { display:grid; grid-template-columns:110px minmax(0,1fr); gap:var(--s-4); padding:var(--s-4) 0; border-top:1px solid var(--border); }
+    .itin-part h4 { font-family:var(--font-display); font-size:0.68rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone-ink); padding-top:0.2rem; }
+    .itin-slots { list-style:none; margin:0; display:flex; flex-direction:column; gap:var(--s-4); }
+    .sl { margin:0; }
+    .sl-link { display:block; border-left:2px solid var(--border); padding-left:var(--s-4); margin-left:-2px; transition:border-color var(--dur) var(--ease); }
+    .sl-link:hover { border-left-color:var(--saffron-deep); }
+    .sl-when { font-family:var(--font-display); font-size:0.95rem; font-weight:800; color:var(--ink); margin-bottom:0.3rem !important; }
+    .sl-meta { display:flex; gap:var(--s-3); flex-wrap:wrap; font-family:var(--font-display); font-size:0.66rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted-strong); margin-bottom:0.35rem !important; }
+    .sl-cat { color:var(--saffron-deep); }
+    .sl-note { font-size:0.9rem !important; color:var(--body-clr); line-height:1.6; margin:0 !important; }
+    .sl-link .rlink { margin-top:var(--s-2); }
+    .plan-src { margin-top:var(--s-6); padding-top:var(--s-4); border-top:1px solid var(--border); font-size:0.85rem; color:var(--muted); }
+    .plan-src a { color:var(--primary); text-decoration:underline; text-underline-offset:2px; }
+    @media(max-width:760px){
+      .pc-label { flex:1 1 100%; }
+      .plan { padding:var(--s-5); }
+      .itin-part { grid-template-columns:1fr; gap:var(--s-2); padding:var(--s-5) 0; }
+    }
+
     .checklist { max-width:760px; }
     .checklist li { margin-bottom:0.7rem; color:var(--body-clr); line-height:1.7; }
     @media(min-width:769px){ .plan-list > .prow:nth-child(odd){padding-right:2.5rem;} .plan-list > .prow:nth-child(even){padding-left:2.5rem;} }
     @media(max-width:768px){ .plan-list{grid-template-columns:1fr;} .hub-hero{padding:7.5rem 5vw 2.5rem;} }"""
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SUGGESTED ITINERARIES
+#
+# These are NOT generated. Every stop, time and duration below is lifted from
+# the itinerary this site already publishes at /blog/nashik-2-day-itinerary/,
+# which sets out both days hour by hour. The planner on /plan-your-trip/ only
+# chooses between the blocks rendered here — it never assembles a plan, so
+# there is nothing a crawler or a visitor without JavaScript cannot see.
+#
+# Three published constraints bound everything below and must not be violated:
+#   1. "Nashik rewards travellers who stay at least two nights. One day is
+#      enough to touch the surface."            (nashik-2-day-itinerary)
+#   2. "Trimbakeshwar and Nashik city are separate destinations. Plan them as
+#      two trips."   (this file, Trimbakeshwar tips; echoed in two blog posts)
+#   3. "A vineyard visit takes half a day once travel is counted."
+#                                               (this file, Sula tips)
+# Day 3 is the only block not published as a sequence; it is composed from the
+# Igatpuri guide and is labelled as such on the page.
+# ─────────────────────────────────────────────────────────────────────────────
+DAY_SACRED = ("The sacred city", "spiritual heritage", [
+    ("Morning", [
+        ("5:30 AM &middot; Ramkund Ghat at dawn", "Spiritual", "About 45 minutes",
+         "The 6 AM aarti, and the ghat at its most active.", "/discover-nashik/panchavati/"),
+        ("8:00 AM &middot; Kalaram Temple", "Spiritual", "30&ndash;45 minutes",
+         "500 metres from Ramkund, through the Panchavati lanes.", "/discover-nashik/panchavati/"),
+        ("10:00 AM &middot; Pandavleni Caves", "Heritage", "1&ndash;1.5 hours",
+         "5 km from the city, and around 200 steps up.", "/discover-nashik/pandavleni-caves/"),
+    ]),
+    ("Afternoon", [
+        ("12:30 PM &middot; Lunch in the old city", "Food", "About an hour",
+         "Maharashtrian thali near the main chowk.", None),
+        ("2:30 PM &middot; Muktidham Temple", "Spiritual", "About 30 minutes",
+         "Marble replicas of all twelve Jyotirlingas under one roof.", None),
+    ]),
+    ("Evening", [
+        ("7:00 PM &middot; Evening aarti at Ramkund", "Spiritual", "An hour or so",
+         "Diyas on the river, then the riverside lanes for dinner.", "/discover-nashik/panchavati/"),
+    ]),
+])
+
+DAY_WINE = ("Trimbakeshwar and the vineyards", "spiritual wine nature", [
+    ("Morning", [
+        ("6:00 AM &middot; Trimbakeshwar Temple", "Spiritual", "Allow the morning",
+         "28 km and 45&ndash;60 minutes out; arrive before 8 AM for the shortest queues. Kushavarta Kund is beside it.",
+         "/discover-nashik/trimbakeshwar/"),
+    ]),
+    ("Afternoon", [
+        ("11:30 AM &middot; Sula Vineyards", "Wine", "2&ndash;3 hours",
+         "15 km from the city. A vineyard walk, a tasting and lunch on the estate.",
+         "/discover-nashik/sula-vineyards/"),
+        ("3:00 PM &middot; Gangapur Dam", "Nature", "An hour or so",
+         "A reservoir in the Sahyadri foothills, on the Trimbak road.", None),
+    ]),
+    ("Evening", [
+        ("5:00 PM &middot; MG Road", "Food", "As long as you like",
+         "Copper and bronze, Maharashtrian textiles, Nashik sweets and local wine.", None),
+    ]),
+])
+
+DAY_GHATS = ("Into the Western Ghats", "nature", [
+    ("All day", [
+        ("Igatpuri &amp; Bhandardara", "Nature", "A full day",
+         "Hill country and reservoirs west of the city. Our guide calls this a landscape rather than a list of sights &mdash; it rewards an unhurried pace, and it is greenest during and just after the monsoon.",
+         "/discover-nashik/igatpuri/"),
+    ]),
+])
+
+PLANS = [
+    {"id": "plan-1-sacred", "days": "1", "interests": "spiritual heritage",
+     "title": "One day &mdash; the sacred city",
+     "note": "Our two-day itinerary is blunt about this: <em>&ldquo;Nashik rewards travellers who stay at least two nights. One day is enough to touch the surface.&rdquo;</em> If a single day is all you have, this is the day that shows you most of it.",
+     "days_list": [DAY_SACRED], "source": "/blog/nashik-2-day-itinerary/"},
+    {"id": "plan-1-wine", "days": "1", "interests": "wine spiritual nature",
+     "title": "One day &mdash; Trimbakeshwar and the vineyards",
+     "note": "Trimbakeshwar and the Panchavati ghats are planned as separate days throughout this site, so this one pairs the Jyotirlinga with the wine country instead of with the city ghats.",
+     "days_list": [DAY_WINE], "source": "/blog/nashik-2-day-itinerary/"},
+    {"id": "plan-2", "days": "2", "interests": "spiritual heritage wine nature",
+     "title": "Two days &mdash; the full itinerary",
+     "note": "This is the itinerary we publish in full, hour by hour, with transport notes and costs.",
+     "days_list": [DAY_SACRED, DAY_WINE], "source": "/blog/nashik-2-day-itinerary/"},
+    {"id": "plan-3", "days": "3", "interests": "spiritual heritage wine nature",
+     "title": "Three days &mdash; the city, the wine country and the Ghats",
+     "note": "The first two days are the published itinerary. The third is a suggestion drawn from our Igatpuri &amp; Bhandardara guide rather than a published day-by-day plan &mdash; we have no verified timings for the Ghats, so treat it as a shape for the day, not a schedule.",
+     "days_list": [DAY_SACRED, DAY_WINE, DAY_GHATS], "source": "/blog/nashik-2-day-itinerary/"},
+]
+
+PLAN_INTERESTS = [("spiritual", "Spiritual"), ("heritage", "Heritage"),
+                  ("wine", "Wine"), ("nature", "Nature")]
+
+
+def _slot(title, cat, dur, note, href):
+    inner = """            <p class="sl-when">%s</p>
+            <p class="sl-meta"><span class="sl-cat">%s</span><span>%s</span></p>
+            <p class="sl-note">%s</p>""" % (title, cat, dur, note)
+    if href:
+        return """          <li class="sl"><a class="sl-link" href="%s">
+%s
+            <span class="rlink">Explore this destination <span aria-hidden="true">&rarr;</span></span>
+          </a></li>""" % (href, inner)
+    return """          <li class="sl">
+%s
+          </li>""" % inner
+
+
+def plan_html(plan):
+    days = []
+    for i, (day_title, _tags, slots) in enumerate(plan["days_list"], 1):
+        parts = []
+        for part_name, entries in slots:
+            parts.append("""        <div class="itin-part">
+          <h4>%s</h4>
+          <ul class="itin-slots">
+%s
+          </ul>
+        </div>""" % (part_name, "\n".join(_slot(*e) for e in entries)))
+        days.append("""      <div class="itin-day">
+        <h3><span class="day-n">Day %d</span> %s</h3>
+%s
+      </div>""" % (i, day_title, "\n".join(parts)))
+
+    return """    <article class="plan" id="%s" data-plan data-plan-days="%s" data-plan-interests="%s">
+      <header class="plan-head">
+        <p class="plan-kicker">Suggested itinerary</p>
+        <h2>%s</h2>
+        <p class="plan-note">%s</p>
+      </header>
+%s
+      <p class="plan-src">Built from our <a href="%s">two-day Nashik itinerary</a>, which sets out each day hour by hour with transport notes and costs. Timings and arrangements change &mdash; confirm them close to your travel date.</p>
+    </article>""" % (plan["id"], plan["days"], plan["interests"], plan["title"],
+                     plan["note"], "\n".join(days), plan["source"])
+
 
 PLAN_ROWS = [
     ("How do I reach Nashik?", "Train, bus, flight and road routes from Mumbai, Pune and Delhi.", "/blog/how-to-reach-nashik-for-kumbh-mela/"),
@@ -768,17 +1009,39 @@ def build_discover_hub():
             t = "f_auto,q_auto,c_fill,g_auto,ar_3:2,w_%d"
             src = "%s/%s/%s" % (CLD, t % 560, d["img"])
             srcset = ", ".join("%s/%s/%s %dw" % (CLD, t % w, d["img"], w) for w in (400, 560, 900))
-        cards.append("""    <a class="dest-card fade-up" href="/discover-nashik/%s/">
+        cats = DEST_CATEGORIES[d["slug"]]
+        tags = " ".join(CATEGORY_LABELS[c] for c in cats)
+        # The card answers the brief's four questions in order: what is this,
+        # why go, where is it, what kind of experience. The CTA names the place
+        # rather than saying "Read more".
+        cards.append("""    <a class="dest-card fade-up" href="/discover-nashik/%s/"
+       data-tags="%s" data-search="%s">
       <img src="%s" srcset="%s" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
            width="560" height="373" alt="%s" loading="lazy" decoding="async" />
       <div class="dest-card-body">
         <span class="dc-kicker">%s</span>
         <h2>%s</h2>
         <p>%s</p>
-        <span class="rlink">Open guide <span aria-hidden="true">&rarr;</span></span>
+        <p class="dc-where">%s</p>
+        <span class="rlink">%s <span aria-hidden="true">&rarr;</span></span>
       </div>
-    </a>""" % (d["slug"], src, srcset, d["alt"], d["kicker"], d["name"],
-               d["lede"].split(". ")[0] + "."))
+    </a>""" % (d["slug"], " ".join(cats),
+               plain(("%s %s %s" % (d["name"], tags, d["lede"])).lower()),
+               src, srcset, d["alt"], d["kicker"], d["name"],
+               d["lede"].split(". ")[0] + ".", d["where"], d["cta"]))
+
+    # Only categories with matching destinations are offered — the brief is
+    # explicit that a filter must never come back empty. Adventure (zero
+    # destinations) and Weekend Getaway (one) are therefore not exposed.
+    counts = {}
+    for d in DESTINATIONS:
+        for c in DEST_CATEGORIES[d["slug"]]:
+            counts[c] = counts.get(c, 0) + 1
+    chips = ['        <button class="chip" type="button" data-filter="all" aria-pressed="true">All <span class="n">%d</span></button>' % len(DESTINATIONS)]
+    for key, label in CATEGORY_LABELS.items():
+        if counts.get(key):
+            chips.append('        <button class="chip" type="button" id="cat-%s" data-filter="%s" aria-pressed="false">%s <span class="n">%d</span></button>'
+                         % (key, key, label, counts[key]))
 
     body = """
   <section class="hub-hero">
@@ -790,13 +1053,23 @@ def build_discover_hub():
     <p class="lede">Five very different places, all within reach of one city &mdash; a Jyotirlinga in the hills, an old riverside quarter, a vineyard estate, a hillside of rock-cut caves, and the Western Ghats.</p>
   </section>
 
-  <section aria-labelledby="places-h">
+  <section aria-labelledby="places-h" data-filter-group="dest">
     <p class="section-eyebrow">Where to Go</p>
     <h2 class="section-title" id="places-h" style="margin-bottom:0.4rem;">Places to visit in Nashik</h2>
     <p class="section-sub">Each guide covers why the place is worth your time, how it fits into a trip, and what to read next.</p>
-    <div class="dest-cards">
+
+    <div class="explorer-bar">
+      <div class="chips" role="group" aria-label="Filter destinations by the kind of place">
+%s
+      </div>
+      <p class="explorer-count"><span data-filter-count>%d</span> destination guides</p>
+      <p class="sr-only" data-filter-status role="status"></p>
+    </div>
+
+    <div class="dest-cards" data-filter-items>
 %s
     </div>
+    <p class="guide-empty" data-filter-empty hidden>No destinations match that filter.</p>
   </section>
 
   <section style="background:var(--light);" aria-labelledby="next-h">
@@ -809,7 +1082,7 @@ def build_discover_hub():
       <a href="/blog/" class="btn btn-outline">All Travel Guides</a>
     </div>
   </section>
-""" % "\n".join(cards)
+""" % ("\n".join(chips), len(DESTINATIONS), "\n".join(cards))
 
     return hub_page(
         "Discover Nashik – Temples, Heritage, Vineyards &amp; Nature",
@@ -841,7 +1114,36 @@ def build_plan_hub():
     <h2 class="section-title" id="q-h" style="margin-bottom:0.4rem;">The questions people ask first</h2>
     <p class="section-sub">Each one links to a full guide.</p>
     <div class="plan-list">
-%s
+%(rows)s
+    </div>
+  </section>
+
+  <section id="itineraries" class="planner" data-planner aria-labelledby="itin-h">
+    <p class="section-eyebrow">Plan Your Nashik Trip</p>
+    <h2 class="section-title" id="itin-h" style="margin-bottom:0.4rem;">How many days do you need in Nashik?</h2>
+    <p class="section-sub">Two days is the short answer. Our own itinerary puts it plainly: <em>&ldquo;Nashik rewards travellers who stay at least two nights. One day is enough to touch the surface.&rdquo;</em> Below are suggested itineraries for one, two and three days, all built from that published guide.</p>
+
+    <div class="planner-controls">
+      <div class="pc-group">
+        <p class="pc-label" id="pc-days">How long are you staying?</p>
+        <div class="chips" role="group" aria-labelledby="pc-days">
+          <button class="chip" type="button" id="day-1" data-days="1" aria-pressed="false">1 day</button>
+          <button class="chip" type="button" id="day-2" data-days="2" aria-pressed="false">2 days</button>
+          <button class="chip" type="button" id="day-3" data-days="3" aria-pressed="false">3 days</button>
+        </div>
+      </div>
+      <div class="pc-group">
+        <p class="pc-label" id="pc-int">What are you most interested in?</p>
+        <div class="chips" role="group" aria-labelledby="pc-int">
+%(interest_chips)s
+        </div>
+      </div>
+      <p class="pc-hint">Every itinerary below stays on the page &mdash; choosing simply narrows what is shown.</p>
+      <p class="sr-only" data-planner-status role="status"></p>
+    </div>
+
+    <div class="plans">
+%(plans)s
     </div>
   </section>
 
@@ -867,7 +1169,13 @@ def build_plan_hub():
       <a href="/blog/" class="btn btn-outline">All Travel Guides</a>
     </div>
   </section>
-""" % rows
+""" % {
+        "rows": rows,
+        "interest_chips": "\n".join(
+            '          <button class="chip" type="button" data-interest="%s" aria-pressed="false">%s</button>'
+            % (key, label) for key, label in PLAN_INTERESTS),
+        "plans": "\n".join(plan_html(p) for p in PLANS),
+    }
 
     return hub_page(
         "Plan Your Nashik Trip – Routes, Timing, Stays &amp; Budget",

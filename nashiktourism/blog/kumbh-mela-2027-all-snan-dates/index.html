@@ -16,20 +16,20 @@
 <link rel="stylesheet" href="/style.css" />
   <style>
     .snan-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 16px rgba(45,27,105,.09)}
-    .snan-table th{background:var(--primary);color:white;font-family:"Montserrat",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.9rem 1.1rem;text-align:left}
+    .snan-table th{background:var(--primary);color:white;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.9rem 1.1rem;text-align:left}
     .snan-table td{padding:.8rem 1.1rem;font-size:.875rem;border-bottom:1px solid var(--border);color:var(--body-clr);vertical-align:top}
     .snan-table tr:last-child td{border-bottom:none}
     .snan-table tr:nth-child(even) td{background:#fafafa}
-    .badge{display:inline-block;padding:.15rem .55rem;border-radius:50px;font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+    .badge{display:inline-block;padding:.15rem .55rem;border-radius:50px;font-family:var(--font-display);font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
     .badge-amrit{background:rgba(232,98,26,.15);color:var(--saffron)}
     .badge-parva{background:rgba(45,27,105,.1);color:var(--primary)}
     .badge-special{background:rgba(201,146,42,.15);color:var(--accent)}
     .highlight-row td{background:#fff8f0 !important;font-weight:600}
-    .month-header td{background:var(--light)!important;font-family:"Montserrat",sans-serif;font-size:.78rem;font-weight:800;color:var(--primary);letter-spacing:.06em;text-transform:uppercase;padding:.6rem 1.1rem}
+    .month-header td{background:var(--light)!important;font-family:var(--font-display);font-size:.78rem;font-weight:800;color:var(--primary);letter-spacing:.06em;text-transform:uppercase;padding:.6rem 1.1rem}
     .key-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
     .key-date{background:var(--primary);color:white;border-radius:8px;padding:1.25rem;text-align:center;border-top:3px solid var(--saffron)}
-    .key-date .kd-label{font-family:"Montserrat",sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron);margin-bottom:.4rem}
-    .key-date .kd-date{font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:900;color:var(--accent-warm);line-height:1.2}
+    .key-date .kd-label{font-family:var(--font-display);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron);margin-bottom:.4rem}
+    .key-date .kd-date{font-family:var(--font-display);font-size:1.1rem;font-weight:900;color:var(--accent-warm);line-height:1.2}
     .key-date .kd-desc{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.35rem}
     @media(max-width:768px){.key-dates{grid-template-columns:1fr}.snan-table{font-size:.8rem}.snan-table td,.snan-table th{padding:.65rem .75rem}}
   </style>
@@ -41,8 +41,33 @@
 <header>
 <nav class="nav solid" id="mainNav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo-white-96.png" alt="Nashik Tourism"  width="48" height="48"/><div class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></div></a>
+    <a href="/" class="nav-logo">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
+      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
+    </a>
     <ul class="nav-menu">
+      <li>
+        <a href="/discover-nashik/">Discover</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-discover">
+          <a href="/discover-nashik/">All Destinations</a>
+          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
+          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
+          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        </div>
+      </li>
+      <li>
+        <a href="/plan-your-trip/">Plan Your Trip</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-plan" aria-label="Plan Your Trip submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-plan">
+          <a href="/plan-your-trip/">Trip Planner</a>
+          <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a>
+          <a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a>
+          <a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a>
+        </div>
+      </li>
       <li>
         <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
         <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
@@ -51,41 +76,51 @@
           <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
           <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
           <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
+          <a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a>
         </div>
       </li>
       <li>
-        <a href="/discover-nashik/">Discover Nashik</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-discover">
-          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
-          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
-          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        <a href="/blog/" class="active">Guides</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-guides" aria-label="Guides submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-guides">
+          <a href="/blog/">All Travel Guides</a>
+          <a href="/blog/#kumbh-mela">Kumbh Mela Guides</a>
+          <a href="/blog/#planning">Planning &amp; Budget</a>
+          <a href="/blog/#nashik-guides">Nashik Place Guides</a>
+          <a href="/blog/#travel-tips">Getting There &amp; Around</a>
         </div>
       </li>
-      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
       <li><a href="/about/">About</a></li>
       <li><a href="/contact/" class="nav-book">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/discover-nashik/">Discover Nashik</a>
+  <p class="mm-heading">Discover</p>
+  <a href="/discover-nashik/">All destinations</a>
   <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+  <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
   <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="/blog/">Travel Blog</a>
-  <a href="/about/">About</a>
+  <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+  <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+  <p class="mm-heading">Plan</p>
+  <a href="/plan-your-trip/">Plan your trip</a>
+  <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-day itineraries</a>
+  <p class="mm-heading">Kumbh Mela 2027</p>
+  <a href="/kumbh-mela-2027/">Complete guide</a>
+  <a href="/kumbh-mela-2027/#dates">Amrit Snan dates</a>
+  <p class="mm-heading">Guides</p>
+  <a href="/blog/">All travel guides</a>
+  <p class="mm-heading">About</p>
+  <a href="/about/">About this site</a>
   <a href="/contact/" class="mob-book">Contact Us</a>
 </div>
 </header>
 
 <main id="main">
+<div class="read-progress" data-reading-progress role="progressbar" aria-label="Article reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
 <div class="page-hero">
   <div>
     <div class="breadcrumb"><a href="/">Home</a> <span>&#8250;</span> <a href="/blog/">Blog</a> <span>&#8250;</span> All Snan Dates 2027</div>
@@ -95,13 +130,13 @@
   </div>
 </div>
 <div class="article-wrap">
-  <article class="article-body">
+  <article class="article-body" data-reading-body>
 
     <p>One of the biggest misconceptions about Kumbh Mela 2027 is that there are only 3 important bathing dates. In reality, the Simhastha Kumbh Mela in Nashik has <strong>over 45 auspicious bathing dates</strong> spread across the full Mela period. The government specifically extended this Kumbh across 21 months to reduce crowd pressure and allow more pilgrims to participate on less crowded days.</p>
 
     <div class="info-box"><div class="info-title">&#128161; Key Insight</div><p>You <strong>do not need to come on Amrit Snan days</strong> to receive full spiritual benefit. Any Parva Snan (auspicious bathing date) is considered holy and blessed. Visiting on a non-peak date means shorter queues, better access to the ghat, easier accommodation and significantly lower costs.</p></div>
 
-    <h2>The 3 Most Important Dates — Amrit Snan</h2>
+    <h2 id="the-3-most-important-dates-amrit-snan">The 3 Most Important Dates — Amrit Snan</h2>
     <p>These are the most crowded and spiritually significant days. The 13 Akharas lead grand processions to the ghat on these dates:</p>
 
     <div class="key-dates">
@@ -122,7 +157,7 @@
       </div>
     </div>
 
-    <h2>Complete Kumbh Mela 2027 Snan Calendar</h2>
+    <h2 id="complete-kumbh-mela-2027-snan-calendar">Complete Kumbh Mela 2027 Snan Calendar</h2>
     <p>Below is the complete calendar of all major bathing dates. The Kumbh Mela Authority (NTKMA) has announced these dates officially. <span style="color:var(--saffron);font-weight:600">Orange highlighted rows</span> are the three Amrit Snan days.</p>
 
     <table class="snan-table">
@@ -179,7 +214,7 @@
 
     <div class="warning-box"><div class="info-title">&#9888;&#65039; Note on Dates</div><p>The above dates are based on officially announced Amrit Snan dates and standard Hindu calendar Parva dates for the Kumbh period. The Nashik Kumbh Mela Authority (NTKMA) may announce additional or modified Parva Snan dates. Always verify with the <a href="https://divcomnashik.maharashtra.gov.in" target="_blank" rel="noopener">official government Kumbh portal</a> before your visit.</p></div>
 
-    <h2>Which Date Should You Choose?</h2>
+    <h2 id="which-date-should-you-choose">Which Date Should You Choose?</h2>
 
     <h3>For Maximum Spiritual Significance — Amrit Snan Days</h3>
     <p>August 2, August 31, and September 11–12, 2027. These are the days when the Akharas lead processions, the energy is at its peak, and the spiritual atmosphere is unmatched. Expect massive crowds — arrive the night before and be at the ghat by 4 AM.</p>
@@ -195,7 +230,7 @@
       <a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="btn btn-gold">Search Nashik Hotels</a>
     </div>
 
-    <h2>Frequently Asked Questions</h2>
+    <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
     <h3>How many bathing dates are there in Nashik Kumbh Mela 2027?</h3>
     <p>There are over 45 auspicious bathing dates across Nashik and Trimbakeshwar during the full Kumbh Mela period (October 2026 to July 2028). The three Amrit Snan dates are the most significant, but all Parva Snan dates are equally blessed for devotees.</p>
     <h3>Can I visit Kumbh Mela 2027 after September 2027?</h3>
@@ -205,6 +240,18 @@
   </article>
 
   <aside class="sidebar">
+      <div class="sidebar-card toc-card">
+        <h4 id="on-this-page">On this page</h4>
+        <nav aria-labelledby="on-this-page" data-section-nav>
+          <ul class="toc-list">
+          <li><a href="#the-3-most-important-dates-amrit-snan">The 3 Most Important Dates — Amrit Snan</a></li>
+          <li><a href="#complete-kumbh-mela-2027-snan-calendar">Complete Kumbh Mela 2027 Snan Calendar</a></li>
+          <li><a href="#which-date-should-you-choose">Which Date Should You Choose?</a></li>
+          <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+          </ul>
+        </nav>
+      </div>
+
     <div class="sidebar-card">
       <h4>3 Amrit Snan Dates</h4>
       <ul class="date-list">
@@ -244,17 +291,63 @@
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><img src="/logo-white-96.png" alt="Nashik Tourism"  width="48" height="48"/><h3>Nashik Tourism</h3><p>Your complete guide to Nashik — Kumbh Mela 2027, temples, vineyards and travel tips.</p></div>
-    <div class="footer-col"><h4>Kumbh 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
-    <div class="footer-col"><h4>More Guides</h4><ul><li><a href="/blog/nashik-kumbh-mela-packing-list/">Packing List</a></li><li><a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a></li><li><a href="/blog/ramkund-ghat-nashik-guide/">Ramkund Ghat</a></li></ul></div>
-    <div class="footer-col"><h4>Discover</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li></ul></div>
+    <div class="footer-brand">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
+      <p class="footer-brand-name">Nashik Tourism</p>
+      <p>An independent guide to Nashik &mdash; the Godavari ghats, Trimbakeshwar, the vineyards, the Western Ghats and Simhastha Kumbh Mela 2027.</p>
+    </div>
+    <nav class="footer-cols" aria-label="Footer">
+      <h2 class="sr-only">Site navigation</h2>
+      <div class="footer-col">
+        <h3>Discover</h3>
+        <ul><li><a href="/discover-nashik/">All Destinations</a></li><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a></li><li><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li><li><a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+          <li><a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a></li>
+          <li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li>
+          <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach Nashik</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">What It Costs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Kumbh Mela</h3>
+        <ul>
+          <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 Guide</a></li>
+          <li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li>
+          <li><a href="/blog/kumbh-mela-2027-all-snan-dates/">All Snan Dates</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-e-pass-registration-2027/">E-Pass &amp; Registration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="/blog/">All Travel Guides</a></li>
+          <li><a href="/blog/#kumbh-mela">Kumbh Mela Guides</a></li>
+          <li><a href="/blog/#planning">Planning &amp; Budget</a></li>
+          <li><a href="/blog/#nashik-guides">Nashik Place Guides</a></li>
+          <li><a href="/blog/#travel-tips">Getting There &amp; Around</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/about/">About This Site</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="footer-bottom"><span>&copy; 2026 NashikTourism.com</span><span>Made with &hearts; for Nashik</span></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
+    <span>Made with &hearts; for Nashik</span>
+  </div>
 </footer>
-<script>
-const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
-hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");});
-mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");}));
-</script>
-<script src="/nav.js" defer></script>
+<script src="/site.js" defer></script>
 </body></html>

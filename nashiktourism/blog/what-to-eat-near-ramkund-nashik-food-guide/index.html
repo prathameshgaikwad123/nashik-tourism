@@ -19,11 +19,11 @@
     .food-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
     .food-card{background:white;border:1px solid var(--border);border-radius:8px;padding:1.25rem;text-align:center}
     .food-card .emoji{font-size:2rem;margin-bottom:.5rem}
-    .food-card h4{font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:800;color:var(--ink);margin-bottom:.3rem}
+    .food-card h4{font-family:var(--font-display);font-size:.85rem;font-weight:800;color:var(--ink);margin-bottom:.3rem}
     .food-card p{font-size:.8rem;color:var(--muted);margin:0;line-height:1.5}
     .restaurant-card{background:white;border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:.75rem 0}
-    .restaurant-card h4{font-family:"Montserrat",sans-serif;font-size:.9rem;font-weight:800;color:var(--primary);margin-bottom:.25rem}
-    .restaurant-card .type{font-size:.68rem;font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--saffron);margin-bottom:.4rem}
+    .restaurant-card h4{font-family:var(--font-display);font-size:.9rem;font-weight:800;color:var(--primary);margin-bottom:.25rem}
+    .restaurant-card .type{font-size:.68rem;font-family:var(--font-display);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--saffron);margin-bottom:.4rem}
     .restaurant-card p{font-size:.85rem;color:var(--muted);margin:0;line-height:1.6}
     .restaurant-card .budget{font-size:.78rem;color:var(--ink);font-weight:600;margin-top:.35rem}
     @media(max-width:768px){.food-grid{grid-template-columns:1fr 1fr}}
@@ -36,8 +36,33 @@
 <header>
 <nav class="nav solid" id="mainNav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48"/><div class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></div></a>
+    <a href="/" class="nav-logo">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
+      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
+    </a>
     <ul class="nav-menu">
+      <li>
+        <a href="/discover-nashik/">Discover</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-discover">
+          <a href="/discover-nashik/">All Destinations</a>
+          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
+          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
+          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        </div>
+      </li>
+      <li>
+        <a href="/plan-your-trip/">Plan Your Trip</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-plan" aria-label="Plan Your Trip submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-plan">
+          <a href="/plan-your-trip/">Trip Planner</a>
+          <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a>
+          <a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a>
+          <a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a>
+        </div>
+      </li>
       <li>
         <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
         <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
@@ -46,41 +71,51 @@
           <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
           <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
           <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
+          <a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a>
         </div>
       </li>
       <li>
-        <a href="/discover-nashik/">Discover Nashik</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-discover">
-          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
-          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
-          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        <a href="/blog/" class="active">Guides</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-guides" aria-label="Guides submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-guides">
+          <a href="/blog/">All Travel Guides</a>
+          <a href="/blog/#kumbh-mela">Kumbh Mela Guides</a>
+          <a href="/blog/#planning">Planning &amp; Budget</a>
+          <a href="/blog/#nashik-guides">Nashik Place Guides</a>
+          <a href="/blog/#travel-tips">Getting There &amp; Around</a>
         </div>
       </li>
-      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
       <li><a href="/about/">About</a></li>
       <li><a href="/contact/" class="nav-book">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/discover-nashik/">Discover Nashik</a>
+  <p class="mm-heading">Discover</p>
+  <a href="/discover-nashik/">All destinations</a>
   <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+  <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
   <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="/blog/">Travel Blog</a>
-  <a href="/about/">About</a>
+  <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+  <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+  <p class="mm-heading">Plan</p>
+  <a href="/plan-your-trip/">Plan your trip</a>
+  <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-day itineraries</a>
+  <p class="mm-heading">Kumbh Mela 2027</p>
+  <a href="/kumbh-mela-2027/">Complete guide</a>
+  <a href="/kumbh-mela-2027/#dates">Amrit Snan dates</a>
+  <p class="mm-heading">Guides</p>
+  <a href="/blog/">All travel guides</a>
+  <p class="mm-heading">About</p>
+  <a href="/about/">About this site</a>
   <a href="/contact/" class="mob-book">Contact Us</a>
 </div>
 </header>
 
 <main id="main">
+<div class="read-progress" data-reading-progress role="progressbar" aria-label="Article reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
 <div class="page-hero">
   <div>
     <div class="breadcrumb"><a href="/">Home</a> <span>&#8250;</span> <a href="/blog/">Blog</a> <span>&#8250;</span> Nashik Food Guide</div>
@@ -91,13 +126,13 @@
 </div>
 
 <div class="article-wrap">
-  <article class="article-body">
+  <article class="article-body" data-reading-body>
 
     <p>Nashik's food scene near Ramkund and Panchavati is entirely vegetarian — reflecting the religious character of the area — and it is genuinely excellent. From the morning sabudana khichdi at old dhabas to the classic Nashik misal pav, the food near the ghat is the kind of simple, honest cooking that sustains pilgrims and satisfies curious travellers alike. This guide tells you exactly where to eat, what to order and what to avoid.</p>
 
     <div class="info-box"><div class="info-title">&#127793; All Vegetarian</div><p>The entire Panchavati and Ramkund area near the ghat is <strong>100% vegetarian</strong> — no meat, fish or eggs are sold anywhere near the religious zone. This is strictly observed and enforced. For non-vegetarian food you need to go to other parts of Nashik city (MG Road area). During Kumbh Mela, the vegetarian-only zone expands significantly.</p></div>
 
-    <h2>Nashik's Must-Try Local Dishes</h2>
+    <h2 id="nashiks-must-try-local-dishes">Nashik's Must-Try Local Dishes</h2>
 
     <div class="food-grid">
       <div class="food-card">
@@ -147,7 +182,7 @@
       </div>
     </div>
 
-    <h2>Where to Eat Near Ramkund — Honest Recommendations</h2>
+    <h2 id="where-to-eat-near-ramkund-honest-recommendations">Where to Eat Near Ramkund — Honest Recommendations</h2>
     <p>The best food near Ramkund is in the small lanes behind the ghat — not on the main road. Look for the dhabas where local pilgrims are eating. No English signage, low prices, excellent food.</p>
 
     <div class="restaurant-card">
@@ -185,7 +220,7 @@
       <div class="budget">Budget: Free</div>
     </div>
 
-    <h2>Food Safety During Kumbh Mela 2027</h2>
+    <h2 id="food-safety-during-kumbh-mela-2027">Food Safety During Kumbh Mela 2027</h2>
     <p>With millions of people and temporary food stalls, food safety is a real concern on peak days. Here is honest advice:</p>
 
     <ul>
@@ -197,7 +232,7 @@
       <li><strong>Government food stalls</strong> set up specifically for Kumbh 2027 will be inspected and regulated — prefer these over completely unknown temporary stalls on peak days.</li>
     </ul>
 
-    <h2>Food During Kumbh Mela Period — Fasting Days</h2>
+    <h2 id="food-during-kumbh-mela-period-fasting-days">Food During Kumbh Mela Period — Fasting Days</h2>
     <p>Several of the auspicious Kumbh bathing dates coincide with Hindu fasting days when many pilgrims eat only sattvic food (no onion, no garlic, no non-vegetarian). On these days:</p>
     <ul>
       <li>Sabudana khichdi and vada are traditional fast foods widely available near the ghat</li>
@@ -205,13 +240,13 @@
       <li>Most dhabas near the ghat accommodate fasting requirements — just ask "upvaas ka khana hai?" (do you have fasting food?)</li>
     </ul>
 
-    <h2>Beyond Panchavati — Nashik City Food</h2>
+    <h2 id="beyond-panchavati-nashik-city-food">Beyond Panchavati — Nashik City Food</h2>
     <p>If you venture into Nashik city (MG Road, College Road areas) you will find a much wider range of food including South Indian, Chinese, fast food chains and yes, non-vegetarian restaurants (away from the religious zone). <strong>Nashik is known for</strong> its excellent misal pav, its thalis and its sweets. The city has a strong food culture that extends beyond Panchavati.</p>
     <p>For those visiting Sula Vineyards, the <strong>Little Italy restaurant</strong> on the estate offers Italian food with vineyard views — a sharp and delightful contrast to the dhaba breakfast near Ramkund. Both experiences are Nashik.</p>
 
     <div class="cta-strip"><div><h3>Staying Near Ramkund for Kumbh Mela?</h3><p>Book hotels close to Panchavati early — they sell out before Amrit Snan dates</p></div><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="btn btn-gold">Search Hotels Near Ramkund</a></div>
 
-    <h2>Frequently Asked Questions</h2>
+    <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
     <h3>Is there any non-vegetarian food near Ramkund?</h3>
     <p>No. The entire Panchavati and Ramkund religious zone is strictly vegetarian. Non-vegetarian food is available in other parts of Nashik city but not in the ghat area.</p>
     <h3>Are there restaurants open at 4 AM on Amrit Snan days?</h3>
@@ -224,6 +259,20 @@
     <p style="font-size:.82rem;color:var(--muted);border-top:1px solid var(--border);margin-top:2rem;padding-top:1rem"><em>Written by the NashikTourism.com editorial team. See our <a href="/about/">About page</a>.</em></p>
   </article>
   <aside class="sidebar">
+      <div class="sidebar-card toc-card">
+        <h4 id="on-this-page">On this page</h4>
+        <nav aria-labelledby="on-this-page" data-section-nav>
+          <ul class="toc-list">
+          <li><a href="#nashiks-must-try-local-dishes">Nashik's Must-Try Local Dishes</a></li>
+          <li><a href="#where-to-eat-near-ramkund-honest-recommendations">Where to Eat Near Ramkund — Honest&hellip;</a></li>
+          <li><a href="#food-safety-during-kumbh-mela-2027">Food Safety During Kumbh Mela 2027</a></li>
+          <li><a href="#food-during-kumbh-mela-period-fasting-days">Food During Kumbh Mela Period — Fasting Days</a></li>
+          <li><a href="#beyond-panchavati-nashik-city-food">Beyond Panchavati — Nashik City Food</a></li>
+          <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+          </ul>
+        </nav>
+      </div>
+
     <div class="sidebar-card"><h4>Kumbh Mela 2027</h4><ul class="date-list"><li><span class="dl">1st Snan</span><span class="dv">2 Aug 2027</span></li><li><span class="dl">2nd Snan</span><span class="dv">31 Aug 2027</span></li><li><span class="dl">3rd Snan</span><span class="dv">11&ndash;12 Sep</span></li></ul></div>
     <div class="sidebar-card"><h4>Essential Guides</h4><ul class="toc-list"><li><a href="/kumbh-mela-2027/">Kumbh Mela Guide</a></li><li><a href="/blog/nashik-2-day-itinerary/">2 Day Itinerary</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li><li><a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a></li></ul></div>
     <div class="sidebar-card"><h4>Book Hotels</h4><a href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener" class="btn btn-primary">MakeMyTrip Hotels</a><a href="https://www.goibibo.com/hotels/hotels-in-nashik/" target="_blank" rel="noopener" class="btn btn-gold">Goibibo Hotels</a></div>
@@ -233,17 +282,63 @@
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48"/><h3>Nashik Tourism</h3><p>Your complete guide to Nashik.</p></div>
-    <div class="footer-col"><h4>Kumbh 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li><li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li></ul></div>
-    <div class="footer-col"><h4>More Guides</h4><ul><li><a href="/blog/nashik-2-day-itinerary/">2 Day Itinerary</a></li><li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li><li><a href="/blog/sula-vineyards-nashik-complete-guide/">Sula Vineyards</a></li></ul></div>
-    <div class="footer-col"><h4>Site</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact Us</a></li><li><a href="/blog/">Travel Blog</a></li></ul></div>
+    <div class="footer-brand">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
+      <p class="footer-brand-name">Nashik Tourism</p>
+      <p>An independent guide to Nashik &mdash; the Godavari ghats, Trimbakeshwar, the vineyards, the Western Ghats and Simhastha Kumbh Mela 2027.</p>
+    </div>
+    <nav class="footer-cols" aria-label="Footer">
+      <h2 class="sr-only">Site navigation</h2>
+      <div class="footer-col">
+        <h3>Discover</h3>
+        <ul><li><a href="/discover-nashik/">All Destinations</a></li><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a></li><li><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li><li><a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+          <li><a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a></li>
+          <li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li>
+          <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach Nashik</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">What It Costs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Kumbh Mela</h3>
+        <ul>
+          <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 Guide</a></li>
+          <li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li>
+          <li><a href="/blog/kumbh-mela-2027-all-snan-dates/">All Snan Dates</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-e-pass-registration-2027/">E-Pass &amp; Registration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="/blog/">All Travel Guides</a></li>
+          <li><a href="/blog/#kumbh-mela">Kumbh Mela Guides</a></li>
+          <li><a href="/blog/#planning">Planning &amp; Budget</a></li>
+          <li><a href="/blog/#nashik-guides">Nashik Place Guides</a></li>
+          <li><a href="/blog/#travel-tips">Getting There &amp; Around</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/about/">About This Site</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="footer-bottom"><span>&copy; 2026 NashikTourism.com</span><span>Made with &hearts; for Nashik</span></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
+    <span>Made with &hearts; for Nashik</span>
+  </div>
 </footer>
-<script>
-const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
-hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");document.body.style.overflow=mm.classList.contains("open")?"hidden":"";});
-mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");document.body.style.overflow="";}));
-</script>
-<script src="/nav.js" defer></script>
+<script src="/site.js" defer></script>
 </body></html>

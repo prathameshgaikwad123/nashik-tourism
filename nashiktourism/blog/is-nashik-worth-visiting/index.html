@@ -18,11 +18,11 @@
     .route-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
     .route-card{background:white;border:1px solid var(--border);border-radius:8px;padding:1.25rem;text-align:center}
     .route-card .icon{font-size:1.75rem;margin-bottom:.5rem}
-    .route-card .mode{font-family:"Montserrat",sans-serif;font-size:.78rem;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem}
-    .route-card .time{font-family:"Montserrat",sans-serif;font-size:1.3rem;font-weight:900;color:var(--ink)}
+    .route-card .mode{font-family:var(--font-display);font-size:.78rem;font-weight:800;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem}
+    .route-card .time{font-family:var(--font-display);font-size:1.3rem;font-weight:900;color:var(--ink)}
     .route-card .cost{font-size:.82rem;color:var(--muted);margin-top:.25rem}
     .fact-strip{background:var(--primary);color:white;padding:1.5rem 2rem;border-radius:8px;margin:1.5rem 0;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
-    .fact{text-align:center}.fact .num{font-family:"Montserrat",sans-serif;font-size:1.8rem;font-weight:900;color:var(--accent-warm)}.fact .lbl{font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
+    .fact{text-align:center}.fact .num{font-family:var(--font-display);font-size:1.8rem;font-weight:900;color:var(--accent-warm)}.fact .lbl{font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem}
     @media(max-width:768px){.route-cards{grid-template-columns:1fr 1fr}.fact-strip{gap:1rem}}
 
     /* ---------- Gallery Carousel ---------- */
@@ -124,8 +124,33 @@
 <header>
 <nav class="nav solid" id="mainNav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="/logo-white-96.png" alt="Nashik Tourism"  width="48" height="48"/><div class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></div></a>
+    <a href="/" class="nav-logo">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
+      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
+    </a>
     <ul class="nav-menu">
+      <li>
+        <a href="/discover-nashik/">Discover</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-discover">
+          <a href="/discover-nashik/">All Destinations</a>
+          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
+          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
+          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        </div>
+      </li>
+      <li>
+        <a href="/plan-your-trip/">Plan Your Trip</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-plan" aria-label="Plan Your Trip submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-plan">
+          <a href="/plan-your-trip/">Trip Planner</a>
+          <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a>
+          <a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a>
+          <a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a>
+        </div>
+      </li>
       <li>
         <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
         <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-kumbh" aria-label="Kumbh Mela 2027 submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
@@ -134,41 +159,51 @@
           <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
           <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a>
           <a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a>
+          <a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a>
         </div>
       </li>
       <li>
-        <a href="/discover-nashik/">Discover Nashik</a>
-        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-discover" aria-label="Discover Nashik submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-discover">
-          <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
-          <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
-          <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-          <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
-          <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+        <a href="/blog/" class="active">Guides</a>
+        <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-guides" aria-label="Guides submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown" id="dd-guides">
+          <a href="/blog/">All Travel Guides</a>
+          <a href="/blog/#kumbh-mela">Kumbh Mela Guides</a>
+          <a href="/blog/#planning">Planning &amp; Budget</a>
+          <a href="/blog/#nashik-guides">Nashik Place Guides</a>
+          <a href="/blog/#travel-tips">Getting There &amp; Around</a>
         </div>
       </li>
-      <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-      <li><a href="/blog/" class="active" aria-current="page">Blog</a></li>
       <li><a href="/about/">About</a></li>
       <li><a href="/contact/" class="nav-book">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/kumbh-mela-2027/">Kumbh Mela 2027</a>
-  <a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a>
-  <a href="/discover-nashik/">Discover Nashik</a>
+  <p class="mm-heading">Discover</p>
+  <a href="/discover-nashik/">All destinations</a>
   <a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a>
+  <a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a>
   <a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>
-  <a href="/plan-your-trip/">Plan Your Trip</a>
-  <a href="/blog/">Travel Blog</a>
-  <a href="/about/">About</a>
+  <a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>
+  <a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a>
+  <p class="mm-heading">Plan</p>
+  <a href="/plan-your-trip/">Plan your trip</a>
+  <a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-day itineraries</a>
+  <p class="mm-heading">Kumbh Mela 2027</p>
+  <a href="/kumbh-mela-2027/">Complete guide</a>
+  <a href="/kumbh-mela-2027/#dates">Amrit Snan dates</a>
+  <p class="mm-heading">Guides</p>
+  <a href="/blog/">All travel guides</a>
+  <p class="mm-heading">About</p>
+  <a href="/about/">About this site</a>
   <a href="/contact/" class="mob-book">Contact Us</a>
 </div>
 </header>
 
 <main id="main">
+<div class="read-progress" data-reading-progress role="progressbar" aria-label="Article reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
 <div class="page-hero">
   <div>
     <div class="breadcrumb"><a href="/">Home</a> <span>&#8250;</span> <a href="/blog/">Blog</a> <span>&#8250;</span> 15 Best Places to Visit in Nashik</div>
@@ -178,15 +213,15 @@
   </div>
 </div>
 <div class="article-wrap">
-  <article class="article-body">
+  <article class="article-body" data-reading-body>
 
     <p>Most guides repeat the same places. This one doesn't. After exploring Nashik deeply, here are the <strong>15 places that actually matter</strong> in 2026 — from the famous Jyotirlinga to secret sunset spots only locals know.</p>
 
     <!-- Place 1: Trimbakeshwar Temple -->
     <div class="place-section">
-      <h2>🛕 1. Trimbakeshwar Temple</h2>
+      <h2 id="1-trimbakeshwar-temple">🛕 1. Trimbakeshwar Temple</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_1_ohlk16.png" alt="Trimbakeshwar Temple" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_46_zcrix3.png" alt="Trimbakeshwar Temple" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777965698/Picture_47_rfq2vp.png" alt="Trimbakeshwar Temple" loading="lazy" />
@@ -200,9 +235,9 @@
 
     <!-- Place 2: Ramkund -->
     <div class="place-section">
-      <h2>🌊 2. Ramkund</h2>
+      <h2 id="2-ramkund">🌊 2. Ramkund</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966036/Picture_48_bntn75.png" alt="Ramkund Ghat Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966030/Picture_50_feltpj.png" alt="Ramkund Ghat Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966029/Picture_14_ckbpa1.jpg" alt="Ramkund Ghat Nashik" loading="lazy" />
@@ -216,9 +251,9 @@
 
     <!-- Place 3: Sula Vineyards -->
     <div class="place-section">
-      <h2>🍷 3. Sula Vineyards</h2>
+      <h2 id="3-sula-vineyards">🍷 3. Sula Vineyards</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966239/Picture_51_dv0a9a.png" alt="Sula Vineyards Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_26_riiwou.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966236/Picture_25_cg35ei.jpg" alt="Sula Vineyards Nashik" loading="lazy" />
@@ -232,9 +267,9 @@
 
     <!-- Place 4: Pandavleni Caves -->
     <div class="place-section">
-      <h2>🏞️ 4. Pandavleni Caves</h2>
+      <h2 id="4-pandavleni-caves">🏞️ 4. Pandavleni Caves</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966469/Picture_19_xib2vq.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966470/Picture_54_itiy3g.png" alt="Pandavleni Caves Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966468/Picture_22_p10saj.jpg" alt="Pandavleni Caves Nashik" loading="lazy" />
@@ -248,9 +283,9 @@
 
     <!-- Place 5: Anjneri Hill -->
     <div class="place-section">
-      <h2>🌿 5. Anjneri Hill</h2>
+      <h2 id="5-anjneri-hill">🌿 5. Anjneri Hill</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966649/Picture_57_tcfdph.png" alt="Anjneri Hill Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966649/Picture_58_pcotz9.png" alt="Anjneri Hill Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966650/Picture_59_jlmwi5.png" alt="Anjneri Hill Nashik" loading="lazy" />
@@ -262,9 +297,9 @@
 
     <!-- Place 6: Brahmagiri Hills -->
     <div class="place-section">
-      <h2>🌄 6. Brahmagiri Hills</h2>
+      <h2 id="6-brahmagiri-hills">🌄 6. Brahmagiri Hills</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777966650/Picture_60_jibk8q.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967125/Picture_5_ndkgrw.jpg" alt="Brahmagiri Hills Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967126/Picture_71_ogcje2.png" alt="Brahmagiri Hills Nashik" loading="lazy" />
@@ -276,9 +311,9 @@
 
     <!-- Place 7: Kalaram Temple -->
     <div class="place-section">
-      <h2>🛕 7. Kalaram Temple</h2>
+      <h2 id="7-kalaram-temple">🛕 7. Kalaram Temple</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967244/Picture_63_sarc7q.png" alt="Kalaram Temple Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967243/Picture_64_k4nexw.png" alt="Kalaram Temple Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967244/Picture_65_vpntba.png" alt="Kalaram Temple Nashik" loading="lazy" />
@@ -290,9 +325,9 @@
 
     <!-- Place 8: Sita Gufa -->
     <div class="place-section">
-      <h2>🌳 8. Sita Gufa</h2>
+      <h2 id="8-sita-gufa">🌳 8. Sita Gufa</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967422/Picture_18_ulzjrm.jpg" alt="Sita Gufa Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967429/Picture_67_ze5m0t.png" alt="Sita Gufa Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967425/Picture_66_zagcxb.png" alt="Sita Gufa Nashik" loading="lazy" />
@@ -305,9 +340,9 @@
 
     <!-- Place 9: Dudhsagar Falls Nashik -->
     <div class="place-section">
-      <h2>🌊 9. Dudhsagar Falls Nashik</h2>
+      <h2 id="9-dudhsagar-falls-nashik">🌊 9. Dudhsagar Falls Nashik</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967868/01_udf7xb.jpg" alt="Dudhsagar Falls Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967695/Picture_69_mztiqq.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777967699/Picture_71_menxgq.png" alt="Dudhsagar Falls Nashik" loading="lazy" />
@@ -319,9 +354,9 @@
 
     <!-- Place 10: Someshwar Temple -->
     <div class="place-section">
-      <h2>🛕 10. Someshwar Temple</h2>
+      <h2 id="10-someshwar-temple">🛕 10. Someshwar Temple</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968021/Picture_72_lbvv5j.png" alt="Someshwar Temple Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968020/Picture_9_xnykgx.jpg" alt="Someshwar Temple Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968021/Picture_73_xlybe6.png" alt="Someshwar Temple Nashik" loading="lazy" />
@@ -332,9 +367,9 @@
 
     <!-- Place 11: Harihar Fort -->
     <div class="place-section">
-      <h2>🌄 11. Harihar Fort</h2>
+      <h2 id="11-harihar-fort">🌄 11. Harihar Fort</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968120/Picture_75_f1htik.png" alt="Harihar Fort Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968122/Picture_77_yrny5c.png" alt="Harihar Fort Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968120/Picture_76_rqkyac.png" alt="Harihar Fort Nashik" loading="lazy" />
@@ -346,9 +381,9 @@
 
     <!-- Place 12: Saraf Bazaar -->
     <div class="place-section">
-      <h2>🛍️ 12. Saraf Bazaar</h2>
+      <h2 id="12-saraf-bazaar">🛍️ 12. Saraf Bazaar</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968205/Picture_80_ivmiss.png" alt="Saraf Bazaar Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968204/Picture_79_lwwf49.png" alt="Saraf Bazaar Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777968203/Picture_11_geqcdt.jpg" alt="Saraf Bazaar Nashik" loading="lazy" />
@@ -359,9 +394,9 @@
 
     <!-- Place 13: York Winery -->
     <div class="place-section">
-      <h2>🍇 13. York Winery</h2>
+      <h2 id="13-york-winery">🍇 13. York Winery</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970422/Picture_81_wq0vy3.png" alt="York Winery Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970416/Picture_82_rhloyq.png" alt="York Winery Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970418/Picture_83_zwfu4b.png" alt="York Winery Nashik" loading="lazy" />
@@ -374,9 +409,9 @@
 
     <!-- Place 14: Gangapur Dam -->
     <div class="place-section">
-      <h2>🌅 14. Gangapur Dam</h2>
+      <h2 id="14-gangapur-dam">🌅 14. Gangapur Dam</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970566/Picture_84_lps5et.png" alt="Gangapur Dam Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970567/Picture_85_vajkyl.png" alt="Gangapur Dam Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970564/Picture_24_ashuh5.jpg" alt="Gangapur Dam Nashik" loading="lazy" />
@@ -388,9 +423,9 @@
 
     <!-- Place 15: Vaitarna Lake -->
     <div class="place-section">
-      <h2>🌄 15. Vaitarna Lake</h2>
+      <h2 id="15-vaitarna-lake">🌄 15. Vaitarna Lake</h2>
       <div class="gallery">
-        <div class="gallery-track">
+        <div class="gallery-track no-js">
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970654/Picture_87_e8lcpu.png" alt="Vaitarna Lake Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970655/Picture_88_c3wz2l.png" alt="Vaitarna Lake Nashik" loading="lazy" />
           <img src="https://res.cloudinary.com/duhuxaukd/image/upload/v1777970652/Picture_7_mfjlzp.jpg" alt="Vaitarna Lake Nashik" loading="lazy" />
@@ -407,6 +442,29 @@
 
   </article>
   <aside class="sidebar">
+      <div class="sidebar-card toc-card">
+        <h4 id="on-this-page">On this page</h4>
+        <nav aria-labelledby="on-this-page" data-section-nav>
+          <ul class="toc-list">
+          <li><a href="#1-trimbakeshwar-temple">🛕 1. Trimbakeshwar Temple</a></li>
+          <li><a href="#2-ramkund">🌊 2. Ramkund</a></li>
+          <li><a href="#3-sula-vineyards">🍷 3. Sula Vineyards</a></li>
+          <li><a href="#4-pandavleni-caves">🏞️ 4. Pandavleni Caves</a></li>
+          <li><a href="#5-anjneri-hill">🌿 5. Anjneri Hill</a></li>
+          <li><a href="#6-brahmagiri-hills">🌄 6. Brahmagiri Hills</a></li>
+          <li><a href="#7-kalaram-temple">🛕 7. Kalaram Temple</a></li>
+          <li><a href="#8-sita-gufa">🌳 8. Sita Gufa</a></li>
+          <li><a href="#9-dudhsagar-falls-nashik">🌊 9. Dudhsagar Falls Nashik</a></li>
+          <li><a href="#10-someshwar-temple">🛕 10. Someshwar Temple</a></li>
+          <li><a href="#11-harihar-fort">🌄 11. Harihar Fort</a></li>
+          <li><a href="#12-saraf-bazaar">🛍️ 12. Saraf Bazaar</a></li>
+          <li><a href="#13-york-winery">🍇 13. York Winery</a></li>
+          <li><a href="#14-gangapur-dam">🌅 14. Gangapur Dam</a></li>
+          <li><a href="#15-vaitarna-lake">🌄 15. Vaitarna Lake</a></li>
+          </ul>
+        </nav>
+      </div>
+
     <div class="sidebar-card">
       <h4>Nashik Guides</h4>
       <ul class="toc-list">
@@ -433,19 +491,65 @@
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><img src="/logo-white-96.png" alt="Nashik Tourism"  width="48" height="48"/><h3>Nashik Tourism</h3><p>Your complete guide to Nashik.</p></div>
-    <div class="footer-col"><h4>Kumbh 2027</h4><ul><li><a href="/kumbh-mela-2027/">Complete Guide</a></li><li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li></ul></div>
-    <div class="footer-col"><h4>Discover</h4><ul><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar</a></li><li><a href="/discover-nashik/panchavati/">Panchavati</a></li></ul></div>
-    <div class="footer-col"><h4>More Guides</h4><ul><li><a href="/blog/nashik-kumbh-mela-budget-2027/">Budget Guide</a></li><li><a href="/blog/kumbh-mela-2027-all-snan-dates/">All Snan Dates</a></li></ul></div>
+    <div class="footer-brand">
+      <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
+      <p class="footer-brand-name">Nashik Tourism</p>
+      <p>An independent guide to Nashik &mdash; the Godavari ghats, Trimbakeshwar, the vineyards, the Western Ghats and Simhastha Kumbh Mela 2027.</p>
+    </div>
+    <nav class="footer-cols" aria-label="Footer">
+      <h2 class="sr-only">Site navigation</h2>
+      <div class="footer-col">
+        <h3>Discover</h3>
+        <ul><li><a href="/discover-nashik/">All Destinations</a></li><li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple</a></li><li><a href="/discover-nashik/panchavati/">Panchavati &amp; Ramkund</a></li><li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a></li><li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a></li><li><a href="/discover-nashik/igatpuri/">Igatpuri &amp; Bhandardara</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+          <li><a href="/plan-your-trip/#itineraries">1, 2 &amp; 3-Day Itineraries</a></li>
+          <li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li>
+          <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach Nashik</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">What It Costs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Kumbh Mela</h3>
+        <ul>
+          <li><a href="/kumbh-mela-2027/">Kumbh Mela 2027 Guide</a></li>
+          <li><a href="/kumbh-mela-2027/#dates">Amrit Snan Dates</a></li>
+          <li><a href="/blog/kumbh-mela-2027-all-snan-dates/">All Snan Dates</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a></li>
+          <li><a href="/blog/nashik-kumbh-mela-e-pass-registration-2027/">E-Pass &amp; Registration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="/blog/">All Travel Guides</a></li>
+          <li><a href="/blog/#kumbh-mela">Kumbh Mela Guides</a></li>
+          <li><a href="/blog/#planning">Planning &amp; Budget</a></li>
+          <li><a href="/blog/#nashik-guides">Nashik Place Guides</a></li>
+          <li><a href="/blog/#travel-tips">Getting There &amp; Around</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="/about/">About This Site</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="footer-bottom"><span>&copy; 2026 NashikTourism.com</span><span>Made with &hearts; for Nashik</span></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
+    <span>Made with &hearts; for Nashik</span>
+  </div>
 </footer>
 <script>
-  // Hamburger menu
-  const hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
-  hb.addEventListener("click",()=>{hb.classList.toggle("open");mm.classList.toggle("open");});
-  mm.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{hb.classList.remove("open");mm.classList.remove("open");}));
-
   // ---------- Image Carousel ----------
   function initGallery(gallery) {
     const track = gallery.querySelector('.gallery-track');
@@ -525,6 +629,6 @@
   // Initialize all galleries
   document.querySelectorAll('.gallery').forEach(g => initGallery(g));
 </script>
-<script src="/nav.js" defer></script>
+<script src="/site.js" defer></script>
 </body>
 </html>
