@@ -1,0 +1,37 @@
+{
+  "id": "cand-2026-10-04-registration",
+  "createdAt": "2026-10-04T12:00:00+05:30",
+  "origin": "web-search-lead",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal (Pune/Nashik)",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune/nashik-84-religious-organisations-complete-online-registration-for-simhastha-kumbh-2027",
+  "extracted": {
+    "title": "Online registration open for religious organisations and student volunteers — not for general pilgrims",
+    "summary": "Press coverage reports QR-code online registration for religious and charitable organisations serving devotees, and registration for student 'Kumbhdoot' volunteers. No registration or e-pass requirement for general visitors has been reported.",
+    "category": "Kumbh",
+    "status": "developing",
+    "tags": [
+      "registration",
+      "pass"
+    ],
+    "publishedAt": null
+  },
+  "confidence": 0.7,
+  "risk": {
+    "high_risk": true,
+    "reasons": [
+      "tag:pass",
+      "tag:registration",
+      "pass-registration"
+    ]
+  },
+  "excerpt": "Search-result summary: 84 organisations completed registration via the Authority's QR single-window system; student volunteer registrations open.",
+  "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  }
+}

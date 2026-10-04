@@ -1,0 +1,1109 @@
+{
+  "_about": "The fact database. A fact that appears on more than one page lives here once and is rendered everywhere it is needed, so one verified change propagates across the site. status: verified = an editor read the cited source and it supports the value; reported = credible reports or a located official page say so but an editor has not confirmed it; not_verified = carried over from earlier copy with no source; disputed = sources disagree (every alternative is shown, none is silently chosen). A verified fact needs source.url, verifiedAt and verifiedBy. 'topic' decides how quickly it goes stale (data/site-config.json > freshness).",
+  "facts": [
+    {
+      "id": "kumbh.mela.opening",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Mela opens with dhwajarohan (flag-hoisting)",
+      "value": "2026-10-31",
+      "display": "31 October 2026",
+      "status": "reported",
+      "source": {
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal (Pune/Nashik)",
+        "url": "https://www.freepressjournal.in/pune/nashik-president-likely-to-attend-simhastha-kumbh-flag-hoisting-ceremony-on-october-31"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-gr",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Reported as a simultaneous flag-hoisting at Ramkund (Nashik) and Kushavarta Tirtha (Trimbakeshwar). Awaiting a link to the Authority's own notice.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.mela.closing",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Mela concludes (flag lowered)",
+      "value": "2028-07-24",
+      "display": "24 July 2028",
+      "status": "reported",
+      "source": {
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal (Pune/Nashik)",
+        "url": "https://www.freepressjournal.in/pune/nashik-president-likely-to-attend-simhastha-kumbh-flag-hoisting-ceremony-on-october-31"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-gr",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Reported alongside the opening date. Some secondary sites give inconsistent end dates, so the Authority's own notice is the source of truth.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.snan.1",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "First Amrit Snan",
+      "value": "2027-08-02",
+      "display": "Monday 2 August 2027",
+      "status": "reported",
+      "source": {
+        "sourceId": "editorial",
+        "name": "Reported by multiple publications; official notification not yet linked",
+        "url": null
+      },
+      "leads": [
+        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-gr",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Ashadh Somvati Amavasya was how earlier guide copy described this date.",
+      "appliesTo": [
+        "/kumbh-mela-2027/",
+        "/blog/kumbh-mela-2027-all-snan-dates/"
+      ]
+    },
+    {
+      "id": "kumbh.snan.2",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Second Amrit Snan",
+      "value": "2027-08-31",
+      "display": "Tuesday 31 August 2027",
+      "status": "reported",
+      "source": {
+        "sourceId": "editorial",
+        "name": "Reported by multiple publications; official notification not yet linked",
+        "url": null
+      },
+      "leads": [
+        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-gr",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Earlier site copy called 31 August a Monday; it is a Tuesday. The tithi name for this date is also unconfirmed (sources differ between Shravan and Bhadrapad Amavasya).",
+      "appliesTo": [
+        "/kumbh-mela-2027/",
+        "/blog/kumbh-mela-2027-all-snan-dates/"
+      ]
+    },
+    {
+      "id": "kumbh.snan.3.nashik",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Third Amrit Snan — Nashik (Ramkund)",
+      "value": "2027-09-11",
+      "display": "Saturday 11 September 2027",
+      "status": "reported",
+      "source": {
+        "sourceId": "editorial",
+        "name": "Reported by multiple publications; official notification not yet linked",
+        "url": null
+      },
+      "leads": [
+        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-gr",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Reported as the Vaishnava akharas' snan at Nashik.",
+      "appliesTo": [
+        "/kumbh-mela-2027/",
+        "/blog/kumbh-mela-2027-all-snan-dates/"
+      ]
+    },
+    {
+      "id": "kumbh.snan.3.trimbak",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Third Amrit Snan — Trimbakeshwar (Kushavarta)",
+      "value": "2027-09-12",
+      "display": "Sunday 12 September 2027",
+      "status": "reported",
+      "source": {
+        "sourceId": "editorial",
+        "name": "Reported by multiple publications; official notification not yet linked",
+        "url": null
+      },
+      "leads": [
+        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-gr",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Reported as the Shaiva akharas' snan at Trimbakeshwar.",
+      "appliesTo": [
+        "/kumbh-mela-2027/",
+        "/blog/kumbh-mela-2027-all-snan-dates/"
+      ]
+    },
+    {
+      "id": "kumbh.attendance.estimate",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Expected number of visitors",
+      "value": null,
+      "display": "No single official estimate has been confirmed",
+      "status": "disputed",
+      "source": {
+        "sourceId": "pib-rail-upgrade",
+        "name": "PIB — Ministry of Railways release on Nashik Simhastha preparations",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2"
+      },
+      "leads": [],
+      "alternatives": [
+        {
+          "value": "over 3 crore pilgrims",
+          "scope": "Ministry of Railways passenger-management planning figure for the five stations near the Mela area",
+          "source": {
+            "sourceId": "pib-rail-upgrade",
+            "name": "PIB (Ministry of Railways)",
+            "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2"
+          }
+        },
+        {
+          "value": "4–5 crore devotees",
+          "scope": "'Expected to draw' figure in press coverage of government tourism planning",
+          "source": {
+            "sourceId": "freepressjournal",
+            "name": "Free Press Journal (Pune/Nashik)",
+            "url": "https://www.freepressjournal.in/pune/nashik-kumbh-mela-2027-govt-plans-tent-cities-helicopter-service-for-jyotirlinga-circuit"
+          }
+        }
+      ],
+      "verifyWith": [
+        "ntka",
+        "pib"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Earlier versions of this site stated '15–20 crore' visitors without a source; that figure has been withdrawn. Estimates published elsewhere differ by an order of magnitude and are planning projections, not counts. Treat any number as an indication of scale only.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.devplan.amount",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Government development plan, total sanctioned or planned",
+      "value": null,
+      "display": "Reported figures differ — see sources",
+      "status": "disputed",
+      "source": {
+        "sourceId": "divcom-approvals",
+        "name": "Nashik Divisional Commissioner — Administrative Approvals",
+        "url": "https://divcomnashik.maharashtra.gov.in/en/administrative-approvals/"
+      },
+      "leads": [],
+      "alternatives": [
+        {
+          "value": "₹22,425.39 crore",
+          "scope": "'Development Plan for Nashik–Trimbakeshwar Simhastha Kumbh Mela' approved by the Government of Maharashtra",
+          "source": {
+            "sourceId": "divcom-approvals",
+            "name": "Nashik Divisional Commissioner — Administrative Approvals",
+            "url": "https://divcomnashik.maharashtra.gov.in/en/administrative-approvals/"
+          }
+        },
+        {
+          "value": "₹34,732 crore",
+          "scope": "'Kumbh development plan' as reported in press coverage of the Chief Minister's review",
+          "source": {
+            "sourceId": "freepressjournal",
+            "name": "Free Press Journal (Pune/Nashik)",
+            "url": "https://www.freepressjournal.in/pune/nashik-cm-devendra-fadnavis-orders-speedy-completion-of-34732-crore-kumbh-development-plan"
+          }
+        }
+      ],
+      "verifyWith": [
+        "divcom-approvals",
+        "dgipr",
+        "maharashtra-gov"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Earlier versions of this site said the Maharashtra government 'committed ₹4,000 crores to infrastructure, crowd management and safety'. No source for that figure could be found and it has been removed. Published totals describe different things (an approved plan, a year's sanction, a project tranche) and none is a 'safety budget'. We do not present any single figure as the Kumbh budget.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.rail.invest",
+      "subject": "Railway works for the Simhastha",
+      "fact": "Projected cost of railway infrastructure works at five stations",
+      "value": "over ₹1,011 crore",
+      "display": "Over ₹1,011 crore (projected)",
+      "status": "reported",
+      "source": {
+        "sourceId": "pib-rail-upgrade",
+        "name": "PIB — Major Railway Infrastructure Upgrade announced for Nashik ahead of Simhastha Kumbh Mela 2027",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "pib"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Official Government of India release located through a search of pib.gov.in; an editor has not yet opened and re-read the release.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.rail.stations",
+      "subject": "Railway works for the Simhastha",
+      "fact": "Stations named for Mela passenger management",
+      "value": [
+        "Nashik Road",
+        "Devlali",
+        "Odha",
+        "Kherwadi",
+        "Kasbe Sukene"
+      ],
+      "display": "Nashik Road, Devlali, Odha, Kherwadi and Kasbe Sukene",
+      "status": "reported",
+      "source": {
+        "sourceId": "pib-rail-upgrade",
+        "name": "PIB — Ministry of Railways release",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "pib",
+        "central-railway"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "transport",
+      "notes": "Not yet re-read by an editor. Which stations take Mela trains, and when, will be set by the railway timetable, not by this list.",
+      "appliesTo": [
+        "/kumbh-mela-2027/",
+        "/transport/"
+      ]
+    },
+    {
+      "id": "kumbh.authority.exists",
+      "subject": "Nashik–Trimbakeshwar Kumbh Mela Authority",
+      "fact": "A dedicated authority plans and coordinates the Simhastha",
+      "value": true,
+      "display": "Established by the Government of Maharashtra",
+      "status": "reported",
+      "source": {
+        "sourceId": "ntka",
+        "name": "Nashik–Trimbakeshwar Authority (Divisional Commissioner, Nashik)",
+        "url": "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Official page located; not yet re-read by an editor.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.pass.general",
+      "subject": "Kumbh Mela passes and registration",
+      "fact": "A general-visitor e-pass or registration is required to attend",
+      "value": null,
+      "display": "Not confirmed — no such requirement has been found in official sources",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "ntka",
+        "name": "Nashik–Trimbakeshwar Authority",
+        "url": "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/"
+      },
+      "leads": [
+        "https://www.freepressjournal.in/pune/nashik-84-religious-organisations-complete-online-registration-for-simhastha-kumbh-2027"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-gr",
+        "divcom-approvals"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "What has been reported: online registration for religious and charitable organisations (QR single-window) and for student volunteers ('Kumbhdoot'), and administrative approval for a web portal and mobile app. A general-pilgrim e-pass has not been announced in any source we could locate. Until the Authority says otherwise, do not tell visitors a pass is required or that none is.",
+      "appliesTo": [
+        "/blog/nashik-kumbh-mela-e-pass-registration-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.portal.status",
+      "subject": "Kumbh Mela passes and registration",
+      "fact": "Official Simhastha web portal and mobile app",
+      "value": "approved, not confirmed live",
+      "display": "Approved; launch not yet confirmed",
+      "status": "reported",
+      "source": {
+        "sourceId": "divcom-approvals",
+        "name": "Nashik Divisional Commissioner — Administrative Approvals",
+        "url": "https://divcomnashik.maharashtra.gov.in/en/administrative-approvals/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-approvals"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Administrative approval for a web portal and Android/iOS app was reported. Add the portal to data/sources.json when it launches.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "airport.ozar.icao",
+      "subject": "Nashik (Ozar) Airport",
+      "fact": "ICAO location indicator",
+      "value": "VAOZ",
+      "display": "VAOZ",
+      "status": "reported",
+      "source": {
+        "sourceId": "aai-vaoz",
+        "name": "AAI eAIP — Ozar Airport (VAOZ)",
+        "url": "https://aim-india.aai.aero/eaip-v2-04-2024/eAIP/IN-AD%202.1VAOZ-en-GB.html"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "aai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "transport",
+      "notes": null,
+      "appliesTo": [
+        "/transport/"
+      ]
+    },
+    {
+      "id": "airport.ozar.terminal",
+      "subject": "Nashik (Ozar) Airport",
+      "fact": "New integrated terminal building — administrative approval",
+      "value": "₹572.51 crore",
+      "display": "Administrative approval of ₹572.51 crore for a new integrated terminal",
+      "status": "reported",
+      "source": {
+        "sourceId": "divcom-approvals",
+        "name": "Nashik Divisional Commissioner — Administrative Approvals",
+        "url": "https://divcomnashik.maharashtra.gov.in/en/administrative-approvals/"
+      },
+      "leads": [
+        "https://www.freepressjournal.in/pune/nashik-ozar-airport-terminal-work-put-on-fast-track-ahead-of-mahasimhastha-march-31-deadline-set",
+        "https://www.freepressjournal.in/pune/maharashtra-minister-chhagan-bhujbal-pushes-for-civil-operations-at-nashik-airport-before-mega-kumbh-mela"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "divcom-approvals",
+        "aai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "transport",
+      "notes": "An approval is not a completion date; press coverage reports a completion target of 31 March 2027 for the new terminal (not confirmed). Whether and when scheduled commercial flights operate is set by airlines and the airport operator, and has not been verified here.",
+      "appliesTo": [
+        "/transport/"
+      ]
+    },
+    {
+      "id": "safety.emergency.number",
+      "subject": "Emergency services in India",
+      "fact": "National emergency number",
+      "value": "112",
+      "display": "112",
+      "status": "reported",
+      "source": {
+        "sourceId": "india-112",
+        "name": "112 India — Emergency Response Support System",
+        "url": "https://112.gov.in/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "india-112"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "default",
+      "notes": "Long-standing national number; listed from editorial knowledge and not yet re-confirmed against the 112 site by an editor.",
+      "appliesTo": [
+        "/accessible-nashik/",
+        "/kumbh-mela-2027/safety/"
+      ]
+    },
+    {
+      "id": "dest.trimbakeshwar.distance",
+      "subject": "Trimbakeshwar Temple",
+      "fact": "Distance from Nashik city centre",
+      "value": "28 km",
+      "display": "28 km",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/trimbakeshwar-to-nashik-distance-route/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "default",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.trimbakeshwar.journey",
+      "subject": "Trimbakeshwar Temple",
+      "fact": "Journey time from Nashik",
+      "value": "45–60 minutes",
+      "display": "45–60 minutes",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/trimbakeshwar-to-nashik-distance-route/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.panchavati.ramkund-hours",
+      "subject": "Ramkund, Panchavati",
+      "fact": "Ghat opening hours",
+      "value": "Approx. 5:30 AM – 9:30 PM, year round",
+      "display": "Approx. 5:30 AM – 9:30 PM, year round",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/ramkund-ghat-nashik-guide/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nmc",
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "timings",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.sula.distance",
+      "subject": "Sula Vineyards",
+      "fact": "Distance from Nashik city",
+      "value": "15 km",
+      "display": "15 km",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/sula-vineyards-nashik-complete-guide/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "sula"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "default",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.sula.hours",
+      "subject": "Sula Vineyards",
+      "fact": "Estate opening hours",
+      "value": "Mon–Sun, 11 AM – 10 PM",
+      "display": "Mon–Sun, 11 AM – 10 PM",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/sula-vineyards-nashik-complete-guide/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "sula"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "timings",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.sula.entry",
+      "subject": "Sula Vineyards",
+      "fact": "Entry fee and tasting prices",
+      "value": "No entry fee; tastings from ₹300",
+      "display": "No entry fee; tastings from ₹300",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/sula-vineyards-nashik-complete-guide/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "sula"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "fees",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.pandavleni.distance",
+      "subject": "Pandavleni Caves",
+      "fact": "Distance from the city",
+      "value": "5 km",
+      "display": "5 km",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/nashik-2-day-itinerary/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "default",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.pandavleni.duration",
+      "subject": "Pandavleni Caves",
+      "fact": "Time needed for a visit",
+      "value": "1–1.5 hours",
+      "display": "1–1.5 hours",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/nashik-2-day-itinerary/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "default",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "dest.pandavleni.steps",
+      "subject": "Pandavleni Caves",
+      "fact": "Climb to reach the caves",
+      "value": "Around 200 steps",
+      "display": "Around 200 steps",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/nashik-2-day-itinerary/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "default",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.mumbai.distance",
+      "subject": "Mumbai to Nashik",
+      "fact": "Road distance",
+      "value": "About 167 km",
+      "display": "About 167 km",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-district",
+        "nhai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.mumbai.road-time",
+      "subject": "Mumbai to Nashik",
+      "fact": "Driving time in normal traffic",
+      "value": "2.5–3 hours",
+      "display": "2.5–3 hours",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nhai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.mumbai.train-time",
+      "subject": "Mumbai to Nashik",
+      "fact": "Fast-train journey time to Nashik Road",
+      "value": "About 2.5–3 hours",
+      "display": "About 2.5–3 hours",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "central-railway",
+        "ntes"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.pune.distance",
+      "subject": "Pune to Nashik",
+      "fact": "Road distance",
+      "value": "About 210 km",
+      "display": "About 210 km",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-district",
+        "nhai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.pune.road-time",
+      "subject": "Pune to Nashik",
+      "fact": "Driving time in normal traffic",
+      "value": "3.5–4 hours",
+      "display": "3.5–4 hours",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "nhai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.delhi.distance",
+      "subject": "Delhi to Nashik",
+      "fact": "Distance",
+      "value": "About 1,400 km",
+      "display": "About 1,400 km",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "indian-railways"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.nashik-road.distance",
+      "subject": "Nashik Road Railway Station",
+      "fact": "Distance from the city centre",
+      "value": "About 8 km, 15–20 minutes from Ramkund",
+      "display": "About 8 km, 15–20 minutes from Ramkund",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "central-railway",
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.ozar.distance",
+      "subject": "Nashik (Ozar) Airport",
+      "fact": "Distance from Nashik city",
+      "value": "About 25 km",
+      "display": "About 25 km",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "aai",
+        "nashik-district"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "transport.bus.stands",
+      "subject": "Nashik bus terminals",
+      "fact": "Main stands",
+      "value": "Nashik CBS (Central Bus Stand); Panchavati bus stand is nearer Ramkund",
+      "display": "Nashik CBS (Central Bus Stand); Panchavati bus stand is nearer Ramkund",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "editorial",
+        "name": "NashikTourism.com earlier guide copy (no source cited)",
+        "url": null,
+        "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "msrtc"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "appliesTo": []
+    },
+    {
+      "id": "kumbh.transport.special-services",
+      "subject": "Kumbh Mela transport",
+      "fact": "Special trains for the Simhastha",
+      "value": "planned",
+      "display": "Planned (long-distance specials and short-distance MEMU services); no timetable or routes located",
+      "status": "reported",
+      "source": {
+        "sourceId": "pib-rail-upgrade",
+        "name": "PIB — Ministry of Railways release on Nashik Simhastha preparations",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2"
+      },
+      "leads": [
+        "https://www.freepressjournal.in/mumbai/indian-railways-begin-1011-crore-infra-push-for-nashik-simhastha-2027-special-trains-station-upgrades-planned"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "central-railway",
+        "indian-railways",
+        "msrtc",
+        "irctc",
+        "pib"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "transport",
+      "notes": "Railways describe a significantly higher number of special trains as planned for the Mela, with long-distance specials and short-distance MEMU services. No train numbers, routes, dates or booking opening have been located. Shuttle buses (earlier guide copy) have not been announced in any source we located. Check IRCTC, Central Railway and MSRTC.",
+      "appliesTo": [
+        "/transport/",
+        "/blog/how-to-reach-nashik-for-kumbh-mela/"
+      ]
+    },
+    {
+      "id": "kumbh.parking.plan",
+      "subject": "Kumbh Mela roads, traffic and parking",
+      "fact": "Official parking and traffic plan for the Mela",
+      "value": null,
+      "display": "No official plan located",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "nashik-city-police",
+        "name": "Nashik City / Rural Police (official URL to be confirmed)",
+        "url": null
+      },
+      "leads": [
+        "https://www.freepressjournal.in/pune/nashik-maha-aarti-traffic-parking-and-security-arrangements-prioritised-for-simhastha-flag-hoisting"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "nashik-city-police",
+        "maharashtra-police",
+        "ntka"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "transport",
+      "notes": "Parking areas, one-way systems and vehicle restrictions will be set by the police and the Authority and may change from day to day. Reported press coverage says traffic and parking arrangements for the flag-hoisting were being prepared; no plan has been published that we could locate.",
+      "appliesTo": [
+        "/transport/",
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.entry.charge",
+      "subject": "Kumbh Mela attendance",
+      "fact": "Charge to attend or bathe at the Mela",
+      "value": null,
+      "display": "Not confirmed. Earlier guide copy said there is no charge.",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "ntka",
+        "name": "Nashik–Trimbakeshwar Authority",
+        "url": "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "kumbh",
+      "notes": "Earlier versions of this site stated that entry is free and no registration is needed, without a source. Charges for particular services (parking, lodging, special access) are separate questions. Confirm with the Authority.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.health.plan",
+      "subject": "Kumbh Mela health arrangements",
+      "fact": "Healthcare plan reported for the Simhastha",
+      "value": "136 temporary healthcare facilities and 190 ambulances (on bathing days)",
+      "display": "Reported: 136 temporary healthcare facilities and 190 ambulances on bathing days",
+      "status": "reported",
+      "source": {
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal (Pune/Nashik)",
+        "url": "https://www.freepressjournal.in/pune/nashik-136-health-centres-190-ambulances-to-be-deployed-for-simhastha"
+      },
+      "leads": [
+        "https://www.freepressjournal.in/pune/nashik-health-arrangements-for-simhastha-kumbh-to-be-ready-by-december-says-minister-prakash-abitkar"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-approvals",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Press coverage reports that the Authority approved a healthcare plan including temporary hospitals and clinics at ghats, Sadhugram, parking areas and routes, ALS and BLS ambulances, and additional staff and beds. The Authority's own notice has not been linked, and exact locations and opening dates are not published. Earlier guide copy gave other specifics (such as 200 m camp spacing); those are not sourced.",
+      "appliesTo": [
+        "/kumbh-mela-2027/",
+        "/accessible-nashik/"
+      ]
+    },
+    {
+      "id": "kumbh.helicopter.plan",
+      "subject": "Kumbh Mela air connectivity",
+      "fact": "Helicopter service for pilgrims",
+      "value": "under planning",
+      "display": "Reported as under planning; no operator, routes, prices or booking system located",
+      "status": "reported",
+      "source": {
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal (Pune/Nashik)",
+        "url": "https://www.freepressjournal.in/pune/nashik-kumbh-mela-2027-govt-plans-tent-cities-helicopter-service-for-jyotirlinga-circuit"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "maharashtra-tourism",
+        "ntka",
+        "aai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "transport",
+      "notes": "Press coverage reports tourism-department planning for a helicopter service on a Jyotirlinga circuit including Trimbakeshwar, and proposed helipads. Prices quoted in earlier guide copy have no source and have been removed.",
+      "appliesTo": [
+        "/blog/nashik-kumbh-mela-helicopter-tour-2027/"
+      ]
+    }
+  ]
+}

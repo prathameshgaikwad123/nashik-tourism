@@ -1,0 +1,38 @@
+name: Daily rebuild
+# Time-sensitive content has to expire and the Kumbh lifecycle has to advance even
+# when nobody commits. This rebuilds the site every day just after midnight IST and
+# commits only if the output changed (an update expired, a phase flipped, an event
+# moved from upcoming to earlier). If your host rebuilds on its own schedule, set
+# the repository variable DAILY_REBUILD to "false" to turn this off.
+on:
+  schedule:
+    - cron: "40 18 * * *"      # 00:10 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    if: ${{ vars.DAILY_REBUILD != 'false' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build (the generators compute "today" in IST themselves)
+        run: python3 tools/build-all.py
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "nothing changed"
+          else
+            git config user.name "nashiktourism-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: daily rebuild (expiry and Kumbh lifecycle)"
+            git push
+          fi

@@ -1,0 +1,36 @@
+{
+  "id": "cand-2026-10-04-ring-road",
+  "createdAt": "2026-10-04T12:00:00+05:30",
+  "origin": "web-search-lead",
+  "sourceId": "pwd-maharashtra",
+  "sourceName": "Maharashtra Public Works Department",
+  "sourceTier": "official",
+  "sourceUrl": "https://pwd.maharashtra.gov.in/en/event/honble-cm-shri-devendra-fadnavis-reviewed-nashik-kumbh-preparations-and-approved-key-road-projects-including-ring-road-and-trimbak-road-widening/",
+  "extracted": {
+    "title": "Nashik Ring Road and Trimbak Road widening approved at a review meeting",
+    "summary": "The Maharashtra PWD reports that the Chief Minister and the Union Road Transport and Highways Minister reviewed Kumbh road preparations and approved key projects including the Nashik Ring Road and the widening of the Trimbak road. This is an approval, not a completion date.",
+    "category": "Roads",
+    "status": "developing",
+    "tags": [
+      "ring-road",
+      "trimbak-road",
+      "approval"
+    ],
+    "publishedAt": null
+  },
+  "confidence": 0.8,
+  "risk": {
+    "high_risk": true,
+    "reasons": [
+      "category:Roads"
+    ]
+  },
+  "excerpt": "Official PWD event page located by search; page text not read.",
+  "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  }
+}

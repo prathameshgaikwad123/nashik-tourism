@@ -1,0 +1,499 @@
+{
+  "_about": "The source registry. Every outbound 'official source' link, every monitor target and every attribution on the site resolves to an entry here by id; URLs are never hard-coded in templates. reliability follows the site's source hierarchy: official (Tier 1) > reliable_news (Tier 2) > business_official (Tier 3) > social (Tier 4, never confirmation). urlStatus: 'located' = the URL was returned by a search of the official domain but has not been opened by an editor; 'unchecked' = listed from editorial knowledge; 'to_be_confirmed' = no URL yet (the entry is inactive until one is added). tools/monitor-sources.py records live reachability in data/state/source-state.json, never here. Entries with citation:true are single documents kept so facts can cite them; they are not listed on /sources/ and are not monitored.",
+  "sources": [
+    {
+      "id": "ntka",
+      "name": "Nashik–Trimbakeshwar Kumbh Mela Authority (Office of the Divisional Commissioner, Nashik)",
+      "url": "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/",
+      "category": "kumbh",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Authority constitution, Simhastha arrangements, official announcements",
+      "notes": "Page title on the site reads 'About Nashik–Trimbakeshwar Authority'. The Authority's official portal and mobile app were reported as approved but not yet live; add them here when they launch.",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "ntka-contact",
+      "name": "Nashik Divisional Commissioner — Contact details (Kumbh Mela Authority)",
+      "url": "https://divcomnashik.maharashtra.gov.in/en/contact-details/",
+      "category": "kumbh",
+      "reliability": "official",
+      "checkFrequency": "monthly",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Where to send questions about Simhastha arrangements",
+      "notes": "The site links here rather than republishing phone numbers or e-mail addresses, so a changed number never goes stale on our pages.",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "divcom-gr",
+      "name": "Nashik Divisional Commissioner — Acts and Government Resolutions",
+      "url": "https://divcomnashik.maharashtra.gov.in/en/acts-and-government-resolutions/",
+      "category": "government",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Government Resolutions and acts concerning the Simhastha",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "divcom-approvals",
+      "name": "Nashik Divisional Commissioner — Administrative Approvals",
+      "url": "https://divcomnashik.maharashtra.gov.in/en/administrative-approvals/",
+      "category": "government",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Sanctioned works and amounts for the Simhastha development plan",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "nashik-district",
+      "name": "Nashik District Administration",
+      "url": "https://nashik.gov.in/",
+      "category": "government",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "District notices, tourism pages, how to reach Nashik",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "nashik-district-how-to-reach",
+      "name": "Nashik District — How to reach (tourism)",
+      "url": "https://nashik.gov.in/en/tourism/how-to-reach/",
+      "category": "transport",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "District tourism guidance on air, rail and road access",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "maharashtra-gov",
+      "name": "Government of Maharashtra",
+      "url": "https://www.maharashtra.gov.in/",
+      "category": "government",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "State government portal: orders, schemes, announcements",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "dgipr",
+      "name": "Maharashtra Directorate General of Information and Public Relations",
+      "url": "https://dgipr.maharashtra.gov.in/",
+      "category": "government",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "State press releases and announcements",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "pwd-maharashtra",
+      "name": "Maharashtra Public Works Department",
+      "url": "https://pwd.maharashtra.gov.in/",
+      "category": "roads",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "State road works, including the Nashik Ring Road and Trimbak Road widening reviews",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "pwd-ring-road-review",
+      "name": "Maharashtra PWD — CM and Union Minister review of Nashik Kumbh road projects",
+      "url": "https://pwd.maharashtra.gov.in/en/event/honble-cm-shri-devendra-fadnavis-reviewed-nashik-kumbh-preparations-and-approved-key-road-projects-including-ring-road-and-trimbak-road-widening/",
+      "category": "roads",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "citation": true,
+      "urlStatus": "located",
+      "scope": "A single dated event page; kept as a citation, not monitored",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "pib",
+      "name": "Press Information Bureau, Government of India",
+      "url": "https://www.pib.gov.in/",
+      "category": "government",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Union Government releases, including Ministry of Railways Simhastha preparations",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "pib-rail-upgrade",
+      "name": "PIB — Major Railway Infrastructure Upgrade announced for Nashik ahead of Simhastha Kumbh Mela 2027",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2",
+      "category": "railway",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "citation": true,
+      "urlStatus": "located",
+      "scope": "Ministry of Railways release on works at five stations near the Mela area",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "pib-rail-review",
+      "name": "PIB — Union Railway Minister reviews Nashik-Trimbakeshwar Simhastha 2027 rail plans",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2148431&reg=48&lang=2",
+      "category": "railway",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "citation": true,
+      "urlStatus": "located",
+      "scope": "Ministry of Railways review release",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "pib-rail-nashik-projects",
+      "name": "PIB — Railway infrastructure projects in Nashik",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2226435&reg=3&lang=2",
+      "category": "railway",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "citation": true,
+      "urlStatus": "located",
+      "scope": "Union Government reply/release on railway projects in Nashik",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "newsonair",
+      "name": "All India Radio News (Prasar Bharati)",
+      "url": "https://www.newsonair.gov.in/",
+      "category": "news",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Public-broadcaster reporting on Maharashtra and the Simhastha",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "nmc",
+      "name": "Nashik Municipal Corporation",
+      "url": null,
+      "category": "government",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": false,
+      "urlStatus": "to_be_confirmed",
+      "scope": "City civic notices, ghat and sanitation arrangements, local traffic notices",
+      "notes": "Official URL to be confirmed by an editor before activation."
+    },
+    {
+      "id": "maharashtra-tourism",
+      "name": "Maharashtra Tourism (MTDC)",
+      "url": "https://www.maharashtratourism.gov.in/",
+      "category": "tourism",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "State tourism information and MTDC properties",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "maharashtra-police",
+      "name": "Maharashtra Police",
+      "url": "https://mahapolice.gov.in/",
+      "category": "police",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "Police notices, advisories",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "nashik-city-police",
+      "name": "Nashik City Police and Nashik Rural Police",
+      "url": null,
+      "category": "police",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": false,
+      "urlStatus": "to_be_confirmed",
+      "scope": "Traffic diversions, parking plans and crowd-control notices for the Mela",
+      "notes": "Official URL(s) to be confirmed by an editor before activation. Traffic and parking items always require human approval."
+    },
+    {
+      "id": "indian-railways",
+      "name": "Indian Railways",
+      "url": "https://indianrailways.gov.in/",
+      "category": "railway",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "Railway notices and special-train announcements",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "central-railway",
+      "name": "Central Railway (Mumbai and Bhusawal divisions serve Nashik)",
+      "url": "https://cr.indianrailways.gov.in/",
+      "category": "railway",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "Zone notices, special trains, cancellations",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "ntes",
+      "name": "National Train Enquiry System",
+      "url": "https://enquiry.indianrail.gov.in/ntes/",
+      "category": "railway",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "urlStatus": "unchecked",
+      "scope": "Live running status and timetable lookup — linked for travellers, not monitored",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "irctc",
+      "name": "IRCTC — train booking",
+      "url": "https://www.irctc.co.in/",
+      "category": "railway",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "urlStatus": "unchecked",
+      "scope": "Booking — linked for travellers, not monitored",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "msrtc",
+      "name": "Maharashtra State Road Transport Corporation (MSRTC)",
+      "url": "https://msrtc.maharashtra.gov.in/",
+      "category": "transport",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "State bus services and any special Kumbh services",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "nhai",
+      "name": "National Highways Authority of India",
+      "url": "https://nhai.gov.in/",
+      "category": "roads",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "National highway works and advisories",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "aai",
+      "name": "Airports Authority of India",
+      "url": "https://www.aai.aero/",
+      "category": "airport",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Airport information; Nashik (Ozar) is listed in AAI's aeronautical information publication as VAOZ",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "aai-vaoz",
+      "name": "AAI eAIP — Ozar Airport (VAOZ)",
+      "url": "https://aim-india.aai.aero/eaip-v2-04-2024/eAIP/IN-AD%202.1VAOZ-en-GB.html",
+      "category": "airport",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "citation": true,
+      "urlStatus": "located",
+      "scope": "Aerodrome data page for Ozar; a dated publication edition, so it can be superseded",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "imd",
+      "name": "India Meteorological Department",
+      "url": "https://mausam.imd.gov.in/",
+      "category": "weather",
+      "reliability": "official",
+      "checkFrequency": "manual",
+      "active": false,
+      "urlStatus": "unchecked",
+      "scope": "Official forecasts and warnings — linked from /nashik-now/ next to the automated weather",
+      "monitor": {
+        "type": "manual"
+      }
+    },
+    {
+      "id": "open-meteo",
+      "name": "Open-Meteo",
+      "url": "https://open-meteo.com/",
+      "category": "weather",
+      "reliability": "data_provider",
+      "checkFrequency": "hourly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "Model-based weather data shown on /nashik-now/. Not an official forecast.",
+      "notes": "Free API, no key required. Always shown with its fetch time and a link to IMD.",
+      "monitor": {
+        "type": "api"
+      }
+    },
+    {
+      "id": "india-112",
+      "name": "112 India — Emergency Response Support System",
+      "url": "https://112.gov.in/",
+      "category": "safety",
+      "reliability": "official",
+      "checkFrequency": "monthly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "National single emergency number",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "freepressjournal",
+      "name": "Free Press Journal — Pune / Nashik coverage",
+      "url": "https://www.freepressjournal.in/pune",
+      "category": "news",
+      "reliability": "reliable_news",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Established daily; detailed Nashik and Simhastha coverage. News leads become candidates, never published facts.",
+      "monitor": {
+        "type": "html",
+        "leadOnly": true
+      }
+    },
+    {
+      "id": "lokmat-times-nashik",
+      "name": "Lokmat Times — Nashik",
+      "url": "https://www.lokmattimes.com/nashik/",
+      "category": "news",
+      "reliability": "reliable_news",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "located",
+      "scope": "Established publication; Nashik coverage. News leads become candidates, never published facts.",
+      "monitor": {
+        "type": "html",
+        "leadOnly": true
+      }
+    },
+    {
+      "id": "sula",
+      "name": "Sula Vineyards (official site)",
+      "url": "https://www.sulawines.com/",
+      "category": "attractions",
+      "reliability": "business_official",
+      "checkFrequency": "monthly",
+      "active": true,
+      "urlStatus": "unchecked",
+      "scope": "Tour, tasting and visiting information published by the estate",
+      "monitor": {
+        "type": "html"
+      }
+    },
+    {
+      "id": "trimbakeshwar-devasthan",
+      "name": "Shri Trimbakeshwar temple trust / Devasthan",
+      "url": null,
+      "category": "attractions",
+      "reliability": "official",
+      "checkFrequency": "weekly",
+      "active": false,
+      "urlStatus": "to_be_confirmed",
+      "scope": "Darshan timings, special-darshan arrangements, festival closures",
+      "notes": "Official URL to be confirmed by an editor before activation."
+    },
+    {
+      "id": "editorial",
+      "name": "NashikTourism.com editorial team",
+      "url": "https://nashiktourism.com/editorial-policy/",
+      "category": "news",
+      "reliability": "business_official",
+      "checkFrequency": "manual",
+      "active": false,
+      "urlStatus": "ok",
+      "scope": "Used only for notices about this site itself (corrections, removed claims), never for facts about Nashik",
+      "monitor": {
+        "type": "manual"
+      }
+    }
+  ]
+}

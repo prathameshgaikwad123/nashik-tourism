@@ -1,0 +1,131 @@
+{
+  "_about": "Visible revision history. Add an entry whenever a page's facts change; pages show the entries whose path matches. type: published | updated | corrected | verified | restructured.",
+  "entries": [
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/",
+      "type": "corrected",
+      "summary": "Removed an unsourced government infrastructure figure; each reported development figure is now listed with what it counts and its source."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/",
+      "type": "corrected",
+      "summary": "Corrected the weekday of the second Amrit Snan date (31 August 2027 is a Tuesday) and relabelled the dates as 'reported' until the Authority's notice is linked."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/",
+      "type": "corrected",
+      "summary": "Withdrew the unsourced '15–20 crore' visitor estimate; no single official estimate is confirmed."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/blog/kumbh-mela-2027-all-snan-dates/",
+      "type": "corrected",
+      "summary": "Corrected the weekday of 31 August 2027 (Tuesday) and removed the 'Somvati' label that depended on it."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/blog/nashik-kumbh-mela-e-pass-registration-2027/",
+      "type": "corrected",
+      "summary": "Added a notice that no general-visitor e-pass or registration requirement has been located in official sources."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/",
+      "type": "restructured",
+      "summary": "Homepage rebuilt around search, Nashik Now, a phase-aware Kumbh block, intent tiles and verified updates."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/updates/",
+      "type": "published",
+      "summary": "Verified updates page published, with archive and feeds."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/updates/archive/",
+      "type": "published",
+      "summary": "Update archive published."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/events/",
+      "type": "published",
+      "summary": "Events page published; every event shows its source and verification status."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/sources/",
+      "type": "published",
+      "summary": "Public source registry published."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/editorial-policy/",
+      "type": "published",
+      "summary": "Editorial policy published."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/transport/",
+      "type": "published",
+      "summary": "Transport hub published."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/accessible-nashik/",
+      "type": "published",
+      "summary": "Accessibility hub published; every place starts at 'accessibility unknown'."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/nashik-now/",
+      "type": "published",
+      "summary": "Nashik Now published."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/live-updates/",
+      "type": "published",
+      "summary": "Kumbh live updates page published."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/",
+      "type": "restructured",
+      "summary": "Rebuilt as a hub with dates, locations, passes, roads, safety, accessibility, figures and FAQs, each fact marked verified, reported or not confirmed."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/discover-nashik/trimbakeshwar/",
+      "type": "restructured",
+      "summary": "Added quick facts with verification status, how to reach, accessibility, latest updates and sources."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/discover-nashik/panchavati/",
+      "type": "restructured",
+      "summary": "Added quick facts with verification status, how to reach, accessibility, latest updates and sources."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/discover-nashik/sula-vineyards/",
+      "type": "restructured",
+      "summary": "Added quick facts with verification status, how to reach, accessibility, latest updates and sources."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/discover-nashik/pandavleni-caves/",
+      "type": "restructured",
+      "summary": "Added quick facts with verification status, how to reach, accessibility, latest updates and sources."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/discover-nashik/igatpuri/",
+      "type": "restructured",
+      "summary": "Added quick facts with verification status, how to reach, accessibility, latest updates and sources."
+    }
+  ]
+}

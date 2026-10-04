@@ -1,0 +1,37 @@
+{
+  "id": "cand-2026-10-04-flag-hoisting",
+  "createdAt": "2026-10-04T12:00:00+05:30",
+  "origin": "web-search-lead",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal (Pune/Nashik)",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune/nashik-president-likely-to-attend-simhastha-kumbh-flag-hoisting-ceremony-on-october-31",
+  "extracted": {
+    "title": "Simhastha flag-hoisting reported for 31 October 2026; President's attendance described as likely",
+    "summary": "The Simhastha is reported to open with a flag-hoisting at Ramkund, Nashik, and Kushavarta Tirtha, Trimbakeshwar, on 31 October 2026. Press coverage describes the President's attendance as likely, not confirmed. Traffic, parking and security arrangements for the day were reported as under preparation.",
+    "category": "Kumbh",
+    "status": "developing",
+    "tags": [
+      "opening",
+      "dhwajarohan",
+      "traffic"
+    ],
+    "publishedAt": null
+  },
+  "confidence": 0.7,
+  "risk": {
+    "high_risk": true,
+    "reasons": [
+      "religious-date",
+      "traffic"
+    ]
+  },
+  "excerpt": "Search-result summary: flag-hoisting simultaneously at Ramkund and Kushavarta at 12.02 pm; flag to come down on 24 July 2028; President's presence described as likely.",
+  "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  }
+}

@@ -72,7 +72,7 @@ CSS = """    .blog-hero { background: var(--dark); padding: 8rem var(--gutter) 3
     .guide-group { margin-bottom:var(--s-16); scroll-margin-top:calc(var(--nav-h) + 72px); }
     .guide-group > h2 { font-family:var(--font-display); font-size:1.35rem; font-weight:800; letter-spacing:var(--ls-heading); color:var(--ink); padding-bottom:var(--s-3); border-bottom:2px solid var(--border); margin-bottom:var(--s-2); }
     .guide-group > p.gg-sub { color:var(--muted); font-size:var(--t-small); margin-bottom:var(--s-6); max-width:60ch; }
-    .guide-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:var(--s-6); }
+    .guide-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr)); gap:var(--s-6); }
 
     .gcard { display:flex; flex-direction:column; background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; transition:transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
     .gcard:hover { transform:translateY(-4px); box-shadow:var(--sh-3); }

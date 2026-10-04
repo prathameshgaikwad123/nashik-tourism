@@ -20,11 +20,13 @@ function arg(name, dflt) {
 }
 
 const BASE = arg('base', 'http://127.0.0.1:8099');
-const WIDTHS = arg('widths', '1440,1280,1024,390,375,360').split(',').map(Number);
+const WIDTHS = arg('widths', '1920,1440,1280,1024,768,414,390,375,360,320').split(',').map(Number);
 const PAGES = arg('pages', [
-  '/', '/discover-nashik/', '/discover-nashik/trimbakeshwar/', '/discover-nashik/igatpuri/',
-  '/plan-your-trip/', '/blog/', '/blog/ramkund-ghat-nashik-guide/',
-  '/kumbh-mela-2027/', '/about/', '/contact/', '/404.html',
+  '/', '/search/', '/discover-nashik/', '/discover-nashik/trimbakeshwar/', '/discover-nashik/igatpuri/',
+  '/plan-your-trip/', '/blog/', '/blog/ramkund-ghat-nashik-guide/', '/blog/kumbh-mela-2027-all-snan-dates/',
+  '/blog/how-to-reach-nashik-for-kumbh-mela/', '/kumbh-mela-2027/', '/kumbh-mela-2027/live-updates/',
+  '/updates/', '/updates/archive/', '/events/', '/transport/', '/accessible-nashik/', '/nashik-now/',
+  '/sources/', '/editorial-policy/', '/about/', '/contact/', '/disclaimer/', '/404.html',
 ].join(',')).split(',').filter(Boolean);
 const JS_DISABLED = args.includes('--nojs');
 

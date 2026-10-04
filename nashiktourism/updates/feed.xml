@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-IN">
+  <id>tag:nashiktourism.com,2026:updates</id>
+  <title>NashikTourism.com verified updates</title>
+  <subtitle>Verified notices about Nashik and the Kumbh Mela, each with its source.</subtitle>
+  <link rel="self" href="https://nashiktourism.com/updates/feed.xml" />
+  <link rel="alternate" href="https://nashiktourism.com/updates/" />
+  <updated>2026-10-04T00:00:00+05:30</updated>
+  <entry>
+    <id>tag:nashiktourism.com,2026:update:2026-10-04-kumbh-figure-withdrawn</id>
+    <title>We removed an unsourced Kumbh infrastructure figure</title>
+    <link rel="alternate" href="https://nashiktourism.com/updates/#u-2026-10-04-kumbh-figure-withdrawn" />
+    <published>2026-10-04T00:00:00+05:30</published>
+    <updated>2026-10-04T00:00:00+05:30</updated>
+    <author><name>NashikTourism.com editorial team</name></author>
+    <category term="Kumbh" />
+    <summary>Earlier versions of our Kumbh Mela guide quoted a single government infrastructure figure that we could not trace to an official source. We have removed it. Government development figures for the Simhastha are published at several different scales, so the Kumbh guide now lists each reported figure with what it counts and where it comes from. Source: NashikTourism.com editorial team. Status: changed.</summary>
+  </entry>
+</feed>

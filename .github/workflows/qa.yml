@@ -1,0 +1,33 @@
+name: Browser QA
+# Real-browser checks: horizontal overflow, tap targets, layout shift and keyboard
+# behaviour at the widths the site is designed for (320 to 1920). Manual and weekly.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-save playwright && npx playwright install --with-deps chromium
+      - run: python3 tools/build-all.py
+      - name: Serve the site
+        run: |
+          python3 tools/qa/serve.py 8099 &
+          sleep 2
+      - name: Viewports
+        run: node tools/qa/viewports.js --widths 320,360,375,390,414,768,1024,1280,1440,1920
+      - name: Interactions
+        run: node tools/qa/interactions.js
+      - name: No JavaScript
+        run: node tools/qa/no-javascript.js
+      - name: Search ranking
+        run: node tools/qa/search-test.js

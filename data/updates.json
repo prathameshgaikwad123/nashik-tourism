@@ -1,0 +1,32 @@
+{
+  "_about": "The verified-update feed behind /updates/. Add and change items with tools/cms.py; never edit page HTML. status = how sure we are right now (confirmed/developing/changed/cancelled/archived). contentStatus = editorial workflow (draft/review/published/updated/archived). An item with expiresAt in the past is archived automatically at build time and in the browser. High-risk items (tools/nt/risk.py) need approvedBy + approvedAt before they can be published. Records are never deleted: archived items stay on /updates/archive/.",
+  "updates": [
+    {
+      "id": "2026-10-04-kumbh-figure-withdrawn",
+      "title": "We removed an unsourced Kumbh infrastructure figure",
+      "summary": "Earlier versions of our Kumbh Mela guide quoted a single government infrastructure figure that we could not trace to an official source. We have removed it. Government development figures for the Simhastha are published at several different scales, so the Kumbh guide now lists each reported figure with what it counts and where it comes from.",
+      "category": "Kumbh",
+      "status": "changed",
+      "contentStatus": "published",
+      "sourceId": "editorial",
+      "sourceName": "NashikTourism.com editorial team",
+      "sourceUrl": "https://nashiktourism.com/editorial-policy/#corrections",
+      "publishedAt": "2026-10-04",
+      "verifiedAt": "2026-10-04",
+      "lastCheckedAt": "2026-10-04",
+      "expiresAt": null,
+      "author": "NashikTourism.com editorial team",
+      "tags": [
+        "correction",
+        "kumbh",
+        "editorial"
+      ],
+      "relatedPages": [
+        "/kumbh-mela-2027/#figures"
+      ],
+      "origin": "manual",
+      "approvedBy": null,
+      "approvedAt": null
+    }
+  ]
+}

@@ -9,11 +9,11 @@ sections, internal linking, FAQs and schema.
 
 FACTUAL DISCIPLINE
 ------------------
-Nothing here states opening hours, entry fees, timings, distances, or dates.
-Where a real destination guide needs those, the section renders a visible
-"being verified" note and the data lives in PENDING below, so it is obvious
-what still needs research. Descriptive copy is editorial, not factual claims.
-Every fact-shaped statement is one this site already publishes elsewhere.
+Every fact-shaped value comes from data/destinations.json / data/facts.json and
+is shown with its verification status. A null field renders as "Not yet
+confirmed" with a pointer to the official source — never a guess. Descriptive
+copy (why visit, history, what to see) is editorial, not a factual claim. Each
+page ends with its sources, its verification status and its change history.
 
 Usage:  python3 tools/build-destinations.py
 """
@@ -24,83 +24,12 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import chrome
+from nt import content, render, store
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                      "..", "nashiktourism"))
 SITE = "https://nashiktourism.com"
 CLD = "https://res.cloudinary.com/duhuxaukd/image/upload"
-
-# ─────────────────────────────────────────────────────────────────────────────
-# PENDING FACT RESEARCH — fill these in, then the matching sections render.
-# Leave a key absent/empty and the page shows the "being verified" note instead.
-# ─────────────────────────────────────────────────────────────────────────────
-PENDING = {
-    "hours": "Opening / darshan hours",
-    "fees": "Entry and any special-darshan fees",
-    "distance": "Verified distances and journey times",
-    "season": "Month-by-month conditions specific to this site",
-}
-
-# ─────────────────────────────────────────────────────────────────────────────
-# QUICK FACTS — verified, cited, and never invented.
-#
-# The brief asks for a facts strip; the house rule is that nothing factual is
-# published without a source. So each row below is a figure this site ALREADY
-# publishes on another page, and `src` is that page — rendered as a link next to
-# the strip. Destinations with no published figures (Igatpuri) get only the rows
-# that can be sourced from their own editorial copy.
-#
-# The "being verified" notes still render, but per destination and only for the
-# categories that destination genuinely still lacks — previously every page
-# claimed hours and distances were unverified while the blog published them.
-# ─────────────────────────────────────────────────────────────────────────────
-FACTS = {
-    "trimbakeshwar": {
-        "rows": [
-            ("Best for", "Jyotirlinga darshan &amp; Kumbh Mela bathing", None),
-            ("Distance", "28 km from Nashik city centre", "/blog/trimbakeshwar-to-nashik-distance-route/"),
-            ("Journey time", "45&ndash;60 minutes", "/blog/trimbakeshwar-to-nashik-distance-route/"),
-            ("Location", "Trimbak, Nashik district, Maharashtra", None),
-        ],
-        "pending": ["hours", "fees", "season"],
-    },
-    "panchavati": {
-        "rows": [
-            ("Best for", "River ghats, temples and the old city on foot", None),
-            ("Ramkund hours", "Approx. 5:30 AM &ndash; 9:30 PM, year round", "/blog/ramkund-ghat-nashik-guide/"),
-            ("Best time of day", "Morning, when the ghat is busiest", None),
-            ("Location", "North bank of the Godavari, Nashik city", None),
-        ],
-        "pending": ["fees", "season"],
-    },
-    "sula-vineyards": {
-        "rows": [
-            ("Best for", "Vineyard tours and tastings", None),
-            ("Distance", "15 km from Nashik city", "/blog/sula-vineyards-nashik-complete-guide/"),
-            ("Estate hours", "Mon&ndash;Sun, 11 AM &ndash; 10 PM", "/blog/sula-vineyards-nashik-complete-guide/"),
-            ("Entry", "No entry fee; tastings from &#8377;300", "/blog/sula-vineyards-nashik-complete-guide/"),
-            ("Time needed", "Half a day, once travel is counted", None),
-        ],
-        "pending": ["season"],
-    },
-    "pandavleni-caves": {
-        "rows": [
-            ("Best for", "Rock-cut heritage and the view over the city", None),
-            ("Distance", "5 km from the city", "/blog/nashik-2-day-itinerary/"),
-            ("Time needed", "1&ndash;1.5 hours", "/blog/nashik-2-day-itinerary/"),
-            ("Getting up", "Around 200 steps to climb", "/blog/nashik-2-day-itinerary/"),
-        ],
-        "pending": ["hours", "fees", "season"],
-    },
-    "igatpuri": {
-        "rows": [
-            ("Best for", "Western Ghats landscape and monsoon greenery", None),
-            ("Best season", "During and just after the monsoon", "/blog/best-time-to-visit-nashik/"),
-            ("Location", "Western Ghats near Nashik, Maharashtra", None),
-        ],
-        "pending": ["hours", "fees", "distance"],
-    },
-}
 
 # Categories used by the destination explorer. Only assigned where the
 # destination's own published copy supports it — see the note in
@@ -112,252 +41,157 @@ CATEGORY_LABELS = {
     "nature": "Nature",
     "wine": "Wine",
 }
-# Each assignment is carried by the destination's own published kicker, with one
-# documented addition: Panchavati's kicker reads "Heritage / Ghats" but its lede
-# is about the Ramayana, the temples and the Kumbh bathing, so it is spiritual
-# too. Trimbakeshwar is NOT tagged heritage — its kicker claims "Spiritual /
-# Jyotirlinga" and nothing in its copy makes a heritage claim.
-DEST_CATEGORIES = {
-    "trimbakeshwar": ["spiritual"],          # kicker: Spiritual / Jyotirlinga
-    "panchavati": ["spiritual", "heritage"],  # kicker: Heritage / Ghats
-    "sula-vineyards": ["wine"],               # kicker: Wine / Leisure
-    "pandavleni-caves": ["heritage"],         # kicker: History / Heritage
-    "igatpuri": ["nature"],                   # kicker: Nature / Weekend
-}
-
-# Contextual next step per destination (brief section 14). Each points at the
-# explorer chip for a category the destination genuinely belongs to; a hash is
-# not a separate URL, so no filter combination becomes indexable.
-PLAN_NEXT = {
-    "trimbakeshwar": ("Planning a spiritual trip?",
-                      "Trimbakeshwar and the Panchavati ghats are the two halves of spiritual Nashik &mdash; and the two centres of the Kumbh Mela.",
-                      "/discover-nashik/#cat-spiritual", "Explore Spiritual Nashik"),
-    "panchavati": ("Planning a spiritual trip?",
-                   "The ghats here and the Jyotirlinga at Trimbakeshwar are the two centres of the Nashik Kumbh Mela.",
-                   "/discover-nashik/#cat-spiritual", "Explore Spiritual Nashik"),
-    "sula-vineyards": ("Want to explore Nashik&rsquo;s wine country?",
-                       "The estate is the easiest way in, and the hills around it hold the rest of India&rsquo;s wine industry.",
-                       "/discover-nashik/#cat-wine", "Explore Wine Tourism"),
-    "pandavleni-caves": ("Looking for more places nearby?",
-                         "The caves sit alongside the city&rsquo;s older heritage and the hill country beyond it.",
-                         "/discover-nashik/#cat-heritage", "Explore Heritage Nashik"),
-    "igatpuri": ("Looking for more of the landscape?",
-                 "The Ghats are the green counterpart to the temples and vineyards on the plain.",
-                 "/discover-nashik/#cat-nature", "Explore Nature &amp; the Ghats"),
-}
-
-PENDING_COPY = {
-    "hours": "opening and darshan hours",
-    "fees": "entry and any special-darshan fees",
-    "distance": "verified distances and journey times",
-    "season": "month-by-month conditions specific to this site",
-}
+# ─────────────────────────────────────────────────────────────────────────────
+# DESTINATIONS now live in data/destinations.json — one structured record per
+# place, reused by these pages, the Discover hub, search, structured data and the
+# accessibility hub. Unknown fields are null and render as "Information not yet
+# confirmed"; they are never filled with a guess. Prose fields are HTML fragments.
+# ─────────────────────────────────────────────────────────────────────────────
+def _load_destinations():
+    out = []
+    for r in store.load("destinations")["destinations"]:
+        d = dict(r)
+        d["meta"] = r["description"]
+        d["nearby"] = r["nearbyPlaces"]
+        d["related"] = [tuple(x) for x in r["related"]]
+        d["faqs"] = [tuple(x) for x in r["faqs"]]
+        out.append(d)
+    return out
 
 
-def facts_html(slug):
-    spec = FACTS.get(slug)
-    if not spec or not spec["rows"]:
-        return ""
-    rows = []
-    for label, value, src in spec["rows"]:
-        cite = ('<a class="qf-src" href="%s">Source</a>' % src) if src else ""
-        rows.append("""        <div class="qf-item">
-          <dt>%s</dt>
-          <dd>%s%s</dd>
-        </div>""" % (label, value, cite))
-    return """      <dl class="quick-facts" aria-label="Quick facts">
-%s
-      </dl>""" % "\n".join(rows)
-
-
-def pending_html(slug, keys):
-    """Render a 'being verified' note only for what this page actually lacks."""
-    spec = FACTS.get(slug, {})
-    outstanding = [k for k in keys if k in spec.get("pending", keys)]
-    if not outstanding:
-        return ""
-    what = ", ".join(PENDING_COPY[k] for k in outstanding)
-    return """        <div class="pending-note">
-          <p class="pending-title">Still being verified</p>
-          <p>We are confirming %s from official sources before publishing them here, rather than repeating figures we cannot stand behind. Please check current details close to your travel date.</p>
-        </div>""" % what
-
-
-DESTINATIONS = [
-    {
-        "slug": "trimbakeshwar",
-        "where": "Trimbak, 28 km west of Nashik city",
-        "cta": "Explore Trimbakeshwar",
-        "name": "Trimbakeshwar Temple",
-        "title": "Trimbakeshwar Temple, Nashik – Visitor Guide",
-        "meta": "A guide to Trimbakeshwar, the Jyotirlinga temple town in the hills west of Nashik and one of the focal points of the Nashik Kumbh Mela.",
-        "kicker": "Spiritual &middot; Jyotirlinga",
-        "img": "v1775379429/steptodown.com223977_zhfdrg.jpg",
-        "alt": "Trimbakeshwar Temple set against the hills west of Nashik",
-        "lede": "Trimbakeshwar is a temple town in the hills west of Nashik, built around one of the twelve Jyotirlingas. It stands near the source of the Godavari, and during the Simhastha Kumbh Mela it is one of the two centres of the bathing rituals &mdash; the other being the ghats in Nashik city itself.",
-        "why": [
-            "Trimbakeshwar is the reason a great many people come to Nashik district at all. The temple draws pilgrims through the year, and the town around it has grown up entirely in service of that visit &mdash; lodgings, priests, ritual supplies, queues.",
-            "It also feels quite different from Nashik city. The road climbs out of the plain into hills that stay green long after the monsoon, and the town is compact enough to walk. If you are making the trip from Nashik, it is worth allowing more time than the distance alone suggests.",
-        ],
-        "see": "The temple itself is the centre of any visit, and most people combine it with the tank at Kushavarta nearby, which is the bathing point associated with the Kumbh Mela at Trimbakeshwar. The surrounding town is small and easily explored on foot between visits.",
-        "significance": "Trimbakeshwar is counted among the twelve Jyotirlingas, the shrines to Shiva that hold particular importance in Hindu pilgrimage. Its position near the source of the Godavari ties it directly to the river that shapes the rest of Nashik &mdash; and to the Kumbh Mela, which follows that river down to the ghats at Ramkund.",
-        "tips": [
-            "Temples in Maharashtra generally expect modest dress. It is worth checking current arrangements before you travel, particularly around festival dates.",
-            "Queues lengthen considerably on auspicious days. If your dates are flexible, an ordinary weekday will be a very different experience from a festival one.",
-            "Trimbakeshwar and Nashik city are separate destinations. Plan them as two trips rather than assuming you can fit both comfortably into a few hours.",
-        ],
-        "nearby": ["panchavati", "pandavleni-caves", "igatpuri"],
-        "related": [
-            ("Travel", "Trimbakeshwar to Nashik: distance &amp; route", "Routes, options and travel notes between the two.", "/blog/trimbakeshwar-to-nashik-distance-route/"),
-            ("Kumbh Mela", "Nashik Kumbh Mela 2027 guide", "Dates, ghats and what to expect across the Mela.", "/kumbh-mela-2027/"),
-            ("Stay", "Where to stay near Ramkund", "Areas, options and what to book early.", "/blog/where-to-stay-nashik-kumbh-mela/"),
-        ],
-        "faqs": [
-            ("Where is Trimbakeshwar?", "Trimbakeshwar is a town in Nashik district, Maharashtra, in the hills to the west of Nashik city. Our <a href=\"/blog/trimbakeshwar-to-nashik-distance-route/\">route guide</a> covers travel between the two."),
-            ("Is Trimbakeshwar part of the Kumbh Mela?", "Yes. The Simhastha Kumbh Mela at Nashik centres on two locations: the ghats at Ramkund in Nashik city, and Kushavarta at Trimbakeshwar. Our <a href=\"/kumbh-mela-2027/\">Kumbh Mela 2027 guide</a> explains how the two connect."),
-            ("Why is Trimbakeshwar significant?", "It is one of the twelve Jyotirlingas, and it stands near the source of the Godavari &mdash; the river that the Kumbh Mela bathing rituals follow downstream to Nashik."),
-        ],
-    },
-    {
-        "slug": "panchavati",
-        "where": "North bank of the Godavari, Nashik city",
-        "cta": "Discover Panchavati",
-        "name": "Panchavati &amp; Ramkund",
-        "title": "Panchavati &amp; Ramkund, Nashik – Visitor Guide",
-        "meta": "A guide to Panchavati, the old riverside quarter of Nashik, and Ramkund, its best-known bathing ghat on the Godavari.",
-        "kicker": "Heritage &middot; Ghats",
-        "img": "v1775367941/steptodown.com803697_wj0xe2.jpg",
-        "alt": "Steps leading down to the Godavari at Ramkund in Panchavati",
-        "lede": "Panchavati is the old quarter of Nashik on the north bank of the Godavari, and Ramkund is the bathing ghat at its heart. It is the part of the city most closely tied to the Ramayana, and it is where the Nashik side of the Kumbh Mela takes place.",
-        "why": [
-            "Panchavati is where Nashik stops being a modern city and becomes an old one. The lanes are narrow, the temples are close together, and the river is never far away. It is the densest, most atmospheric part of Nashik and the easiest place to spend a morning simply walking.",
-            "Ramkund itself is a working ghat rather than a monument. People come to bathe, to perform rites for the dead, and simply to sit. Visiting means joining that rather than observing it from outside, which is worth knowing before you arrive.",
-        ],
-        "see": "Ramkund is the anchor, and the temples of Panchavati sit within easy walking distance of it. The area is also the best eating in the city &mdash; our <a href=\"/blog/what-to-eat-near-ramkund-nashik-food-guide/\">food guide to the area</a> covers what to look for.",
-        "significance": "Panchavati is associated in the Ramayana with the years Rama spent in exile, and that association is what has drawn pilgrims here for centuries. Ramkund is the primary bathing point on the Nashik side of the Simhastha Kumbh Mela, which makes this quarter the focus of the city's Mela arrangements.",
-        "tips": [
-            "Panchavati is best walked. The lanes are narrow and vehicle access near the ghat is limited, particularly during festivals.",
-            "Ramkund is a place of active worship and of funeral rites. Photography is not always welcome &mdash; read the situation, and ask before pointing a camera at anyone.",
-            "Mornings are the most active and the most interesting time at the ghat.",
-        ],
-        "nearby": ["trimbakeshwar", "pandavleni-caves", "sula-vineyards"],
-        "related": [
-            ("Guide", "Ramkund Ghat: complete guide", "The ghat itself &mdash; history, rituals and Kumbh context.", "/blog/ramkund-ghat-nashik-guide/"),
-            ("Food", "What to eat near Ramkund", "Panchavati food, local dishes and where to find them.", "/blog/what-to-eat-near-ramkund-nashik-food-guide/"),
-            ("Stay", "Where to stay near Ramkund", "Areas, options and what to book early.", "/blog/where-to-stay-nashik-kumbh-mela/"),
-        ],
-        "faqs": [
-            ("What is Panchavati known for?", "It is the old riverside quarter of Nashik, associated in the Ramayana with Rama's years of exile, and home to Ramkund &mdash; the city's principal bathing ghat on the Godavari."),
-            ("Is Ramkund where the Kumbh Mela bathing happens?", "Ramkund is the main bathing point on the Nashik city side of the Simhastha Kumbh Mela. Kushavarta at <a href=\"/discover-nashik/trimbakeshwar/\">Trimbakeshwar</a> is the other centre."),
-            ("Can I walk between the Panchavati temples?", "Yes &mdash; the quarter is compact and most of it is easiest on foot. Our <a href=\"/blog/ramkund-ghat-nashik-guide/\">Ramkund guide</a> goes into the area in more detail."),
-        ],
-    },
-    {
-        "slug": "sula-vineyards",
-        "where": "15 km from Nashik city",
-        "cta": "Explore Nashik&rsquo;s vineyards",
-        "name": "Sula Vineyards",
-        "title": "Sula Vineyards, Nashik – Visitor Guide",
-        "meta": "A guide to visiting Sula Vineyards in the hills outside Nashik — what a vineyard visit involves and how it fits into a Nashik trip.",
-        "kicker": "Wine &middot; Leisure",
-        "img": None,
-        "unsplash": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb",
-        "alt": "Rows of vines on a vineyard estate in the hills near Nashik",
-        "lede": "Sula is the best-known name in Indian wine and the estate that made Nashik a wine destination. It sits in the hills outside the city, and it is open to visitors for vineyard tours and tastings.",
-        "why": [
-            "A vineyard visit is the clearest illustration of how many different cities Nashik contains at once. You can spend a morning at the ghats in Panchavati and an afternoon on a terrace looking over vines, and the two feel like different countries.",
-            "Sula is also simply the easiest way into Nashik's wine country if you have never done it before. The estate is set up for visitors in a way that smaller producers are not, which makes it a sensible first stop before exploring further.",
-        ],
-        "see": "A visit generally means a walk through the vineyard, a look at the production side, and a tasting. The estate sits in open country outside the city, so it is worth allowing time for the journey each way rather than treating it as a quick stop.",
-        "significance": "The hills around Nashik hold the centre of India's wine industry, and Sula is the estate most responsible for that. Wine tourism is now one of the main reasons people visit Nashik who have no interest in its temples at all &mdash; which is a large part of what makes the city unusual.",
-        "tips": [
-            "A vineyard visit takes half a day once travel is counted. Do not plan it as an hour between two other things.",
-            "If you intend to taste, sort out how you are getting back before you go.",
-            "The vineyards are at their most photogenic when the vines are in leaf. Our <a href=\"/blog/best-time-to-visit-nashik/\">month-by-month guide</a> covers how Nashik's seasons run.",
-        ],
-        "nearby": ["panchavati", "trimbakeshwar", "igatpuri"],
-        "related": [
-            ("Guide", "Sula Vineyards: complete visit guide", "The full guide to visiting &mdash; tours, tastings and planning.", "/blog/sula-vineyards-nashik-complete-guide/"),
-            ("Itinerary", "Nashik in two days", "How a vineyard afternoon fits around the temples and caves.", "/blog/nashik-2-day-itinerary/"),
-            ("Timing", "Best time to visit Nashik", "Month by month, and what each season looks like.", "/blog/best-time-to-visit-nashik/"),
-        ],
-        "faqs": [
-            ("Where is Sula Vineyards?", "The estate is in the hills outside Nashik city, in Nashik district, Maharashtra. Our <a href=\"/blog/sula-vineyards-nashik-complete-guide/\">complete Sula guide</a> covers getting there."),
-            ("Can you visit the vineyard without booking?", "Arrangements for tours and tastings change with the season and with demand. Check the estate's own current information before travelling &mdash; our <a href=\"/blog/sula-vineyards-nashik-complete-guide/\">guide</a> covers what a visit involves."),
-            ("Is Nashik worth visiting just for the wine?", "Plenty of people do exactly that. It is also easy to combine with the rest of the city &mdash; see our <a href=\"/blog/nashik-2-day-itinerary/\">two-day itinerary</a>."),
-        ],
-    },
-    {
-        "slug": "pandavleni-caves",
-        "where": "Trirashmi hill, 5 km from the city",
-        "cta": "Explore Pandavleni Caves",
-        "name": "Pandavleni Caves",
-        "title": "Pandavleni Caves, Nashik – Visitor Guide",
-        "meta": "A guide to the Pandavleni Caves, the group of rock-cut chambers in the hillside south of Nashik city.",
-        "kicker": "History &middot; Heritage",
-        "img": "v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg",
-        "alt": "Rock-cut cave facades in the hillside at Pandavleni near Nashik",
-        "lede": "Pandavleni is a group of caves cut into a hillside south of Nashik city &mdash; chambers, halls and carved facades worked directly into the rock. It is the oldest thing you can visit in Nashik, and the least crowded.",
-        "why": [
-            "Pandavleni is the part of Nashik that most visitors skip, which is exactly why it is worth going. The caves are cut into a hill above the plain, and the climb up is rewarded with a long view back over the city.",
-            "It is also a complete change of register from the rest of a Nashik trip. After the density of Panchavati and the crowds at Trimbakeshwar, a quiet hillside of empty stone rooms is a genuine relief.",
-        ],
-        "see": "The caves run along the hillside and are explored on foot, one chamber to the next. Reaching them involves a climb, so footwear matters more here than anywhere else in Nashik.",
-        "significance": "The caves are rock-cut monastic chambers, carved into the hillside long before anything else you can visit in Nashik was built. They are the clearest surviving evidence of how old settlement in this part of Maharashtra is.",
-        "tips": [
-            "There is a climb involved. Wear something you can walk up a hill in.",
-            "There is little shade on the way up. Early morning or late afternoon is far more comfortable than the middle of the day.",
-            "Carry water. Facilities on the hill are limited.",
-        ],
-        "nearby": ["panchavati", "sula-vineyards", "trimbakeshwar"],
-        "related": [
-            ("Itinerary", "Nashik in two days", "Where the caves fit alongside temples and vineyards.", "/blog/nashik-2-day-itinerary/"),
-            ("Places", "15 best places to visit in Nashik", "The wider list, including quieter corners.", "/blog/is-nashik-worth-visiting/"),
-            ("Timing", "Best time to visit Nashik", "Month by month, and what each season looks like.", "/blog/best-time-to-visit-nashik/"),
-        ],
-        "faqs": [
-            ("Where are the Pandavleni Caves?", "They are cut into a hillside south of Nashik city, in Nashik district, Maharashtra."),
-            ("Is there a climb to reach the caves?", "Yes &mdash; the caves are partway up a hill and are reached on foot. Allow more time and better footwear than a city sight would need."),
-            ("How do the caves fit into a short Nashik trip?", "They work well as a half-day alongside the city. Our <a href=\"/blog/nashik-2-day-itinerary/\">two-day itinerary</a> shows one way to sequence it."),
-        ],
-    },
-    {
-        "slug": "igatpuri",
-        "where": "Western Ghats, west of Nashik",
-        "cta": "Explore Igatpuri &amp; Bhandardara",
-        "name": "Igatpuri &amp; Bhandardara",
-        "title": "Igatpuri &amp; Bhandardara – Visitor Guide",
-        "meta": "A guide to Igatpuri and Bhandardara, the Western Ghats hill country near Nashik and a common monsoon weekend trip from Mumbai and Pune.",
-        "kicker": "Nature &middot; Weekend",
-        "img": "v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg",
-        "alt": "Green hills and low cloud in the Western Ghats near Igatpuri",
-        "lede": "Igatpuri and Bhandardara sit in the Western Ghats near Nashik &mdash; hills, reservoirs and, through the monsoon, a great deal of water and green. This is the part of the district people come to for the landscape rather than the temples.",
-        "why": [
-            "The Ghats change completely with the season here. Through the monsoon and just after, the hills are green, the streams are running and the cloud sits low over everything. It is a genuinely different landscape from the plain around Nashik city.",
-            "It is also the reason Nashik works as a weekend trip from Mumbai and Pune. A lot of people come out this way for the hills first and only discover the rest of the district afterwards.",
-        ],
-        "see": "This is a landscape rather than a list of sights. Most visits mean driving between viewpoints, walking where the weather allows, and stopping at the reservoirs. It rewards an unhurried pace more than a checklist.",
-        "significance": "Igatpuri and Bhandardara sit on the edge of the Western Ghats, where the plateau drops away westward. That escarpment is what makes the monsoon here so dramatic, and what has made this stretch a long-standing escape from the cities on the coast.",
-        "tips": [
-            "The monsoon is the draw and also the difficulty &mdash; roads are wetter, visibility is lower, and paths are slippery. Plan accordingly.",
-            "Weekends in season are busy. A weekday is a very different experience.",
-            "This is hill country with limited public transport between points. Consider how you will move around before you commit to a route.",
-        ],
-        "nearby": ["trimbakeshwar", "sula-vineyards", "pandavleni-caves"],
-        "related": [
-            ("Timing", "Best time to visit Nashik", "How the seasons run, and when the hills are greenest.", "/blog/best-time-to-visit-nashik/"),
-            ("Itinerary", "Nashik in two days", "Fitting the hills around the rest of the district.", "/blog/nashik-2-day-itinerary/"),
-            ("Places", "15 best places to visit in Nashik", "The wider list across the district.", "/blog/is-nashik-worth-visiting/"),
-        ],
-        "faqs": [
-            ("Where are Igatpuri and Bhandardara?", "Both are in the Western Ghats near Nashik, in Maharashtra, between Nashik and the coast."),
-            ("When is the best time to go?", "The hills are at their greenest during and just after the monsoon. Our <a href=\"/blog/best-time-to-visit-nashik/\">month-by-month guide</a> covers how Nashik's seasons run."),
-            ("Is it a good weekend trip from Mumbai or Pune?", "It is one of the more common weekend destinations from both. Our <a href=\"/blog/nashik-2-day-itinerary/\">two-day itinerary</a> shows how it fits with the rest of Nashik."),
-        ],
-    },
-]
+DESTINATIONS = _load_destinations()
+# Category assignments and the contextual next step are fields of the record.
+DEST_CATEGORIES = {d["slug"]: d["category"] for d in DESTINATIONS}
+PLAN_NEXT = {d["slug"]: tuple(d["planNext"]) for d in DESTINATIONS}
 
 BY_SLUG = {d["slug"]: d for d in DESTINATIONS}
+
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase 4 — data-driven sections: quick facts, how to reach, during Kumbh,
+# accessibility, latest updates, sources and verification.
+# ─────────────────────────────────────────────────────────────────────────────
+_FACTS = render.facts_index()
+_SOURCES = render.sources_index()
+_ACCESS = {p["slug"]: p for p in store.load("accessibility")["places"]}
+
+
+def _resolve(value):
+    """A record field -> (html, status). None -> not confirmed."""
+    if value is None:
+        return '<span class="unconfirmed">Not yet confirmed</span>', None
+    if isinstance(value, dict) and "$fact" in value:
+        f = _FACTS[value["$fact"]]
+        return render.fact_value_html(f), f["status"]
+    if isinstance(value, dict) and "sourceId" in value:
+        s = _SOURCES[value["sourceId"]]
+        host = re.sub(r"^https?://(www\.)?|/$", "", s["url"] or "")
+        return render.ext_link(s["url"], render.esc(host) + " (official site)", item=value["sourceId"]), "reported"
+    return render.esc(value), "not_verified"
+
+
+def quick_facts_html(d):
+    cells = []
+
+    def cell(label, html, status=None, badge=True):
+        b = ('<div class="qf-b">%s</div>' % render.fact_badge(status)) if (status and badge) else ""
+        cells.append('<div class="qf-item"><dt>%s</dt><dd>%s%s</dd></div>' % (label, html, b))
+
+    loc = d.get("location") or {}
+    cell("Location", render.esc(loc.get("summary") or d["where"]))
+    tr = d.get("transport") or {}
+    dist, dst = _resolve(tr.get("fromNashikDistance"))
+    jt, jst = _resolve(tr.get("fromNashikTime"))
+    if tr.get("fromNashikDistance") or tr.get("fromNashikTime"):
+        both = " &middot; ".join(x for x, v in ((dist, tr.get("fromNashikDistance")), (jt, tr.get("fromNashikTime"))) if v)
+        cell("From Nashik city", both, dst or jst)
+    for label, key in (("Timings", "timings"), ("Entry", "entryFee")):
+        h, st = _resolve(d.get(key))
+        cell(label, h, st)
+    h, st = _resolve(d.get("recommendedDuration"))
+    cell("Recommended duration", h, st)
+    acc = _ACCESS.get(d["slug"])
+    cell("Accessibility", ('<a href="#accessibility">%s</a>' % render.access_badge(acc["status"])) if acc else '<span class="unconfirmed">Not yet confirmed</span>')
+    h, st = _resolve(d.get("parking"))
+    cell("Parking", h, st)
+    h, st = _resolve(d.get("officialWebsite"))
+    cell("Official website", h if d.get("officialWebsite") else '<span class="unconfirmed">Not yet confirmed</span>', st if d.get("officialWebsite") else None)
+
+    lv = d.get("lastVerified")
+    verified = ("Information verified: %s" % render.time_tag(lv)) if lv else "Information verified: not yet &mdash; see <a href=\"#verification\">sources and verification</a>"
+    return """      <div id="quick-facts" class="qf-wrap">
+      <dl class="quick-facts" aria-label="Quick facts">
+        %s
+      </dl>
+      <p class="qf-verified">%s. Timings may change during festivals. Confirm before travelling. <a href="/sources/">Check with the official authority.</a></p>
+      </div>""" % ("\n        ".join(cells), verified)
+
+
+def reach_extra_html(d):
+    tr = d.get("transport") or {}
+    rows = []
+    for label, key in (("Distance from Nashik city", "fromNashikDistance"), ("Journey time from Nashik city", "fromNashikTime")):
+        v = tr.get(key)
+        if v:
+            h, st = _resolve(v)
+            rows.append("<li><span class=\"t-fl\">%s</span> <span class=\"t-fv\">%s</span> %s</li>" % (label, h, render.fact_badge(st) if st else ""))
+    if not rows:
+        return '<p class="prose"><span class="unconfirmed">Distance and journey time from Nashik city: not yet confirmed.</span> See the <a href="/transport/">transport hub</a> and the <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">how to reach Nashik guide</a>.</p>'
+    return ('<h3 id="from-nashik">From Nashik city</h3><ul class="t-facts" style="list-style:none;display:grid;gap:var(--s-2);">%s</ul>'
+            '<p class="prose" style="margin-top:var(--s-3);">Check the <a href="/transport/">transport hub</a> for official sources before you travel.</p>' % "".join(rows))
+
+
+def kumbh_section_html(d):
+    if not d.get("kumbhRole"):
+        return ""
+    return """      <section id="during-kumbh">
+        <h2>During the Kumbh Mela</h2>
+        <p>%s</p>
+        <p>Access, queues and crowd rules during the Mela will be set by the Authority and the police and may differ from ordinary days. We could not find a published plan for this site, so we do not describe one. See the <a href="/kumbh-mela-2027/">Kumbh hub</a> and <a href="/kumbh-mela-2027/live-updates/">live updates</a>.</p>
+      </section>""" % render.esc(d["kumbhRole"])
+
+
+def access_section_html(d):
+    acc = _ACCESS.get(d["slug"])
+    if not acc:
+        return ""
+    note = "<p>%s</p>" % render.esc(acc["notes"]) if acc.get("notes") else ""
+    ver = ("Verified %s." % render.esc(render.fmt_date(acc["verifiedAt"]))) if acc.get("verifiedAt") else "Not yet verified by our editors."
+    return """      <section id="accessibility">
+        <h2>Accessibility</h2>
+        <p>%s</p>
+        %s
+        <p>%s &ldquo;Accessibility unknown&rdquo; describes what we know, not the place &mdash; please ask before you travel. See <a href="/accessible-nashik/">Accessible Nashik</a>.</p>
+      </section>""" % (render.access_badge(acc["status"]), note, ver)
+
+
+def updates_section_html(d):
+    tags = set(d.get("tags", [])) | {d["slug"]}
+    path = "/discover-nashik/%s/" % d["slug"]
+    ups = [u for u in content.live_updates()
+           if tags & set(u.get("tags") or []) or any(p.split("#")[0] == path for p in (u.get("relatedPages") or []))][:3]
+    body = ("".join(render.update_card(u, tag="h3", compact=True) for u in ups) if ups else
+            '<p class="none">No live updates for this place right now. See <a href="/updates/">all updates</a>.</p>')
+    return """      <section id="latest-updates">
+        <h2>Latest updates</h2>
+        <div class="update-list">%s</div>
+      </section>""" % body
+
+
+def verify_section_html(d):
+    path = "/discover-nashik/%s/" % d["slug"]
+    ids = list(d.get("sourceReferences", []))
+    for key in ("timings", "entryFee", "recommendedDuration", "parking"):
+        v = d.get(key)
+        if isinstance(v, dict) and "$fact" in v:
+            for sid in _FACTS[v["$fact"]].get("verifyWith", []):
+                if sid not in ids:
+                    ids.append(sid)
+    block = render.verify_block(path, d.get("verificationStatus", "not_verified"), d.get("lastVerified"), None, ids,
+                               caveat="Timings may change during festivals. Confirm before travelling.",
+                               heading="Sources and verification")
+    return '      <section id="verification">%s</section>' % block
 
 
 def img_url(dest, transform):
@@ -565,15 +399,16 @@ def build(dest):
 
   <nav class="dest-nav" aria-label="On this page" data-section-nav>
     <ul>
+      <li><a href="#quick-facts">Quick facts</a></li>
       <li><a href="#why-visit">Why visit</a></li>
       <li><a href="#see-do">Things to see</a></li>
-      <li><a href="#significance">Significance</a></li>
-      <li><a href="#getting-there">Getting there</a></li>
+      <li><a href="#significance">History</a></li>
+      <li><a href="#how-to-reach">How to reach</a></li>%(nav_kumbh)s
+      <li><a href="#accessibility">Accessibility</a></li>
       <li><a href="#best-time">Best time</a></li>
-      <li><a href="#tips">Travel tips</a></li>
       <li><a href="#nearby">Nearby</a></li>
       <li><a href="#faqs">FAQs</a></li>
-      <li><a href="#plan-next">Plan next</a></li>
+      <li><a href="#verification">Sources</a></li>
     </ul>
   </nav>
 
@@ -590,7 +425,6 @@ def build(dest):
       <section id="see-do">
         <h2>Things to see and do</h2>
         <p>%(see)s</p>
-%(pending_seedo)s
       </section>
 
       <section id="significance">
@@ -598,16 +432,18 @@ def build(dest):
         <p>%(significance)s</p>
       </section>
 
-      <section id="getting-there">
+      <section id="how-to-reach">
         <h2>How to reach %(name)s</h2>
         <p>%(name)s is in Nashik district, Maharashtra. Nashik itself is reachable by train, bus, road and air, and our <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">how to reach Nashik guide</a> sets out the options from Mumbai, Pune and Delhi.</p>
-%(pending_route)s
+%(reach_extra)s
       </section>
+
+%(during_kumbh)s
+%(access)s
 
       <section id="best-time">
         <h2>Best time to visit</h2>
         <p>Nashik's year divides fairly clearly into the monsoon, the cool months that follow it, and a hot stretch before the rains return. Our <a href="/blog/best-time-to-visit-nashik/">month-by-month guide to Nashik</a> covers how that plays out across the district.</p>
-%(pending_season_note)s
       </section>
 
       <section id="tips">
@@ -636,6 +472,10 @@ def build(dest):
 %(faqs)s
       </section>
 
+%(updates)s
+
+%(verify)s
+
       <section id="plan-next" class="plan-next">
         <p class="pn-eyebrow">%(pn_q)s</p>
         <p class="pn-lede">%(pn_lede)s</p>
@@ -649,7 +489,7 @@ def build(dest):
 
     <aside class="sidebar" aria-label="Quick links">
       <div class="sidebar-card">
-        <h4>Plan this visit</h4>
+        <h3>Plan this visit</h3>
         <ul class="toc-list">
           <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to reach Nashik</a></li>
           <li><a href="/blog/best-time-to-visit-nashik/">Best time to visit</a></li>
@@ -660,11 +500,11 @@ def build(dest):
         <a href="/plan-your-trip/" class="btn btn-purple">Plan Your Trip</a>
       </div>
       <div class="sidebar-card">
-        <h4>Related reading</h4>
+        <h3>Related reading</h3>
         <ul class="toc-list">%(sidebar_related)s</ul>
       </div>
       <div class="sidebar-card">
-        <h4>Kumbh Mela 2027</h4>
+        <h3>Kumbh Mela 2027</h3>
         <ul class="toc-list">
           <li><a href="/kumbh-mela-2027/">Complete guide</a></li>
           <li><a href="/kumbh-mela-2027/#dates">Amrit Snan dates</a></li>
@@ -690,10 +530,13 @@ def build(dest):
         "tips": tips, "nearby": nearby, "related": related, "faqs": faqs,
         "sidebar_related": sidebar_related, "breadcrumb": breadcrumb_json,
         "faq_schema": faq_schema,
-        "facts": facts_html(slug),
-        "pending_seedo": pending_html(slug, ["hours", "fees"]),
-        "pending_route": pending_html(slug, ["distance"]),
-        "pending_season_note": pending_html(slug, ["season"]),
+        "facts": quick_facts_html(dest),
+        "reach_extra": reach_extra_html(dest),
+        "during_kumbh": kumbh_section_html(dest),
+        "nav_kumbh": ('\n      <li><a href="#during-kumbh">During Kumbh</a></li>' if dest.get("kumbhRole") else ""),
+        "access": access_section_html(dest),
+        "updates": updates_section_html(dest),
+        "verify": verify_section_html(dest),
         "pn_q": PLAN_NEXT[slug][0], "pn_lede": PLAN_NEXT[slug][1],
         "pn_href": PLAN_NEXT[slug][2], "pn_cta": PLAN_NEXT[slug][3],
         "nav": nav_html(dest["slug"]), "footer": footer_html(url.replace(SITE, "")), "script": SCRIPT,
@@ -964,7 +807,7 @@ def plan_html(plan):
         parts = []
         for part_name, entries in slots:
             parts.append("""        <div class="itin-part">
-          <h4>%s</h4>
+          <h3>%s</h3>
           <ul class="itin-slots">
 %s
           </ul>

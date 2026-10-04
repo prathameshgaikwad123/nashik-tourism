@@ -35,11 +35,10 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                      "..", "nashiktourism"))
 SITE = "https://nashiktourism.com"
 URL = SITE + "/disclaimer/"
-TITLE = "Disclaimer &amp; Editorial Policy"
-META = ("How NashikTourism.com works: an independent travel guide with no government "
-        "or official tourism affiliation, how our guides are researched and funded, "
-        "and why you should confirm timings and Kumbh Mela arrangements with official "
-        "sources before you travel.")
+TITLE = "Disclaimer"
+META = ("What NashikTourism.com is and is not: an independent travel guide with no government "
+        "or official tourism affiliation, how it is funded, and why you should confirm timings "
+        "and Kumbh Mela arrangements with official sources before you travel.")
 
 CSS = """    .doc-hero { background: var(--dark); padding: 8rem var(--gutter) 3.5rem; }
     .doc-hero h1 { font-family:var(--font-display); font-size:var(--t-h1); font-weight:900; color:#fff; letter-spacing:var(--ls-display); line-height:1.08; margin:0.4rem 0 0.9rem; }
@@ -62,8 +61,8 @@ BODY = """
       <a href="/">Home</a> <span aria-hidden="true">&rsaquo;</span>
       <span aria-current="page">Disclaimer</span>
     </nav>
-    <h1>Disclaimer &amp; editorial policy</h1>
-    <p class="lede">What this site is, what it is not, how it is funded, and what you should check for yourself before you travel.</p>
+    <h1>Disclaimer</h1>
+    <p class="lede">What this site is, what it is not, how it is funded, and what you should check for yourself before you travel. How we verify and label information is set out in the <a href="/editorial-policy/" style="color:var(--accent-warm);text-decoration:underline;">editorial policy</a>.</p>
   </section>
 
   <div class="doc">
@@ -76,7 +75,7 @@ BODY = """
     <div class="doc-note">
       <p>Where we are not confident in a figure, we leave it out and say so on the page rather than repeating a number we cannot stand behind. You will see &ldquo;still being verified&rdquo; notes on the <a href="/discover-nashik/">destination guides</a> for exactly this reason.</p>
     </div>
-    <p>Our <a href="/about/">About page</a> sets out in full how we research and update our guides, and how Kumbh Mela 2027 information is sourced.</p>
+    <p>Our <a href="/editorial-policy/">editorial policy</a> sets out how we rank sources, label what is verified, reported or unconfirmed, and correct mistakes; our <a href="/sources/">sources page</a> lists the official sources to check yourself. The <a href="/about/">About page</a> explains who writes these guides.</p>
 
     <h2>We do not take bookings</h2>
     <p>We do not take bookings and do not handle payments. Where this site links to a hotel or transport booking site, that is an external company with its own terms, prices and cancellation rules. Any transaction is between you and them.</p>
@@ -135,7 +134,7 @@ HEAD = """<!DOCTYPE html>
         "@type": "WebPage",
         "@id": "%(url)s#webpage",
         "url": "%(url)s",
-        "name": "Disclaimer & Editorial Policy",
+        "name": "Disclaimer",
         "description": "%(meta)s",
         "isPartOf": { "@id": "%(site)s/#website" },
         "publisher": { "@id": "%(site)s/#organization" },

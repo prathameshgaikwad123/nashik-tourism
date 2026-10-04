@@ -1,0 +1,570 @@
+{
+  "_about": "The structured destination record, reused by the destination pages, the Discover hub, search, structured data and the accessibility hub. String fields that carry prose are HTML fragments (entities and links allowed). Any field set to null means 'not confirmed' and renders as 'Information not yet confirmed' with a pointer to the official source; never fill a null with a guess. {\"$fact\": id} resolves from data/facts.json so a verified change there updates every page that shows it. lastVerified / verificationStatus describe the record as a whole.",
+  "destinations": [
+    {
+      "slug": "trimbakeshwar",
+      "where": "Trimbak, 28 km west of Nashik city",
+      "cta": "Explore Trimbakeshwar",
+      "name": "Trimbakeshwar Temple",
+      "title": "Trimbakeshwar Temple, Nashik – Visitor Guide",
+      "kicker": "Spiritual &middot; Jyotirlinga",
+      "img": "v1775379429/steptodown.com223977_zhfdrg.jpg",
+      "alt": "Trimbakeshwar Temple set against the hills west of Nashik",
+      "lede": "Trimbakeshwar is a temple town in the hills west of Nashik, built around one of the twelve Jyotirlingas. It stands near the source of the Godavari, and during the Simhastha Kumbh Mela it is one of the two centres of the bathing rituals &mdash; the other being the ghats in Nashik city itself.",
+      "why": [
+        "Trimbakeshwar is the reason a great many people come to Nashik district at all. The temple draws pilgrims through the year, and the town around it has grown up entirely in service of that visit &mdash; lodgings, priests, ritual supplies, queues.",
+        "It also feels quite different from Nashik city. The road climbs out of the plain into hills that stay green long after the monsoon, and the town is compact enough to walk. If you are making the trip from Nashik, it is worth allowing more time than the distance alone suggests."
+      ],
+      "see": "The temple itself is the centre of any visit, and most people combine it with the tank at Kushavarta nearby, which is the bathing point associated with the Kumbh Mela at Trimbakeshwar. The surrounding town is small and easily explored on foot between visits.",
+      "significance": "Trimbakeshwar is counted among the twelve Jyotirlingas, the shrines to Shiva that hold particular importance in Hindu pilgrimage. Its position near the source of the Godavari ties it directly to the river that shapes the rest of Nashik &mdash; and to the Kumbh Mela, which follows that river down to the ghats at Ramkund.",
+      "tips": [
+        "Temples in Maharashtra generally expect modest dress. It is worth checking current arrangements before you travel, particularly around festival dates.",
+        "Queues lengthen considerably on auspicious days. If your dates are flexible, an ordinary weekday will be a very different experience from a festival one.",
+        "Trimbakeshwar and Nashik city are separate destinations. Plan them as two trips rather than assuming you can fit both comfortably into a few hours."
+      ],
+      "related": [
+        [
+          "Travel",
+          "Trimbakeshwar to Nashik: distance &amp; route",
+          "Routes, options and travel notes between the two.",
+          "/blog/trimbakeshwar-to-nashik-distance-route/"
+        ],
+        [
+          "Kumbh Mela",
+          "Nashik Kumbh Mela 2027 guide",
+          "Dates, ghats and what to expect across the Mela.",
+          "/kumbh-mela-2027/"
+        ],
+        [
+          "Stay",
+          "Where to stay near Ramkund",
+          "Areas, options and what to book early.",
+          "/blog/where-to-stay-nashik-kumbh-mela/"
+        ]
+      ],
+      "faqs": [
+        [
+          "Where is Trimbakeshwar?",
+          "Trimbakeshwar is a town in Nashik district, Maharashtra, in the hills to the west of Nashik city. Our <a href=\"/blog/trimbakeshwar-to-nashik-distance-route/\">route guide</a> covers travel between the two."
+        ],
+        [
+          "Is Trimbakeshwar part of the Kumbh Mela?",
+          "Yes. The Simhastha Kumbh Mela at Nashik centres on two locations: the ghats at Ramkund in Nashik city, and Kushavarta at Trimbakeshwar. Our <a href=\"/kumbh-mela-2027/\">Kumbh Mela 2027 guide</a> explains how the two connect."
+        ],
+        [
+          "Why is Trimbakeshwar significant?",
+          "It is one of the twelve Jyotirlingas, and it stands near the source of the Godavari &mdash; the river that the Kumbh Mela bathing rituals follow downstream to Nashik."
+        ]
+      ],
+      "category": [
+        "spiritual"
+      ],
+      "description": "A guide to Trimbakeshwar, the Jyotirlinga temple town in the hills west of Nashik and one of the focal points of the Nashik Kumbh Mela.",
+      "coordinates": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "contentStatus": "published",
+      "planNext": [
+        "Planning a spiritual trip?",
+        "Trimbakeshwar and the Panchavati ghats are the two halves of spiritual Nashik &mdash; and the two centres of the Kumbh Mela.",
+        "/discover-nashik/#cat-spiritual",
+        "Explore Spiritual Nashik"
+      ],
+      "images": [
+        {
+          "cloudinary": "v1775379429/steptodown.com223977_zhfdrg.jpg",
+          "unsplash": null,
+          "alt": "Trimbakeshwar Temple set against the hills west of Nashik"
+        }
+      ],
+      "location": {
+        "summary": "Trimbak, Nashik district, Maharashtra",
+        "locality": "Trimbak",
+        "district": "Nashik",
+        "state": "Maharashtra",
+        "country": "IN"
+      },
+      "timings": null,
+      "entryFee": null,
+      "officialWebsite": null,
+      "officialContact": null,
+      "recommendedDuration": null,
+      "parking": null,
+      "transport": {
+        "fromNashikDistance": {
+          "$fact": "dest.trimbakeshwar.distance"
+        },
+        "fromNashikTime": {
+          "$fact": "dest.trimbakeshwar.journey"
+        }
+      },
+      "bestTimeToVisit": null,
+      "sourceReferences": [
+        "trimbakeshwar-devasthan",
+        "nashik-district",
+        "ntka"
+      ],
+      "kumbhRole": "Kushavarta Tirtha, beside the temple, is the Mela bathing point at Trimbakeshwar (Shaiva akharas).",
+      "tags": [
+        "trimbakeshwar",
+        "kushavarta"
+      ],
+      "nearbyPlaces": [
+        "panchavati",
+        "pandavleni-caves",
+        "igatpuri"
+      ]
+    },
+    {
+      "slug": "panchavati",
+      "where": "North bank of the Godavari, Nashik city",
+      "cta": "Discover Panchavati",
+      "name": "Panchavati &amp; Ramkund",
+      "title": "Panchavati &amp; Ramkund, Nashik – Visitor Guide",
+      "kicker": "Heritage &middot; Ghats",
+      "img": "v1775367941/steptodown.com803697_wj0xe2.jpg",
+      "alt": "Steps leading down to the Godavari at Ramkund in Panchavati",
+      "lede": "Panchavati is the old quarter of Nashik on the north bank of the Godavari, and Ramkund is the bathing ghat at its heart. It is the part of the city most closely tied to the Ramayana, and it is where the Nashik side of the Kumbh Mela takes place.",
+      "why": [
+        "Panchavati is where Nashik stops being a modern city and becomes an old one. The lanes are narrow, the temples are close together, and the river is never far away. It is the densest, most atmospheric part of Nashik and the easiest place to spend a morning simply walking.",
+        "Ramkund itself is a working ghat rather than a monument. People come to bathe, to perform rites for the dead, and simply to sit. Visiting means joining that rather than observing it from outside, which is worth knowing before you arrive."
+      ],
+      "see": "Ramkund is the anchor, and the temples of Panchavati sit within easy walking distance of it. The area is also the best eating in the city &mdash; our <a href=\"/blog/what-to-eat-near-ramkund-nashik-food-guide/\">food guide to the area</a> covers what to look for.",
+      "significance": "Panchavati is associated in the Ramayana with the years Rama spent in exile, and that association is what has drawn pilgrims here for centuries. Ramkund is the primary bathing point on the Nashik side of the Simhastha Kumbh Mela, which makes this quarter the focus of the city's Mela arrangements.",
+      "tips": [
+        "Panchavati is best walked. The lanes are narrow and vehicle access near the ghat is limited, particularly during festivals.",
+        "Ramkund is a place of active worship and of funeral rites. Photography is not always welcome &mdash; read the situation, and ask before pointing a camera at anyone.",
+        "Mornings are the most active and the most interesting time at the ghat."
+      ],
+      "related": [
+        [
+          "Guide",
+          "Ramkund Ghat: complete guide",
+          "The ghat itself &mdash; history, rituals and Kumbh context.",
+          "/blog/ramkund-ghat-nashik-guide/"
+        ],
+        [
+          "Food",
+          "What to eat near Ramkund",
+          "Panchavati food, local dishes and where to find them.",
+          "/blog/what-to-eat-near-ramkund-nashik-food-guide/"
+        ],
+        [
+          "Stay",
+          "Where to stay near Ramkund",
+          "Areas, options and what to book early.",
+          "/blog/where-to-stay-nashik-kumbh-mela/"
+        ]
+      ],
+      "faqs": [
+        [
+          "What is Panchavati known for?",
+          "It is the old riverside quarter of Nashik, associated in the Ramayana with Rama's years of exile, and home to Ramkund &mdash; the city's principal bathing ghat on the Godavari."
+        ],
+        [
+          "Is Ramkund where the Kumbh Mela bathing happens?",
+          "Ramkund is the main bathing point on the Nashik city side of the Simhastha Kumbh Mela. Kushavarta at <a href=\"/discover-nashik/trimbakeshwar/\">Trimbakeshwar</a> is the other centre."
+        ],
+        [
+          "Can I walk between the Panchavati temples?",
+          "Yes &mdash; the quarter is compact and most of it is easiest on foot. Our <a href=\"/blog/ramkund-ghat-nashik-guide/\">Ramkund guide</a> goes into the area in more detail."
+        ]
+      ],
+      "category": [
+        "spiritual",
+        "heritage"
+      ],
+      "description": "A guide to Panchavati, the old riverside quarter of Nashik, and Ramkund, its best-known bathing ghat on the Godavari.",
+      "coordinates": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "contentStatus": "published",
+      "planNext": [
+        "Planning a spiritual trip?",
+        "The ghats here and the Jyotirlinga at Trimbakeshwar are the two centres of the Nashik Kumbh Mela.",
+        "/discover-nashik/#cat-spiritual",
+        "Explore Spiritual Nashik"
+      ],
+      "images": [
+        {
+          "cloudinary": "v1775367941/steptodown.com803697_wj0xe2.jpg",
+          "unsplash": null,
+          "alt": "Steps leading down to the Godavari at Ramkund in Panchavati"
+        }
+      ],
+      "location": {
+        "summary": "North bank of the Godavari, Nashik city",
+        "locality": "Panchavati",
+        "district": "Nashik",
+        "state": "Maharashtra",
+        "country": "IN"
+      },
+      "timings": {
+        "$fact": "dest.panchavati.ramkund-hours"
+      },
+      "entryFee": null,
+      "officialWebsite": null,
+      "officialContact": null,
+      "recommendedDuration": null,
+      "parking": null,
+      "transport": {
+        "fromNashikDistance": null,
+        "fromNashikTime": null
+      },
+      "bestTimeToVisit": null,
+      "sourceReferences": [
+        "nmc",
+        "nashik-district",
+        "ntka"
+      ],
+      "kumbhRole": "Ramkund is the principal Mela bathing point on the Nashik side (Vaishnava akharas).",
+      "tags": [
+        "ramkund",
+        "panchavati"
+      ],
+      "nearbyPlaces": [
+        "trimbakeshwar",
+        "pandavleni-caves",
+        "sula-vineyards"
+      ]
+    },
+    {
+      "slug": "sula-vineyards",
+      "where": "15 km from Nashik city",
+      "cta": "Explore Nashik&rsquo;s vineyards",
+      "name": "Sula Vineyards",
+      "title": "Sula Vineyards, Nashik – Visitor Guide",
+      "kicker": "Wine &middot; Leisure",
+      "img": null,
+      "unsplash": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb",
+      "alt": "Rows of vines on a vineyard estate in the hills near Nashik",
+      "lede": "Sula is the best-known name in Indian wine and the estate that made Nashik a wine destination. It sits in the hills outside the city, and it is open to visitors for vineyard tours and tastings.",
+      "why": [
+        "A vineyard visit is the clearest illustration of how many different cities Nashik contains at once. You can spend a morning at the ghats in Panchavati and an afternoon on a terrace looking over vines, and the two feel like different countries.",
+        "Sula is also simply the easiest way into Nashik's wine country if you have never done it before. The estate is set up for visitors in a way that smaller producers are not, which makes it a sensible first stop before exploring further."
+      ],
+      "see": "A visit generally means a walk through the vineyard, a look at the production side, and a tasting. The estate sits in open country outside the city, so it is worth allowing time for the journey each way rather than treating it as a quick stop.",
+      "significance": "The hills around Nashik hold the centre of India's wine industry, and Sula is the estate most responsible for that. Wine tourism is now one of the main reasons people visit Nashik who have no interest in its temples at all &mdash; which is a large part of what makes the city unusual.",
+      "tips": [
+        "A vineyard visit takes half a day once travel is counted. Do not plan it as an hour between two other things.",
+        "If you intend to taste, sort out how you are getting back before you go.",
+        "The vineyards are at their most photogenic when the vines are in leaf. Our <a href=\"/blog/best-time-to-visit-nashik/\">month-by-month guide</a> covers how Nashik's seasons run."
+      ],
+      "related": [
+        [
+          "Guide",
+          "Sula Vineyards: complete visit guide",
+          "The full guide to visiting &mdash; tours, tastings and planning.",
+          "/blog/sula-vineyards-nashik-complete-guide/"
+        ],
+        [
+          "Itinerary",
+          "Nashik in two days",
+          "How a vineyard afternoon fits around the temples and caves.",
+          "/blog/nashik-2-day-itinerary/"
+        ],
+        [
+          "Timing",
+          "Best time to visit Nashik",
+          "Month by month, and what each season looks like.",
+          "/blog/best-time-to-visit-nashik/"
+        ]
+      ],
+      "faqs": [
+        [
+          "Where is Sula Vineyards?",
+          "The estate is in the hills outside Nashik city, in Nashik district, Maharashtra. Our <a href=\"/blog/sula-vineyards-nashik-complete-guide/\">complete Sula guide</a> covers getting there."
+        ],
+        [
+          "Can you visit the vineyard without booking?",
+          "Arrangements for tours and tastings change with the season and with demand. Check the estate's own current information before travelling &mdash; our <a href=\"/blog/sula-vineyards-nashik-complete-guide/\">guide</a> covers what a visit involves."
+        ],
+        [
+          "Is Nashik worth visiting just for the wine?",
+          "Plenty of people do exactly that. It is also easy to combine with the rest of the city &mdash; see our <a href=\"/blog/nashik-2-day-itinerary/\">two-day itinerary</a>."
+        ]
+      ],
+      "category": [
+        "wine"
+      ],
+      "description": "A guide to visiting Sula Vineyards in the hills outside Nashik — what a vineyard visit involves and how it fits into a Nashik trip.",
+      "coordinates": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "contentStatus": "published",
+      "planNext": [
+        "Want to explore Nashik&rsquo;s wine country?",
+        "The estate is the easiest way in, and the hills around it hold the rest of India&rsquo;s wine industry.",
+        "/discover-nashik/#cat-wine",
+        "Explore Wine Tourism"
+      ],
+      "images": [
+        {
+          "cloudinary": null,
+          "unsplash": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb",
+          "alt": "Rows of vines on a vineyard estate in the hills near Nashik"
+        }
+      ],
+      "location": {
+        "summary": "In the hills outside Nashik city",
+        "locality": null,
+        "district": "Nashik",
+        "state": "Maharashtra",
+        "country": "IN"
+      },
+      "timings": {
+        "$fact": "dest.sula.hours"
+      },
+      "entryFee": {
+        "$fact": "dest.sula.entry"
+      },
+      "officialWebsite": {
+        "sourceId": "sula"
+      },
+      "officialContact": null,
+      "recommendedDuration": null,
+      "parking": null,
+      "transport": {
+        "fromNashikDistance": {
+          "$fact": "dest.sula.distance"
+        },
+        "fromNashikTime": null
+      },
+      "bestTimeToVisit": null,
+      "sourceReferences": [
+        "sula"
+      ],
+      "kumbhRole": null,
+      "tags": [
+        "wine",
+        "sula"
+      ],
+      "nearbyPlaces": [
+        "panchavati",
+        "trimbakeshwar",
+        "igatpuri"
+      ]
+    },
+    {
+      "slug": "pandavleni-caves",
+      "where": "Trirashmi hill, 5 km from the city",
+      "cta": "Explore Pandavleni Caves",
+      "name": "Pandavleni Caves",
+      "title": "Pandavleni Caves, Nashik – Visitor Guide",
+      "kicker": "History &middot; Heritage",
+      "img": "v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg",
+      "alt": "Rock-cut cave facades in the hillside at Pandavleni near Nashik",
+      "lede": "Pandavleni is a group of caves cut into a hillside south of Nashik city &mdash; chambers, halls and carved facades worked directly into the rock. It is the oldest thing you can visit in Nashik, and the least crowded.",
+      "why": [
+        "Pandavleni is the part of Nashik that most visitors skip, which is exactly why it is worth going. The caves are cut into a hill above the plain, and the climb up is rewarded with a long view back over the city.",
+        "It is also a complete change of register from the rest of a Nashik trip. After the density of Panchavati and the crowds at Trimbakeshwar, a quiet hillside of empty stone rooms is a genuine relief."
+      ],
+      "see": "The caves run along the hillside and are explored on foot, one chamber to the next. Reaching them involves a climb, so footwear matters more here than anywhere else in Nashik.",
+      "significance": "The caves are rock-cut monastic chambers, carved into the hillside long before anything else you can visit in Nashik was built. They are the clearest surviving evidence of how old settlement in this part of Maharashtra is.",
+      "tips": [
+        "There is a climb involved. Wear something you can walk up a hill in.",
+        "There is little shade on the way up. Early morning or late afternoon is far more comfortable than the middle of the day.",
+        "Carry water. Facilities on the hill are limited."
+      ],
+      "related": [
+        [
+          "Itinerary",
+          "Nashik in two days",
+          "Where the caves fit alongside temples and vineyards.",
+          "/blog/nashik-2-day-itinerary/"
+        ],
+        [
+          "Places",
+          "15 best places to visit in Nashik",
+          "The wider list, including quieter corners.",
+          "/blog/is-nashik-worth-visiting/"
+        ],
+        [
+          "Timing",
+          "Best time to visit Nashik",
+          "Month by month, and what each season looks like.",
+          "/blog/best-time-to-visit-nashik/"
+        ]
+      ],
+      "faqs": [
+        [
+          "Where are the Pandavleni Caves?",
+          "They are cut into a hillside south of Nashik city, in Nashik district, Maharashtra."
+        ],
+        [
+          "Is there a climb to reach the caves?",
+          "Yes &mdash; the caves are partway up a hill and are reached on foot. Allow more time and better footwear than a city sight would need."
+        ],
+        [
+          "How do the caves fit into a short Nashik trip?",
+          "They work well as a half-day alongside the city. Our <a href=\"/blog/nashik-2-day-itinerary/\">two-day itinerary</a> shows one way to sequence it."
+        ]
+      ],
+      "category": [
+        "heritage"
+      ],
+      "description": "A guide to the Pandavleni Caves, the group of rock-cut chambers in the hillside south of Nashik city.",
+      "coordinates": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "contentStatus": "published",
+      "planNext": [
+        "Looking for more places nearby?",
+        "The caves sit alongside the city&rsquo;s older heritage and the hill country beyond it.",
+        "/discover-nashik/#cat-heritage",
+        "Explore Heritage Nashik"
+      ],
+      "images": [
+        {
+          "cloudinary": "v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg",
+          "unsplash": null,
+          "alt": "Rock-cut cave facades in the hillside at Pandavleni near Nashik"
+        }
+      ],
+      "location": {
+        "summary": "Trirashmi hill, south of Nashik city",
+        "locality": null,
+        "district": "Nashik",
+        "state": "Maharashtra",
+        "country": "IN"
+      },
+      "timings": null,
+      "entryFee": null,
+      "officialWebsite": null,
+      "officialContact": null,
+      "recommendedDuration": {
+        "$fact": "dest.pandavleni.duration"
+      },
+      "parking": null,
+      "transport": {
+        "fromNashikDistance": {
+          "$fact": "dest.pandavleni.distance"
+        },
+        "fromNashikTime": null
+      },
+      "bestTimeToVisit": null,
+      "sourceReferences": [
+        "nashik-district"
+      ],
+      "kumbhRole": null,
+      "tags": [
+        "caves",
+        "pandavleni"
+      ],
+      "nearbyPlaces": [
+        "panchavati",
+        "sula-vineyards",
+        "trimbakeshwar"
+      ]
+    },
+    {
+      "slug": "igatpuri",
+      "where": "Western Ghats, west of Nashik",
+      "cta": "Explore Igatpuri &amp; Bhandardara",
+      "name": "Igatpuri &amp; Bhandardara",
+      "title": "Igatpuri &amp; Bhandardara – Visitor Guide",
+      "kicker": "Nature &middot; Weekend",
+      "img": "v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg",
+      "alt": "Green hills and low cloud in the Western Ghats near Igatpuri",
+      "lede": "Igatpuri and Bhandardara sit in the Western Ghats near Nashik &mdash; hills, reservoirs and, through the monsoon, a great deal of water and green. This is the part of the district people come to for the landscape rather than the temples.",
+      "why": [
+        "The Ghats change completely with the season here. Through the monsoon and just after, the hills are green, the streams are running and the cloud sits low over everything. It is a genuinely different landscape from the plain around Nashik city.",
+        "It is also the reason Nashik works as a weekend trip from Mumbai and Pune. A lot of people come out this way for the hills first and only discover the rest of the district afterwards."
+      ],
+      "see": "This is a landscape rather than a list of sights. Most visits mean driving between viewpoints, walking where the weather allows, and stopping at the reservoirs. It rewards an unhurried pace more than a checklist.",
+      "significance": "Igatpuri and Bhandardara sit on the edge of the Western Ghats, where the plateau drops away westward. That escarpment is what makes the monsoon here so dramatic, and what has made this stretch a long-standing escape from the cities on the coast.",
+      "tips": [
+        "The monsoon is the draw and also the difficulty &mdash; roads are wetter, visibility is lower, and paths are slippery. Plan accordingly.",
+        "Weekends in season are busy. A weekday is a very different experience.",
+        "This is hill country with limited public transport between points. Consider how you will move around before you commit to a route."
+      ],
+      "related": [
+        [
+          "Timing",
+          "Best time to visit Nashik",
+          "How the seasons run, and when the hills are greenest.",
+          "/blog/best-time-to-visit-nashik/"
+        ],
+        [
+          "Itinerary",
+          "Nashik in two days",
+          "Fitting the hills around the rest of the district.",
+          "/blog/nashik-2-day-itinerary/"
+        ],
+        [
+          "Places",
+          "15 best places to visit in Nashik",
+          "The wider list across the district.",
+          "/blog/is-nashik-worth-visiting/"
+        ]
+      ],
+      "faqs": [
+        [
+          "Where are Igatpuri and Bhandardara?",
+          "Both are in the Western Ghats near Nashik, in Maharashtra, between Nashik and the coast."
+        ],
+        [
+          "When is the best time to go?",
+          "The hills are at their greenest during and just after the monsoon. Our <a href=\"/blog/best-time-to-visit-nashik/\">month-by-month guide</a> covers how Nashik's seasons run."
+        ],
+        [
+          "Is it a good weekend trip from Mumbai or Pune?",
+          "It is one of the more common weekend destinations from both. Our <a href=\"/blog/nashik-2-day-itinerary/\">two-day itinerary</a> shows how it fits with the rest of Nashik."
+        ]
+      ],
+      "category": [
+        "nature"
+      ],
+      "description": "A guide to Igatpuri and Bhandardara, the Western Ghats hill country near Nashik and a common monsoon weekend trip from Mumbai and Pune.",
+      "coordinates": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "contentStatus": "published",
+      "planNext": [
+        "Looking for more of the landscape?",
+        "The Ghats are the green counterpart to the temples and vineyards on the plain.",
+        "/discover-nashik/#cat-nature",
+        "Explore Nature &amp; the Ghats"
+      ],
+      "images": [
+        {
+          "cloudinary": "v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg",
+          "unsplash": null,
+          "alt": "Green hills and low cloud in the Western Ghats near Igatpuri"
+        }
+      ],
+      "location": {
+        "summary": "Western Ghats, west of Nashik",
+        "locality": "Igatpuri",
+        "district": "Nashik",
+        "state": "Maharashtra",
+        "country": "IN"
+      },
+      "timings": null,
+      "entryFee": null,
+      "officialWebsite": null,
+      "officialContact": null,
+      "recommendedDuration": null,
+      "parking": null,
+      "transport": {
+        "fromNashikDistance": null,
+        "fromNashikTime": null
+      },
+      "bestTimeToVisit": null,
+      "sourceReferences": [
+        "nashik-district",
+        "maharashtra-tourism"
+      ],
+      "kumbhRole": null,
+      "tags": [
+        "igatpuri",
+        "bhandardara"
+      ],
+      "nearbyPlaces": [
+        "trimbakeshwar",
+        "sula-vineyards",
+        "pandavleni-caves"
+      ]
+    }
+  ]
+}
