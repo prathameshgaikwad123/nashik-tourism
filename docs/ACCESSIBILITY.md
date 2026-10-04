@@ -37,6 +37,21 @@ node tools/qa/viewports.js                                    # overflow, tap ta
 node tools/qa/no-javascript.js                                # content and links without JavaScript
 ```
 
+## Last full run (4 Oct 2026, headless Chromium 1.56 against a production-like server)
+
+| Check | Result |
+|---|---|
+| axe-core 4.13, WCAG 2.0–2.2 A/AA + best practice, 46 pages × 360 and 1280 px, each with the page, the open search dialog and the open mobile menu | 0 violations (54 colour-contrast findings on legacy guides were fixed first) |
+| Interaction suite (search dialog, menu, filters, expiry, Kumbh phases via a mocked clock, weather success and failure, keyboard) | 59 passed, 0 failed, 0 page errors |
+| Layout sweep, 46 pages × 10 widths (320, 360, 375, 390, 414, 768, 1024, 1280, 1440, 1920) | 460 combinations, 0 horizontal overflow, 0 load failures, 0 images without dimensions |
+| Layout shift / paint | worst CLS 0.0066; worst LCP 516 ms on localhost (not a field measurement) |
+| Targets under 44 px | Gallery dots on one guide (24 × 24 px, which meets WCAG 2.2 AA 2.5.8) and one 41 px inline link; both are below the stricter 44 px guideline |
+| Search relevance | 13 of 13 brief queries return the expected page first |
+| No-JavaScript | content and links present; only phase-gated blocks (live band, post-Kumbh section) are hidden, by design |
+| Unit tests / SEO audit | 38 tests pass; 0 errors, 39 title/description-length warnings |
+
+The only console errors were blocked third-party requests from the sandbox's TLS proxy.
+
 ## Manual checks still to do (automation finds about a third of problems)
 
 1. Tab through the home, a destination page, the Kumbh hub, `/search/` and `/updates/` at 320 px and 1280 px; confirm order matches reading order.
