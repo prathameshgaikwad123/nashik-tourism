@@ -80,11 +80,243 @@
       if (openDd && !openDd.menu.contains(e.target) && !openDd.btn.contains(e.target)) closeDd();
     });
 
-    // Only the homepage nav floats over a hero and needs a scrolled state.
-    if (bar && !bar.classList.contains('solid')) {
-      var onScroll = function () { bar.classList.toggle('scrolled', window.scrollY > 60); };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
+    // The header is solid on every page now, so there is no scroll state to
+    // manage. If the sheet is open when the window grows into the desktop bar
+    // (rotating a tablet), close it so the page is never left scroll-locked.
+    if (hb && mm && window.matchMedia) {
+      var wide = window.matchMedia('(min-width: 1200px)');
+      var onWide = function () { if (wide.matches && mm.classList.contains('open')) { hb.classList.remove('open'); mm.classList.remove('open'); hb.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; } };
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else if (wide.addListener) wide.addListener(onWide);
+    }
+  })();
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SEARCH — the header control is a real link to /search/ (works without JS);
+     here it is upgraded to open a native <dialog>. The index and the matching
+     code (/search.js) are fetched only when search is first used.
+     ───────────────────────────────────────────────────────────────────────── */
+  function loadSearch(cb) {
+    if (window.NTSearch) return cb();
+    var s = document.createElement('script');
+    s.src = '/search.js'; s.async = true; s.onload = cb;
+    document.head.appendChild(s);
+  }
+
+  (function searchDialog() {
+    var dlg = $('#searchDialog');
+    var openers = $$('#searchOpen, [data-search-open]');
+    if (!dlg || typeof dlg.showModal !== 'function' || !openers.length) return;
+    var input = $('#searchInput');
+    var body = $('#searchBody');
+    var status = $('#searchStatus');
+    var idle = body.innerHTML;
+    var lastFocus = null, timer = null, tracked = '';
+
+    function run() {
+      var q = input.value.trim();
+      if (!q) { body.innerHTML = idle; status.textContent = ''; return; }
+      if (!window.NTSearch) return;
+      NTSearch.load().then(function () {
+        if (input.value.trim() !== q) return;            // a newer keystroke won
+        var n = NTSearch.render(body, q, { perGroup: 4 });
+        status.textContent = NTSearch.status(n, q);
+      }).catch(function () {
+        body.textContent = '';
+        var p = document.createElement('p'); p.className = 'sd-empty';
+        p.appendChild(document.createTextNode('Search is unavailable right now. '));
+        var a = document.createElement('a'); a.href = '/search/#browse'; a.textContent = 'Browse everything on the site'; p.appendChild(a);
+        body.appendChild(p);
+      });
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        var t = NTSearch.trackable(q);
+        if (t && t !== tracked) { tracked = t; NTSearch.track('search', { search_term: t }); }
+      }, 900);
+    }
+
+    function open(trigger, q) {
+      lastFocus = trigger || document.activeElement;
+      if (!dlg.open) dlg.showModal();
+      document.body.classList.add('nt-lock');
+      if (q != null) input.value = q;
+      input.focus();
+      loadSearch(function () { NTSearch.load().then(run, run); });
+    }
+
+    openers.forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); open(a); });
+    });
+    $('#searchClose').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('close', function () {
+      document.body.classList.remove('nt-lock');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });  // backdrop
+    input.addEventListener('input', run);
+
+    // Arrow keys move through the links; Enter on the field goes to the full
+    // results page. No ARIA combobox needed: focus really moves to each link.
+    dlg.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      var links = $$('.sr-item a, .sd-try a', body);
+      if (!links.length) return;
+      var i = links.indexOf(document.activeElement);
+      e.preventDefault();
+      if (e.key === 'ArrowDown') (links[i + 1] || links[0]).focus();
+      else if (i <= 0) input.focus();
+      else links[i - 1].focus();
+    });
+    body.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('[data-search-result]') : null;
+      if (a && window.NTSearch) {
+        NTSearch.track('search_result_click', { search_term: NTSearch.trackable(input.value) || '', content_type: a.getAttribute('data-search-type'), item_id: a.getAttribute('data-search-result') });
+      }
+    });
+
+    // Anything on the site can ask for search with ?search=1 (the 404 page does).
+    if (/[?&]open-search=1/.test(location.search)) open(openers[0]);
+  })();
+
+  // The /search/ page: same engine, full-page results, query kept in the URL.
+  (function searchPage() {
+    var form = $('[data-search-page]');
+    if (!form) return;
+    var input = $('input[name="q"]', form);
+    var out = $('#sp-results');
+    var status = $('#sp-status');
+    var browse = $('#browse');
+    var timer = null, tracked = '';
+    function run(push) {
+      var q = input.value.trim();
+      if (history.replaceState) history.replaceState(null, '', q ? '?q=' + encodeURIComponent(q) : location.pathname);
+      if (!q) { out.textContent = ''; status.textContent = ''; return; }
+      loadSearch(function () {
+        NTSearch.load().then(function () {
+          if (input.value.trim() !== q) return;
+          var n = NTSearch.render(out, q, { limit: 60 });
+          status.textContent = NTSearch.status(n, q);
+          if (browse && n) browse.open = false;
+        }).catch(function () { out.textContent = 'Search is unavailable right now. Browse everything below.'; });
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          var t = NTSearch.trackable(q);
+          if (t && t !== tracked) { tracked = t; NTSearch.track('search', { search_term: t }); }
+        }, 900);
+      });
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); run(); });
+    input.addEventListener('input', function () { run(); });
+    out.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('[data-search-result]') : null;
+      if (a && window.NTSearch) NTSearch.track('search_result_click', { search_term: NTSearch.trackable(input.value) || '', content_type: a.getAttribute('data-search-type'), item_id: a.getAttribute('data-search-result') });
+    });
+    var m = /[?&]q=([^&]*)/.exec(location.search);
+    if (m) { input.value = decodeURIComponent(m[1].replace(/\+/g, ' ')); run(); }
+  })();
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TIME-SENSITIVE CONTENT — a page can be weeks old by the time it is read.
+       * an update past its expiry is shown as Archived without a rebuild
+       * the Kumbh lifecycle phase is re-evaluated, so "live mode" switches on
+         the right day even if the page was built before it
+     Both start from correct build-time markup; this only corrects staleness.
+     ───────────────────────────────────────────────────────────────────────── */
+  (function liveState() {
+    var now = Date.now();
+    $$('[data-expires]').forEach(function (card) {
+      var t = Date.parse(card.getAttribute('data-expires'));
+      if (!t || t >= now || card.getAttribute('data-status') === 'archived') return;
+      card.setAttribute('data-status', 'archived');
+      var badge = $('.st', card);
+      if (badge) {
+        badge.className = 'st st-update st-archived';
+        badge.textContent = '';
+        var g = document.createElement('span'); g.className = 'st-i'; g.setAttribute('aria-hidden', 'true'); g.textContent = '▣';
+        badge.appendChild(g); badge.appendChild(document.createTextNode('Archived'));
+      }
+    });
+
+    var cfgEl = document.getElementById('nt-phases');
+    if (!cfgEl) return;
+    var cfg;
+    try { cfg = JSON.parse(cfgEl.textContent); } catch (e) { return; }
+    var ist = new Date(now + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
+    var current = null;
+    if (cfg.forcePhase) current = cfg.phases.filter(function (p) { return p.id === cfg.forcePhase; })[0];
+    if (!current) {
+      current = cfg.phases.filter(function (p) { return (!p.from || ist >= p.from) && (!p.to || ist <= p.to); })[0];
+    }
+    if (!current) return;
+    document.documentElement.setAttribute('data-phase', current.id);
+    $$('[data-phase-id]').forEach(function (n) {
+      n.hidden = (' ' + n.getAttribute('data-phase-id') + ' ').indexOf(' ' + current.id + ' ') < 0;
+    });
+    $$('[data-phase-flag]').forEach(function (n) {
+      n.hidden = !current.profile[n.getAttribute('data-phase-flag')];
+    });
+  })();
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     ANALYTICS EVENTS — only if the page already carries Google Analytics
+     (window.gtag). No personal data: event names, an item id or path, and the
+     link's domain. Nothing is sent if analytics is absent.
+     ───────────────────────────────────────────────────────────────────────── */
+  (function analytics() {
+    function send(name, params) {
+      if (typeof window.gtag !== 'function') return;
+      try { window.gtag('event', name, params || {}); } catch (e) { /* optional */ }
+    }
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest ? ev.target.closest('a[href]') : null;
+      if (!a) return;
+      var explicit = a.getAttribute('data-track');
+      var href = a.getAttribute('href') || '';
+      var host = a.hostname;
+      if (explicit) {
+        send(explicit, { item_id: a.getAttribute('data-track-item') || href, link_domain: host, page_path: location.pathname });
+      } else if (/(^|\s)sponsored(\s|$)/.test(a.rel || '')) {
+        send('accommodation_click', { link_domain: host, page_path: location.pathname });
+      } else if (/^\/discover-nashik\/[a-z-]+\/?(#.*)?$/.test(href)) {
+        send('destination_click', { item_id: href.replace(/^\/discover-nashik\/|\/.*$/g, ''), page_path: location.pathname });
+      } else if (/^\/plan-your-trip\/#(day-|itineraries)/.test(href) || a.closest('[data-planner] [data-plan]')) {
+        send('itinerary_click', { item_id: href, page_path: location.pathname });
+      } else if (/^\/events\//.test(href)) {
+        send('event_click', { item_id: href, page_path: location.pathname });
+      } else if (/^\/updates\//.test(href)) {
+        send('update_click', { item_id: href, page_path: location.pathname });
+      }
+    }, true);
+
+    // Engagement on the sections the site is built around.
+    var meta = document.querySelector('meta[name="nt-section"]');
+    var section = meta ? meta.getAttribute('content') : (/^\/kumbh-mela-2027\//.test(location.pathname) ? 'kumbh' : '');
+    if (section) {
+      var visibleMs = 0, last = Date.now(), fired30 = false;
+      setInterval(function () {
+        var t = Date.now();
+        if (!document.hidden) visibleMs += t - last;
+        last = t;
+        if (!fired30 && visibleMs >= 30000) { fired30 = true; send('section_engaged', { section: section, seconds: 30, page_path: location.pathname }); }
+      }, 2000);
+      var fired75 = false;
+      window.addEventListener('scroll', function () {
+        if (fired75) return;
+        var h = document.documentElement;
+        if ((window.scrollY + window.innerHeight) / h.scrollHeight >= 0.75) { fired75 = true; send('section_scroll_75', { section: section, page_path: location.pathname }); }
+      }, { passive: true });
+    }
+    // Each update is counted once, when at least half of it has been on screen.
+    if ('IntersectionObserver' in window) {
+      var cards = $$('.update-card');
+      if (cards.length) {
+        var seen = {};
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting && !seen[en.target.id]) { seen[en.target.id] = 1; send('update_view', { item_id: en.target.id, page_path: location.pathname }); io.unobserve(en.target); }
+          });
+        }, { threshold: 0.5 });
+        cards.forEach(function (c) { io.observe(c); });
+      }
     }
   })();
 
