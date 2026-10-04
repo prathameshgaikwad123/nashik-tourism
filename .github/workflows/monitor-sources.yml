@@ -1,0 +1,48 @@
+name: Monitor sources
+# Watches the official sources in data/sources.json and proposes candidate updates.
+# It NEVER publishes: candidates land in a pull request under data/pipeline/, and an
+# editor approves each one with tools/cms.py (high-risk items need a named approver).
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Restore monitor state (hashes and snapshots)
+        uses: actions/cache@v4
+        with:
+          path: data/state
+          key: monitor-state-${{ github.run_id }}
+          restore-keys: monitor-state-
+      - name: Run the monitor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}      # optional: enables AI classification
+          NT_CLASSIFIER_MODEL: ${{ vars.NT_CLASSIFIER_MODEL }}      # optional
+        run: python3 tools/monitor-sources.py --expire --summary-file monitor-summary.md
+      - name: Open a pull request with new candidates
+        id: pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: monitor/candidates
+          commit-message: "chore: source monitor candidates for review"
+          title: "Source monitor: candidate updates for review (nothing is published)"
+          body-path: monitor-summary.md
+          add-paths: |
+            data/pipeline/candidates/*.json
+          labels: needs-human-review
+      - name: Notify
+        if: steps.pr.outputs.pull-request-number != ''
+        env:
+          NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+        run: python3 tools/notify.py --file monitor-summary.md

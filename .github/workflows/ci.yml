@@ -1,0 +1,29 @@
+name: CI
+# Every push and pull request: the data must satisfy the verification policy, the
+# tests must pass, the site must build, and the SEO / link audit must be clean.
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests
+        run: python3 -m unittest discover -s tools/tests -v
+      - name: Validate editorial data
+        run: python3 tools/validate-data.py
+      - name: Build the site
+        run: python3 tools/build-all.py
+      - name: SEO, structured-data and link audit
+        run: python3 tools/seo-check.py
+      - name: Content health report
+        run: python3 tools/content-health.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: content-health
+          path: reports/
