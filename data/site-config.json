@@ -1,0 +1,76 @@
+{
+  "_about": "Site-wide editorial configuration. Phase boundaries and the pipeline policy are decisions for the site owner; change them here, not in templates.",
+  "siteUrl": "https://nashiktourism.com",
+  "timezone": "Asia/Kolkata",
+  "kumbh": {
+    "name": "Nashik–Trimbakeshwar Simhastha Kumbh Mela",
+    "shortName": "Kumbh Mela 2027",
+    "forcePhase": null,
+    "_forcePhase": "Set to one of preparation, mela_open, peak, extended, post_kumbh, evergreen to pin the whole site to a phase regardless of the date (useful for previews). null means follow the calendar.",
+    "phases": [
+      {
+        "id": "preparation",
+        "label": "Preparation",
+        "from": null,
+        "to": "2026-10-30",
+        "basis": "Before the reported flag-hoisting on 31 Oct 2026.",
+        "profile": { "homeKumbhEmphasis": "standard", "liveBand": false, "archiveKumbhLive": false }
+      },
+      {
+        "id": "mela_open",
+        "label": "Mela open",
+        "from": "2026-10-31",
+        "to": "2027-07-18",
+        "basis": "Mela reported to open with dhwajarohan on 31 Oct 2026; peak bathing dates have not begun.",
+        "profile": { "homeKumbhEmphasis": "standard", "liveBand": false, "archiveKumbhLive": false }
+      },
+      {
+        "id": "peak",
+        "label": "Peak Kumbh period",
+        "from": "2027-07-19",
+        "to": "2027-09-19",
+        "basis": "Editorial planning window of roughly two weeks before the first and two weeks after the last reported Amrit Snan date (2 Aug – 12 Sep 2027). Move it when the Authority confirms dates.",
+        "profile": { "homeKumbhEmphasis": "live", "liveBand": true, "archiveKumbhLive": false }
+      },
+      {
+        "id": "extended",
+        "label": "Mela continues",
+        "from": "2027-09-20",
+        "to": "2028-07-24",
+        "basis": "The Mela is reported to conclude with the flag coming down on 24 Jul 2028.",
+        "profile": { "homeKumbhEmphasis": "standard", "liveBand": false, "archiveKumbhLive": false }
+      },
+      {
+        "id": "post_kumbh",
+        "label": "After the Kumbh",
+        "from": "2028-07-25",
+        "to": "2028-12-31",
+        "basis": "Live Kumbh items archive; evergreen and historical Kumbh guides stay.",
+        "profile": { "homeKumbhEmphasis": "reduced", "liveBand": false, "archiveKumbhLive": true }
+      },
+      {
+        "id": "evergreen",
+        "label": "Nashik, year round",
+        "from": "2029-01-01",
+        "to": null,
+        "basis": "Kumbh is one topic among many; the homepage leads with Nashik itself.",
+        "profile": { "homeKumbhEmphasis": "reduced", "liveBand": false, "archiveKumbhLive": true }
+      }
+    ]
+  },
+  "pipeline": {
+    "autoPublishLowRisk": false,
+    "autoPublishTiers": ["official"],
+    "minConfidence": 0.9,
+    "candidateTtlDays": 14,
+    "_note": "autoPublishLowRisk ships OFF. Even when on, high-risk items (tools/nt/risk.py) always need a named human approver."
+  },
+  "freshness": {
+    "_note": "How long a verified fact or page may go without a re-check before the content-health report flags it stale.",
+    "factStaleAfterDays": { "kumbh": 14, "transport": 30, "timings": 60, "fees": 60, "accommodation": 30, "default": 90 },
+    "pageReviewDays": { "kumbh": 14, "transport": 30, "destination": 90, "guide": 120, "default": 180 }
+  },
+  "contact": {
+    "formEndpoint": "contact form is handled by the existing Formspree integration on /contact/"
+  }
+}

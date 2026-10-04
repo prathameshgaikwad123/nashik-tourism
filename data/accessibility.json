@@ -1,0 +1,165 @@
+{
+  "_about": "Accessibility records behind /accessible-nashik/ and each destination page. RULE: a place is never described as accessible without verification. verified_accessible needs a named source, verifiedAt and verifiedBy. Every place starts at accessibility_unknown; that is a statement about our knowledge, not about the place.",
+  "statuses": [
+    {
+      "id": "verified_accessible",
+      "label": "Verified accessible",
+      "glyph": "✓",
+      "meaning": "A named source (the venue, the operator or an in-person editorial visit) confirms step-free access and the specifics are listed. The date of the check is shown."
+    },
+    {
+      "id": "partially_accessible",
+      "label": "Partially accessible",
+      "glyph": "◐",
+      "meaning": "Some parts are accessible and some are not, and we say which."
+    },
+    {
+      "id": "accessibility_unknown",
+      "label": "Accessibility unknown",
+      "glyph": "?",
+      "meaning": "We have not verified access. This is not a statement that the place is inaccessible — please ask the venue before you travel."
+    },
+    {
+      "id": "accessibility_varies_by_event",
+      "label": "Varies by event",
+      "glyph": "↻",
+      "meaning": "Access changes with festivals and crowd arrangements. Check close to the date."
+    }
+  ],
+  "places": [
+    {
+      "slug": "trimbakeshwar",
+      "name": "Trimbakeshwar Temple",
+      "status": "accessibility_unknown",
+      "notes": null,
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "source": null
+    },
+    {
+      "slug": "panchavati",
+      "name": "Panchavati and Ramkund",
+      "status": "accessibility_unknown",
+      "notes": "Ramkund is a working ghat reached by steps. During the Mela, access will be set by the Authority and may differ from ordinary days.",
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "source": null
+    },
+    {
+      "slug": "sula-vineyards",
+      "name": "Sula Vineyards",
+      "status": "accessibility_unknown",
+      "notes": "Ask the estate directly about step-free routes and accessible toilets.",
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "source": null
+    },
+    {
+      "slug": "pandavleni-caves",
+      "name": "Pandavleni Caves",
+      "status": "accessibility_unknown",
+      "notes": "Our itinerary guide reports a climb of around 200 steps to reach the caves (not verified). Step-free access has not been verified.",
+      "factRef": "dest.pandavleni.steps",
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "source": null
+    },
+    {
+      "slug": "igatpuri",
+      "name": "Igatpuri and Bhandardara",
+      "status": "accessibility_unknown",
+      "notes": "A hill landscape with limited public transport between points; access varies by viewpoint.",
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "source": null
+    }
+  ],
+  "topics": [
+    {
+      "id": "wheelchair-attractions",
+      "title": "Wheelchair-friendly attractions",
+      "intro": "Attractions we have verified as wheelchair-accessible.",
+      "emptyNote": "None verified yet. The destination table above shows the status of each place we cover."
+    },
+    {
+      "id": "step-free",
+      "title": "Step-free access",
+      "intro": "Where a step-free route exists, and where it does not.",
+      "emptyNote": "None verified yet."
+    },
+    {
+      "id": "hotels",
+      "title": "Accessible hotels",
+      "intro": "Hotels that have confirmed accessible rooms and entrances.",
+      "emptyNote": "None verified yet. When you ask a hotel, ask about the entrance, lift, room door width, bathroom and parking separately — 'accessible' means different things."
+    },
+    {
+      "id": "toilets",
+      "title": "Accessible toilets",
+      "intro": "Accessible public toilets at ghats, stations and attractions.",
+      "emptyNote": "None verified yet."
+    },
+    {
+      "id": "senior",
+      "title": "Senior citizen facilities",
+      "intro": "Practical guidance for older visitors.",
+      "emptyNote": "Our guide for senior citizens covers the practical side of a Kumbh visit. Its facility claims are not yet verified against official sources.",
+      "links": [
+        [
+          "/blog/nashik-kumbh-mela-for-senior-citizens-2027/",
+          "Kumbh Mela for senior citizens"
+        ]
+      ]
+    },
+    {
+      "id": "medical",
+      "title": "Medical facilities",
+      "intro": "Hospitals, first-aid points and Mela medical arrangements.",
+      "emptyNote": "No verified list yet. For a medical emergency, call 112. Mela medical arrangements will be set by the Authority; check its official announcements.",
+      "factRefs": [
+        "safety.emergency.number"
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "Accessible transport",
+      "intro": "Step-free trains, buses and taxis.",
+      "emptyNote": "None verified yet. Indian Railways and MSRTC publish their own accessibility information; see the Transport hub for the official sources.",
+      "links": [
+        [
+          "/transport/",
+          "Transport hub"
+        ]
+      ]
+    },
+    {
+      "id": "ghats",
+      "title": "Ghat accessibility",
+      "intro": "Ramkund and Kushavarta are reached by steps; during the Mela, arrangements for older and disabled pilgrims will be set by the Authority.",
+      "emptyNote": "No verified arrangements yet."
+    },
+    {
+      "id": "assistance",
+      "title": "Assistance points",
+      "intro": "Help desks and volunteer points at the Mela.",
+      "emptyNote": "None announced that we could locate."
+    },
+    {
+      "id": "emergency",
+      "title": "Emergency information",
+      "intro": "112 is India's single emergency number.",
+      "emptyNote": "",
+      "factRefs": [
+        "safety.emergency.number"
+      ]
+    }
+  ],
+  "askBeforeYouGo": [
+    "Is there a step-free route from the entrance to what I want to see — and how many steps if not?",
+    "Is there a lift, and is it working today?",
+    "Where is the nearest accessible toilet, and is it open?",
+    "Can a vehicle stop close to the entrance, and where is parking?",
+    "Is there somewhere to sit and rest along the route?",
+    "Will arrangements change during a festival or on a crowded day?"
+  ]
+}

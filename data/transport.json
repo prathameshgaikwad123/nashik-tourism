@@ -1,0 +1,296 @@
+{
+  "_about": "Modular transport content behind /transport/. Each section lists the fact ids it shows (resolved from data/facts.json with their verification status), the official sources a traveller should check, a link to the long-form guide, and the update categories whose latest items appear in it. Change a fact once and every section that shows it changes.",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "How to reach Nashik",
+      "group": "reach",
+      "summary": "Nashik can be reached by air, rail, bus and road. Rail and road from Mumbai and Pune are the usual routes; this page shows what we know, how sure we are, and which official source to check before you go.",
+      "facts": [],
+      "sources": [
+        "nashik-district-how-to-reach"
+      ],
+      "guides": [
+        [
+          "/blog/how-to-reach-nashik-for-kumbh-mela/",
+          "Full guide: how to reach Nashik for the Kumbh Mela"
+        ]
+      ],
+      "liveCategories": [
+        "Transport"
+      ]
+    },
+    {
+      "id": "air",
+      "title": "By air",
+      "group": "reach",
+      "summary": "Nashik (Ozar) Airport serves the city; many travellers use Mumbai or Pune airports and continue by road or rail. Whether scheduled flights operate, and to where, is set by airlines and the airport operator.",
+      "facts": [
+        "airport.ozar.icao",
+        "transport.ozar.distance",
+        "airport.ozar.terminal"
+      ],
+      "sources": [
+        "aai",
+        "aai-vaoz"
+      ],
+      "guides": [],
+      "liveCategories": [
+        "Airport"
+      ]
+    },
+    {
+      "id": "train",
+      "title": "By train",
+      "group": "reach",
+      "summary": "Nashik Road is the main railway station. Timetables, special trains and cancellations are published by Indian Railways; book and check on the official systems.",
+      "facts": [
+        "transport.mumbai.train-time",
+        "transport.nashik-road.distance",
+        "kumbh.rail.stations"
+      ],
+      "sources": [
+        "central-railway",
+        "ntes",
+        "irctc",
+        "indian-railways"
+      ],
+      "guides": [
+        [
+          "/blog/how-to-reach-nashik-for-kumbh-mela/",
+          "Train options in our guide"
+        ]
+      ],
+      "liveCategories": [
+        "Railways"
+      ]
+    },
+    {
+      "id": "bus",
+      "title": "By bus",
+      "group": "reach",
+      "summary": "MSRTC and private operators connect Nashik with Mumbai, Pune and other cities. Fares and frequencies change; check the operator.",
+      "facts": [
+        "transport.bus.stands"
+      ],
+      "sources": [
+        "msrtc"
+      ],
+      "guides": [
+        [
+          "/blog/how-to-reach-nashik-for-kumbh-mela/",
+          "Bus options in our guide"
+        ]
+      ],
+      "liveCategories": [
+        "Transport"
+      ]
+    },
+    {
+      "id": "road",
+      "title": "By road",
+      "group": "reach",
+      "summary": "Nashik is on the national highway network. Road conditions, works and Mela traffic diversions change; check police and highway advisories on the day.",
+      "facts": [],
+      "sources": [
+        "nhai",
+        "pwd-maharashtra",
+        "maharashtra-police"
+      ],
+      "guides": [],
+      "liveCategories": [
+        "Roads"
+      ]
+    },
+    {
+      "id": "mumbai",
+      "title": "Mumbai to Nashik",
+      "group": "routes",
+      "summary": "The most common route into Nashik, by rail or road.",
+      "facts": [
+        "transport.mumbai.distance",
+        "transport.mumbai.road-time",
+        "transport.mumbai.train-time"
+      ],
+      "sources": [
+        "central-railway",
+        "nhai"
+      ],
+      "guides": [
+        [
+          "/blog/how-to-reach-nashik-for-kumbh-mela/",
+          "Mumbai route in our guide"
+        ]
+      ],
+      "liveCategories": []
+    },
+    {
+      "id": "pune",
+      "title": "Pune to Nashik",
+      "group": "routes",
+      "summary": "Usually by road; check rail options with Indian Railways.",
+      "facts": [
+        "transport.pune.distance",
+        "transport.pune.road-time"
+      ],
+      "sources": [
+        "nhai",
+        "central-railway"
+      ],
+      "guides": [
+        [
+          "/blog/how-to-reach-nashik-for-kumbh-mela/",
+          "Pune route in our guide"
+        ]
+      ],
+      "liveCategories": []
+    },
+    {
+      "id": "delhi",
+      "title": "Delhi to Nashik",
+      "group": "routes",
+      "summary": "A long journey; most travellers combine a flight or a long-distance train with a final leg by road or rail.",
+      "facts": [
+        "transport.delhi.distance"
+      ],
+      "sources": [
+        "indian-railways",
+        "aai"
+      ],
+      "guides": [
+        [
+          "/blog/how-to-reach-nashik-for-kumbh-mela/",
+          "Delhi route in our guide"
+        ]
+      ],
+      "liveCategories": []
+    },
+    {
+      "id": "airport",
+      "title": "Nashik (Ozar) Airport",
+      "group": "places",
+      "summary": "What we know about the airport, and what is only approved or planned.",
+      "facts": [
+        "airport.ozar.icao",
+        "transport.ozar.distance",
+        "airport.ozar.terminal"
+      ],
+      "sources": [
+        "aai",
+        "aai-vaoz",
+        "divcom-approvals"
+      ],
+      "guides": [],
+      "liveCategories": [
+        "Airport"
+      ]
+    },
+    {
+      "id": "station",
+      "title": "Nashik Road Railway Station",
+      "group": "places",
+      "summary": "The main station for the city. Works at five stations near the Mela area were announced by the Ministry of Railways.",
+      "facts": [
+        "transport.nashik-road.distance",
+        "kumbh.rail.stations",
+        "kumbh.rail.invest"
+      ],
+      "sources": [
+        "central-railway",
+        "pib-rail-upgrade"
+      ],
+      "guides": [],
+      "liveCategories": [
+        "Railways"
+      ]
+    },
+    {
+      "id": "trimbakeshwar",
+      "title": "Nashik to Trimbakeshwar",
+      "group": "places",
+      "summary": "Trimbakeshwar is a separate town in the hills, reached by road.",
+      "facts": [
+        "dest.trimbakeshwar.distance",
+        "dest.trimbakeshwar.journey"
+      ],
+      "sources": [
+        "nashik-district"
+      ],
+      "guides": [
+        [
+          "/blog/trimbakeshwar-to-nashik-distance-route/",
+          "Trimbakeshwar to Nashik: distance and route"
+        ]
+      ],
+      "liveCategories": [
+        "Roads"
+      ]
+    },
+    {
+      "id": "local",
+      "title": "Local transport",
+      "group": "places",
+      "summary": "Within Nashik, the usual options are autos, taxis and buses. Panchavati is best explored on foot.",
+      "facts": [],
+      "sources": [
+        "msrtc",
+        "nmc"
+      ],
+      "guides": [
+        [
+          "/discover-nashik/panchavati/",
+          "Panchavati and Ramkund"
+        ]
+      ],
+      "liveCategories": [
+        "Transport"
+      ]
+    },
+    {
+      "id": "kumbh",
+      "title": "Kumbh transport",
+      "group": "kumbh",
+      "summary": "Special trains, shuttle buses and road arrangements for the Mela will be announced by the Railways, MSRTC, the police and the Authority. None with routes or dates has been located yet.",
+      "facts": [
+        "kumbh.transport.special-services",
+        "kumbh.rail.invest",
+        "kumbh.rail.stations"
+      ],
+      "sources": [
+        "ntka",
+        "central-railway",
+        "msrtc",
+        "maharashtra-police"
+      ],
+      "guides": [
+        [
+          "/blog/how-to-reach-nashik-for-kumbh-mela/",
+          "Kumbh travel in our guide"
+        ]
+      ],
+      "liveCategories": [
+        "Transport",
+        "Railways",
+        "Roads"
+      ]
+    },
+    {
+      "id": "parking",
+      "title": "Parking",
+      "group": "kumbh",
+      "summary": "No official Kumbh parking plan has been located. Parking and traffic arrangements are set by the police and may change daily.",
+      "facts": [
+        "kumbh.parking.plan"
+      ],
+      "sources": [
+        "nashik-city-police",
+        "maharashtra-police",
+        "ntka"
+      ],
+      "guides": [],
+      "liveCategories": [
+        "Roads"
+      ]
+    }
+  ]
+}

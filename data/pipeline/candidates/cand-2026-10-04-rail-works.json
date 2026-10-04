@@ -1,0 +1,34 @@
+{
+  "id": "cand-2026-10-04-rail-works",
+  "createdAt": "2026-10-04T12:00:00+05:30",
+  "origin": "web-search-lead",
+  "sourceId": "pib",
+  "sourceName": "Press Information Bureau (Ministry of Railways)",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2",
+  "extracted": {
+    "title": "Railways announce infrastructure works at five stations near the Mela area",
+    "summary": "The Ministry of Railways has announced passenger-amenity and capacity works at Nashik Road, Devlali, Odha, Kherwadi and Kasbe Sukene stations ahead of the Simhastha, including works at Nashik Road such as platform extension and a wider foot overbridge. This describes planned works, not train timings.",
+    "category": "Railways",
+    "status": "developing",
+    "tags": [
+      "railway",
+      "nashik-road",
+      "works"
+    ],
+    "publishedAt": null
+  },
+  "confidence": 0.8,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Official PIB release located by search; page text not read. The release is also the source of the 'over 3 crore pilgrims' railway planning figure.",
+  "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  }
+}

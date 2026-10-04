@@ -1,0 +1,35 @@
+{
+  "_about": "Visible revision history. Add an entry whenever a page's facts change; pages show the entries whose path matches. type: published | updated | corrected | verified | restructured.",
+  "entries": [
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/",
+      "type": "corrected",
+      "summary": "Removed an unsourced government infrastructure figure; each reported development figure is now listed with what it counts and its source."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/",
+      "type": "corrected",
+      "summary": "Corrected the weekday of the second Amrit Snan date (31 August 2027 is a Tuesday) and relabelled the dates as 'reported' until the Authority's notice is linked."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/kumbh-mela-2027/",
+      "type": "corrected",
+      "summary": "Withdrew the unsourced '15–20 crore' visitor estimate; no single official estimate is confirmed."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/blog/kumbh-mela-2027-all-snan-dates/",
+      "type": "corrected",
+      "summary": "Corrected the weekday of 31 August 2027 (Tuesday) and removed the 'Somvati' label that depended on it."
+    },
+    {
+      "date": "2026-10-04",
+      "path": "/blog/nashik-kumbh-mela-e-pass-registration-2027/",
+      "type": "corrected",
+      "summary": "Added a notice that no general-visitor e-pass or registration requirement has been located in official sources."
+    }
+  ]
+}

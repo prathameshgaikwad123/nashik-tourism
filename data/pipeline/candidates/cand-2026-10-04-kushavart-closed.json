@@ -1,0 +1,37 @@
+{
+  "id": "cand-2026-10-04-kushavart-closed",
+  "createdAt": "2026-10-04T12:00:00+05:30",
+  "origin": "web-search-lead",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal (Pune/Nashik)",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune/nashik-kushavart-tirth-to-remain-closed-till-october-31-ahead-of-simhastha-kumbh",
+  "extracted": {
+    "title": "Kushavarta Tirtha reported closed to devotees until 31 October 2026",
+    "summary": "Kushavarta Tirtha, the sacred tank at Trimbakeshwar, is reported to be closed to devotees until 31 October 2026 while renovation and development works for the Simhastha are completed. Alternative ritual locations were reported, including the Ahilya–Godavari Sangam ghat and several temples in the town.",
+    "category": "Local",
+    "status": "developing",
+    "tags": [
+      "trimbakeshwar",
+      "kushavarta",
+      "restriction"
+    ],
+    "publishedAt": null
+  },
+  "confidence": 0.7,
+  "risk": {
+    "high_risk": true,
+    "reasons": [
+      "tag:restriction",
+      "entry-restriction"
+    ]
+  },
+  "excerpt": "Search-result summary: Kushavart Tirth will remain closed to devotees until October 31, 2026 for renovation ahead of the Simhastha; alternative locations named; target completion coincides with flag-hoisting.",
+  "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  }
+}
