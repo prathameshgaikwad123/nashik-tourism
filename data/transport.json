@@ -24,7 +24,7 @@
       "id": "air",
       "title": "By air",
       "group": "reach",
-      "summary": "Nashik (Ozar) Airport serves the city; many travellers use Mumbai or Pune airports and continue by road or rail. Whether scheduled flights operate, and to where, is set by airlines and the airport operator.",
+      "summary": "Nashik (Ozar) Airport is the city's airport. Whether scheduled commercial flights operate, and to where, is set by airlines and the airport operator and has not been verified here. A new terminal has been approved, and press reports describe a push to start civil operations before the Mela. Mumbai and Pune airports are the alternatives; confirm flights with the airlines.",
       "facts": [
         "airport.ozar.icao",
         "transport.ozar.distance",
@@ -250,7 +250,7 @@
       "id": "kumbh",
       "title": "Kumbh transport",
       "group": "kumbh",
-      "summary": "Special trains, shuttle buses and road arrangements for the Mela will be announced by the Railways, MSRTC, the police and the Authority. None with routes or dates has been located yet.",
+      "summary": "Railways say special trains (long-distance specials and short-distance MEMU services) are planned. No train numbers, routes or dates have been located, and no shuttle-bus or road arrangements have been announced in sources we found. The Railways, MSRTC, the police and the Authority will publish these.",
       "facts": [
         "kumbh.transport.special-services",
         "kumbh.rail.invest",

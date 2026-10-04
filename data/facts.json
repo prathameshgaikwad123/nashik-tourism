@@ -203,6 +203,15 @@
             "name": "PIB (Ministry of Railways)",
             "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2"
           }
+        },
+        {
+          "value": "4–5 crore devotees",
+          "scope": "'Expected to draw' figure in press coverage of government tourism planning",
+          "source": {
+            "sourceId": "freepressjournal",
+            "name": "Free Press Journal (Pune/Nashik)",
+            "url": "https://www.freepressjournal.in/pune/nashik-kumbh-mela-2027-govt-plans-tent-cities-helicopter-service-for-jyotirlinga-circuit"
+          }
         }
       ],
       "verifyWith": [
@@ -446,7 +455,10 @@
         "name": "Nashik Divisional Commissioner — Administrative Approvals",
         "url": "https://divcomnashik.maharashtra.gov.in/en/administrative-approvals/"
       },
-      "leads": [],
+      "leads": [
+        "https://www.freepressjournal.in/pune/nashik-ozar-airport-terminal-work-put-on-fast-track-ahead-of-mahasimhastha-march-31-deadline-set",
+        "https://www.freepressjournal.in/pune/maharashtra-minister-chhagan-bhujbal-pushes-for-civil-operations-at-nashik-airport-before-mega-kumbh-mela"
+      ],
       "alternatives": [],
       "verifyWith": [
         "divcom-approvals",
@@ -456,7 +468,7 @@
       "verifiedBy": null,
       "lastCheckedAt": "2026-10-04",
       "topic": "transport",
-      "notes": "An approval is not a completion date. Whether and when scheduled commercial flights operate is set by airlines and the airport operator.",
+      "notes": "An approval is not a completion date; press coverage reports a completion target of 31 March 2027 for the new terminal (not confirmed). Whether and when scheduled commercial flights operate is set by airlines and the airport operator, and has not been verified here.",
       "appliesTo": [
         "/transport/"
       ]
@@ -947,28 +959,31 @@
     {
       "id": "kumbh.transport.special-services",
       "subject": "Kumbh Mela transport",
-      "fact": "Special Kumbh trains and shuttle buses",
-      "value": null,
-      "display": "No timetable or notification located",
-      "status": "not_verified",
+      "fact": "Special trains for the Simhastha",
+      "value": "planned",
+      "display": "Planned (long-distance specials and short-distance MEMU services); no timetable or routes located",
+      "status": "reported",
       "source": {
-        "sourceId": "indian-railways",
-        "name": "Indian Railways / Central Railway / MSRTC",
-        "url": "https://indianrailways.gov.in/"
+        "sourceId": "pib-rail-upgrade",
+        "name": "PIB — Ministry of Railways release on Nashik Simhastha preparations",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153377&reg=3&lang=2"
       },
-      "leads": [],
+      "leads": [
+        "https://www.freepressjournal.in/mumbai/indian-railways-begin-1011-crore-infra-push-for-nashik-simhastha-2027-special-trains-station-upgrades-planned"
+      ],
       "alternatives": [],
       "verifyWith": [
         "central-railway",
         "indian-railways",
         "msrtc",
-        "irctc"
+        "irctc",
+        "pib"
       ],
       "verifiedAt": null,
       "verifiedBy": null,
-      "lastCheckedAt": null,
+      "lastCheckedAt": "2026-10-04",
       "topic": "transport",
-      "notes": "Earlier guide copy said special trains and shuttle buses would run. That is plausible but no announcement with routes or dates has been located. Check IRCTC, Central Railway and MSRTC; treat any specific claim as unconfirmed until one of them publishes it.",
+      "notes": "Railways describe a significantly higher number of special trains as planned for the Mela, with long-distance specials and short-distance MEMU services. No train numbers, routes, dates or booking opening have been located. Shuttle buses (earlier guide copy) have not been announced in any source we located. Check IRCTC, Central Railway and MSRTC.",
       "appliesTo": [
         "/transport/",
         "/blog/how-to-reach-nashik-for-kumbh-mela/"
@@ -1029,6 +1044,65 @@
       "notes": "Earlier versions of this site stated that entry is free and no registration is needed, without a source. Charges for particular services (parking, lodging, special access) are separate questions. Confirm with the Authority.",
       "appliesTo": [
         "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.health.plan",
+      "subject": "Kumbh Mela health arrangements",
+      "fact": "Healthcare plan reported for the Simhastha",
+      "value": "136 temporary healthcare facilities and 190 ambulances (on bathing days)",
+      "display": "Reported: 136 temporary healthcare facilities and 190 ambulances on bathing days",
+      "status": "reported",
+      "source": {
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal (Pune/Nashik)",
+        "url": "https://www.freepressjournal.in/pune/nashik-136-health-centres-190-ambulances-to-be-deployed-for-simhastha"
+      },
+      "leads": [
+        "https://www.freepressjournal.in/pune/nashik-health-arrangements-for-simhastha-kumbh-to-be-ready-by-december-says-minister-prakash-abitkar"
+      ],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka",
+        "divcom-approvals",
+        "dgipr"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "kumbh",
+      "notes": "Press coverage reports that the Authority approved a healthcare plan including temporary hospitals and clinics at ghats, Sadhugram, parking areas and routes, ALS and BLS ambulances, and additional staff and beds. The Authority's own notice has not been linked, and exact locations and opening dates are not published. Earlier guide copy gave other specifics (such as 200 m camp spacing); those are not sourced.",
+      "appliesTo": [
+        "/kumbh-mela-2027/",
+        "/accessible-nashik/"
+      ]
+    },
+    {
+      "id": "kumbh.helicopter.plan",
+      "subject": "Kumbh Mela air connectivity",
+      "fact": "Helicopter service for pilgrims",
+      "value": "under planning",
+      "display": "Reported as under planning; no operator, routes, prices or booking system located",
+      "status": "reported",
+      "source": {
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal (Pune/Nashik)",
+        "url": "https://www.freepressjournal.in/pune/nashik-kumbh-mela-2027-govt-plans-tent-cities-helicopter-service-for-jyotirlinga-circuit"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "maharashtra-tourism",
+        "ntka",
+        "aai"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": "2026-10-04",
+      "topic": "transport",
+      "notes": "Press coverage reports tourism-department planning for a helicopter service on a Jyotirlinga circuit including Trimbakeshwar, and proposed helipads. Prices quoted in earlier guide copy have no source and have been removed.",
+      "appliesTo": [
+        "/blog/nashik-kumbh-mela-helicopter-tour-2027/"
       ]
     }
   ]
