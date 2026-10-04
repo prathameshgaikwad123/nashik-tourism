@@ -382,13 +382,13 @@ section { padding: 5.5rem 5vw; }
 
 /* CTA strip */
 .cta-strip { background: var(--primary); color: white; padding: 2rem 2rem; border-radius: 8px; margin: 2.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
-.cta-strip h3 { font-family: var(--font-display); color: var(--accent-warm); margin: 0; font-size: 1.1rem; font-weight: 800; }
+.cta-strip h2, .cta-strip h3 { font-family: var(--font-display); color: var(--accent-warm); margin: 0; font-size: 1.1rem; font-weight: 800; }
 .cta-strip p { margin: 0.2rem 0 0; color: var(--on-dark-muted); font-size: 0.85rem; }
 
 /* Sidebar */
 .sidebar { position: sticky; top: calc(var(--nav-h) + 16px); }
 .sidebar-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin-bottom: 1.25rem; }
-.sidebar-card h4 { font-family: var(--font-display); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+.sidebar-card h4, .sidebar-card h3 { font-family: var(--font-display); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
 .toc-list { list-style: none; }
 .toc-list li { margin-bottom: 0.35rem; }
 .toc-list a { font-size: 0.85rem; color: var(--muted-strong); display: block; padding: 0.2rem 0 0.2rem 0.7rem; border-left: 2px solid transparent; transition: all 0.2s; }
@@ -985,7 +985,7 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
 .ec-flag { margin: var(--s-2) 0 0; font-size: 0.85rem; color: var(--stone-ink); line-height: 1.5; }
 .ec-book { margin-top: var(--s-4); }
 .empty-state { border: 1.5px dashed var(--border-strong); border-radius: var(--r-lg); padding: var(--s-6); background: var(--white); color: var(--body-clr); }
-.empty-state h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--ink); margin-bottom: var(--s-2); }
+.empty-state h3, .empty-state h2 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--ink); margin-bottom: var(--s-2); }
 .empty-state p { line-height: var(--lh-body); max-width: 62ch; }
 .empty-state a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
 
@@ -1027,7 +1027,8 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
 /* ── Tables on small screens: scroll inside a labelled region, never the page ── */
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: var(--s-4) 0; border-radius: var(--r-lg); }
 .table-scroll:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
-.table-scroll table { margin: 0; min-width: 34rem; }
+.table-scroll table { margin: 0; min-width: 100%; }
+.table-scroll > table { width: max-content; max-width: none; min-width: 100%; }
 .table-scroll caption { text-align: left; padding: var(--s-2) 0; font-size: 0.85rem; color: var(--stone-ink); caption-side: top; }
 
 /* ── Intent tiles: "What are you looking for?" ── */
@@ -1141,3 +1142,22 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
 .err-search-row:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
 .err-search-row button { flex: none; padding: 0 var(--s-5); border: 0; background: var(--saffron-deep); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 0.82rem; cursor: pointer; min-height: var(--tap); }
 .err-search-row button:hover { background: var(--saffron-deep-h); }
+
+/* ── Touch targets: outbound source links and the logo reach 44px ──
+   Vertical padding on an inline link enlarges its hit area without changing the
+   line height of the text it sits in. */
+.nav-logo { min-height: var(--tap); }
+.meta-dl dd a, .t-fs a, .src-list a, .fc-alts a, .src-name a, .qf-item dd a { padding-block: 0.9rem; }
+.qf-item dd a { display: inline-block; padding-block: 0.6rem; }
+
+/* ── Grid children must be allowed to shrink ──
+   A grid item's default min-width is its min-content, so one wide table made the
+   whole article column (and with it the header) wider than a phone. min-width:0
+   lets the column stay at the viewport width; wide tables scroll inside their own
+   .table-scroll region instead. */
+.article-wrap > *, .dest-wrap > *, .article-body, .dest-body, .sidebar { min-width: 0; }
+.article-body pre, .article-body code { overflow-wrap: anywhere; }
+
+/* Headings never push the page wider than the screen; hotel/booking buttons meet the 44px target. */
+h1, h2, h3 { overflow-wrap: break-word; }
+.btn-gold { display: inline-flex; align-items: center; justify-content: center; min-height: var(--tap); padding-inline: var(--s-4); border-radius: var(--r-md); font-family: var(--font-display); font-weight: 700; font-size: 0.82rem; }

@@ -156,9 +156,14 @@
   }
 
   function groupResults(results, perGroup) {
-    var by = {};
-    results.forEach(function (r) { (by[r.doc.k] = by[r.doc.k] || []).push(r); });
-    return TYPE_ORDER.filter(function (k) { return by[k]; }).map(function (k) {
+    var by = {}, seen = [];
+    results.forEach(function (r) {
+      if (!by[r.doc.k]) { by[r.doc.k] = []; seen.push(r.doc.k); }
+      by[r.doc.k].push(r);
+    });
+    // Groups appear in the order of their best match, so the strongest hit is
+    // always first on screen; TYPE_ORDER only places groups never seen.
+    return seen.concat(TYPE_ORDER.filter(function (k) { return !by[k]; })).filter(function (k) { return by[k]; }).map(function (k) {
       return { type: k, label: TYPE_LABEL[k], items: perGroup ? by[k].slice(0, perGroup) : by[k], total: by[k].length };
     });
   }
