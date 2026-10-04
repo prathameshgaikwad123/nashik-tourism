@@ -1,0 +1,341 @@
+{
+  "_about": "Per-page editorial metadata for hand-written pages. tools/apply-verification.py reads it to inject the 'how current is this guide' notice and the verification block into each guide. topic sets how soon the page needs re-review (data/site-config.json > freshness.pageReviewDays). notice picks the wording. Set lastVerified + verificationStatus when an editor has checked the page against its sources; the badge and the content-health report update on the next build.",
+  "pages": {
+    "/blog/nashik-kumbh-mela-2027-complete-guide/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "kumbh",
+      "published": "2026-04-05",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "dgipr",
+        "pib"
+      ],
+      "showDates": true
+    },
+    "/blog/how-to-reach-nashik-for-kumbh-mela/": {
+      "template": "article",
+      "topic": "transport",
+      "notice": "transport",
+      "published": "2026-04-05",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "central-railway",
+        "msrtc",
+        "nhai",
+        "aai",
+        "nashik-district-how-to-reach"
+      ],
+      "showDates": true
+    },
+    "/blog/where-to-stay-nashik-kumbh-mela/": {
+      "template": "article",
+      "topic": "accommodation",
+      "notice": "accommodation",
+      "published": "2026-04-05",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "maharashtra-tourism",
+        "ntka"
+      ],
+      "showDates": true
+    },
+    "/blog/nashik-kumbh-mela-packing-list/": {
+      "template": "article",
+      "topic": "guide",
+      "notice": "general",
+      "published": "2026-04-12",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "nashik-district",
+        "maharashtra-tourism",
+        "imd"
+      ],
+      "showDates": false
+    },
+    "/blog/ramkund-ghat-nashik-guide/": {
+      "template": "article",
+      "topic": "destination",
+      "notice": "place",
+      "published": "2026-04-12",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "nmc",
+        "nashik-district",
+        "ntka"
+      ],
+      "showDates": false
+    },
+    "/blog/nashik-kumbh-mela-budget-2027/": {
+      "template": "article",
+      "topic": "guide",
+      "notice": "accommodation",
+      "published": "2026-04-12",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "maharashtra-tourism",
+        "ntka"
+      ],
+      "showDates": true
+    },
+    "/blog/trimbakeshwar-to-nashik-distance-route/": {
+      "template": "article",
+      "topic": "transport",
+      "notice": "transport",
+      "published": "2026-04-12",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "central-railway",
+        "msrtc",
+        "nhai",
+        "aai",
+        "nashik-district-how-to-reach"
+      ],
+      "showDates": true
+    },
+    "/blog/kumbh-mela-2027-all-snan-dates/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "kumbh",
+      "published": "2026-04-12",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "dgipr",
+        "pib"
+      ],
+      "showDates": true
+    },
+    "/blog/nashik-2-day-itinerary/": {
+      "template": "article",
+      "topic": "guide",
+      "notice": "general",
+      "published": "2026-04-16",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "nashik-district",
+        "maharashtra-tourism",
+        "imd"
+      ],
+      "showDates": false
+    },
+    "/blog/best-time-to-visit-nashik/": {
+      "template": "article",
+      "topic": "guide",
+      "notice": "general",
+      "published": "2026-04-16",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "nashik-district",
+        "maharashtra-tourism",
+        "imd"
+      ],
+      "showDates": false
+    },
+    "/blog/sula-vineyards-nashik-complete-guide/": {
+      "template": "article",
+      "topic": "destination",
+      "notice": "place",
+      "published": "2026-04-16",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "sula",
+        "nashik-district"
+      ],
+      "showDates": false
+    },
+    "/blog/nashik-kumbh-mela-vs-prayagraj-kumbh/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "kumbh",
+      "published": "2026-04-16",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "dgipr",
+        "pib"
+      ],
+      "showDates": true
+    },
+    "/blog/naga-sadhus-kumbh-mela-nashik-2027/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "kumbh",
+      "published": "2026-04-16",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "dgipr",
+        "pib"
+      ],
+      "showDates": true
+    },
+    "/blog/is-nashik-worth-visiting/": {
+      "template": "article",
+      "topic": "guide",
+      "notice": "general",
+      "published": "2026-05-05",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "nashik-district",
+        "maharashtra-tourism",
+        "imd"
+      ],
+      "showDates": false
+    },
+    "/blog/what-to-eat-near-ramkund-nashik-food-guide/": {
+      "template": "article",
+      "topic": "destination",
+      "notice": "place",
+      "published": "2026-04-20",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "nashik-district",
+        "maharashtra-tourism"
+      ],
+      "showDates": false
+    },
+    "/blog/nashik-kumbh-mela-for-women-solo-travellers/": {
+      "template": "article",
+      "topic": "guide",
+      "notice": "general",
+      "published": "2026-04-20",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "nashik-district",
+        "maharashtra-tourism",
+        "imd"
+      ],
+      "showDates": false
+    },
+    "/blog/nashik-kumbh-mela-for-international-tourists/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "international",
+      "published": "2026-04-20",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "maharashtra-tourism"
+      ],
+      "showDates": true
+    },
+    "/blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "kumbh",
+      "published": "2026-04-26",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "dgipr",
+        "pib"
+      ],
+      "showDates": true
+    },
+    "/blog/nashik-kumbh-mela-for-senior-citizens-2027/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "kumbh",
+      "published": "2026-04-26",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "dgipr",
+        "pib"
+      ],
+      "showDates": true
+    },
+    "/blog/nashik-kumbh-mela-helicopter-tour-2027/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "helicopter",
+      "published": "2026-04-26",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "aai",
+        "dgipr"
+      ],
+      "showDates": true
+    },
+    "/blog/pind-daan-nashik-kumbh-mela-2027/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "kumbh",
+      "published": "2026-04-26",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "dgipr",
+        "pib"
+      ],
+      "showDates": true
+    },
+    "/blog/nashik-kumbh-mela-e-pass-registration-2027/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "passes",
+      "published": "2026-04-26",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "divcom-gr",
+        "divcom-approvals"
+      ],
+      "showDates": true
+    }
+  }
+}

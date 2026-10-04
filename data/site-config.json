@@ -14,7 +14,12 @@
         "from": null,
         "to": "2026-10-30",
         "basis": "Before the reported flag-hoisting on 31 Oct 2026.",
-        "profile": { "homeKumbhEmphasis": "standard", "liveBand": false, "archiveKumbhLive": false }
+        "profile": {
+          "homeKumbhEmphasis": "standard",
+          "liveBand": false,
+          "archiveKumbhLive": false,
+          "navLabel": "Kumbh 2027"
+        }
       },
       {
         "id": "mela_open",
@@ -22,7 +27,12 @@
         "from": "2026-10-31",
         "to": "2027-07-18",
         "basis": "Mela reported to open with dhwajarohan on 31 Oct 2026; peak bathing dates have not begun.",
-        "profile": { "homeKumbhEmphasis": "standard", "liveBand": false, "archiveKumbhLive": false }
+        "profile": {
+          "homeKumbhEmphasis": "standard",
+          "liveBand": false,
+          "archiveKumbhLive": false,
+          "navLabel": "Kumbh 2027"
+        }
       },
       {
         "id": "peak",
@@ -30,7 +40,12 @@
         "from": "2027-07-19",
         "to": "2027-09-19",
         "basis": "Editorial planning window of roughly two weeks before the first and two weeks after the last reported Amrit Snan date (2 Aug – 12 Sep 2027). Move it when the Authority confirms dates.",
-        "profile": { "homeKumbhEmphasis": "live", "liveBand": true, "archiveKumbhLive": false }
+        "profile": {
+          "homeKumbhEmphasis": "live",
+          "liveBand": true,
+          "archiveKumbhLive": false,
+          "navLabel": "Kumbh 2027"
+        }
       },
       {
         "id": "extended",
@@ -38,7 +53,12 @@
         "from": "2027-09-20",
         "to": "2028-07-24",
         "basis": "The Mela is reported to conclude with the flag coming down on 24 Jul 2028.",
-        "profile": { "homeKumbhEmphasis": "standard", "liveBand": false, "archiveKumbhLive": false }
+        "profile": {
+          "homeKumbhEmphasis": "standard",
+          "liveBand": false,
+          "archiveKumbhLive": false,
+          "navLabel": "Kumbh 2027"
+        }
       },
       {
         "id": "post_kumbh",
@@ -46,7 +66,12 @@
         "from": "2028-07-25",
         "to": "2028-12-31",
         "basis": "Live Kumbh items archive; evergreen and historical Kumbh guides stay.",
-        "profile": { "homeKumbhEmphasis": "reduced", "liveBand": false, "archiveKumbhLive": true }
+        "profile": {
+          "homeKumbhEmphasis": "reduced",
+          "liveBand": false,
+          "archiveKumbhLive": true,
+          "navLabel": "Kumbh Mela"
+        }
       },
       {
         "id": "evergreen",
@@ -54,23 +79,47 @@
         "from": "2029-01-01",
         "to": null,
         "basis": "Kumbh is one topic among many; the homepage leads with Nashik itself.",
-        "profile": { "homeKumbhEmphasis": "reduced", "liveBand": false, "archiveKumbhLive": true }
+        "profile": {
+          "homeKumbhEmphasis": "reduced",
+          "liveBand": false,
+          "archiveKumbhLive": true,
+          "navLabel": "Kumbh Mela"
+        }
       }
     ]
   },
   "pipeline": {
     "autoPublishLowRisk": false,
-    "autoPublishTiers": ["official"],
+    "autoPublishTiers": [
+      "official"
+    ],
     "minConfidence": 0.9,
     "candidateTtlDays": 14,
     "_note": "autoPublishLowRisk ships OFF. Even when on, high-risk items (tools/nt/risk.py) always need a named human approver."
   },
   "freshness": {
     "_note": "How long a verified fact or page may go without a re-check before the content-health report flags it stale.",
-    "factStaleAfterDays": { "kumbh": 14, "transport": 30, "timings": 60, "fees": 60, "accommodation": 30, "default": 90 },
-    "pageReviewDays": { "kumbh": 14, "transport": 30, "destination": 90, "guide": 120, "default": 180 }
+    "factStaleAfterDays": {
+      "kumbh": 14,
+      "transport": 30,
+      "timings": 60,
+      "fees": 60,
+      "accommodation": 30,
+      "default": 90
+    },
+    "pageReviewDays": {
+      "kumbh": 14,
+      "transport": 30,
+      "destination": 90,
+      "guide": 120,
+      "default": 180
+    }
   },
   "contact": {
     "formEndpoint": "contact form is handled by the existing Formspree integration on /contact/"
+  },
+  "analytics": {
+    "_note": "GA4 (existing measurement ID) is on the home, discover, plan and destination pages and on every page added in this phase. sitewide=true makes apply-chrome add it to the remaining legacy guides too — a decision for the site owner, so it ships off.",
+    "sitewide": false
   }
 }

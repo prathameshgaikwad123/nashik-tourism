@@ -1,5 +1,5 @@
 {
-  "_about": "The source registry. Every outbound 'official source' link, every monitor target and every attribution on the site resolves to an entry here by id; URLs are never hard-coded in templates. reliability follows the site's source hierarchy: official (Tier 1) > reliable_news (Tier 2) > business_official (Tier 3) > social (Tier 4, never confirmation). urlStatus: 'located' = the URL was returned by a search of the official domain but has not been opened by an editor; 'unchecked' = listed from editorial knowledge; 'to_be_confirmed' = no URL yet (the entry is inactive until one is added). tools/monitor-sources.py records live reachability in data/state/source-state.json, never here.",
+  "_about": "The source registry. Every outbound 'official source' link, every monitor target and every attribution on the site resolves to an entry here by id; URLs are never hard-coded in templates. reliability follows the site's source hierarchy: official (Tier 1) > reliable_news (Tier 2) > business_official (Tier 3) > social (Tier 4, never confirmation). urlStatus: 'located' = the URL was returned by a search of the official domain but has not been opened by an editor; 'unchecked' = listed from editorial knowledge; 'to_be_confirmed' = no URL yet (the entry is inactive until one is added). tools/monitor-sources.py records live reachability in data/state/source-state.json, never here. Entries with citation:true are single documents kept so facts can cite them; they are not listed on /sources/ and are not monitored.",
   "sources": [
     {
       "id": "ntka",
@@ -12,7 +12,9 @@
       "urlStatus": "located",
       "scope": "Authority constitution, Simhastha arrangements, official announcements",
       "notes": "Page title on the site reads 'About Nashik–Trimbakeshwar Authority'. The Authority's official portal and mobile app were reported as approved but not yet live; add them here when they launch.",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "ntka-contact",
@@ -25,7 +27,9 @@
       "urlStatus": "located",
       "scope": "Where to send questions about Simhastha arrangements",
       "notes": "The site links here rather than republishing phone numbers or e-mail addresses, so a changed number never goes stale on our pages.",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "divcom-gr",
@@ -37,7 +41,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "Government Resolutions and acts concerning the Simhastha",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "divcom-approvals",
@@ -49,7 +55,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "Sanctioned works and amounts for the Simhastha development plan",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "nashik-district",
@@ -61,7 +69,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "District notices, tourism pages, how to reach Nashik",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "nashik-district-how-to-reach",
@@ -73,7 +83,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "District tourism guidance on air, rail and road access",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "maharashtra-gov",
@@ -85,7 +97,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "State government portal: orders, schemes, announcements",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "dgipr",
@@ -97,7 +111,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "State press releases and announcements",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "pwd-maharashtra",
@@ -109,7 +125,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "State road works, including the Nashik Ring Road and Trimbak Road widening reviews",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "pwd-ring-road-review",
@@ -119,9 +137,12 @@
       "reliability": "official",
       "checkFrequency": "manual",
       "active": false,
+      "citation": true,
       "urlStatus": "located",
       "scope": "A single dated event page; kept as a citation, not monitored",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "pib",
@@ -133,7 +154,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "Union Government releases, including Ministry of Railways Simhastha preparations",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "pib-rail-upgrade",
@@ -143,9 +166,12 @@
       "reliability": "official",
       "checkFrequency": "manual",
       "active": false,
+      "citation": true,
       "urlStatus": "located",
       "scope": "Ministry of Railways release on works at five stations near the Mela area",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "pib-rail-review",
@@ -155,9 +181,12 @@
       "reliability": "official",
       "checkFrequency": "manual",
       "active": false,
+      "citation": true,
       "urlStatus": "located",
       "scope": "Ministry of Railways review release",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "pib-rail-nashik-projects",
@@ -167,9 +196,12 @@
       "reliability": "official",
       "checkFrequency": "manual",
       "active": false,
+      "citation": true,
       "urlStatus": "located",
       "scope": "Union Government reply/release on railway projects in Nashik",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "newsonair",
@@ -181,7 +213,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "Public-broadcaster reporting on Maharashtra and the Simhastha",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "nmc",
@@ -205,7 +239,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "State tourism information and MTDC properties",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "maharashtra-police",
@@ -217,7 +253,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "Police notices, advisories",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "nashik-city-police",
@@ -241,7 +279,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "Railway notices and special-train announcements",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "central-railway",
@@ -253,7 +293,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "Zone notices, special trains, cancellations",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "ntes",
@@ -265,7 +307,9 @@
       "active": false,
       "urlStatus": "unchecked",
       "scope": "Live running status and timetable lookup — linked for travellers, not monitored",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "irctc",
@@ -277,7 +321,9 @@
       "active": false,
       "urlStatus": "unchecked",
       "scope": "Booking — linked for travellers, not monitored",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "msrtc",
@@ -289,7 +335,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "State bus services and any special Kumbh services",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "nhai",
@@ -301,7 +349,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "National highway works and advisories",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "aai",
@@ -313,7 +363,9 @@
       "active": true,
       "urlStatus": "located",
       "scope": "Airport information; Nashik (Ozar) is listed in AAI's aeronautical information publication as VAOZ",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "aai-vaoz",
@@ -323,9 +375,12 @@
       "reliability": "official",
       "checkFrequency": "manual",
       "active": false,
+      "citation": true,
       "urlStatus": "located",
       "scope": "Aerodrome data page for Ozar; a dated publication edition, so it can be superseded",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "imd",
@@ -337,7 +392,9 @@
       "active": false,
       "urlStatus": "unchecked",
       "scope": "Official forecasts and warnings — linked from /nashik-now/ next to the automated weather",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     },
     {
       "id": "open-meteo",
@@ -350,7 +407,9 @@
       "urlStatus": "unchecked",
       "scope": "Model-based weather data shown on /nashik-now/. Not an official forecast.",
       "notes": "Free API, no key required. Always shown with its fetch time and a link to IMD.",
-      "monitor": { "type": "api" }
+      "monitor": {
+        "type": "api"
+      }
     },
     {
       "id": "india-112",
@@ -362,7 +421,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "National single emergency number",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "freepressjournal",
@@ -374,7 +435,10 @@
       "active": true,
       "urlStatus": "located",
       "scope": "Established daily; detailed Nashik and Simhastha coverage. News leads become candidates, never published facts.",
-      "monitor": { "type": "html", "leadOnly": true }
+      "monitor": {
+        "type": "html",
+        "leadOnly": true
+      }
     },
     {
       "id": "lokmat-times-nashik",
@@ -386,7 +450,10 @@
       "active": true,
       "urlStatus": "located",
       "scope": "Established publication; Nashik coverage. News leads become candidates, never published facts.",
-      "monitor": { "type": "html", "leadOnly": true }
+      "monitor": {
+        "type": "html",
+        "leadOnly": true
+      }
     },
     {
       "id": "sula",
@@ -398,7 +465,9 @@
       "active": true,
       "urlStatus": "unchecked",
       "scope": "Tour, tasting and visiting information published by the estate",
-      "monitor": { "type": "html" }
+      "monitor": {
+        "type": "html"
+      }
     },
     {
       "id": "trimbakeshwar-devasthan",
@@ -422,7 +491,9 @@
       "active": false,
       "urlStatus": "ok",
       "scope": "Used only for notices about this site itself (corrections, removed claims), never for facts about Nashik",
-      "monitor": { "type": "manual" }
+      "monitor": {
+        "type": "manual"
+      }
     }
   ]
 }

@@ -1004,6 +1004,32 @@
         "/transport/",
         "/kumbh-mela-2027/"
       ]
+    },
+    {
+      "id": "kumbh.entry.charge",
+      "subject": "Kumbh Mela attendance",
+      "fact": "Charge to attend or bathe at the Mela",
+      "value": null,
+      "display": "Not confirmed. Earlier guide copy said there is no charge.",
+      "status": "not_verified",
+      "source": {
+        "sourceId": "ntka",
+        "name": "Nashik–Trimbakeshwar Authority",
+        "url": "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka"
+      ],
+      "verifiedAt": null,
+      "verifiedBy": null,
+      "lastCheckedAt": null,
+      "topic": "kumbh",
+      "notes": "Earlier versions of this site stated that entry is free and no registration is needed, without a source. Charges for particular services (parking, lodging, special access) are separate questions. Confirm with the Authority.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
     }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "NashikTourism.com verified updates",
+  "home_page_url": "https://nashiktourism.com/updates/",
+  "feed_url": "https://nashiktourism.com/updates/feed.json",
+  "language": "en-IN",
+  "items": [
+    {
+      "id": "tag:nashiktourism.com,2026:update:2026-10-04-kumbh-figure-withdrawn",
+      "url": "https://nashiktourism.com/updates/#u-2026-10-04-kumbh-figure-withdrawn",
+      "title": "We removed an unsourced Kumbh infrastructure figure",
+      "content_text": "Earlier versions of our Kumbh Mela guide quoted a single government infrastructure figure that we could not trace to an official source. We have removed it. Government development figures for the Simhastha are published at several different scales, so the Kumbh guide now lists each reported figure with what it counts and where it comes from.",
+      "date_published": "2026-10-04T00:00:00+05:30",
+      "date_modified": "2026-10-04T00:00:00+05:30",
+      "tags": [
+        "Kumbh",
+        "correction",
+        "kumbh",
+        "editorial"
+      ],
+      "_source": {
+        "name": "NashikTourism.com editorial team",
+        "url": "https://nashiktourism.com/editorial-policy/#corrections",
+        "verified_at": "2026-10-04",
+        "last_checked_at": "2026-10-04",
+        "status": "changed"
+      }
+    }
+  ]
+}
