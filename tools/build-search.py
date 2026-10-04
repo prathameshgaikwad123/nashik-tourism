@@ -38,7 +38,7 @@ CSS = """    .sp-form { display: flex; align-items: stretch; max-width: 680px; b
     .sp-form button { flex: none; padding: 0 var(--s-5); border: 0; background: var(--primary); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 0.82rem; cursor: pointer; min-height: var(--tap); }
     #sp-results .sd-group { margin-top: var(--s-6); }
     .browse summary { display: flex; align-items: center; min-height: var(--tap); cursor: pointer; font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; color: var(--ink); }
-    .browse h3 { font-family: var(--font-display); font-size: 0.74rem; font-weight: 700; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--saffron-deep); margin: var(--s-6) 0 var(--s-2); }
+    .browse h2 { font-family: var(--font-display); font-size: 0.74rem; font-weight: 700; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--saffron-deep); margin: var(--s-6) 0 var(--s-2); }
     .browse ul { list-style: none; display: grid; gap: 0; }
     .browse li a { display: flex; align-items: center; min-height: var(--tap); color: var(--primary); text-decoration: underline; text-underline-offset: 2px; border-bottom: 1px solid var(--border); font-weight: 600; }"""
 
@@ -193,7 +193,7 @@ def browse_html(docs):
     parts = []
     for k in ("page", "destination", "guide"):
         items = sorted(by[k], key=lambda d: d["t"]) if k != "page" else by[k]
-        parts.append("<h3>%s</h3><ul>%s</ul>" % (labels[k], "".join('<li><a href="%s">%s</a></li>' % (render.esc(d["u"]), render.esc(d["t"])) for d in items)))
+        parts.append("<h2>%s</h2><ul>%s</ul>" % (labels[k], "".join('<li><a href="%s">%s</a></li>' % (render.esc(d["u"]), render.esc(d["t"])) for d in items)))
     return "".join(parts)
 
 

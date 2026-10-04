@@ -165,7 +165,7 @@ def hub():
         fact_row("Third Amrit Snan &mdash; Trimbakeshwar", "kumbh.snan.3.trimbak", facts),
         fact_row("Mela concludes (flag lowered)", "kumbh.mela.closing", facts)])}
 
-    locations = """<section class="sec k-sec" id="locations" aria-labelledby="h-loc"><div class="inner">
+    locations = """<section class="sec k-sec" id="locations" aria-labelledby="h-loc"><div class="inner"><span id="two-locations" class="anchor-alias"></span>
   <h2 id="h-loc">Two locations: Ramkund and Kushavarta</h2>
   <p class="sec-sub">Unlike other Kumbh Melas, the Nashik Kumbh spans two sites about %(dist)s apart.</p>
   <div class="loc-grid">
@@ -174,7 +174,7 @@ def hub():
   </div>
 </div></section>""" % {"dist": render.esc(f_("dest.trimbakeshwar.distance")["display"] + " (not yet verified)")}
 
-    getting = """<section class="sec sec-alt k-sec" id="getting-here" aria-labelledby="h-get"><div class="inner">
+    getting = """<section class="sec sec-alt k-sec" id="getting-here" aria-labelledby="h-get"><div class="inner"><span id="how-to-reach" class="anchor-alias"></span>
   <h2 id="h-get">Getting to the Kumbh</h2>
   <p class="sec-sub">Rail, road and air. Special services for the Mela have not been announced in a form we could verify.</p>
   <ul class="t-facts">%(facts)s</ul>
@@ -198,7 +198,7 @@ def hub():
   %(roads)s
 </div></section>""" % {"card": render.fact_card(f_("kumbh.parking.plan")), "roads": roads_block}
 
-    stay = """<section class="sec k-sec" id="stay" aria-labelledby="h-stay"><div class="inner">
+    stay = """<section class="sec k-sec" id="stay" aria-labelledby="h-stay"><div class="inner"><span id="where-to-stay" class="anchor-alias"></span>
   <h2 id="h-stay">Where to stay</h2>
   <p class="prose">Rooms near Ramkund and Trimbakeshwar are likely to be in demand around the main bathing dates, so decisions about where to stay are best made early. Our <a href="/blog/where-to-stay-nashik-kumbh-mela/">where-to-stay guide</a> covers areas and options. We do not track availability or prices &mdash; check the hotel or booking site directly. Official accommodation (such as Mela camps) has not been announced in a form we could verify.</p>
   <p class="link-row"><a class="btn btn-outline" href="https://www.makemytrip.com/hotels/nashik-hotels.html" target="_blank" rel="noopener sponsored" data-track="accommodation_click">Search on MakeMyTrip (external)</a><a class="btn btn-outline" href="https://www.goibibo.com/hotels/hotels-in-nashik/" target="_blank" rel="noopener sponsored" data-track="accommodation_click">Search on Goibibo (external)</a></p>
@@ -209,12 +209,14 @@ def hub():
     safety = """<section class="sec sec-alt k-sec" id="safety" aria-labelledby="h-safe"><div class="inner">
   <h2 id="h-safe">Safety, medical and emergencies</h2>
   <div class="answer"><p class="a-q">In an emergency</p><p>Call <strong>%(num)s</strong>, India&rsquo;s single emergency number. %(badge)s</p></div>
-  <p class="prose">Crowd, medical and security arrangements for the Mela will be set by the Authority, the police and the health services. We could not locate a published medical or crowd-management plan, so we do not describe one. On the day, follow the instructions of police and volunteers, agree a meeting point with your group, and keep the Authority&rsquo;s official contact details to hand &mdash; <a href="https://divcomnashik.maharashtra.gov.in/en/contact-details/" rel="noopener noreferrer" data-track="official_source_click" data-track-item="ntka-contact">Authority contact page (official)</a>.</p>
+  <h3>Reported medical arrangements</h3>
+  <div class="fact-list">%(health)s</div>
+  <p class="prose" style="margin-top:var(--s-4);">Crowd-management and security arrangements for the Mela will be set by the Authority and the police; we could not locate a published plan, so we do not describe one. On the day, follow the instructions of police and volunteers, agree a meeting point with your group, and keep the Authority&rsquo;s official contact details to hand &mdash; <a href="https://divcomnashik.maharashtra.gov.in/en/contact-details/" rel="noopener noreferrer" data-track="official_source_click" data-track-item="ntka-contact">Authority contact page (official)</a>.</p>
   <ul class="t-links"><li><a href="/blog/nashik-kumbh-mela-for-senior-citizens-2027/">Guide for senior citizens</a></li><li><a href="/blog/nashik-kumbh-mela-for-women-solo-travellers/">Guide for women and solo travellers</a></li></ul>
-</div></section>""" % {"num": render.esc(e112["display"]), "badge": render.fact_badge(e112["status"], e112.get("verifiedAt"))}
+</div></section>""" % {"num": render.esc(e112["display"]), "badge": render.fact_badge(e112["status"], e112.get("verifiedAt")), "health": render.fact_card(f_("kumbh.health.plan"))}
 
 
-    tips = """<section class="sec k-sec" id="tips" aria-labelledby="h-tips"><div class="inner">
+    tips = """<section class="sec k-sec" id="tips" aria-labelledby="h-tips"><div class="inner"><span id="what-to-expect" class="anchor-alias"></span>
   <h2 id="h-tips">Practical tips for crowded days</h2>
   <p class="sec-sub">General advice for any large gathering &mdash; none of it depends on arrangements that have not been announced.</p>
   <ul class="prose" style="margin-left:1.3rem;">

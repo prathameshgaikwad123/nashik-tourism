@@ -17,8 +17,8 @@ WHAT IT TOUCHES — deliberately narrow:
 WHAT IT NEVER TOUCHES:
   * anything inside <main>, the <head>, page-level <style>, or JSON-LD
   * Google Analytics: pages that carry it keep it, pages that do not stay
-    without it. Adding tracking to pages the owner never tagged is not this
-    script's call to make.
+    without it — unless the owner sets analytics.sitewide in data/site-config.json,
+    which adds the existing snippet to the remaining pages.
 
 Behaviour removed from the inline blocks is carried by /site.js: mobile menu,
 dropdown toggles, Escape-to-close, nav scroll state, hero zoom-in, scroll
@@ -32,10 +32,15 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import chrome  # noqa: E402
+from nt import store  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                      "..", "nashiktourism"))
 SKIP = {"nav-template.html"}
+try:
+    SITEWIDE_GA = bool(store.load("site-config").get("analytics", {}).get("sitewide"))
+except (FileNotFoundError, SystemExit, KeyError):
+    SITEWIDE_GA = False
 
 HEADER_RE = re.compile(r"<header>.*?</header>", re.S)
 FOOTER_RE = re.compile(r"<footer>.*?</footer>", re.S)
@@ -145,6 +150,13 @@ def apply(html, page):
     html = SITEJS_RE.sub("", html)
     html = html.replace("</body>", chrome.SITE_JS + "\n</body>", 1)
     notes.append("+site.js")
+
+    # Analytics: left exactly where each page already had it, unless the site owner
+    # has switched on data/site-config.json > analytics.sitewide, in which case the
+    # existing GA4 snippet is added to the pages that lack it (the legacy guides).
+    if SITEWIDE_GA and "G-H04PTE8QL1" not in html:
+        html = html.replace("</body>", chrome.GA + "\n</body>", 1)
+        notes.append("+GA (sitewide)")
 
     # Tidy the blank runs left where inline blocks used to be.
     html = re.sub(r"\n{3,}", "\n\n", html)

@@ -35,6 +35,7 @@ STEPS = [
     ("build-home.py", "the homepage"),
     ("build-article-nav.py", "in-article contents and reading progress"),
     ("apply-verification.py", "status notice + verification block on every guide"),
+    ("apply-seo.py", "social tags, image sizes and sponsored-link marking on hand-written pages"),
     ("apply-chrome.py", "shared header, footer and /site.js on every page"),
     ("build-home-guides.py", "the homepage's latest-guide cards"),
     ("build-search.py", "search index and /search/"),

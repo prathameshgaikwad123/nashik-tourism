@@ -132,7 +132,7 @@ def archive_page():
     if arch:
         lst = '<div class="update-list">%s</div>' % "\n".join(render.update_card(u, compact=True) for u in arch)
     else:
-        lst = """<div class="empty-state"><h3>Nothing archived yet</h3>
+        lst = """<div class="empty-state"><h2>Nothing archived yet</h2>
         <p>When an update expires or is withdrawn it moves here, with its source and dates intact. We keep the record rather than deleting it.</p></div>"""
     head = pagekit.page_head(
         "Update archive",

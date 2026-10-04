@@ -193,7 +193,7 @@ def nav_html(page="/"):
 %(items)s
     </ul>
     <div class="nav-tools">
-      <a href="/search/" class="nav-search" id="searchOpen" aria-haspopup="dialog" aria-controls="searchDialog">%(icon)s<span class="nav-search-label">Search</span></a>
+      <a href="/search/" class="nav-search" id="searchOpen" aria-label="Search Nashik" aria-haspopup="dialog" aria-controls="searchDialog">%(icon)s<span class="nav-search-label">Search</span></a>
       <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
   </div>

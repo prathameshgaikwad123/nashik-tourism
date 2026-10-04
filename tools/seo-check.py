@@ -110,14 +110,16 @@ def load_sitemap():
 
 
 def main():
-    pages, errors, warnings = {}, [], []
+    pages, errors, warnings, page_text = {}, [], [], {}
     for dirpath, _d, files in os.walk(ROOT):
         for n in files:
             if n.endswith(".html") and n not in SKIP_FILES:
                 full = os.path.join(dirpath, n)
                 p = Page()
-                p.feed(open(full, encoding="utf-8").read())
+                raw_html = open(full, encoding="utf-8").read()
+                p.feed(raw_html)
                 pages[page_url(full)] = p
+                page_text[page_url(full)] = re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style).*?</\1>", " ", raw_html, flags=re.S))
 
     def err(path, msg):
         errors.append("%s: %s" % (path, msg))
@@ -180,6 +182,18 @@ def main():
                 err(path, "invalid JSON-LD: %s" % e)
                 continue
             for node in (data.get("@graph") or [data]):
+                typ = node.get("@type")
+                # Structured data must never claim more than the page shows: no invented
+                # prices, availability, ratings or reviews.
+                if typ in ("Offer", "AggregateOffer", "AggregateRating", "Review", "Rating") or any(
+                        k in node for k in ("offers", "aggregateRating", "review", "priceRange", "isAccessibleForFree")):
+                    err(path, "structured data carries %s — never publish prices, ratings, reviews or availability we have not verified" % (typ or "an offer/rating property"))
+                if typ == "FAQPage":
+                    for q in node.get("mainEntity", []):
+                        if re.sub(r"\W+", " ", q.get("name", "")).strip().lower()[:50] not in re.sub(r"\W+", " ", page_text.get(path, "")).lower():
+                            warn(path, "FAQ question not found in visible text: %s" % q.get("name", "")[:50])
+                if typ == "Article" and not (node.get("headline") and node.get("datePublished")):
+                    err(path, "Article structured data needs headline and datePublished")
                 if node.get("@type") == "BreadcrumbList":
                     items = node.get("itemListElement", [])
                     if [i["position"] for i in items] != list(range(1, len(items) + 1)):
@@ -258,6 +272,21 @@ def main():
     for path in sorted(indexable - {"/", "/404.html"}):
         if not inbound[path]:
             warn(path, "orphan: no internal link points here")
+
+    # posts.json feeds the guide cards, the homepage and the search index: it must say what the page says.
+    import html as _h
+    try:
+        for post in json.load(open(os.path.join(ROOT, "posts.json"), encoding="utf-8")):
+            pg = pages.get("/blog/%s/" % post["slug"])
+            if pg is None:
+                err("/blog/%s/" % post["slug"], "listed in posts.json but no such page")
+                continue
+            if (pg.title or "").strip() != post["title"].strip():
+                err("/blog/%s/" % post["slug"], "posts.json title differs from the page <title>")
+            if pg.meta.get("description", "").strip() != post["excerpt"].strip():
+                err("/blog/%s/" % post["slug"], "posts.json excerpt differs from the page meta description")
+    except (OSError, ValueError):
+        pass
 
     print("pages: %d (%d indexable); sitemap URLs: %d" % (len(pages), len(indexable), len(sitemap)))
     for w in warnings:

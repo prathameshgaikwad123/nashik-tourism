@@ -96,7 +96,7 @@ def process(html):
     toc = "\n".join('          <li><a href="#%s">%s</a></li>' % (i, t) for i, t in entries)
     card = """
       <div class="sidebar-card toc-card">
-        <h4 id="on-this-page">On this page</h4>
+        <h3 id="on-this-page">On this page</h3>
         <nav aria-labelledby="on-this-page" data-section-nav>
           <ul class="toc-list">
 %s
