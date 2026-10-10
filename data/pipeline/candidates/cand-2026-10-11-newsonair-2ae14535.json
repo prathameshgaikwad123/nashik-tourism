@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-10-11-newsonair-2ae14535",
+  "createdAt": "2026-10-11T03:10:39.372354+05:30",
+  "origin": "monitor",
+  "sourceId": "newsonair",
+  "sourceName": "All India Radio News (Prasar Bharati)",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.newsonair.gov.in/",
+  "extracted": {
+    "title": "Change detected on All India Radio News (Prasar Bharati)",
+    "summary": "India, Africa Cannot Remain Underrepresented in UN Security Council: EAM S Jaishankar",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "5 hours ago | National\nIndia, Africa Cannot Remain Underrepresented in UN Security Council: EAM S Jaishankar\nExternal Affairs Minister S Jaishankar has called for reform of the UN Security Council, saying India and Africa cannot remain under represented in global decision-making.\nAddressing a gathering at the Adwa Victory Memorial Museum in Addis Ababa, Jaishankar called for fair African representation in both permanent and non-permanent membership and recalled India’s efforts during its 2023 G20 presidency to secure permanent membership for the African Union.\nOn the final leg of his thr...\n5 hours ago | International\nNIA registers case to probe attack on flydubai Captain Smit Machchhar\n6 hours ago | Business\nRBI Raises Daily CRR Maintenance Requirement for Banks to 99% from October 16\nRussian Strikes Kill 11 in Ukraine’s Zaporizhzhia; Trump Announces Deal to Buy Russian Diesel\nRajnath Singh Calls for Shift from ‘Policy for Youth’ to ‘Policy by Youth’ and ‘Policy with Youth’\nndia to Reassess US Interim Trade Deal Amid Changing Tariff Landscape: Piyush Goyal\nBJP says, its victory in bypolls reaffirms faith in democracy\nIndia Mobile Congress 2026 Concludes, Emphasises Affordable and ",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

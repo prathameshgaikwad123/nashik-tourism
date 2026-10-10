@@ -1,0 +1,34 @@
+{
+  "id": "cand-2026-10-11-lokmat-times-nashik-dab9dc26",
+  "createdAt": "2026-10-11T03:10:39.372354+05:30",
+  "origin": "monitor",
+  "sourceId": "lokmat-times-nashik",
+  "sourceName": "Lokmat Times — Nashik",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.lokmattimes.com/nashik/",
+  "extracted": {
+    "title": "Change detected on Lokmat Times — Nashik",
+    "summary": "Nashik : Senior citizen cheated of Rs 1.73 lakh over fake gas bill",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": true,
+    "reasons": [
+      "pricing"
+    ]
+  },
+  "excerpt": "Nashik : Senior citizen cheated of Rs 1.73 lakh over fake gas bill\nLokmat News Network Nashik, OCT 9 A 67-year-old retired man from Kamod Nagar was allegedly cheated of Rs 1.73 ... ...\nNashik :Trimbak temple may close temporarily for Simhastha works\nLokmat News Network Trimbakeshwar, OCT 9 With preparations gathering pace for the upcoming Simhastha Kumbh Mela, the possibility of ... ...\nNashik :Two leopards trapped in Sinnar taluka in one day\nLokmat News Network Nashik, OCT 9 Increasing leopard movement across Sinnar taluka, with sightings in agricultural fields and near ... ...\nNashik :Nashik: Traffic Diversions Announced For Navratri Yatras From October 11; Check Details\nNashik traffic police have announced route diversions and parking restrictions for Navratri yatras from October 11 to 20. Check the road closures, alternate routes, bus diversions and parking arrangements near Kalikadevi Temple at Mumbai Naka and Ren ...\nNashik :Nashik Weather Update: October Heat Intensifies, Mercury Soars to 35.4°C\nNashik’s record for the highest temperature recorded in October was broken on Wednesday, October 7. With the heat persisting ... ...\nNashik :Alternative road to Saptashrung Gad stuck",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

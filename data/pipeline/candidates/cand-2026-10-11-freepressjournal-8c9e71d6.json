@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-10-11-freepressjournal-8c9e71d6",
+  "createdAt": "2026-10-11T03:10:39.372354+05:30",
+  "origin": "monitor",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal — Pune / Nashik coverage",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune",
+  "extracted": {
+    "title": "Change detected on Free Press Journal — Pune / Nashik coverage",
+    "summary": "Mumbai: Special NIA Court Rejects Kader Pathan’s Discharge Plea In Pune ISIS Terror Module Case",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Mumbai: Special NIA Court Rejects Kader Pathan’s Discharge Plea In Pune ISIS Terror Module Case\n11 October 2026, 12:32 AM\nCockroach Janta Party, Gyanesh Kumar & The Battle Over Democracy, Dissent & Voters’ Rights\nPune Police Release 102 CJP Protesters After 3-Hour Detention; Demonstrators Stage 15-Minute Rasta Roko Andolan\nPune Police Release 102 CJP Protesters After 3-Hour Detention; Demonstrators Stage 15-Minute Rasta Roko Outside Lashkar Police Station\nCJP Pune Members Distance Themselves From Lal Mahal Protest\nPune VIDEOS: 100-150 CJP Supporters Detained Near Lal Mahal Ahead Of Delhi Protest\n‘Feared They Would Arrest Him’: Abhijeet Dipke’s Parents Criticise Government After Delhi Police Detention\nThe parents of Cockroach Janta Party (CJP) founder Abhijeet Dipke have criticised the government... Read More\nPune: Man Stabs 60-Year-Old Step-Grandmother To Death Over Property Dispute In Pimpri-Chinchwad\nA property dispute over a three-storey building allegedly led a man to stab his 60-year-old... Read More\n‘File A Case Against Me, Not Students’: Rohit Pawar Slams Pune Police Over FIRs Against MPSC Protesters\nNationalist Congress Party (Sharadchandra Pawar) MLA Rohit Pawar on Saturda",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}
