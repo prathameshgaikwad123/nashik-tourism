@@ -34,6 +34,10 @@ jobs:
         id: pr
         uses: peter-evans/create-pull-request@v7
         with:
+          # Falls back to the default token. That token can only open PRs when the repo
+          # setting "Allow GitHub Actions to create and approve pull requests" is on
+          # (Settings > Actions > General). If it is off, add a PAT as the PR_TOKEN secret.
+          token: ${{ secrets.PR_TOKEN || github.token }}
           branch: monitor/candidates
           commit-message: "chore: source monitor candidates for review"
           title: "Source monitor: candidate updates for review (nothing is published)"
