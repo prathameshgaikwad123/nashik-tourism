@@ -21,7 +21,7 @@ The existing host configuration was not in the repository, so nothing host-speci
 None are required to build or run the site. All are optional and read from the environment only.
 
 | Name | Where | Purpose |
-|---|---|---|
+| `PR_TOKEN` | secret (monitor workflow) | Personal access token (`repo` scope) used to open the candidates PR. Only needed if you do not enable *Settings > Actions > General > Allow GitHub Actions to create and approve pull requests*; without either, the "Open a pull request" step fails with `GitHub Actions is not permitted to create or approve pull requests`. |
 | `ANTHROPIC_API_KEY` | secret (monitor workflow) | Enables AI classification of detected changes. Without it the monitor still runs with heuristic candidates. |
 | `NT_CLASSIFIER_MODEL` | variable | Model id for classification (default `claude-haiku-4-5-20251001`). |
 | `NOTIFY_WEBHOOK_URL` | secret | Slack/Teams/Discord webhook for "candidates need review". |
