@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-10-17-nashik-district-2461b29e",
+  "createdAt": "2026-10-17T21:00:30.571132+05:30",
+  "origin": "monitor",
+  "sourceId": "nashik-district",
+  "sourceName": "Nashik District Administration",
+  "sourceTier": "official",
+  "sourceUrl": "https://nashik.gov.in/",
+  "extracted": {
+    "title": "Change detected on Nashik District Administration",
+    "summary": "मौजे वंजारवाडी - भूसंपादन अंतिम निवाडा New",
+    "category": "Government",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "मौजे वंजारवाडी - भूसंपादन अंतिम निवाडा New\nअंतिम निवडा - नाशिक रिंगरोडसाठी भूसंपादन (कुंभमेळा २०२७)- मौजे विंचूर गवळी. New\nश्री. देवेंद्र सरिता गंगाधरराव फडणवीस\nमाननीय मुख्यमंत्री, महाराष्ट्र राज्य\nश्री. एकनाथ गंगुबाई संभाजी शिंदे\nमाननीय उपमुख्यमंत्री, महाराष्ट्र राज्य\nश्रीमती. सुनेत्रा अजित पवार\nनाशिकला अनेक प्रसिद्ध व्यक्ती असण्याचे श्रेय मिळाले आहे जसे वीर सावरकर, अनंत कान्हेरे, लोकमान्य टिळक, दादासाहेब पोतनीस, बाबूभाई राठी, व्ही.व्ही. शिरवाडकर आणि वसंत कानेटकर हे फक्त काही नाव आहेत. नाशिकला मिनी महाराष्ट्र असेही म्हणतात, कारण सुरगाणा, पेठ, इगतपुरीचे हवामान कोकण सारखे आहेत. निफाड, सिन्नर, दिंडोरी, बागलाण हे पश्चिम महाराष्ट्र सारखे आणि येवला, नांदगाव, चांदवड ब्लॉक विदर्भ विभागा सारखे आहेत. नाशिक जिल्ह्यातील नाशिक, मालेगाव, मनमाड, इगतपुरी अशी काही मोठी शहरे आहेत.\nमौजे मेटघर किल्ला कलम 11 ची अधिसुचना\nजिल्हा विकास आराखडा २०२६-२७\nमौजे वंजारवाडी – भूसंपादन अंतिम निवाडा\nअंतिम निवडा – नाशिक रिंगरोडसाठी भूसंपादन (कुंभमेळा २०२७)- मौजे विंचूर गवळी.\nमौजे गौळाणे – भूसंपादन अंतिम निवाडा\nमौजे जलालपुर, तालुका आणि जिल्हा नाशिक कलम १९ अधिसूचना.\nअनु. क्षेत्राबाहेरील ग्राम महसूल अधिकारी बदली आदेश प्रत\nमहसूल सहायक संवर्ग सर्वसाधारण बदली २०२६ आदेश\nसहायक महसूल अधिकारी संवर्ग सर्वसाधारण बदली २०२६ आदेश\n",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

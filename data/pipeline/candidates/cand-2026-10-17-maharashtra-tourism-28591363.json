@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-10-17-maharashtra-tourism-28591363",
+  "createdAt": "2026-10-17T21:00:30.571132+05:30",
+  "origin": "monitor",
+  "sourceId": "maharashtra-tourism",
+  "sourceName": "Maharashtra Tourism (MTDC)",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.maharashtratourism.gov.in/",
+  "extracted": {
+    "title": "Change detected on Maharashtra Tourism (MTDC)",
+    "summary": "Shri Mahalakshmi (Ambabai) Temple, Kolhapur | A Timeless Symbol of Faith and Heritage",
+    "category": "Tourism",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Shri. Sanjay Yadav (IAS)\nShri Mahalakshmi (Ambabai) Temple, Kolhapur | A Timeless Symbol of Faith and Heritage\nPratapgad Mashal Mahotsav 🔥 | Celebrating the Pride of Swarajya | Maharashtra Tourism\nMadhu Kambikar: A Legendary Lavani Artist and Marathi Cinema Icon | Heartfelt Tribute\nMaharashtra Tourism Shines at TTF Hyderabad 2026 | Discover Maharashtra’s Rich Heritage",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

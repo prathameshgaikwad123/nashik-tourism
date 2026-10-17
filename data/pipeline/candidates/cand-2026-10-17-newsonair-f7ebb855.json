@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-10-17-newsonair-f7ebb855",
+  "createdAt": "2026-10-17T21:00:30.571132+05:30",
+  "origin": "monitor",
+  "sourceId": "newsonair",
+  "sourceName": "All India Radio News (Prasar Bharati)",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.newsonair.gov.in/",
+  "extracted": {
+    "title": "Change detected on All India Radio News (Prasar Bharati)",
+    "summary": "IMD issues orange alert in five districts of Keralam for very heavy rainfall",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "3 hours ago | Regional News\nIMD issues orange alert in five districts of Keralam for very heavy rainfall\nThe India Meteorological Department has issued an orange alert in five districts of Keralam- Thiruvananthapuram, Malappuram, Kozhikode, Wayanad and Kannur, forecasting very heavy rainfall today. A yellow alert has been issued for the remaining nine districts. The yellow alert will remain in force in various districts until October 21. The IMD has also forecast isolated thunderstorms accompanied by rain and strong winds reaching speeds of 40-50 kmph. In view of the rough weather conditions, fishi...\n4 hours ago | National\nFSSAI draft amendment proposes ban on sucrose and fructose in food products for babies up to six ...\nUnion Minister Bhupender Yadav holds meeting with start-ups on air pollution mitigation in New Delhi\nIndia’s Amruta Pujari wins silver at under-23 World Wrestling Championships in Las Vegas\n6 hours ago | International\nAir India, Air India Express suspend flights to Jeddah, Riyadh & Dammam until October 24 ami...\nNPPA undertakes Trade Margin Rationalisation for 137 non-scheduled anti-cancer drugs in public interest\nAll nine Indian seafarers aboard YARA J safe; ves",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

@@ -1,0 +1,34 @@
+{
+  "id": "cand-2026-10-17-lokmat-times-nashik-a5e1d69a",
+  "createdAt": "2026-10-17T21:00:30.571132+05:30",
+  "origin": "monitor",
+  "sourceId": "lokmat-times-nashik",
+  "sourceName": "Lokmat Times — Nashik",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.lokmattimes.com/nashik/",
+  "extracted": {
+    "title": "Change detected on Lokmat Times — Nashik",
+    "summary": "Nashik : Maharashtra FDA Crackdown: 5 Nashik Officers Suspended, 20 More Face Possible Action",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": true,
+    "reasons": [
+      "transport-restriction"
+    ]
+  },
+  "excerpt": "Nashik : Maharashtra FDA Crackdown: 5 Nashik Officers Suspended, 20 More Face Possible Action\nMaharashtra's Food and Drug Administration is considering action against officers over alleged corruption during food outlet inspections. Separately, five Nashik officials have been suspended over alleged irregularities in the seizure and disposal of ...\nNashik :Plea filed before NGT over yellowish-coloured water in Ambad\nNashik, OCT 16 Environmental activists have approached the National Green Tribunal (NGT) seeking action over alleged groundwater contamination in ... ...\nNashik :Administration bans transport, sale of fodder outside district\nLokmat News Network Nashik, OCT 16 The district administration has banned the transportation and sale of fodder produced in ... ...\nNashik :6,500 residents to perform Goda Aarti together\nLokmat News Network Nashik, OCT 16 The banks of the Godavari will witness a massive Goda Aarti on October ... ...\nNashik :Crop damage assessments completed in 1,293 villages\nLokmat News Network Nashik, OCT 16 With erratic rainfall affecting the kharif season, drought conditions have emerged across 13 ... ...\nNashik :Leopard cub rescued from well\nVinchur, OCT 16 A leop",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

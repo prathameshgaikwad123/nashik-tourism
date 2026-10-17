@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-10-17-freepressjournal-18ed6383",
+  "createdAt": "2026-10-17T21:00:30.571132+05:30",
+  "origin": "monitor",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal — Pune / Nashik coverage",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune",
+  "extracted": {
+    "title": "Change detected on Free Press Journal — Pune / Nashik coverage",
+    "summary": "‘Lehra Do Tiranga’: CJP Pune Demands CEC Gyanesh Kumar’s Resignation At Protest Outside Collector’s Office",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "‘Lehra Do Tiranga’: CJP Pune Demands CEC Gyanesh Kumar’s Resignation At Protest Outside Collector’s Office\nPune VIDEOS: Eknath Shinde Announces ₹5,000 Aid For Farmers Before Diwali, Accuses Rahul Gandhi Of 'Misleading People'\nPune: UP Gang Busted For Stealing Gold Chains During Ganeshotsav; 13 Cases Solved, Valuables Worth ₹21.21 Lakh Seized\nPune: Man Strangled To Death Over Verbal Abuse, Body Tied To 16 kg Stone & Dumped In Well; Suspect Arrested\nPune: Supriya Sule Questions 'Two Sets Of Laws' For Protests In Delhi & Maharashtra\nWATCH: Major Fire Breaks Out At Vidyut Bhavan In Nashik Road; Fire Brigade Averts Disaster\n'₹5,000 Drought Aid Is A Cruel Joke': Rohit Pawar Demands ₹1 Lakh Per Hectare For Farmers\nAlleging that Maharashtra farmers are facing an unprecedented drought crisis amid a sharp rainfall... Read More\nPune: Shankar Mahadevan Academy Signs MoU With Bharati Vidyapeeth; Online Certificate Courses In Music To Be Launched\nShankar Mahadevan Academy (SMA) has signed a Memorandum of Understanding (MoU) with Bharati... Read More\nPune FDA Seizes Food Stock Worth ₹38.10 Lakh, Suspends Nine Licences; 29 FIRs, 25 Arrests In Banned Products Drive\nThe Food and Drug Administration ",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

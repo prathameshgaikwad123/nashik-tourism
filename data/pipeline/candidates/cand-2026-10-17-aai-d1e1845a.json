@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-10-17-aai-d1e1845a",
+  "createdAt": "2026-10-17T21:00:30.571132+05:30",
+  "origin": "monitor",
+  "sourceId": "aai",
+  "sourceName": "Airports Authority of India",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.aai.aero/",
+  "extracted": {
+    "title": "Change detected on Airports Authority of India",
+    "summary": "Admit Card for Computer Based Test under Advt. No. 12/2026/CHQ/DR-CBT Advertisement for Hiring of Quality Manager/Compliance Monitoring Manager on contracts basis at Flight Inspection Unit, AAI Advertisement for Hiring of Co-Pilot (P2) on contract basis at Flight Inspection Unit,",
+    "category": "Airport",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Admit Card for Computer Based Test under Advt. No. 12/2026/CHQ/DR-CBT Advertisement for Hiring of Quality Manager/Compliance Monitoring Manager on contracts basis at Flight Inspection Unit, AAI Advertisement for Hiring of Co-Pilot (P2) on contract basis at Flight Inspection Unit, AAI Video Tutorial on NIC Email solution Experience our new Website Application Verification Schedule for recruitment through GATE 2023/GATE 2024/GATE 2025\nConstruction of Fire Watch Tower over the Existing Fire Station at Kalaburagi Airport\nConstruciton of Switch room and ancillary rooms at civil airport pantnagar SH Electrical works\nARMO Works. SH:-Testing, calibration and servicing of Protective relays, Metering Devices, HT & LT Breakers & Panels and Transformer oil filtration at Hubballi Airport\nModification of Part of Old Terminal Building-Ground Floor for relocation of BCAS office at S.V. Airport, Raipur. SH: Electrical Works\nComprehensive Insurance of Airports Authority of India (AAI) Vehicles at DABH Airport, Indore\nCurtain Raiser for Route Asia 2027",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}
