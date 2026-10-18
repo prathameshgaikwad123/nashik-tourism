@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
    NASHIKTOURISM.COM — GLOBAL STYLESHEET
-   Montserrat + Lato | Indigo + Gold + Saffron on stone
+   Playfair Display + Plus Jakarta Sans | Indigo + Gold + Saffron on stone
 
    PHASE 3 DESIGN SYSTEM
    The token block below is the single source of truth for colour, type,
@@ -62,8 +62,9 @@
   --focus:         #E8A030;
 
   /* ── Type scale ────────────────────────────────────────────────────────── */
-  --font-display:  'Montserrat', 'Montserrat Fallback', system-ui, sans-serif;
-  --font-body:     'Lato', 'Lato Fallback', system-ui, sans-serif;
+  --font-serif:    'Playfair Display', 'Playfair Fallback', Georgia, 'Times New Roman', serif;
+  --font-display:  'Plus Jakarta Sans', 'Jakarta Fallback', system-ui, sans-serif;
+  --font-body:     'Plus Jakarta Sans', 'Jakarta Fallback', system-ui, sans-serif;
   --t-display:     clamp(2.75rem, 7.5vw, 7rem);
   --t-h1:          clamp(2rem, 5vw, 3.6rem);
   --t-h2:          clamp(1.7rem, 3vw, 2.6rem);
@@ -116,36 +117,28 @@
 
 /* ═══════════════════════════════════════════
    FONT FALLBACK METRICS
-   Montserrat and Lato arrive from a third party, so the first paint uses a
-   local fallback and the swap reflowed every heading — measured at CLS 0.266
-   on /blog/ramkund-ghat-nashik-guide/ and 0.257 on /kumbh-mela-2027/ at
-   1280px, both far above the 0.1 "good" threshold.
-
-   These faces re-cut the local fallback to the real font's metrics, measured in
-   Chromium against the actual woff2 files rather than looked up: Montserrat is
-   110.8% of Arial's advance width at weight 400 and 114.3% at 900, Lato is 97%.
-
-   size-adjust is then tuned ABOVE the raw glyph measurement — 118%, not 114% —
-   because letter-spacing is computed from the declared font-size and is NOT
-   scaled by size-adjust, so a size-adjusted fallback ends up with proportionally
-   less tracking than the real face and wraps a line too late. 114/116/118/120%
-   were each measured across eight pages at three widths; 118% gave the lowest
-   worst-page CLS (0.086, from 0.196 at 114%).
+   Playfair Display and Plus Jakarta Sans arrive from a third party, so the
+   first paint uses a local fallback and the swap can reflow headings. These
+   faces re-cut the local fallback to the real fonts' metrics. Advance widths
+   were measured in Chromium against the actual woff2 files as a ratio of
+   Arial for Plus Jakarta Sans (103% at weight 400, 95% at 700, so 100%) and of
+   Times New Roman for Playfair Display (104-107% at weights 700-900, so 105%).
+   Ascent and descent come from the fonts' own hhea tables, divided by size-adjust.
 ═══════════════════════════════════════════ */
 @font-face {
-  font-family: 'Montserrat Fallback';
-  src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
-  size-adjust: 118%;
-  ascent-override: 82%;
-  descent-override: 21%;
+  font-family: 'Playfair Fallback';
+  src: local('Times New Roman'), local('Liberation Serif');
+  size-adjust: 105%;
+  ascent-override: 103%;
+  descent-override: 23.9%;
   line-gap-override: 0%;
 }
 @font-face {
-  font-family: 'Lato Fallback';
+  font-family: 'Jakarta Fallback';
   src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
-  size-adjust: 97%;
-  ascent-override: 102%;
-  descent-override: 22%;
+  size-adjust: 100%;
+  ascent-override: 103.8%;
+  descent-override: 22.2%;
   line-gap-override: 0%;
 }
 
@@ -1161,3 +1154,15 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
 /* Headings never push the page wider than the screen; hotel/booking buttons meet the 44px target. */
 h1, h2, h3 { overflow-wrap: break-word; }
 .btn-gold { display: inline-flex; align-items: center; justify-content: center; min-height: var(--tap); padding-inline: var(--s-4); border-radius: var(--r-md); font-family: var(--font-display); font-weight: 700; font-size: 0.82rem; }
+
+/* ═══════════════════════════════════════════
+   HEADLINE SERIF
+   Page and section headings use Playfair Display; labels, navigation, buttons
+   and body copy stay in Plus Jakarta Sans. Many pages carry their own inline
+   heading rules, so this wins with !important instead of chasing each selector.
+   Small uppercase labels that happen to be h2/h3 are excluded.
+═══════════════════════════════════════════ */
+html body :is(h1, h2, h3):not(.footer-col h3, .sidebar-card h3, .browse h2, .err-links h2, .trust-item h3, .contact-card h2, .contact-card h3) {
+  font-family: var(--font-serif) !important;
+  font-variant-numeric: lining-nums;
+}
