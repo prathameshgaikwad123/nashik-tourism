@@ -32,6 +32,9 @@ jobs:
         run: python3 tools/monitor-sources.py --expire --summary-file monitor-summary.md
       - name: Open a pull request with new candidates
         id: pr
+        # Never fail the run over PR creation: the candidates branch is pushed either way,
+        # and failing here sends a failure e-mail every 6 hours until the setting below is fixed.
+        continue-on-error: true
         uses: peter-evans/create-pull-request@v7
         with:
           # Falls back to the default token. That token can only open PRs when the repo
@@ -45,6 +48,10 @@ jobs:
           add-paths: |
             data/pipeline/candidates/*.json
           labels: needs-human-review
+      - name: Explain how to enable PR creation
+        if: steps.pr.outcome == 'failure'
+        run: |
+          echo "::warning title=Could not open the candidates PR::Candidates were pushed to branch monitor/candidates. Enable Settings > Actions > General > 'Allow GitHub Actions to create and approve pull requests', or add a PR_TOKEN secret."
       - name: Notify
         if: steps.pr.outputs.pull-request-number != ''
         env:
