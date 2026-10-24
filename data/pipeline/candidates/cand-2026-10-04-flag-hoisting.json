@@ -29,9 +29,9 @@
   "excerpt": "Search-result summary: flag-hoisting simultaneously at Ramkund and Kushavarta at 12.02 pm; flag to come down on 24 July 2028; President's presence described as likely.",
   "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
   "review": {
-    "state": "pending",
-    "by": null,
-    "at": null,
-    "note": null
+    "state": "superseded",
+    "by": "monitor",
+    "at": "2026-10-24",
+    "note": "expired unreviewed after 14 days; never published"
   }
 }
