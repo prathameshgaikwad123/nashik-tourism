@@ -29,9 +29,9 @@
   "excerpt": "Search-result summary: Kushavart Tirth will remain closed to devotees until October 31, 2026 for renovation ahead of the Simhastha; alternative locations named; target completion coincides with flag-hoisting.",
   "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
   "review": {
-    "state": "pending",
-    "by": null,
-    "at": null,
-    "note": null
+    "state": "superseded",
+    "by": "monitor",
+    "at": "2026-10-24",
+    "note": "expired unreviewed after 14 days; never published"
   }
 }
