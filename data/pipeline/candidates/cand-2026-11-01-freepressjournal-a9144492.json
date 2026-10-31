@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-01-freepressjournal-a9144492",
+  "createdAt": "2026-11-01T02:59:59.543785+05:30",
+  "origin": "monitor",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal — Pune / Nashik coverage",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune",
+  "extracted": {
+    "title": "Change detected on Free Press Journal — Pune / Nashik coverage",
+    "summary": "Maharashtra: School Managements Get Only 10 Marks For Teacher Interviews; 11,493 Candidates Recommended",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Maharashtra: School Managements Get Only 10 Marks For Teacher Interviews; 11,493 Candidates Recommended\nWATCH: Parcel Explodes During Unloading At Courier Office In Maharashtra's Latur; Employee Seriously Injured\nPune Policeman Dismissed From Service After Arrest With 12 Kg Ganja In Telangana\nKetan Agarwal Murder Case: Siya Goyal Seeks Bail, Discharge; Next Hearing On Nov 17 In\nPune Railway Station Gets High-Tech Security Cover Ahead Of Diwali; 170 CCTV Cameras, Drones Deployed\nPune Metro Line 3: Hinjawadi-Shivajinagar Route To Open On Nov 4; Timings, Ticket Fares, Special Features And More\nNashik: Simhastha Kumbh Parva Begins In Trimbakeshwar; CM Devendra Fadnavis Hoists Religious Flag\nChief Minister Performs Dharmadhwajarohan Ceremony Amid Vedic Chants And Presence Of Saints, Mahants... Read More\nSimhastha Kumbh Celebrations Begin Amid Vedic Chants & Conch Shells In Nashik; President Droupadi Murmu Present\nPresident Murmu Hoists Saffron Religious Flag At Ramtirtha As Saints, Spiritual Leaders And Devotees... Read More\nWATCH: Simhastha Kumbh Parva Begins In Nashik; President Droupadi Murmu Hoists Religious Flag At Ramkund\nPresident Performs Dharmadhwajarohan Ceremony Amid Vedic Ch",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

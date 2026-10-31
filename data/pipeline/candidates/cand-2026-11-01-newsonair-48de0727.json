@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-01-newsonair-48de0727",
+  "createdAt": "2026-11-01T02:59:59.543785+05:30",
+  "origin": "monitor",
+  "sourceId": "newsonair",
+  "sourceName": "All India Radio News (Prasar Bharati)",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.newsonair.gov.in/",
+  "extracted": {
+    "title": "Change detected on All India Radio News (Prasar Bharati)",
+    "summary": "PM Modi leads the nation in paying tributes to Sardar Vallabhbhai Patel on his birth anniversary",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "PM Modi leads the nation in paying tributes to Sardar Vallabhbhai Patel on his birth anniversary\nPrime Minister Narendra Modi today led the nation in paying tributes to Sardar Vallabhbhai Patel on his birth anniversary.\nHe participated in the Rashtriya Ekta Diwas celebrations at Ektanagar in Gujarat to mark the 151st birth anniversary of Sardar Patel. Addressing the event this evening, Mr. Modi recalled monumental role of Sardar Patel in shaping and safeguarding the nation's unity. He emphasized that India today is more secure and more resolute than ever before. He said, a major reason...\nPM Modi Visits Rain Forest and Vaman Vriksha Vatika in Gujarat’s Ekta Nagar\nVande Bharat Sleeper Express Between Varanasi and Delhi Flagged Off\nAir Chief Marshal Ashutosh Dixit Takes Charge as 29th Chief of Air Staff\nPV Sindhu Enters Women’s Singles Final at Hylo Open in Germany\nEducation Ministry Extends NMMSS Application Deadline to November 15\nQuad Ministers Pledge Over $85 Million to Support Trusted AI Across Indo-Pacific\nUAE announces reduction in petrol & diesel prices for November, despite rising crude prices\nUK Considers Formal Apology for Role in Transatlantic Slave Trade\nIndian Women Win",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

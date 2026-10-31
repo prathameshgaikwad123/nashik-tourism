@@ -29,9 +29,9 @@
   "excerpt": "Search-result summary: 84 organisations completed registration via the Authority's QR single-window system; student volunteer registrations open.",
   "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
   "review": {
-    "state": "pending",
-    "by": null,
-    "at": null,
-    "note": null
+    "state": "superseded",
+    "by": "monitor",
+    "at": "2026-11-01",
+    "note": "expired unreviewed after 14 days; never published"
   }
 }
