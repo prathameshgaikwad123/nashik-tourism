@@ -28,9 +28,9 @@
   "excerpt": "Official PWD event page located by search; page text not read.",
   "extractionNote": "Drafted from a search-engine summary of the page. The article text itself was not read. An editor must open the source, check every detail, and set publishedAt before approving.",
   "review": {
-    "state": "pending",
-    "by": null,
-    "at": null,
-    "note": null
+    "state": "superseded",
+    "by": "monitor",
+    "at": "2026-11-01",
+    "note": "expired unreviewed after 14 days; never published"
   }
 }
