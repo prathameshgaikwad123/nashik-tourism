@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-21-freepressjournal-6ff096fe",
+  "createdAt": "2026-11-21T12:30:10.825858+05:30",
+  "origin": "monitor",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal — Pune / Nashik coverage",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune",
+  "extracted": {
+    "title": "Change detected on Free Press Journal — Pune / Nashik coverage",
+    "summary": "Maharashtra Forms CM Fadnavis-Led Panel To Recommend Naming And Renaming Of Metro Stations In Mumbai, Pune And Nagpur",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Maharashtra Forms CM Fadnavis-Led Panel To Recommend Naming And Renaming Of Metro Stations In Mumbai, Pune And Nagpur\n21 November 2026, 11:27 AM\n'Our Shops Are Our Livelihood': Traders Protest As Pune Municipal Corporation Clears 1.17 Lakh Sq Ft Of Encroachments On Day 4 Of Drive\nMaharashtra Sanctions ₹64.53 Crore For Baramati Airport Upgrade 10 Months After Ajit Pawar's Death\nMaha CM Devendra Fadnavis Calls For Long-Term Water Security Plans For Mumbai, Pune; 8 TMC Water From Mulshi Dam Under Consideration\nPMC Approves ₹2,634 Crore Land Acquisition Proposal For 43.6-Km High-Capacity Mass Transit Route (HCMTR)\nCentral Bank Of India Disburses ₹70 Crore In Loans To Entrepreneurs In Chhatrapati Sambhajinagar\n‘FSI Monster Could Consume Pune’: All-Party Corporators Demand Changes To UDCPR In PMC’s General Body Meeting\nPune Municipal Corporation House Leader Ganesh Bidkar warned that the \"FSI monster could consume the... Read More\nPune To Intensify Traffic Enforcement At 22 Accident-Prone Black Spots Under Zero Fatality Corridor Project\nPune Police will intensify traffic checks across 22 accident-prone black spots under the Zero... Read More\nAngels Of Nashik: 165 Truckloads Of Concrete R",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}
