@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-21-lokmat-times-nashik-aef1f586",
+  "createdAt": "2026-11-21T12:30:10.825858+05:30",
+  "origin": "monitor",
+  "sourceId": "lokmat-times-nashik",
+  "sourceName": "Lokmat Times — Nashik",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.lokmattimes.com/nashik/",
+  "extracted": {
+    "title": "Change detected on Lokmat Times — Nashik",
+    "summary": "Nashik : 33-Year-Old Man Killed In Hit-And-Run Accident During Morning Walk In Nashik",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Nashik : 33-Year-Old Man Killed In Hit-And-Run Accident During Morning Walk In Nashik\nA 33-year-old man was killed after an unidentified vehicle hit him while he was out for his morning walk ... ...\nNashik :Rs 57.5 lakh approved for DPR of proposed spiritual hub",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}
