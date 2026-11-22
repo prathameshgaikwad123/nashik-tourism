@@ -25,6 +25,16 @@ jobs:
           python-version: "3.11"
       - name: Build (the generators compute "today" in IST themselves)
         run: python3 tools/build-all.py
+        env:
+          NT_MSVALIDATE: ${{ vars.NT_MSVALIDATE }}
+          NT_PLAUSIBLE_DOMAIN: ${{ vars.NT_PLAUSIBLE_DOMAIN }}
+          NT_CF_BEACON_TOKEN: ${{ vars.NT_CF_BEACON_TOKEN }}
+          NT_SIGNUP_FORM_ACTION: ${{ vars.NT_SIGNUP_FORM_ACTION }}
+          NT_WHATSAPP_CHANNEL_URL: ${{ vars.NT_WHATSAPP_CHANNEL_URL }}
+          NT_AFFILIATE_MAKEMYTRIP: ${{ vars.NT_AFFILIATE_MAKEMYTRIP }}
+          NT_AFFILIATE_GOIBIBO: ${{ vars.NT_AFFILIATE_GOIBIBO }}
+          NT_AFFILIATE_BOOKING: ${{ vars.NT_AFFILIATE_BOOKING }}
+          NT_AFFILIATE_AGODA: ${{ vars.NT_AFFILIATE_AGODA }}
       - name: Commit if anything changed
         run: |
           if git diff --quiet; then

@@ -495,7 +495,7 @@ def build(dest):
           <li><a href="/blog/best-time-to-visit-nashik/">Best time to visit</a></li>
           <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to stay</a></li>
           <li><a href="/blog/nashik-2-day-itinerary/">Two-day itinerary</a></li>
-          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">Budget guide</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027">Budget guide</a></li>
         </ul>
         <a href="/plan-your-trip/" class="btn btn-purple">Plan Your Trip</a>
       </div>
@@ -834,9 +834,9 @@ PLAN_ROWS = [
     ("When should I visit?", "How the seasons run, and which months suit which kind of trip.", "/blog/best-time-to-visit-nashik/"),
     ("How many days are enough?", "A worked two-day itinerary across temples, caves and vineyards.", "/blog/nashik-2-day-itinerary/"),
     ("Where should I stay?", "Which areas suit which trip, from Panchavati to the vineyard side.", "/blog/where-to-stay-nashik-kumbh-mela/"),
-    ("What will it cost?", "A budget breakdown for travel, stay, food and getting around.", "/blog/nashik-kumbh-mela-budget-2027/"),
+    ("What will it cost?", "A budget breakdown for travel, stay, food and getting around.", "/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027"),
     ("What should I actually see?", "Fifteen places worth your time, temples and vineyards to quieter corners.", "/blog/is-nashik-worth-visiting/"),
-    ("What do I pack?", "A practical packing list, written with Kumbh Mela crowds in mind.", "/blog/nashik-kumbh-mela-packing-list/"),
+    ("What do I pack?", "A practical packing list, written with Kumbh Mela crowds in mind.", "/kumbh-mela-2027/#what-to-pack"),
     ("What about Kumbh Mela 2027?", "Dates, ghats, crowds and how the Mela reshapes a Nashik trip.", "/kumbh-mela-2027/"),
 ]
 
@@ -998,7 +998,7 @@ def build_plan_hub():
       <li>Decide your travel mode first &mdash; train, bus, flight or self-drive &mdash; because it shapes everything else. See <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">how to reach Nashik</a>.</li>
       <li>Pick the zone you want to stay in before you pick a hotel. Panchavati and Trimbakeshwar suit very different trips: <a href="/blog/where-to-stay-nashik-kumbh-mela/">where to stay</a>.</li>
       <li>Book accommodation early if your dates fall near the Amrit Snan dates &mdash; see the <a href="/kumbh-mela-2027/">Kumbh Mela 2027 guide</a>.</li>
-      <li>Carry ID, emergency contacts and a light day bag for ghat visits. Our <a href="/blog/nashik-kumbh-mela-packing-list/">packing list</a> goes further.</li>
+      <li>Carry ID, emergency contacts and a light day bag for ghat visits. Our <a href="/kumbh-mela-2027/#what-to-pack">packing list</a> goes further.</li>
       <li>Confirm timings and any festival arrangements close to your travel date &mdash; they change, and Kumbh Mela plans in particular are still being finalised.</li>
     </ul>
   </section>

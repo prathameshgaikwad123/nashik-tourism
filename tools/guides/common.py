@@ -48,9 +48,11 @@ def matrix(ids=None, caption="Road distance to Trimbakeshwar from each starting 
     rows = distances()["rows"]
     if ids:
         rows = [r for r in rows if r["id"] in ids]
-    body = "".join(
-        '<tr><th scope="row">%s</th><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
-            esc(r["origin"]), km_cell(r), time_cell(r), esc(r["cheapest"]), notes_cell(r)) for r in rows)
+    def row_tr(r):
+        c = "" if r["status"] == "verified" else "<!-- VERIFY: %s road distance to Trimbakeshwar (%s, %s): measure on a maps app, then set status verified in data/distances.json. See VERIFY.md -->\n" % (r["id"], r["km"], r["status"])
+        return c + '<tr><th scope="row">%s</th><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+            esc(r["origin"]), km_cell(r), time_cell(r), esc(r["cheapest"]), notes_cell(r))
+    body = "".join(row_tr(r) for r in rows)
     return ('<div class="table-scroll" tabindex="0" role="region" aria-label="%s">'
             '<table class="key-facts dist-matrix"><caption>%s</caption><thead><tr>'
             '<th scope="col">Starting point</th><th scope="col">By road to Trimbakeshwar</th><th scope="col">Typical drive</th>'

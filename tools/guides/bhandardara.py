@@ -53,6 +53,7 @@ def build():
       </tbody></table></div>""" % {"c": chip()}
 
     body = """
+    <!-- VERIFY: every Bhandardara figure is 'reported' from Maharashtra Tourism and travel guides (distances, Randha Falls 10 km, Kalsubai 12 km, nearest station Igatpuri 35-45 km, fireflies May-June, district boundary). See VERIFY.md -->
     <p>Bhandardara sits in the Western Ghats close to the Nashik district boundary, and is a common weekend trip from Mumbai and Pune. It has been covered inside our <a href="/discover-nashik/igatpuri/">Igatpuri guide</a>; this page gives it a guide of its own. Every figure below shows its status: <strong>Reported</strong> means published by the sources named, not yet confirmed by our editor.</p>
     %(facts)s
 

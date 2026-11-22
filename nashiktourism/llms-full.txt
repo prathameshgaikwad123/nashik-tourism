@@ -615,7 +615,7 @@ Change history
 
 ------------------------------------------------------------------------
 
-# Nashik Kumbh Mela 2027: Simhastha guide with dates, passes, roads and sources
+# Nashik Kumbh Mela 2027: Dates, Guide, Stay and Passes
 URL: https://nashiktourism.com/kumbh-mela-2027/
 
 Kumbh hub
@@ -642,6 +642,11 @@ Latest: We removed an unsourced Kumbh infrastructure figure
 -
 -
 -
+-
+
+Quick answer
+
+The Nashik Kumbh Mela 2027 (Simhastha) is reported to open on 31 October 2026 and end on 24 July 2028, with Amrit Snan on 2 and 31 August and 11 and 12 September 2027 at Ramkund and Trimbakeshwar. These dates are reported, not yet confirmed by the Authority, and no general-visitor pass has been announced.
 
 What is confirmed, and what is not
 
@@ -701,55 +706,31 @@ Last checked
 
 Kumbh live updatesEvents and dates
 
-## Kumbh 2027 dates and calendar
+## When is the Nashik Kumbh Mela 2027? Dates and calendar
 
-All of these dates are reported, not yet confirmed against the Authority’s own notice. They were announced after a meeting of the Chief Minister with the akharas and reported by several publications; we will mark each one verified when an editor has read the official notice.
+All of these dates are reported, not yet confirmed against the Authority’s own notice. They were announced after a meeting of the Chief Minister with the akharas and reported by several publications; we will mark each one Verified when an editor has read the Authority’s notice. Nothing in this table is marked Verified today.
 
-- Mela opens (flag-hoisting)
+Kumbh Mela 2027 dates: reported or confirmed, and the source of each
 
-31 October 2026
+| Event | Date | Status | Source | Note
 
-◐Reported, not yet confirmed · Source: Free Press Journal (Pune/Nashik)
+| Mela opens (flag-hoisting) | 31 October 2026 | ◐Reported, not yet confirmed | Free Press Journal (Pune/Nashik) | Reported as a simultaneous ceremony at Ramkund and Kushavarta.
 
-Reported as a simultaneous ceremony at Ramkund and Kushavarta.
+| First Amrit Snan | Monday 2 August 2027 | ◐Reported, not yet confirmed | Reported by multiple publications; official notification not yet linked |
 
-- First Amrit Snan
+| Second Amrit Snan | Tuesday 31 August 2027 | ◐Reported, not yet confirmed | Reported by multiple publications; official notification not yet linked | Earlier site copy called this date a Monday; it is a Tuesday.
 
-Monday 2 August 2027
+| Third Amrit Snan: Nashik | Saturday 11 September 2027 | ◐Reported, not yet confirmed | Reported by multiple publications; official notification not yet linked |
 
-◐Reported, not yet confirmed · Source: Reported by multiple publications; official notification not yet linked
+| Third Amrit Snan: Trimbakeshwar | Sunday 12 September 2027 | ◐Reported, not yet confirmed | Reported by multiple publications; official notification not yet linked |
 
-- Second Amrit Snan
-
-Tuesday 31 August 2027
-
-◐Reported, not yet confirmed · Source: Reported by multiple publications; official notification not yet linked
-
-Earlier site copy called this date a Monday; it is a Tuesday.
-
-- Third Amrit Snan &mdash; Nashik
-
-Saturday 11 September 2027
-
-◐Reported, not yet confirmed · Source: Reported by multiple publications; official notification not yet linked
-
-- Third Amrit Snan &mdash; Trimbakeshwar
-
-Sunday 12 September 2027
-
-◐Reported, not yet confirmed · Source: Reported by multiple publications; official notification not yet linked
-
-- Mela concludes (flag lowered)
-
-24 July 2028
-
-◐Reported, not yet confirmed · Source: Free Press Journal (Pune/Nashik)
+| Mela concludes (flag lowered) | 24 July 2028 | ◐Reported, not yet confirmed | Free Press Journal (Pune/Nashik) |
 
 Other bathing days (Parva Snan) fall between these dates; our full calendar guide lists them, and it is being re-checked. Dates also appear as events.
 
 ## Two locations: Ramkund and Kushavarta
 
-Unlike other Kumbh Melas, the Nashik Kumbh spans two sites about About 28–30 km (not yet verified) apart.
+Unlike other Kumbh Melas, the Nashik Kumbh spans two sites about About 28–30 km (not yet verified) apart. See the Nashik to Trimbakeshwar distance and routes for the table by starting point.
 
 ### Ramkund, Nashik (Panchavati)
 
@@ -774,6 +755,10 @@ Rail, road and air. Special services for the Mela have not been announced in a f
 - Transport hub: air, train, bus, road, parking
 
 - Our longer guide to reaching Nashik
+
+- Nashik to Trimbakeshwar distance, bus, jeep and cab
+
+- From Nashik Road station to Trimbakeshwar
 
 ## Passes and registration
 
@@ -930,9 +915,9 @@ These guides were written before official arrangements were published. They are 
 
 - International visitorsKumbh Mela for international touristsVisas, arrival and what to expect from abroad.
 
-- BudgetWhat the Kumbh Mela will costA budget breakdown for travel, stay and food.
+- BudgetHow to budget for the Kumbh MelaWhat to budget for and how to estimate it, in our where-to-stay guide.
 
-- PackingWhat to pack for the Kumbh MelaA packing list for crowds, weather and bathing.
+- PackingWhat to pack for the Kumbh MelaA packing checklist for crowds, weather and bathing.
 
 - PassesE-pass and registration guideWhat has and has not been announced about passes.
 
@@ -943,6 +928,70 @@ These guides were written before official arrangements were published. They are 
 - SadhugramSadhugram visitor guideThe sadhu village inside the Mela.
 
 - RitualsPind daan at NashikAncestral rites at the ghats.
+
+- ComparisonNashik Kumbh vs Prayagraj KumbhHow the two differ: rivers, sites and setting.
+
+- HelicopterHelicopter service: what has been reportedA service reported as under planning; nothing confirmed.
+
+- Between the two sitesNashik to Trimbakeshwar distanceDistance, bus, jeep and cab between the Kumbh sites.
+
+- From the stationNashik Road station to TrimbakeshwarThe last leg from Nashik's main railhead.
+
+- Ramkund to TrimbakTrimbakeshwar to Panchavati and RamkundTravelling between the two bathing sites.
+
+## What to pack for the Kumbh Mela
+
+General packing advice from an independent site, not a list of official requirements. We have found no published rules on what may be carried into the Mela area, so check notices before you travel. On a bathing day, leave almost everything at your hotel.
+
+Clothes
+
+Expect standing in water, long walks and crowds. Light colours reflect heat and make you easier to spot for your group.
+
+- 2–3 sets of light cotton clothing, plus one extra set for after the holy dip
+
+- A light jacket or shawl for early mornings and after bathing
+
+- Comfortable walking sandals or rubber chappals rather than shoes; rubber slippers for the ghat area
+
+- Leave at home: jeans, leather shoes, expensive or sentimental clothing, heavy woollens (unless it is cold), synthetic fabrics that do not breathe
+
+Documents and phone
+
+Never keep documents in a back pocket or loose bag in a crowd. Mobile data may be slow on Amrit Snan days.
+
+- Government photo ID (original and a photocopy) in a waterproof pouch
+
+- Accommodation booking confirmation and a printed train or bus ticket
+
+- Emergency contacts written on paper as well as saved offline; 112 is India’s single emergency number
+
+- Phone fully charged, a power bank, a charging cable, offline Google Maps for Nashik and a waterproof phone pouch
+
+- Some cash, but not a large amount
+
+Health and hygiene
+
+Ask your doctor or pharmacist what is suitable for you.
+
+- ORS sachets, paracetamol, an antacid, antiseptic cream and bandages
+
+- Personal prescription medicines (carry extra), sunscreen, mosquito repellent, eye drops
+
+- A reusable water bottle, hand sanitiser, wet wipes, tissues and a small quick-dry towel
+
+Ghat day bag
+
+- One change of clothes in a waterproof bag, and a plastic bag for wet clothes
+
+- ID in a waterproof pouch, a small amount of cash, phone and power bank
+
+- Water bottle, ORS sachets and a few biscuits, a small towel, rubber chappals
+
+- Leave at the hotel: laptop, camera, valuables, jewellery, excess cash and a heavy backpack
+
+Water and food
+
+Do not drink water directly from the Godavari or from unknown sources. The press has reported a healthcare plan with temporary facilities and ambulances on bathing days, but exact locations are not published, so carry your own water and ORS and do not assume a facility will be near you. Eat freshly cooked food from established stalls. This is general advice, not medical advice.
 
 ## Figures: attendance and spending
 
@@ -1039,11 +1088,17 @@ Can foreign nationals attend?
 
 We have found no announcement restricting foreign visitors, but have not been able to confirm the position with the Authority. Foreign nationals need a valid Indian visa to enter India — see our guide for international visitors.
 
+##
+
 ## How current is this page?
 
 Information status
 
 ◐Reported, not yet confirmed
+
+Last updated
+
+22 Nov 2026
 
 Last verified
 
@@ -1068,6 +1123,10 @@ Sources to check
 Kumbh information may evolve. Check with the official authority before travelling.
 
 Change history
+
+- 22 Nov 2026 — Added a short quick answer at the top, a named author byline and per-page structured data (Article, breadcrumbs, FAQ where the page has one). Body content unchanged.
+
+- 22 Nov 2026 — Merged the separate nashik kumbh mela packing list guide into this page; the old URL now redirects here.
 
 - 4 Oct 2026 — Removed an unsourced government infrastructure figure; each reported development figure is now listed with what it counts and its source.
 
@@ -1264,6 +1323,10 @@ The Mela is reported to conclude on 24 July 2028. Whether there will be organise
 ### What is the difference between Amrit Snan and Parva Snan?
 
 Amrit Snan (also known as Shahi Snan) is the term for the major bathing days on which the akharas traditionally bathe in procession. Parva Snan generally refers to bathing on days of Hindu calendar significance such as Purnima, Amavasya, Ekadashi and Sankranti. Many devotees regard both as holy. Only the Amrit Snan dates have been reported for this Mela; we have not found an announced list of Parva Snan dates.
+
+## Travelling between Nashik and Trimbakeshwar
+
+Both Kumbh Mela sites are on one route. See Nashik to Trimbakeshwar distance, bus, jeep and cab, from Nashik Road railway station to Trimbakeshwar and between Trimbakeshwar and Ramkund.
 
 ## How current is this page?
 
@@ -1478,6 +1541,10 @@ Nothing has been announced. No vehicle pass, parking plan or traffic plan has be
 No general-visitor e-pass has been announced, so be very wary of any website or message offering one. We advise you not to pay anyone for a Kumbh Mela pass. If a scheme is announced, confirm it through the Authority’s own channels on our sources page, including whether any fee applies.
 
 Written by the NashikTourism.com team. See our About page.
+
+## Travelling between Nashik and Trimbakeshwar
+
+Both Kumbh Mela sites are on one route. See Nashik to Trimbakeshwar distance, bus, jeep and cab, from Nashik Road railway station to Trimbakeshwar and between Trimbakeshwar and Ramkund.
 
 ## How current is this page?
 
@@ -1779,6 +1846,10 @@ The Railways say special trains are planned, including long-distance specials an
 
 Consider arriving the day before your chosen Amrit Snan date. Procession timings and road closures have not been announced in any source we could locate, so check the latest notices for both before you travel.
 
+## Travelling between Nashik and Trimbakeshwar
+
+Both Kumbh Mela sites are on one route. See Nashik to Trimbakeshwar distance, bus, jeep and cab, from Nashik Road railway station to Trimbakeshwar and between Trimbakeshwar and Ramkund.
+
 ## How current is this page?
 
 Information status
@@ -2033,6 +2104,26 @@ Search on MakeMyTrip →
 
 - Ask about parking if driving — no official parking or traffic plan has been located, and restrictions near Ramkund may apply on busy days
 
+## How much should you budget for Kumbh Mela 2027?
+
+Your budget depends on your travel style and where you start from, and we have no verified prices to give you. Hotels, private transport and some food vendors may charge more than usual on and around the reported Amrit Snan dates (2 Aug, 31 Aug and 11–12 Sep 2027). We cannot say by how much, so check current prices before you book and keep a buffer.
+
+Cost lines for a Kumbh Mela 2027 trip and how to estimate each
+
+| Cost line | How to estimate it | Where to check
+
+| Transport to Nashik and back | Fares are set by the operators; multiply by the number of travellers. Cab fares are agreed with the driver. | The railways’ own booking systems; MSRTC (see the transport hub)
+
+| Accommodation | Rates vary by property and date; check the total with taxes. For a dharamshala or ashram, contact it directly because terms vary. | The property, or a booking site
+
+| Food, per person per day | Indicative editor estimates, not verified: dhaba or street food ₹150–300; small local restaurant ₹300–600; mid-range restaurant ₹600–1,200; hotel restaurant ₹1,200–2,500. Do not rely on free community kitchens (langar); none has been announced. | Ask locally; prices change, especially around the Kumbh
+
+| Local transport | Agree auto and cab fares before you ride. For the Nashik to Trimbakeshwar leg, see the distance guide. | Your hotel or locals; the app, for app-based cabs
+
+| Offerings, puja items, buffer | Your own choice; set aside a buffer for medicines, snacks and surprises. | n/a
+
+We give no totals for the three common styles of trip, because the prices behind them are not verified: a budget pilgrim trip (sleeper train, dharamshala, dhabas, local autos), a mid-range trip (AC train, 2-star hotel, restaurants, private taxis) and a comfortable stay (AC train, 3–4 star hotel, private cab, good restaurants). A shorter stay may reduce accommodation costs, for example arriving the evening before and travelling back the next day; whether it changes train or bus prices depends on the operators’ own fare rules, which we have not verified.
+
 ## Frequently Asked Questions
 
 ### How far in advance should I book hotels for Kumbh Mela 2027?
@@ -2050,6 +2141,10 @@ Some dharamshalas and ashrams may offer low-cost or free stays, but terms and av
 ### Can I commute daily from Mumbai to Nashik during Kumbh?
 
 It may be possible, but on busy days roads and trains may be crowded and delays are likely, and no special transport arrangements have been announced in sources we could locate. If you're attending an Amrit Snan, staying in Nashik the night before may be wise.
+
+## Travelling between Nashik and Trimbakeshwar
+
+Both Kumbh Mela sites are on one route. See Nashik to Trimbakeshwar distance, bus, jeep and cab, from Nashik Road railway station to Trimbakeshwar and between Trimbakeshwar and Ramkund.
 
 ## How current is this page?
 
@@ -2080,6 +2175,10 @@ Details can change. Confirm before travelling.
 Change history
 
 - 22 Nov 2026 — Added a short quick answer at the top, a named author byline and per-page structured data (Article, breadcrumbs, FAQ where the page has one). Body content unchanged.
+
+- 22 Nov 2026 — Added a short quick answer at the top, a named author byline and per-page structured data (Article, breadcrumbs, FAQ where the page has one). Body content unchanged.
+
+- 22 Nov 2026 — Merged the separate nashik kumbh mela budget 2027 guide into this page; the old URL now redirects here.
 
 ###
 
@@ -2191,7 +2290,7 @@ Ramkund is an open riverside ghat. This site has not verified its opening hours 
 
 | Afternoon | Generally quieter | May suit visitors who want to look around
 
-| Evening Aarti | Times vary; check locally | Often described as a lamp ceremony on the river
+| Evening Goda Aarti | Often listed at about 7:00–8:00 PM, around sunset (reported; varies by season) | A lamp ceremony on the river. See the aarti section below to confirm
 
 | Closing | Approx. 9:30 PM (not verified) | Check locally
 
@@ -2200,6 +2299,30 @@ Ramkund is an open riverside ghat. This site has not verified its opening hours 
 🌟 Best Time to Visit Ramkund
 
 Many visitors find the morning aarti the most spiritually charged and visually striking time to visit; check locally for the aarti time. The evening aarti with diyas on the river is also beautiful and is often less crowded than the morning. Weekend mornings tend to be the most crowded non-Kumbh hours.
+
+## What time is the Godavari aarti at Ramkund?
+
+Travel listings most often give the evening Godavari (Goda) aarti at Ramkund as about 7:00–8:00 PM, and one says it is held daily ◐Reported, not confirmed. Another source says it is held around sunset and shifts a little with the seasons, so a fixed clock time may be wrong on the day. We found no timing published by the temple trust or the municipal corporation, so we do not state one as confirmed. Sources: Trawell: Ram Kund; EaseIndiaTrip: Ramkund guide.
+
+How to confirm the aarti time
+
+Ask at the ghat on arrival or at your hotel, check the official sources (the municipal corporation and the district tourism site, Nashik District tourism site: Ramkund), and add a buffer: arrive 30 minutes early for a place near the river. On festival days and Amrit Snan days the aarti timing and access may differ; none has been announced. Searches for the “Ram Ghat Nashik aarti time” usually mean this Ramkund evening aarti.
+
+The ghat is described as open at all hours in some listings (Incredible India: Ramkund) and as roughly 5:30 AM to 9:30 PM in our earlier copy; the two differ ⚠Sources differ. Check locally.
+
+## How far is Ramkund from the bus stand, the railway station and Trimbakeshwar?
+
+Distances to Ramkund, Panchavati
+
+| From | Distance | Status and source
+
+| Nashik CBS (Central Bus Stand) | About 2 km | ◐Reported, not confirmed Trawell: Ram Kund
+
+| Nashik Road railway station | About 14 km (district tourism site); our earlier copy said about 8 km | ⚠Sources differ Nashik District tourism site: Panchvati
+
+| Trimbakeshwar | About 28–30 km, using the city figure as a guide | ◐Reported, not confirmed see Trimbakeshwar to Panchavati and Ramkund and the Nashik to Trimbakeshwar distance guide
+
+Figures compiled from the sources named on 22 Nov 2026; not yet measured by our editor.
 
 ## How to Reach Ramkund Ghat
 
@@ -2239,21 +2362,27 @@ The points below are general etiquette, not official regulations. This site cann
 
 - Asthi visarjan (ash immersion): Families usually arrange the rites with local priests (pandas); ask locally about current requirements.
 
-## What to See Near Ramkund
+## Which temples are near Ramkund?
 
-Ramkund sits in the heart of the Panchavati area, with several temples and sacred sites nearby. Distances and walking times have not been verified, so ask locally:
+Ramkund sits in the heart of the Panchavati area, with several temples and sacred sites nearby. Published distances are mostly measured from the Nashik CBS rather than between the sites, so the figures below show that; the sites are described as close together, but walking times have not been verified, so ask locally. Source for the CBS distances: Nashik District tourism site: Panchvati and Outlook Traveller: Panchavati; each figure is ◐Reported, not confirmed.
 
-- Kalaram Temple — Known for its black Ram idol, one of Nashik's best-known temples
+- Kalaram Temple — known for its black Ram idol, one of Nashik’s best-known temples; about 2.5–3 km from the CBS
 
-- Sita Gufa — The cave where Sita is believed to have stayed during Vanvas
+- Sita Gufa — the cave where Sita is believed to have stayed during Vanvas; reported near Kalaram Temple, about 2.7 km from the CBS
 
-- Panchavati Banyan Tree — The banyan grove traditionally linked to the Ramayana's Panchavati
+- Sundarnarayan Temple — reported near the Ahilyabai Holkar bridge by Ramkund, about 2 km from the CBS
 
-- Ganga Ghat — Another ghat on the Godavari, near Ramkund
+- Kapaleshwar Temple — reported to be across the river from Ramkund; no distance figure found
 
-- Muktidham Temple — White marble temple featuring replicas of India's 12 Jyotirlingas
+- Panchavati Banyan Tree — the banyan grove traditionally linked to the Ramayana’s Panchavati
 
-- Coin Museum — A museum devoted to coins; check its location and opening hours before planning a visit
+- Ganga Ghat — another ghat on the Godavari, near Ramkund
+
+- Muktidham Temple — white marble temple featuring replicas of India’s 12 Jyotirlingas
+
+- Coin Museum — a museum devoted to coins; check its location and opening hours before planning a visit
+
+Combine Ramkund with a day trip to Trimbakeshwar: see the Nashik to Trimbakeshwar distance and routes.
 
 ### Book Your Nashik Hotel Now
 
@@ -2292,6 +2421,18 @@ Ramkund is an open public ghat, and visitors of all backgrounds, including inter
 ### Is there parking near Ramkund?
 
 Parking in the Panchavati area can be limited, and arrangements have not been verified. Parking and road arrangements for the Kumbh Mela have not been announced; expect vehicle restrictions and some walking on busy days. See parking and roads.
+
+### What time is the aarti at Ramkund?
+
+Travel listings most often give the evening Godavari aarti as about 7:00–8:00 PM, around sunset, but it varies by season and we found no timing published by the temple trust or the municipal corporation. Confirm locally on the day.
+
+### How far is Ramkund from Trimbakeshwar?
+
+About 28–30 km by road, using the Nashik city figure as a guide (reported, not yet measured by our editor). See the Nashik to Trimbakeshwar distance guide.
+
+## Travelling between Nashik and Trimbakeshwar
+
+Both Kumbh Mela sites are on one route. See Nashik to Trimbakeshwar distance, bus, jeep and cab, from Nashik Road railway station to Trimbakeshwar and between Trimbakeshwar and Ramkund.
 
 ## How current is this page?
 
@@ -2648,6 +2789,24 @@ Ramkund itself is a working ghat rather than a monument. People come to bathe, t
 
 Ramkund is the anchor, and the temples of Panchavati sit within easy walking distance of it. The area is also the best eating in the city — our food guide to the area covers what to look for.
 
+### What to eat near Ramkund
+
+Food near the ghat and in the Panchavati lanes is largely vegetarian by custom. This site has not verified any rule about what may be sold there, so do not assume one; ask locally if it matters to you. Non-vegetarian food is more likely in other parts of Nashik city, such as the MG Road and College Road areas. Food-stall arrangements for the Kumbh Mela have not been announced.
+
+- Nashik misal pav: spiced sprouted-lentil curry with farsan, onion and lemon, with bread rolls; a popular breakfast.
+
+- Sabudana khichdi and poha with sev: light morning dishes; sabudana khichdi is eaten especially on fast days.
+
+- Maharashtrian thali: dal, rice, vegetables, roti, papad, pickle and buttermilk at sit-down restaurants.
+
+- Sweets from mithai shops in the lanes: chirote, shankarpali, puran poli, pedha; and cutting chai, strong milky tea in a small glass.
+
+Small dhabas in the lanes around Ramkund are commonly said to serve early-morning pilgrims; opening hours and prices have not been verified, so ask before ordering. On fasting days, many eateries can serve fasting food; ask “upvaas ka khana hai?”. Earlier editions of our food guide named two restaurants (Satkar and Kapila); we have not re-verified their location, hours, menu or prices, so check before you go.
+
+### Food safety on crowded days
+
+General advice, not medical advice: eat freshly cooked, hot food at established stalls; avoid pre-cooked food sitting in the heat and cut fruit from unknown vendors on peak days; drink only bottled or sealed water; carry ORS sachets; and do not assume a stall is inspected, because no inspection arrangements have been announced. If you become unwell, seek medical help.
+
 ## History and significance
 
 Panchavati is associated in the Ramayana with the years Rama spent in exile, and that association is what has drawn pilgrims here for centuries. Ramkund is the primary bathing point on the Nashik side of the Simhastha Kumbh Mela, which makes this quarter the focus of the city's Mela arrangements.
@@ -2712,6 +2871,10 @@ Stay
 Where to stay near Ramkund
 Areas, options and what to book early.
 
+Getting there
+Nashik to Trimbakeshwar distance and routes
+Distance table by starting point, with bus, jeep, cab and Kumbh 2027 notes.
+
 ## Frequently asked questions
 
 What is Panchavati known for?
@@ -2725,6 +2888,14 @@ Ramkund is the main bathing point on the Nashik city side of the Simhastha Kumbh
 Can I walk between the Panchavati temples?
 
 Yes — the quarter is compact and most of it is easiest on foot. Our Ramkund guide goes into the area in more detail.
+
+What time is the Godavari aarti at Ramkund?
+
+Travel listings most often give the evening aarti as about 7:00–8:00 PM, around sunset, but it varies by season and we found no timing published by the temple trust or the municipal corporation. Confirm locally; see the Ramkund guide.
+
+How far is Ramkund from Trimbakeshwar?
+
+About 28–30 km by road, using the Nashik city figure as a guide (reported, not yet measured). See Trimbakeshwar to Panchavati and Ramkund.
 
 ## Latest updates
 
@@ -2751,6 +2922,10 @@ Sources to check
 Timings may change during festivals. Confirm before travelling.
 
 Change history
+
+- 22 Nov 2026 — Added a short quick answer at the top, a named author byline and per-page structured data (Article, breadcrumbs, FAQ where the page has one). Body content unchanged.
+
+- 22 Nov 2026 — Merged the separate what to eat near ramkund nashik food guide guide into this page; the old URL now redirects here.
 
 - 4 Oct 2026 — Added quick facts with verification status, how to reach, accessibility, latest updates and sources.
 
@@ -2782,6 +2957,8 @@ Plan Your Trip
 - What to eat near Ramkund
 
 - Where to stay near Ramkund
+
+- Nashik to Trimbakeshwar distance and routes
 
 ### Kumbh Mela 2027
 
@@ -2918,6 +3095,10 @@ Places
 15 best places to visit in Nashik
 The wider list across the district.
 
+Getting there
+Nashik to Trimbakeshwar distance and routes
+Distance table by starting point, with bus, jeep, cab and Kumbh 2027 notes.
+
 ## Frequently asked questions
 
 Where are Igatpuri and Bhandardara?
@@ -2988,6 +3169,8 @@ Plan Your Trip
 - Nashik in two days
 
 - 15 best places to visit in Nashik
+
+- Nashik to Trimbakeshwar distance and routes
 
 ### Kumbh Mela 2027
 
@@ -3359,6 +3542,10 @@ Timing
 Best time to visit Nashik
 Month by month, and what each season looks like.
 
+Getting there
+Nashik to Trimbakeshwar distance and routes
+Distance table by starting point, with bus, jeep, cab and Kumbh 2027 notes.
+
 ## Frequently asked questions
 
 Where is Sula Vineyards?
@@ -3433,6 +3620,8 @@ Plan Your Trip
 - Nashik in two days
 
 - Best time to visit Nashik
+
+- Nashik to Trimbakeshwar distance and routes
 
 ### Kumbh Mela 2027
 

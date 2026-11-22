@@ -25,6 +25,7 @@ def build():
 
     sources_cbs = "; ".join(common.src_links(cbs))
     body = """
+    <!-- VERIFY: 28-30 km (CBS), 36-40 km (Nashik Road) and the 45-60 minute drive time are reported, not measured. MSRTC departure point, jeep pickup, app-cab availability, last bus: unverified. See VERIFY.md -->
     <p>Nashik to Trimbakeshwar and Trimbakeshwar to Nashik are the same road, so the distance is the same whichever way you travel. Trimbakeshwar, with its Jyotirlinga temple and the Kushavarta Kund, is also written <strong>Trimbak</strong>, <strong>Tryambakeshwar</strong>, <strong>Tryambakam</strong>, <strong>Trayambakam</strong> or <strong>Trambakeshwar</strong>; this guide covers all of them.</p>
 
     <h2 id="how-far-is-trimbakeshwar-from-nashik">How far is Trimbakeshwar from Nashik, by starting point?</h2>

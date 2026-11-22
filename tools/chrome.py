@@ -60,7 +60,7 @@ KUMBH_LINKS = [
     ("/kumbh-mela-2027/live-updates/", "Live updates"),
     ("/blog/how-to-reach-nashik-for-kumbh-mela/", "How to reach"),
     ("/blog/where-to-stay-nashik-kumbh-mela/", "Where to stay"),
-    ("/blog/nashik-kumbh-mela-packing-list/", "What to pack"),
+    ("/kumbh-mela-2027/#what-to-pack", "What to pack"),
     ("/kumbh-mela-2027/#figures", "Figures &amp; sources"),
 ]
 
@@ -70,7 +70,7 @@ PLAN_LINKS = [
     ("/transport/", "Transport hub"),
     ("/accessible-nashik/", "Accessible Nashik"),
     ("/blog/best-time-to-visit-nashik/", "Best time to visit"),
-    ("/blog/nashik-kumbh-mela-budget-2027/", "Budget guide"),
+    ("/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027", "Budget guide"),
 ]
 
 UPDATES_LINKS = [
@@ -264,7 +264,7 @@ def footer_html(page="/"):
           <li><a href="/accessible-nashik/">Accessible Nashik</a></li>
           <li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li>
           <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>
-          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">What It Costs</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027">What It Costs</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -274,7 +274,7 @@ def footer_html(page="/"):
           <li><a href="/kumbh-mela-2027/#dates">Dates &amp; Calendar</a></li>
           <li><a href="/kumbh-mela-2027/live-updates/">Live Updates</a></li>
           <li><a href="/blog/how-to-reach-nashik-for-kumbh-mela/">How to Reach</a></li>
-          <li><a href="/blog/nashik-kumbh-mela-packing-list/">What to Pack</a></li>
+          <li><a href="/kumbh-mela-2027/#what-to-pack">What to Pack</a></li>
           <li><a href="/blog/nashik-kumbh-mela-e-pass-registration-2027/">Passes &amp; Registration</a></li>
         </ul>
       </div>

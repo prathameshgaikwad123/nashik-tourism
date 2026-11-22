@@ -147,7 +147,7 @@
     },
     {
       "date": "2026-11-22",
-      "path": "/blog/nashik-kumbh-mela-packing-list/",
+      "path": "/kumbh-mela-2027/",
       "type": "restructured",
       "summary": "Added a short quick answer at the top, a named author byline and per-page structured data (Article, breadcrumbs, FAQ where the page has one). Body content unchanged."
     },
@@ -159,7 +159,7 @@
     },
     {
       "date": "2026-11-22",
-      "path": "/blog/nashik-kumbh-mela-budget-2027/",
+      "path": "/blog/where-to-stay-nashik-kumbh-mela/",
       "type": "restructured",
       "summary": "Added a short quick answer at the top, a named author byline and per-page structured data (Article, breadcrumbs, FAQ where the page has one). Body content unchanged."
     },
@@ -201,7 +201,7 @@
     },
     {
       "date": "2026-11-22",
-      "path": "/blog/what-to-eat-near-ramkund-nashik-food-guide/",
+      "path": "/discover-nashik/panchavati/",
       "type": "restructured",
       "summary": "Added a short quick answer at the top, a named author byline and per-page structured data (Article, breadcrumbs, FAQ where the page has one). Body content unchanged."
     },
@@ -300,6 +300,24 @@
       "path": "/blog/nashik-kumbh-mela-e-pass-registration-2027/",
       "type": "updated",
       "summary": "Added an 'Official status as of 22 Nov 2026' box: the Authority's website is reported live, registration so far covers organisations and student volunteers, and an optional digital Kumbh Pass is described in the KumbhDoot framework. No general-visitor pass has been announced."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/kumbh-mela-2027/",
+      "type": "restructured",
+      "summary": "Merged the separate nashik kumbh mela packing list guide into this page; the old URL now redirects here."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/blog/where-to-stay-nashik-kumbh-mela/",
+      "type": "restructured",
+      "summary": "Merged the separate nashik kumbh mela budget 2027 guide into this page; the old URL now redirects here."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/discover-nashik/panchavati/",
+      "type": "restructured",
+      "summary": "Merged the separate what to eat near ramkund nashik food guide guide into this page; the old URL now redirects here."
     }
   ]
 }

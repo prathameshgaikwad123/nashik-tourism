@@ -39,6 +39,7 @@ STEPS = [
     ("apply-aeo.py", "quick answer, byline, Article/FAQ/Breadcrumb JSON-LD on hand-written guides"),
     ("apply-verification.py", "status notice + verification block on every guide"),
     ("apply-seo.py", "social tags, image sizes and sponsored-link marking on hand-written pages"),
+    ("apply-affiliate.py", "sponsored/nofollow rel and optional affiliate parameters on booking links"),
     ("apply-chrome.py", "shared header, footer and /site.js on every page"),
     ("build-home-guides.py", "the homepage's latest-guide cards"),
     ("build-search.py", "search index and /search/"),

@@ -886,9 +886,9 @@
       "id": "transport.nashik-road.distance",
       "subject": "Nashik Road Railway Station",
       "fact": "Distance from the city centre",
-      "value": "About 8 km, 15–20 minutes from Ramkund",
-      "display": "About 8 km, 15–20 minutes from Ramkund",
-      "status": "not_verified",
+      "value": "About 8–14 km from Ramkund (sources differ)",
+      "display": "About 8–14 km from Ramkund (sources differ)",
+      "status": "disputed",
       "source": {
         "sourceId": "editorial",
         "name": "NashikTourism.com earlier guide copy (no source cited)",
@@ -896,16 +896,33 @@
         "path": "/blog/how-to-reach-nashik-for-kumbh-mela/"
       },
       "leads": [],
-      "alternatives": [],
+      "alternatives": [
+        {
+          "value": "About 14 km",
+          "scope": "Panchavati to Nashik Road railway station",
+          "source": {
+            "name": "Nashik District tourism site: Panchvati page",
+            "url": "https://nashik.gov.in/tourist-place/panchvati/"
+          }
+        },
+        {
+          "value": "About 8 km, 15–20 minutes",
+          "scope": "Nashik Road station from the city centre (Ramkund)",
+          "source": {
+            "name": "NashikTourism.com earlier guide copy (no source cited)",
+            "url": null
+          }
+        }
+      ],
       "verifyWith": [
         "central-railway",
         "nashik-district"
       ],
       "verifiedAt": null,
       "verifiedBy": null,
-      "lastCheckedAt": null,
+      "lastCheckedAt": "2026-11-22",
       "topic": "transport",
-      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "notes": "The figures may count different routes or reference points. Not yet measured by an editor on a map.",
       "appliesTo": []
     },
     {

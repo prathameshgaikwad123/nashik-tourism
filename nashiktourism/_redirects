@@ -20,6 +20,9 @@
 /kumbh-mela/ /kumbh-mela-2027/ 301
 /blog/ramkund-ghat-nashik-guide /blog/ramkund-ghat-nashik-guide/ 301
 /blog/sula-vineyards-nashik-complete-guide/ /discover-nashik/sula-vineyards/ 301
+/blog/nashik-kumbh-mela-packing-list/ /kumbh-mela-2027/ 301
+/blog/nashik-kumbh-mela-budget-2027/ /blog/where-to-stay-nashik-kumbh-mela/ 301
+/blog/what-to-eat-near-ramkund-nashik-food-guide/ /discover-nashik/panchavati/ 301
 
 # --- no trailing slash -> slash (every real page) ---
 /about /about/ 301
@@ -34,18 +37,15 @@
 /blog/naga-sadhus-kumbh-mela-nashik-2027 /blog/naga-sadhus-kumbh-mela-nashik-2027/ 301
 /blog/nashik-2-day-itinerary /blog/nashik-2-day-itinerary/ 301
 /blog/nashik-kumbh-mela-2027-complete-guide /blog/nashik-kumbh-mela-2027-complete-guide/ 301
-/blog/nashik-kumbh-mela-budget-2027 /blog/nashik-kumbh-mela-budget-2027/ 301
 /blog/nashik-kumbh-mela-e-pass-registration-2027 /blog/nashik-kumbh-mela-e-pass-registration-2027/ 301
 /blog/nashik-kumbh-mela-for-international-tourists /blog/nashik-kumbh-mela-for-international-tourists/ 301
 /blog/nashik-kumbh-mela-for-senior-citizens-2027 /blog/nashik-kumbh-mela-for-senior-citizens-2027/ 301
 /blog/nashik-kumbh-mela-for-women-solo-travellers /blog/nashik-kumbh-mela-for-women-solo-travellers/ 301
 /blog/nashik-kumbh-mela-helicopter-tour-2027 /blog/nashik-kumbh-mela-helicopter-tour-2027/ 301
-/blog/nashik-kumbh-mela-packing-list /blog/nashik-kumbh-mela-packing-list/ 301
 /blog/nashik-kumbh-mela-vs-prayagraj-kumbh /blog/nashik-kumbh-mela-vs-prayagraj-kumbh/ 301
 /blog/pind-daan-nashik-kumbh-mela-2027 /blog/pind-daan-nashik-kumbh-mela-2027/ 301
 /blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide /blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide/ 301
 /blog/trimbakeshwar-to-nashik-distance-route /blog/trimbakeshwar-to-nashik-distance-route/ 301
-/blog/what-to-eat-near-ramkund-nashik-food-guide /blog/what-to-eat-near-ramkund-nashik-food-guide/ 301
 /blog/where-to-stay-nashik-kumbh-mela /blog/where-to-stay-nashik-kumbh-mela/ 301
 /contact /contact/ 301
 /disclaimer /disclaimer/ 301
@@ -71,7 +71,6 @@
 /updates/archive /updates/archive/ 301
 
 # --- .html -> clean URL (every real page) ---
-/index.html / 301
 /about.html /about/ 301
 /about/prathamesh.html /about/prathamesh/ 301
 /accessible-nashik.html /accessible-nashik/ 301
@@ -83,19 +82,16 @@
 /blog/kumbh-mela-2027-all-snan-dates.html /blog/kumbh-mela-2027-all-snan-dates/ 301
 /blog/naga-sadhus-kumbh-mela-nashik-2027.html /blog/naga-sadhus-kumbh-mela-nashik-2027/ 301
 /blog/nashik-kumbh-mela-2027-complete-guide.html /blog/nashik-kumbh-mela-2027-complete-guide/ 301
-/blog/nashik-kumbh-mela-budget-2027.html /blog/nashik-kumbh-mela-budget-2027/ 301
 /blog/nashik-kumbh-mela-e-pass-registration-2027.html /blog/nashik-kumbh-mela-e-pass-registration-2027/ 301
 /blog/nashik-kumbh-mela-for-international-tourists.html /blog/nashik-kumbh-mela-for-international-tourists/ 301
 /blog/nashik-kumbh-mela-for-senior-citizens-2027.html /blog/nashik-kumbh-mela-for-senior-citizens-2027/ 301
 /blog/nashik-kumbh-mela-for-women-solo-travellers.html /blog/nashik-kumbh-mela-for-women-solo-travellers/ 301
 /blog/nashik-kumbh-mela-helicopter-tour-2027.html /blog/nashik-kumbh-mela-helicopter-tour-2027/ 301
-/blog/nashik-kumbh-mela-packing-list.html /blog/nashik-kumbh-mela-packing-list/ 301
 /blog/nashik-kumbh-mela-vs-prayagraj-kumbh.html /blog/nashik-kumbh-mela-vs-prayagraj-kumbh/ 301
 /blog/pind-daan-nashik-kumbh-mela-2027.html /blog/pind-daan-nashik-kumbh-mela-2027/ 301
 /blog/ramkund-ghat-nashik-guide.html /blog/ramkund-ghat-nashik-guide/ 301
 /blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide.html /blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide/ 301
 /blog/trimbakeshwar-to-nashik-distance-route.html /blog/trimbakeshwar-to-nashik-distance-route/ 301
-/blog/what-to-eat-near-ramkund-nashik-food-guide.html /blog/what-to-eat-near-ramkund-nashik-food-guide/ 301
 /blog/where-to-stay-nashik-kumbh-mela.html /blog/where-to-stay-nashik-kumbh-mela/ 301
 /contact.html /contact/ 301
 /disclaimer.html /disclaimer/ 301

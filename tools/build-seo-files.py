@@ -124,8 +124,8 @@ def redirects_file(pages):
     lines.append("\n# --- .html -> clean URL (every real page) ---")
     for url in sorted(pages):
         if url == "/":
-            lines.append("/index.html / 301")
-        elif url[:-1] + ".html" not in sources:
+            continue   # /index.html -> / is handled by the host itself
+        if url[:-1] + ".html" not in sources:
             lines.append("%s.html %s 301" % (url[:-1], url))
     return "\n".join(lines) + "\n"
 

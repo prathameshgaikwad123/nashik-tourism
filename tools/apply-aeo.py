@@ -29,11 +29,13 @@ from nt.render import esc, fmt_date  # noqa: E402
 from nt.paths import ROOT, SITE  # noqa: E402
 
 QA_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-QA -->.*?<!-- END:NT-QA -->\n?", re.S)
+LK_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-LINKS -->.*?<!-- END:NT-LINKS -->\n?", re.S)
 OF_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-OFFICIAL -->.*?<!-- END:NT-OFFICIAL -->\n?", re.S)
 BY_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-BYLINE -->.*?<!-- END:NT-BYLINE -->\n?", re.S)
 LD_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-LD[^>]*-->.*?<!-- END:NT-LD -->\n?", re.S)
 HD_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-HEAD[^>]*-->.*?<!-- END:NT-HEAD -->\n?", re.S)
 SCRIPT_RE = re.compile(r'[ \t]*<script type="application/ld\+json">(.*?)</script>\n?', re.S)
+LINK_TOPICS = {"kumbh", "transport", "destination", "accommodation"}
 STRIP_TYPES = {"Article", "BlogPosting", "FAQPage", "BreadcrumbList", "WebPage"}
 
 
@@ -101,6 +103,7 @@ def apply(html, path, meta):
     html = QA_RE.sub("", html)
     html = BY_RE.sub("", html)
     html = OF_RE.sub("", html)
+    html = LK_RE.sub("", html)
     html = strip_old_ld(html)
     head = ld_block(html, path, meta)
     hb = head_block()
@@ -115,6 +118,16 @@ def apply(html, path, meta):
         html, n = re.subn(r'(<article class="article-body"[^>]*>)', lambda m: m.group(1) + "\n" + qa + "\n", html, count=1)
         if n != 1:
             raise SystemExit("ERROR: %s has no article body for the quick answer" % path)
+    if meta.get("topic") in LINK_TOPICS:
+        block = ('<!-- BEGIN:NT-LINKS -->\n<aside class="related-links" aria-label="Between Nashik and Trimbakeshwar"><h2 id="between-nashik-and-trimbakeshwar">Travelling between Nashik and Trimbakeshwar</h2>'
+                 '<p>Both Kumbh Mela sites are on one route. See <a href="/blog/trimbakeshwar-to-nashik-distance-route/">Nashik to Trimbakeshwar distance, bus, jeep and cab</a>, '
+                 '<a href="/transport/nashik-road-station-to-trimbakeshwar/">from Nashik Road railway station to Trimbakeshwar</a> and '
+                 '<a href="/transport/trimbakeshwar-to-panchavati-ramkund/">between Trimbakeshwar and Ramkund</a>.</p></aside>\n<!-- END:NT-LINKS -->')
+        if "<!-- BEGIN:NT-VERIFY" in html:
+            html = html.replace("<!-- BEGIN:NT-VERIFY", block + "\n<!-- BEGIN:NT-VERIFY", 1)
+        else:
+            i = html.rindex("</article>")
+            html = html[:i] + block + "\n" + html[i:]
     if meta.get("officialStatus"):
         o = meta["officialStatus"]
         box = ('<!-- BEGIN:NT-OFFICIAL -->\n<div class="official-box" role="note" data-official-status>\n  <p class="ob-title">Official status as of %s</p>\n  %s\n</div>\n<!-- END:NT-OFFICIAL -->'
@@ -125,10 +138,31 @@ def apply(html, path, meta):
     return html
 
 
+HEAD_ONLY = ["about/index.html", "contact/index.html", "404.html"]
+
+
+def apply_head_only(html):
+    """Hand-written pages that are not guides still get the optional Bing verification meta and
+    cookieless analytics (env-driven), between the same NT-HEAD markers."""
+    html = HD_RE.sub("", html)
+    hb = head_block()
+    return html.replace("</head>", ("  %s\n" % hb if hb else "") + "</head>", 1)
+
+
 def main():
     check = "--check" in sys.argv
     pages = store.load("pages")["pages"]
     changed = 0
+    for rel in HEAD_ONLY:
+        full = os.path.join(ROOT, rel)
+        if os.path.isfile(full):
+            before = open(full, encoding="utf-8").read()
+            after = apply_head_only(before)
+            if after != before:
+                changed += 1
+                if not check:
+                    with open(full, "w", encoding="utf-8") as fh:
+                        fh.write(after)
     for path, meta in sorted(pages.items()):
         if meta.get("template") != "article" or meta.get("generated"):
             continue
