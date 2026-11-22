@@ -98,7 +98,7 @@ Lighter change (quick answer, byline, schema, link to the distance hub): all oth
 /blog/what-to-eat-near-ramkund-nashik-food-guide/ -> /discover-nashik/panchavati/
 ```
 
-Also retired and now returning 404 (briefly live, never linked): `/about/prathamesh/`. Do not redirect it.
+One retired author page URL was briefly live and now returns 404; it was never linked or indexed, so do not redirect it.
 
 ## D) Sitemap
 

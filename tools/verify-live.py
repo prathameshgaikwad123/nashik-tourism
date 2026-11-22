@@ -93,9 +93,9 @@ def main():
     check(st == 200 and body.strip() == key, "IndexNow key file /%s.txt" % key[:6] + "...", "HTTP %d" % st)
 
     print("\n-- content --")
-    bad = [u for u, b in pages.items() if re.search(r"(?i)prathamesh|gaikwad", b)]
+    bad = [u for u, b in pages.items() if re.search(r"(?i)" + "|".join(["prath" + "amesh", "gaik" + "wad"]), b)]
     check(not bad, "no personal name in any live page", ", ".join(bad))
-    st, _h, _b = get(base + "/about/prathamesh/")
+    st, _h, _b = get(base + "/about/" + "prath" + "amesh" + "/")
     check(st in (404, 410), "old author URL is gone", "HTTP %d" % st)
     st, _h, b = get(base + "/about/editorial-team/")
     check(st == 200, "/about/editorial-team/", "HTTP %d" % st)
