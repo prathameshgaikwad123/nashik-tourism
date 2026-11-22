@@ -26,13 +26,13 @@ def src_links(r):
 
 
 def km_cell(r):
-    return '%s<br>%s' % (esc(r["km"]), aeo.claim(r["status"], date=CHECKED, short=True))
+    return '%s<br>%s' % (esc(r["km"]), aeo.claim(r["status"], date=(r.get("measuredOn") or CHECKED), short=True))
 
 
 def time_cell(r):
     t = esc(r["time"])
     if r["time"] != "Not yet confirmed":
-        t += "<br>" + aeo.claim(r["timeStatus"], short=True)
+        t += "<br>" + aeo.claim(r["timeStatus"], date=(r.get("measuredOn") if r["timeStatus"] == "verified" else None), short=True)
     return t
 
 

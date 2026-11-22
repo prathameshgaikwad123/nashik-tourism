@@ -1,67 +1,77 @@
 {
-  "_about": "Road distances to Trimbakeshwar, behind the distance hub and the two transport pages. status uses the same vocabulary as facts.json: verified needs verifiedBy + verifiedAt + a source an editor read; reported = published by the named sources but not yet measured by an editor; disputed = the sources disagree (every figure is shown); not_verified = no supporting source yet. Every row ships 'reported', 'disputed' or 'not_verified' because the official pages could not be opened from the build environment on 2026-11-22 (search-result snippets only). To verify a row: measure the shortest common road route on a maps service, set status verified, verifiedBy, verifiedAt, source and measuredOn.",
+  "_about": "Road distances to Trimbakeshwar, behind the distance hub and the two transport pages. status uses the same vocabulary as facts.json: verified needs verifiedBy + verifiedAt + a source an editor read; reported = published by the named sources but not yet measured by an editor; disputed = the sources disagree (every figure is shown); not_verified = no supporting source yet. Rows marked verified were measured by the site's editor on Google Maps; all other rows are reported, disputed or not verified.",
   "checkedOn": "2026-11-22",
-  "method": "Compiled on 22 Nov 2026 from the published sources named in each row. Not yet measured on a map by our editor, so no figure here is marked Verified.",
+  "method": "Three rows (CBS, Nashik Road station, Ramkund) are Google Maps driving routes measured on 22 Nov 2026 at about 11:50 AM IST to Trimbakeshwar Jyotirling Mandir; times vary with traffic. Every other row is compiled from the published sources named in it and is not yet measured.",
   "headline": {
-    "cbsKm": "28–30",
-    "stationKm": "36–40",
-    "driveTime": "45–60 minutes"
+    "cbsKm": "29–30",
+    "stationKm": "37–39",
+    "ramkundKm": "30–31",
+    "cbsTime": "55–60 minutes",
+    "stationTime": "1 hour 15 minutes",
+    "ramkundTime": "1 hour",
+    "driveTime": "55–60 minutes"
   },
   "rows": [
     {
       "id": "cbs",
       "origin": "Nashik CBS (Central Bus Stand) / Old CBS",
-      "km": "About 28–30 km",
-      "status": "reported",
-      "time": "About 45–60 min",
-      "timeStatus": "not_verified",
+      "km": "About 29–30 km",
+      "status": "verified",
+      "time": "Roughly 55–60 min (late-morning traffic)",
+      "timeStatus": "verified",
       "cheapest": "MSRTC bus from the CBS (reported; confirm the platform and timings with MSRTC)",
-      "notes": "The usual reference point for \"Nashik to Trimbakeshwar\". We have no separate figure for Old CBS; use this one as a guide and check a maps app from where you are standing.",
+      "notes": "The usual reference point for \"Nashik to Trimbakeshwar\". Google Maps showed routes of 29.3, 29.4 and 29.6 km, fastest 56 min. We have no separate figure for Old CBS; use this one as a guide.",
       "sources": [
+        {
+          "name": "Google Maps: CBS to Trimbakeshwar Jyotirling Mandir, driving, 22 Nov 2026",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Nashik+Central+Bus+Stand&destination=Trimbakeshwar+Jyotirling+Mandir&travelmode=driving"
+        },
         {
           "name": "Nashik District tourism site: Trimbakeshwar page (about 30 km from the city)",
           "url": "https://nashik.gov.in/tourist-place/trimbakeshwar/"
-        },
-        {
-          "name": "NashikTourism.com earlier guide copy (28 km, no source cited)",
-          "url": null
         }
-      ]
+      ],
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "verifiedAt": "2026-11-22",
+      "measuredOn": "2026-11-22"
     },
     {
       "id": "station",
       "origin": "Nashik Road railway station",
-      "km": "About 36–40 km",
-      "status": "reported",
-      "time": "Not yet confirmed",
-      "timeStatus": "not_verified",
+      "km": "About 37–39 km",
+      "status": "verified",
+      "time": "Roughly 1 hr 15 min",
+      "timeStatus": "verified",
       "cheapest": "Bus or auto to the CBS, then an MSRTC bus to Trimbakeshwar (reported); or a taxi direct",
-      "notes": "Nashik Road is Nashik's main railhead, several kilometres from the city centre, so it is further than the city figure. See the dedicated station guide.",
+      "notes": "Google Maps showed routes of 37.3, 38.0 and 38.8 km, taking 1 hr 15 min to 1 hr 21 min. Nashik Road is further than the city centre. See the dedicated station guide.",
       "sources": [
         {
-          "name": "Nashik District tourism site (approx. 40 km)",
-          "url": "https://nashik.gov.in/tourist-place/trimbakeshwar/"
-        },
-        {
-          "name": "Housing.com: nearest railway station to Trimbakeshwar (about 36 km)",
-          "url": "https://housing.com/news/nearest-railway-station-to-trimbakeshwar-shiva-temple"
-        },
-        {
-          "name": "DistancesFrom: Trimbakeshwar Temple to Nashik Road station (37 km driving)",
-          "url": "https://www.distancesfrom.com/in/distance-from-Trimbakeshwar-Temple-to-Nashik-Road-Railway-Station-Nashik/DistanceHistory/4808378.aspx"
+          "name": "Google Maps: Nashik Road railway station to Trimbakeshwar Jyotirling Mandir, driving, 22 Nov 2026",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Nashik+Road+railway+station&destination=Trimbakeshwar+Jyotirling+Mandir&travelmode=driving"
         }
-      ]
+      ],
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "verifiedAt": "2026-11-22",
+      "measuredOn": "2026-11-22"
     },
     {
       "id": "ramkund",
       "origin": "Panchavati / Ramkund",
-      "km": "Roughly the city figure, about 28–30 km",
-      "status": "not_verified",
-      "time": "Not yet confirmed",
-      "timeStatus": "not_verified",
+      "km": "About 30–31 km",
+      "status": "verified",
+      "time": "Roughly 1 hr",
+      "timeStatus": "verified",
       "cheapest": "MSRTC bus from the CBS or Panchavati stand (reported; confirm with MSRTC)",
-      "notes": "We have not found a separate published figure for Ramkund. It is reported to be about 2 km from the CBS, so the city figure is a reasonable guide. See the Panchavati and Ramkund guide.",
-      "sources": []
+      "notes": "Google Maps showed routes of 30.3, 30.5 and 31.1 km, taking 1 hr to 1 hr 7 min. See the Panchavati and Ramkund guide.",
+      "sources": [
+        {
+          "name": "Google Maps: Ramkund, Panchavati to Trimbakeshwar Jyotirling Mandir, driving, 22 Nov 2026",
+          "url": "https://www.google.com/maps/dir/?api=1&origin=Ramkund+Panchavati+Nashik&destination=Trimbakeshwar+Jyotirling+Mandir&travelmode=driving"
+        }
+      ],
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "verifiedAt": "2026-11-22",
+      "measuredOn": "2026-11-22"
     },
     {
       "id": "tapovan",

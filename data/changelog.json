@@ -318,6 +318,60 @@
       "path": "/discover-nashik/panchavati/",
       "type": "restructured",
       "summary": "Merged the separate what to eat near ramkund nashik food guide guide into this page; the old URL now redirects here."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/kumbh-mela-2027/",
+      "type": "verified",
+      "summary": "The six Kumbh dates (opening, three Amrut Snan dates with their sites, closing) are now Verified against the Authority's official FAQ; added the major Mela period and the Nagar Pradakshina; the official term Amrut Snan is now primary."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/blog/kumbh-mela-2027-all-snan-dates/",
+      "type": "verified",
+      "summary": "Amrut Snan, opening and closing dates verified against the Authority's official FAQ (checked 22 Nov 2026); tithi for the second snan is now Shravan Amavasya; page uses the official term Amrut Snan."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/events/",
+      "type": "verified",
+      "summary": "Kumbh Mela events (opening, three Amrut Snan dates, closing) verified against the Authority's official FAQ; they now carry Event structured data."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/blog/trimbakeshwar-to-nashik-distance-route/",
+      "type": "verified",
+      "summary": "Distances and drive times from the CBS, Nashik Road station and Ramkund are now Verified (Google Maps driving routes measured 22 Nov 2026); quick answer, FAQ and Hindi/Marathi blocks updated."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/transport/nashik-road-station-to-trimbakeshwar/",
+      "type": "verified",
+      "summary": "Nashik Road station distance and drive time verified (Google Maps, 22 Nov 2026)."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/transport/trimbakeshwar-to-panchavati-ramkund/",
+      "type": "verified",
+      "summary": "Ramkund distance and drive time verified (Google Maps, 22 Nov 2026)."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/blog/ramkund-ghat-nashik-guide/",
+      "type": "verified",
+      "summary": "Ramkund to Trimbakeshwar distance verified (Google Maps, 22 Nov 2026); Kumbh snan dates updated to the Authority's official dates."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/blog/nashik-kumbh-mela-e-pass-registration-2027/",
+      "type": "verified",
+      "summary": "Official website confirmed live on 22 Nov 2026; Kumbh dates in this guide now match the Authority's official FAQ."
+    },
+    {
+      "date": "2026-11-22",
+      "path": "/discover-nashik/",
+      "type": "restructured",
+      "summary": "Rebuilt as the Places to visit in Nashik page: answer-first summary, a numbered list of 14 places with type, best-for and time-needed tags and a status on each, an at-a-glance table, FAQ and ItemList structured data. The destination guide cards and filter are kept below it."
     }
   ]
 }

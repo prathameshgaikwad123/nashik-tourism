@@ -121,7 +121,7 @@ def kumbh_block(prof, facts):
       </div>
     </div></div></section>""" % ("" if prof["id"] in ("preparation", "mela_open", "peak", "extended") else " hidden",
                                   render.esc(prof["label"]),
-                                  d("kumbh.mela.opening", "Mela opens") + d("kumbh.snan.1", "1st Amrit Snan") + d("kumbh.snan.2", "2nd Amrit Snan") + d("kumbh.snan.3.nashik", "3rd Amrit Snan (Nashik)"))
+                                  d("kumbh.mela.opening", "Mela opens") + d("kumbh.snan.1", "1st Amrut Snan") + d("kumbh.snan.2", "2nd Amrut Snan") + d("kumbh.snan.3.nashik", "3rd Amrut Snan (Nashik)"))
     reduced = """<section class="sec sec-stone" data-phase-id="post_kumbh evergreen"%s aria-labelledby="kr-h"><div class="inner">
     <h2 class="sec-title" id="kr-h">Kumbh Mela: guides and history</h2>
     <p class="sec-sub">The Simhastha is part of Nashik&rsquo;s story. Our Kumbh guides and the record of what was announced remain available.</p>

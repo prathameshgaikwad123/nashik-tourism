@@ -60,9 +60,11 @@ def dates_line(facts):
     sn = "%s, %s, %s (Nashik) and %s (Trimbakeshwar)" % (d("kumbh.snan.1"), d("kumbh.snan.2"), d("kumbh.snan.3.nashik"), d("kumbh.snan.3.trimbak"))
     status = [facts[x]["status"] for x in ("kumbh.mela.opening", "kumbh.mela.closing", "kumbh.snan.1", "kumbh.snan.2", "kumbh.snan.3.nashik", "kumbh.snan.3.trimbak")]
     st = "verified" if all(x == "verified" for x in status) else "reported"
-    return ('<p class="sn-dates"><strong>Dates, from our fact database:</strong> Mela opens %s &middot; Amrit Snan %s &middot; Mela concludes %s. %s '
+    when = facts["kumbh.snan.1"].get("verifiedAt")
+    label = ("Official dates, verified against the Authority&rsquo;s FAQ on %s:" % render.fmt_date(when, short=True)) if st == "verified" and when else "Dates, from our fact database:"
+    return ('<p class="sn-dates"><strong>%s</strong> Mela opens %s &middot; Amrut Snan %s &middot; Mela concludes %s. %s '
             '<a href="/kumbh-mela-2027/#dates">Dates and sources</a></p>') % (
-        d("kumbh.mela.opening"), sn, d("kumbh.mela.closing"), render.fact_badge(st))
+        label, d("kumbh.mela.opening"), sn, d("kumbh.mela.closing"), render.fact_badge(st, when))
 
 
 def blocks(path, meta, facts):

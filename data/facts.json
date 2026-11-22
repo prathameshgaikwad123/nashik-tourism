@@ -4,27 +4,25 @@
     {
       "id": "kumbh.mela.opening",
       "subject": "Simhastha Kumbh Mela 2026–28",
-      "fact": "Mela opens with dhwajarohan (flag-hoisting)",
+      "fact": "Mela opens with Dhwajarohan (flag-hoisting)",
       "value": "2026-10-31",
-      "display": "31 October 2026",
-      "status": "reported",
+      "display": "31 October 2026, 12:02 PM",
+      "status": "verified",
       "source": {
-        "sourceId": "freepressjournal",
-        "name": "Free Press Journal (Pune/Nashik)",
-        "url": "https://www.freepressjournal.in/pune/nashik-president-likely-to-attend-simhastha-kumbh-flag-hoisting-ceremony-on-october-31"
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
       },
       "leads": [],
       "alternatives": [],
       "verifyWith": [
-        "ntka",
-        "divcom-gr",
-        "dgipr"
+        "ntka-portal"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "Reported as a simultaneous flag-hoisting at Ramkund (Nashik) and Kushavarta Tirtha (Trimbakeshwar). Awaiting a link to the Authority's own notice.",
+      "notes": "Official date and time of the flag-hoisting (Dhwajarohan). Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
       "appliesTo": [
         "/kumbh-mela-2027/"
       ]
@@ -32,27 +30,25 @@
     {
       "id": "kumbh.mela.closing",
       "subject": "Simhastha Kumbh Mela 2026–28",
-      "fact": "Mela concludes (flag lowered)",
+      "fact": "Mela concludes with Dhwajavatarana (flag-lowering)",
       "value": "2028-07-24",
-      "display": "24 July 2028",
-      "status": "reported",
+      "display": "24 July 2028, 3:36 PM",
+      "status": "verified",
       "source": {
-        "sourceId": "freepressjournal",
-        "name": "Free Press Journal (Pune/Nashik)",
-        "url": "https://www.freepressjournal.in/pune/nashik-president-likely-to-attend-simhastha-kumbh-flag-hoisting-ceremony-on-october-31"
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
       },
       "leads": [],
       "alternatives": [],
       "verifyWith": [
-        "ntka",
-        "divcom-gr",
-        "dgipr"
+        "ntka-portal"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "Reported alongside the opening date. Some secondary sites give inconsistent end dates, so the Authority's own notice is the source of truth.",
+      "notes": "Official date and time of the flag-lowering (Dhwajavatarana). Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
       "appliesTo": [
         "/kumbh-mela-2027/"
       ]
@@ -60,29 +56,25 @@
     {
       "id": "kumbh.snan.1",
       "subject": "Simhastha Kumbh Mela 2026–28",
-      "fact": "First Amrit Snan",
+      "fact": "First Amrut Snan",
       "value": "2027-08-02",
-      "display": "Monday 2 August 2027",
-      "status": "reported",
+      "display": "Monday 2 August 2027 (Somvati Amavasya)",
+      "status": "verified",
       "source": {
-        "sourceId": "editorial",
-        "name": "Reported by multiple publications; official notification not yet linked",
-        "url": null
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
       },
-      "leads": [
-        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
-      ],
+      "leads": [],
       "alternatives": [],
       "verifyWith": [
-        "ntka",
-        "divcom-gr",
-        "dgipr"
+        "ntka-portal"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Ashadh Somvati Amavasya was how earlier guide copy described this date.",
+      "notes": "Official date. The Authority uses the term Amrut Snan; the spelling Amrut Snan is common in searches. Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
       "appliesTo": [
         "/kumbh-mela-2027/",
         "/blog/kumbh-mela-2027-all-snan-dates/"
@@ -91,29 +83,25 @@
     {
       "id": "kumbh.snan.2",
       "subject": "Simhastha Kumbh Mela 2026–28",
-      "fact": "Second Amrit Snan",
+      "fact": "Second Amrut Snan",
       "value": "2027-08-31",
-      "display": "Tuesday 31 August 2027",
-      "status": "reported",
+      "display": "Tuesday 31 August 2027 (Shravan Amavasya)",
+      "status": "verified",
       "source": {
-        "sourceId": "editorial",
-        "name": "Reported by multiple publications; official notification not yet linked",
-        "url": null
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
       },
-      "leads": [
-        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
-      ],
+      "leads": [],
       "alternatives": [],
       "verifyWith": [
-        "ntka",
-        "divcom-gr",
-        "dgipr"
+        "ntka-portal"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Earlier site copy called 31 August a Monday; it is a Tuesday. The tithi name for this date is also unconfirmed (sources differ between Shravan and Bhadrapad Amavasya).",
+      "notes": "Official date and tithi. 31 August 2027 is a Tuesday. Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
       "appliesTo": [
         "/kumbh-mela-2027/",
         "/blog/kumbh-mela-2027-all-snan-dates/"
@@ -122,29 +110,25 @@
     {
       "id": "kumbh.snan.3.nashik",
       "subject": "Simhastha Kumbh Mela 2026–28",
-      "fact": "Third Amrit Snan — Nashik (Ramkund)",
+      "fact": "Third Amrut Snan: Nashik (Ramtirth, also called Ramkund)",
       "value": "2027-09-11",
       "display": "Saturday 11 September 2027",
-      "status": "reported",
+      "status": "verified",
       "source": {
-        "sourceId": "editorial",
-        "name": "Reported by multiple publications; official notification not yet linked",
-        "url": null
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
       },
-      "leads": [
-        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
-      ],
+      "leads": [],
       "alternatives": [],
       "verifyWith": [
-        "ntka",
-        "divcom-gr",
-        "dgipr"
+        "ntka-portal"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Reported as the Vaishnava akharas' snan at Nashik.",
+      "notes": "Official date. The Authority's name for the Nashik bathing site is Ramtirth (Ramkund). Press reports describe this as the Vaishnava akharas' snan. Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
       "appliesTo": [
         "/kumbh-mela-2027/",
         "/blog/kumbh-mela-2027-all-snan-dates/"
@@ -153,29 +137,25 @@
     {
       "id": "kumbh.snan.3.trimbak",
       "subject": "Simhastha Kumbh Mela 2026–28",
-      "fact": "Third Amrit Snan — Trimbakeshwar (Kushavarta)",
+      "fact": "Third Amrut Snan: Trimbakeshwar (Kushavarta Tirth)",
       "value": "2027-09-12",
       "display": "Sunday 12 September 2027",
-      "status": "reported",
+      "status": "verified",
       "source": {
-        "sourceId": "editorial",
-        "name": "Reported by multiple publications; official notification not yet linked",
-        "url": null
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
       },
-      "leads": [
-        "https://www.lokmattimes.com/nashik/nashik-kumbh-mela-2027-maharashtra-chief-minister-fadnavis-to-announce-shahi-snan-dates-on-june-1st-a519/"
-      ],
+      "leads": [],
       "alternatives": [],
       "verifyWith": [
-        "ntka",
-        "divcom-gr",
-        "dgipr"
+        "ntka-portal"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "Reported by several publications after the Chief Minister's announcement of the Simhastha schedule. No page on an official site containing the date has been linked yet; the Authority's own notice is the source of truth. Reported as the Shaiva akharas' snan at Trimbakeshwar.",
+      "notes": "Official date and site. Press reports describe this as the Shaiva akharas' snan. Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
       "appliesTo": [
         "/kumbh-mela-2027/",
         "/blog/kumbh-mela-2027-all-snan-dates/"
@@ -507,50 +487,51 @@
     {
       "id": "dest.trimbakeshwar.distance",
       "subject": "Trimbakeshwar Temple",
-      "fact": "Distance from Nashik city centre",
-      "value": "28–30 km",
-      "display": "About 28–30 km",
-      "status": "reported",
+      "fact": "Distance from Nashik CBS (Central Bus Stand) by road",
+      "value": "29–30 km",
+      "display": "About 29–30 km, roughly 55–60 min by road (Google Maps, 22 Nov 2026, late-morning traffic)",
+      "status": "verified",
       "source": {
-        "sourceId": "nashik-district",
-        "name": "Nashik District tourism site (Trimbakeshwar page: about 30 km); earlier site copy said 28 km",
-        "url": "https://nashik.gov.in/tourist-place/trimbakeshwar/"
+        "sourceId": "editorial",
+        "name": "Google Maps driving directions, CBS to Trimbakeshwar Jyotirling Mandir, measured 22 Nov 2026 (routes of 29.3, 29.4 and 29.6 km; fastest 56 min)",
+        "url": "https://www.google.com/maps/dir/?api=1&origin=Nashik+Central+Bus+Stand&destination=Trimbakeshwar+Jyotirling+Mandir&travelmode=driving"
       },
-      "leads": [],
+      "leads": [
+        "https://nashik.gov.in/tourist-place/trimbakeshwar/"
+      ],
       "alternatives": [],
       "verifyWith": [
         "nashik-district"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": null,
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "default",
-      "notes": "The district tourism page gives about 30 km from the city; this site's earlier copy gave 28 km with no source. Not yet measured by an editor on a map. The distance table on the distance guide shows other starting points and every source.",
+      "notes": "Measured on Google Maps (driving) on Sunday 22 Nov 2026 at about 11:50 AM IST; times vary with traffic. The Nashik District tourism site gives about 30 km from the city. Site owner approved.",
       "appliesTo": []
     },
     {
       "id": "dest.trimbakeshwar.journey",
       "subject": "Trimbakeshwar Temple",
       "fact": "Journey time from Nashik",
-      "value": "45–60 minutes",
-      "display": "45–60 minutes",
-      "status": "not_verified",
+      "value": "55–60 minutes",
+      "display": "Roughly 55–60 minutes (Google Maps, 22 Nov 2026, late-morning traffic)",
+      "status": "verified",
       "source": {
         "sourceId": "editorial",
-        "name": "NashikTourism.com earlier guide copy (no source cited)",
-        "url": null,
-        "path": "/blog/trimbakeshwar-to-nashik-distance-route/"
+        "name": "Google Maps driving directions, CBS to Trimbakeshwar Jyotirling Mandir, measured 22 Nov 2026 (fastest 56 min)",
+        "url": "https://www.google.com/maps/dir/?api=1&origin=Nashik+Central+Bus+Stand&destination=Trimbakeshwar+Jyotirling+Mandir&travelmode=driving"
       },
       "leads": [],
       "alternatives": [],
       "verifyWith": [
         "nashik-district"
       ],
-      "verifiedAt": null,
-      "verifiedBy": null,
-      "lastCheckedAt": null,
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
       "topic": "transport",
-      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "notes": "Measured on Google Maps (driving) on 22 Nov 2026 at about 11:50 AM IST; times vary with traffic. Site owner approved.",
       "appliesTo": []
     },
     {
@@ -1123,6 +1104,58 @@
       "notes": "Press coverage reports tourism-department planning for a helicopter service on a Jyotirlinga circuit including Trimbakeshwar, and proposed helipads. Prices quoted in earlier guide copy have no source and have been removed.",
       "appliesTo": [
         "/blog/nashik-kumbh-mela-helicopter-tour-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.major-period",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Major Mela period",
+      "value": "2027-06-15/2027-09-30",
+      "display": "15 June to 30 September 2027",
+      "status": "verified",
+      "source": {
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka-portal"
+      ],
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
+      "topic": "kumbh",
+      "notes": "The Authority's FAQ gives this as the major Mela period. Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
+      ]
+    },
+    {
+      "id": "kumbh.nagar-pradakshina",
+      "subject": "Simhastha Kumbh Mela 2026–28",
+      "fact": "Nagar Pradakshina (Nashik)",
+      "value": "2027-07-29",
+      "display": "29 July 2027",
+      "status": "verified",
+      "source": {
+        "sourceId": "ntka-portal",
+        "name": "Nashik-Trimbakeshwar Kumbh Mela Authority: official FAQ (page last updated 17 Nov 2026)",
+        "url": "https://simhasthamahakumbh.maharashtra.gov.in/faqs"
+      },
+      "leads": [],
+      "alternatives": [],
+      "verifyWith": [
+        "ntka-portal"
+      ],
+      "verifiedAt": "2026-11-22",
+      "verifiedBy": "NashikTourism.com Editorial Team",
+      "lastCheckedAt": "2026-11-22",
+      "topic": "kumbh",
+      "notes": "Official date of the Nagar Pradakshina. Verified 22 Nov 2026 against the Authority's official FAQ page (last updated 17 Nov 2026); site owner approved.",
+      "appliesTo": [
+        "/kumbh-mela-2027/"
       ]
     }
   ]

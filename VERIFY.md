@@ -1,24 +1,42 @@
 # VERIFY.md: figures and claims to confirm in one pass
 
-Created in the SEO/AEO sprint (22 Nov 2026). **Nothing below is marked "Verified" on the site.** The official pages (nashik.gov.in, MSRTC, Indian Railways, NHAI, the Kumbh Authority) could not be opened from the build environment, so every figure comes from search-result text and is shown as *Reported*, *Sources differ* or *Not yet verified*. Each item below has a matching `<!-- VERIFY: ... -->` comment in the page source.
+Created in the SEO/AEO sprint (22 Nov 2026). **Items under "Verified on 22 Nov 2026" are marked Verified; everything else is not.** The official pages (nashik.gov.in, MSRTC, Indian Railways, NHAI, the Kumbh Authority) could not be opened from the build environment, so every figure comes from search-result text and is shown as *Reported*, *Sources differ* or *Not yet verified*. Each item below has a matching `<!-- VERIFY: ... -->` comment in the page source.
 
 **To verify an item:** open the suggested source, read it, then update the data file named in the last column (set `status` to `verified`, plus `verifiedBy`, `verifiedAt` and the source URL; `python3 tools/cms.py fact verify <id> ...` works for facts). Rebuild with `python3 tools/build-all.py`. The status chip on the page changes by itself.
+
+## Verified on 22 Nov 2026
+
+Approved by the site owner (editor) on 22 Nov 2026. Marked `verified` by "NashikTourism.com Editorial Team".
+
+| Item | Verified value | Source |
+|---|---|---|
+| `kumbh.mela.opening` | Dhwajarohan (flag-hoisting), 31 October 2026, 12:02 PM | Authority's official FAQ, https://simhasthamahakumbh.maharashtra.gov.in/faqs (page last updated 17 Nov 2026), checked 22 Nov 2026 |
+| `kumbh.snan.1` | First Amrut Snan, Monday 2 August 2027 (Somvati Amavasya) | same |
+| `kumbh.snan.2` | Second Amrut Snan, Tuesday 31 August 2027 (Shravan Amavasya) | same |
+| `kumbh.snan.3.nashik` | Third Amrut Snan, 11 September 2027, Ramtirth (Ramkund), Nashik | same |
+| `kumbh.snan.3.trimbak` | Third Amrut Snan, 12 September 2027, Kushavarta Tirth, Trimbakeshwar | same |
+| `kumbh.mela.closing` | Dhwajavatarana (flag-lowering), 24 July 2028, 3:36 PM | same |
+| `kumbh.major-period` (new) | Major Mela period 15 June to 30 September 2027 | same |
+| `kumbh.nagar-pradakshina` (new) | Nagar Pradakshina 29 July 2027 | same |
+| Official website | `simhasthamahakumbh.maharashtra.gov.in` is live (maharashtra.gov.in domain; lists the Authority's official social handles). Source `ntka-portal`, `urlStatus: ok` | opened 22 Nov 2026 |
+| CBS to Trimbakeshwar Jyotirling Mandir | About 29-30 km, roughly 55-60 min (routes 29.3 / 29.4 / 29.6 km; fastest 56 min), late-morning traffic. Also `dest.trimbakeshwar.distance` and `dest.trimbakeshwar.journey` | Google Maps driving, measured Sun 22 Nov 2026 about 11:50 AM IST |
+| Nashik Road railway station to Trimbakeshwar | About 37-39 km, roughly 1 hr 15 min (routes 37.3 / 38.0 / 38.8 km; 1 hr 15 min to 1 hr 21 min) | same |
+| Ramkund, Panchavati to Trimbakeshwar | About 30-31 km, roughly 1 hr (routes 30.3 / 30.5 / 31.1 km; 1 hr to 1 hr 7 min) | same |
+
+Effects: the `/events/` page now emits `Event` JSON-LD for the five upcoming Kumbh events (the opening date has passed, so it is listed under "Earlier"). Kumbh pages use the official term "Amrut Snan" (the spelling "Amrit Snan" is kept once on the hub and the dates guide as a search variant). Distance times vary with traffic; re-measure if routes change.
+
+Everything below is still open.
 
 ## 1. Distances (page: `/blog/trimbakeshwar-to-nashik-distance-route/` and both transport guides; data: `data/distances.json`)
 
 | Figure | Currently shown | Suggested source / how |
 |---|---|---|
-| Trimbakeshwar from Nashik CBS | About 28–30 km (reported) | Google Maps shortest common road route, CBS to Trimbakeshwar Temple; note the date. Also read the Trimbakeshwar page on nashik.gov.in |
-| From Nashik Road railway station | About 36–40 km (reported) | Google Maps; nashik.gov.in "how to reach" |
-| Drive time CBS to Trimbakeshwar | 45–60 minutes (earlier site estimate, not verified) | Google Maps typical-traffic range; say which time of day |
-| Ramkund / Panchavati to Trimbakeshwar | About 28–30 km (no separate figure) | Google Maps from Ramkund |
 | Tapovan, Kapaleshwar, Sula Vineyards, Igatpuri | Not yet confirmed | Google Maps |
 | Nashik (Ozar) airport | About 40–55 km (sources differ) | Google Maps; AAI page; also confirm which scheduled flights operate |
 | Mumbai, Pune, Shirdi | 166–193 / 209–240 / 76–125 km (sources differ) | Google Maps, NHAI route; Shirdi range is too wide to be useful |
 | Ramkund is about 2 km from the CBS | Reported (travel listings) | Google Maps |
 | Panchavati to Nashik Road station | 14 km (district site) vs 8 km (earlier copy): disputed | Google Maps; fact `transport.nashik-road.distance` |
 | Kalaram, Sita Gufa, Sundarnarayan distances from the CBS | 2.5–3, 2.7, 2 km (reported) | nashik.gov.in places of interest; Google Maps |
-| `dest.trimbakeshwar.distance` (fact) | About 28–30 km (reported) | as above; `python3 tools/cms.py fact verify dest.trimbakeshwar.distance ...` |
 
 ## 2. Transport services (same pages)
 
@@ -55,8 +73,6 @@ Created in the SEO/AEO sprint (22 Nov 2026). **Nothing below is marked "Verified
 
 | Claim | Suggested source |
 |---|---|
-| All six Kumbh dates (`kumbh.mela.opening`, `kumbh.snan.1`, `.2`, `.3.nashik`, `.3.trimbak`, `kumbh.mela.closing`) are *Reported*. **Verifying these unlocks `Event` rich results on `/events/`** (the page emits Event JSON-LD only for events an editor has verified; Search Console currently shows 0) | The Authority's own notice (divcomnashik.maharashtra.gov.in / the official Simhastha website) or the Maharashtra government GR |
-| Official Simhastha website live; address reported as `simhasthamahakumbh.maharashtra.gov.in` (source `ntka-portal`, `urlStatus: to_be_confirmed`) | Open it; match the address to the Authority's own social channels; then set `urlStatus: ok` |
 | 84 organisations registered (Sept 2026); student "Kumbhdoot" registration; optional KumbhDoot Kumbh Pass in DigiLocker (pilot planned) | The Authority's website / notices. E-pass page shows these in an "Official status as of 22 Nov 2026" box (`data/pages.json` > `officialStatus`) |
 | No general-visitor pass announced (the most-read claim on the site) | Re-check the Authority's website each week; update `officialStatus.asOf` |
 | Traffic, parking, shuttle, last-mile arrangements: "none announced" | Nashik police / Authority notices |

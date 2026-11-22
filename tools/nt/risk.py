@@ -22,7 +22,7 @@ RULES = [
     ("safety",              r"\b(safety|unsafe|stampede|crowd (control|crush|management)|evacuat\w*|fire|flood\w*|landslide)\b"),
     ("medical",             r"\b(medical|hospital|doctor|ambulance|first[- ]aid|health (camp|advisory)|medicine|vaccinat\w*|outbreak|heat ?stroke)\b"),
     ("emergency",           r"\b(emergency|helpline|distress|rescue|disaster)\b"),
-    ("religious-date",      r"\b(amrit snan|shahi snan|snan dates?|parva snan|tithi|muhurat|shubh|auspicious (date|day)|flag[- ]hoisting|dhwajarohan|amavasya|purnima)\b"),
+    ("religious-date",      r"\b(amrut snan|shahi snan|snan dates?|parva snan|tithi|muhurat|shubh|auspicious (date|day)|flag[- ]hoisting|dhwajarohan|amavasya|purnima)\b"),
     ("kumbh-rule",          r"\b(rules?|guidelines?|prohibited|banned?|not allowed|mandatory|compulsory|must carry|permitted|permit)\b"),
     ("pass-registration",   r"\b(e-?pass|passes|pass required|registration|register(ed)?|qr code|vip pass|entry pass)\b"),
     ("traffic",             r"\b(traffic|diversions?|barricad\w*|no[- ]entry|one[- ]way|vehicle (ban|restriction)|parking)\b"),
