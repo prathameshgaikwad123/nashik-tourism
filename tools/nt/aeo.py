@@ -43,7 +43,8 @@ def author():
 
 
 def author_id():
-    return SITE + author()["path"] + "#person"
+    """Articles are credited to the site's Organization; there is no personal author."""
+    return ORG_ID
 
 
 # ── JSON-LD ──────────────────────────────────────────────────────────────────
@@ -68,22 +69,11 @@ def website_ld():
                                 "query-input": "required name=search_term_string"}}
 
 
-def person_ld():
-    a = author()
-    d = {"@type": "Person", "@id": author_id(), "name": a["name"], "url": SITE + a["path"],
-         "jobTitle": a["jobTitle"], "homeLocation": {"@type": "Place", "name": a["homeLocation"]},
-         "worksFor": {"@id": ORG_ID}}
-    if a.get("sameAs"):
-        d["sameAs"] = a["sameAs"]
-    if a.get("bioApproved") and a.get("bio"):
-        d["description"] = a["bio"]
-    return d
-
-
 def article_ld(path, headline, description, published, modified, image=None, kind="Article", about=None):
     d = {"@type": kind, "@id": SITE + path + "#article", "headline": headline[:110], "description": description,
          "datePublished": published, "dateModified": modified or published,
-         "author": {"@id": author_id()}, "publisher": {"@id": ORG_ID},
+         "author": {"@type": "Organization", "@id": ORG_ID, "name": author()["name"], "url": SITE + "/"},
+         "publisher": {"@id": ORG_ID},
          "mainEntityOfPage": {"@type": "WebPage", "@id": SITE + path},
          "isPartOf": {"@id": WEBSITE_ID}, "inLanguage": "en-IN"}
     if image:
@@ -196,13 +186,23 @@ def byline(updated, verified=None, published=None):
     ver = ("Verified <time datetime=\"%s\">%s</time>" % (esc(verified), esc(fmt_date(verified, short=True)))) if verified \
         else "Not yet verified against official sources"
     pub = (' &middot; Published <time datetime="%s">%s</time>' % (esc(published), esc(fmt_date(published, short=True)))) if published else ""
-    return ('<!-- BEGIN:NT-BYLINE -->\n<p class="byline" data-byline>By <a href="%s" rel="author">%s</a>, %s'
+    return ('<!-- BEGIN:NT-BYLINE -->\n<p class="byline" data-byline>By <a href="%s" rel="author">%s</a>'
             ' &middot; Last updated <time datetime="%s">%s</time>%s &middot; Last verified: %s</p>\n<!-- END:NT-BYLINE -->'
-            % (esc(a["path"]), esc(a["name"]), esc(a["jobTitle"]), esc(updated), esc(fmt_date(updated, short=True)), pub, ver))
+            % (esc(a["path"]), esc(a["byline"]), esc(updated), esc(fmt_date(updated, short=True)), pub, ver))
 
 
 def sponsored_label(text="Sponsored"):
     return '<span class="sponsored-label" data-sponsored>%s</span>' % esc(text)
+
+
+def sponsored_block(inner_html, sponsor_name):
+    """A labelled sponsored section. Never carries a Verified status (seo-check fails the build if
+    a sponsored block contains one), and its outbound links must use rel="sponsored nofollow"."""
+    return ('<aside class="sponsored-block" data-sponsored aria-label="Sponsored content">%s %s'
+            '<div class="sb-body">%s</div>'
+            '<p class="sb-note">Sponsored by %s. The sponsor does not control our facts, and this content is not marked Verified. '
+            '<a href="/editorial-policy/#sponsored">How sponsored content works</a>.</p></aside>'
+            % (sponsored_label(), "", inner_html, esc(sponsor_name)))
 
 
 def _affiliate_params(host):

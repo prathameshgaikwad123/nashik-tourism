@@ -6,7 +6,7 @@ pieces wired in the same order on every page:
 
     quick answer -> status notice (apply-verification) -> body -> sources by claim -> verify block
 
-JSON-LD (Article with a Person author, BreadcrumbList, FAQPage mirrored from the visible
+JSON-LD (Article with the Organization as author, BreadcrumbList, FAQPage mirrored from the visible
 FAQ, plus any page-specific nodes) is generated here from the same data that renders the page.
 """
 import re
@@ -60,7 +60,7 @@ def build(path, *, title, h1, lede, description, crumbs, body, side="", faq=None
     ld = [aeo.article_ld(path, h1, description, published, modified, image or pagekit.OG_DEFAULT, kind=article_kind, about=about)]
     if faq:
         ld.append(aeo.faq_ld([(q, aeo.plain(a)) for q, a in faq], path))
-    ld += (extra_ld or []) + [aeo.person_ld(), aeo.organization_ld()]
+    ld += (extra_ld or []) + [aeo.organization_ld()]
     html = pagekit.render(path, title, description, head + "\n" + article, crumbs=crumbs, jsonld=ld, css=css, raw_title=True,
                           page_type="WebPage", modified=modified, published=published, og_image=image)
     html = html.replace('<meta property="og:type" content="website" />', '<meta property="og:type" content="article" />', 1)

@@ -43,7 +43,8 @@ DESTINATION_LINKS = [
     ("/discover-nashik/panchavati/", "Panchavati &amp; Ramkund"),
     ("/discover-nashik/sula-vineyards/", "Sula Vineyards"),
     ("/discover-nashik/pandavleni-caves/", "Pandavleni Caves"),
-    ("/discover-nashik/igatpuri/", "Igatpuri &amp; Bhandardara"),
+    ("/discover-nashik/igatpuri/", "Igatpuri"),
+    ("/discover-nashik/bhandardara/", "Bhandardara"),
 ]
 
 GUIDE_LINKS = [

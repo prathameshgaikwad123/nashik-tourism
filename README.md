@@ -82,7 +82,7 @@ the reason. Details: `data/README.md`.
 | guides under `/blog/` | hand-written; `apply-verification.py` adds the status notice and verification block | pages, facts |
 | header and footer on every page | `chrome.py` via `apply-chrome.py` | — |
 | `/blog/trimbakeshwar-to-nashik-distance-route/`, `/transport/nashik-road-station-to-trimbakeshwar/`, `/transport/trimbakeshwar-to-panchavati-ramkund/`, `/discover-nashik/bhandardara/` | `build-guides.py` (`tools/guides/`) | distances, facts, sources |
-| `/about/prathamesh/`, `/advertise/` | `build-about-pages.py` | seo, monetization |
+| `/about/editorial-team/`, `/advertise/` | `build-about-pages.py` | seo, monetization |
 | quick answer, byline, Article / FAQ / breadcrumb JSON-LD on the other guides | `apply-aeo.py` | pages (front-matter), changelog |
 | booking-link rel and affiliate parameters, every page | `apply-affiliate.py` | monetization, env |
 | `sitemap.xml` | `build-sitemap.py` | changelog, front-matter dates |

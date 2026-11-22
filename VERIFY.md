@@ -48,7 +48,7 @@ Created in the SEO/AEO sprint (22 Nov 2026). **Nothing below is marked "Verified
 | From Nashik 70–73 km; Mumbai 177 km (165–185); Pune 156 km (156–191) | Maharashtra Tourism; Google Maps |
 | Nearest station Igatpuri, 35–45 km; Nashik airport about 90 km | Indian Railways; AAI |
 | Fireflies about May to June | Local operators; Maharashtra forest department. No official calendar found |
-| **Which district Bhandardara is in.** The page says only "close to the Nashik district boundary". It is believed to be in Akole taluka, Ahilyanagar (formerly Ahmednagar) district. The Igatpuri page (`data/destinations.json`, `igatpuri`) still says both places are "in Nashik district"; correct it once confirmed | District gazetteer / Maharashtra Tourism |
+| District: Akole taluka, Ahilyanagar (formerly Ahmednagar) district, close to the Nashik district boundary. **Confirmed by the site owner on 22 Nov 2026**; the Igatpuri page was corrected to say Igatpuri only is in Nashik district | n/a (done) |
 | Umbrella Falls visible when the dam overflows; monsoon safety advice is general, not official | Maharashtra Tourism; local police / forest notices |
 
 ## 5. Kumbh Mela (pages: Kumbh hub, e-pass guide; data: `data/facts.json`)
@@ -75,8 +75,8 @@ Created in the SEO/AEO sprint (22 Nov 2026). **Nothing below is marked "Verified
 
 | Item | Where |
 |---|---|
-| Author name shown as "Prathamesh Gaikwad" (taken from the repository owner's handle; confirm spelling), the placeholder bio, and `sameAs` links | `data/seo.json` > `author`; page `/about/prathamesh/` |
+| Articles are credited to "NashikTourism.com Editorial Team" (Organization); no personal names anywhere on the site | `data/seo.json` > `author`; page `/about/editorial-team/` |
 | Organization `sameAs` (social profiles). Empty, so omitted from the JSON-LD | `data/seo.json` > `organization.sameAs` |
-| Sponsored-content wording on `/editorial-policy/#sponsored` and the new `/advertise/` page. The previous policy said paid editorial was not accepted; the new wording permits **labelled** sponsored content. Confirm this is the policy you want | `tools/build-editorial-policy.py`, `data/monetization.json` |
+| Sponsored-content policy (approved by the site owner 22 Nov 2026): always labelled, `rel="sponsored nofollow"`, sponsors never control facts, sponsored pages never marked Verified (enforced by `seo-check.py` and `validate-data.py`) | `tools/build-editorial-policy.py`, `data/monetization.json` |
 | Audience statistics on `/advertise/` ship empty; fill from GA4 / Search Console only | `data/monetization.json` > `audienceStats` |
 | `geo`, `openingHoursSpecification` and `isAccessibleForFree` were **not** added to destination schema: no verified values. Add them per destination when verified (`seo-check` blocks `isAccessibleForFree` unless you change that rule) | `data/destinations.json` |

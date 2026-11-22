@@ -64,7 +64,7 @@ Baseline: `9475705` (the site before the 2026–28 platform transformation). Cur
 
 | URL | In sitemap | Indexable | Purpose |
 |---|---|---|---|
-| `/about/prathamesh/` | yes | yes | Prathamesh Gaikwad, Editor at NashikTourism.com |
+| `/about/editorial-team/` | yes | yes | Editorial team: how NashikTourism.com researches and verifies |
 | `/advertise/` | yes | yes | Advertise with NashikTourism.com |
 | `/discover-nashik/bhandardara/` | yes | yes | Bhandardara: Arthur Lake, Randha Falls, Fireflies and How to Reach |
 | `/transport/nashik-road-station-to-trimbakeshwar/` | yes | yes | Nashik Road Station to Trimbakeshwar: Distance and Options |

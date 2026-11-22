@@ -1214,3 +1214,11 @@ h1, h2, h3 { overflow-wrap: break-word; }
 .route-steps { counter-reset: step; list-style: none; margin: var(--s-4) 0; padding: 0; display: grid; gap: var(--s-3); }
 .route-steps li { counter-increment: step; position: relative; padding-left: 2.6rem; }
 .route-steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--primary); color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; display: grid; place-items: center; }
+
+/* QA fixes: long source URLs wrap instead of widening the page at 320px; citation links meet the 44px target */
+.official-box a, .fact-card a, .fc-value a, .key-facts a, .source-list a, .matrix-note a { overflow-wrap: anywhere; word-break: break-word; }
+.source-list a, .key-facts td a, .key-facts .muted a, .official-box a, .byline a, .sponsored-block a { display: inline-block; padding-block: 0.7rem; }
+.official-box p { overflow-wrap: anywhere; }
+.fact-card { min-width: 0; overflow-wrap: anywhere; }
+.signup-block h2, .k-sec .signup-block h2 { color: var(--accent-warm); }
+.signup-block p, .k-sec .signup-block p { color: var(--on-dark); }

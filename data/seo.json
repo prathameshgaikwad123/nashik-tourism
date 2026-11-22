@@ -3,20 +3,15 @@
   "organization": {
     "name": "NashikTourism.com",
     "sameAs": [],
-    "_sameAs": "TODO(Prathamesh): add the site's real social profile URLs (Instagram, YouTube, X, Facebook, LinkedIn) once they exist. Leave empty rather than guess; an empty array is omitted from the JSON-LD.",
+    "_sameAs": "TODO(site owner): add the site's real social profile URLs (Instagram, YouTube, X, Facebook, LinkedIn) once they exist. Leave empty rather than guess; an empty array is omitted from the JSON-LD.",
     "publishingPrinciples": "/editorial-policy/"
   },
   "author": {
-    "id": "prathamesh",
-    "name": "Prathamesh Gaikwad",
-    "path": "/about/prathamesh/",
-    "jobTitle": "Editor",
-    "homeLocation": "Nashik, Maharashtra, India",
-    "sameAs": [],
-    "_sameAs": "TODO(Prathamesh): add LinkedIn / other profile URLs you are happy to publish.",
-    "bioApproved": false,
-    "bio": null,
-    "_bio": "TODO(Prathamesh): write and approve the bio. Until bioApproved is true the author page shows a clearly marked placeholder and no personal claims."
+    "id": "editorial-team",
+    "name": "NashikTourism.com Editorial Team",
+    "byline": "the NashikTourism.com Editorial Team",
+    "path": "/about/editorial-team/",
+    "_note": "No personal name appears anywhere on the site. Articles are credited to the site's Organization entity; the page at `path` explains how the team researches and verifies, with no names."
   },
   "bing": {
     "verificationEnvVar": "NT_MSVALIDATE",
@@ -89,7 +84,7 @@
           "/editorial-policy/",
           "/sources/",
           "/about/",
-          "/about/prathamesh/",
+          "/about/editorial-team/",
           "/disclaimer/",
           "/contact/",
           "/advertise/"

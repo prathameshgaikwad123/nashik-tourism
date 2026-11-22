@@ -758,7 +758,7 @@ DAY_WINE = ("Trimbakeshwar and the vineyards", "spiritual wine nature", [
 
 DAY_GHATS = ("Into the Western Ghats", "nature", [
     ("All day", [
-        ("Igatpuri &amp; Bhandardara", "Nature", "A full day",
+        ("Igatpuri", "Nature", "A full day",
          "Hill country and reservoirs west of the city. Our guide calls this a landscape rather than a list of sights &mdash; it rewards an unhurried pace, and it is greenest during and just after the monsoon.",
          "/discover-nashik/igatpuri/"),
     ]),
@@ -779,7 +779,7 @@ PLANS = [
      "days_list": [DAY_SACRED, DAY_WINE], "source": "/blog/nashik-2-day-itinerary/"},
     {"id": "plan-3", "days": "3", "interests": "spiritual heritage wine nature",
      "title": "Three days &mdash; the city, the wine country and the Ghats",
-     "note": "The first two days are the published itinerary. The third is a suggestion drawn from our Igatpuri &amp; Bhandardara guide rather than a published day-by-day plan &mdash; we have no verified timings for the Ghats, so treat it as a shape for the day, not a schedule.",
+     "note": "The first two days are the published itinerary. The third is a suggestion drawn from our Igatpuri guide rather than a published day-by-day plan &mdash; we have no verified timings for the Ghats, so treat it as a shape for the day, not a schedule.",
      "days_list": [DAY_SACRED, DAY_WINE, DAY_GHATS], "source": "/blog/nashik-2-day-itinerary/"},
 ]
 

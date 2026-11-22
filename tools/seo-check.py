@@ -204,8 +204,8 @@ def main():
                     ids = {n.get("@id"): n.get("@type") for n in graph}
                     auth = node.get("author")
                     aid = auth.get("@id") if isinstance(auth, dict) else None
-                    if not ((isinstance(auth, dict) and auth.get("@type") == "Person") or ids.get(aid) == "Person"):
-                        err(path, "Article author must be a Person")
+                    if not (isinstance(auth, dict) and auth.get("@type") == "Organization"):
+                        err(path, "Article author must be the site's Organization (no personal names)")
                     if not node.get("publisher"):
                         err(path, "Article needs a publisher")
                     if not node.get("mainEntityOfPage"):
@@ -244,6 +244,17 @@ def main():
                 err(path, "quick answer is %d words (must be 40-60)" % n)
         elif "data-reading-body" in raw and "noindex" not in raw[:6000]:
             err(path, "guide has no quick answer")
+
+    # Sponsored content is never "Verified", and its outbound links are sponsored + nofollow.
+    for path, raw in sorted(raw_pages.items()):
+        for blk in re.findall(r'<aside class="sponsored-block".*?</aside>', raw, re.S):
+            if re.search(r"st-verified|st-confirmed|>\s*Verified\b", blk):
+                err(path, "sponsored block carries a Verified/Confirmed status")
+            for a in re.findall(r"<a\s[^>]*href=\"https?://[^\"]*\"[^>]*>", blk):
+                if "nashiktourism.com" in a:
+                    continue
+                if not ("sponsored" in a and "nofollow" in a):
+                    err(path, "sponsored block has an outbound link without rel=sponsored nofollow")
 
     # Redirect integrity: targets exist, sources do not, nothing internal points at a source.
     redirect_src = {}
