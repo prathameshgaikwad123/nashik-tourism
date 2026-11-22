@@ -19,6 +19,18 @@ jobs:
         run: python3 tools/validate-data.py
       - name: Build the site
         run: python3 tools/build-all.py
+        env:
+          NT_MSVALIDATE: ${{ vars.NT_MSVALIDATE }}
+          NT_PLAUSIBLE_DOMAIN: ${{ vars.NT_PLAUSIBLE_DOMAIN }}
+          NT_CF_BEACON_TOKEN: ${{ vars.NT_CF_BEACON_TOKEN }}
+          NT_SIGNUP_FORM_ACTION: ${{ vars.NT_SIGNUP_FORM_ACTION }}
+          NT_WHATSAPP_CHANNEL_URL: ${{ vars.NT_WHATSAPP_CHANNEL_URL }}
+          NT_AFFILIATE_MAKEMYTRIP: ${{ vars.NT_AFFILIATE_MAKEMYTRIP }}
+          NT_AFFILIATE_GOIBIBO: ${{ vars.NT_AFFILIATE_GOIBIBO }}
+          NT_AFFILIATE_BOOKING: ${{ vars.NT_AFFILIATE_BOOKING }}
+          NT_AFFILIATE_AGODA: ${{ vars.NT_AFFILIATE_AGODA }}
+      - name: Redirects resolve to real pages
+        run: python3 tools/check-redirects.py
       - name: SEO, structured-data and link audit
         run: python3 tools/seo-check.py
       - name: Content health report

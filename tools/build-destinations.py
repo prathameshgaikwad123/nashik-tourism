@@ -363,7 +363,7 @@ def build(dest):
         "image": "%(ogimg)s",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Nashik",
+          "addressLocality": "%(locality)s",
           "addressRegion": "Maharashtra",
           "addressCountry": "IN"
         }
@@ -424,7 +424,7 @@ def build(dest):
 
       <section id="see-do">
         <h2>Things to see and do</h2>
-        <p>%(see)s</p>
+        %(see)s
       </section>
 
       <section id="significance">
@@ -495,7 +495,7 @@ def build(dest):
           <li><a href="/blog/best-time-to-visit-nashik/">Best time to visit</a></li>
           <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to stay</a></li>
           <li><a href="/blog/nashik-2-day-itinerary/">Two-day itinerary</a></li>
-          <li><a href="/blog/nashik-kumbh-mela-budget-2027/">Budget guide</a></li>
+          <li><a href="/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027">Budget guide</a></li>
         </ul>
         <a href="/plan-your-trip/" class="btn btn-purple">Plan Your Trip</a>
       </div>
@@ -523,10 +523,10 @@ def build(dest):
 """ % {
         "title": dest["title"], "title_plain": plain(dest["title"]),
         "meta": dest["meta"], "url": url, "site": SITE,
-        "ogimg": og_img(dest), "src": src, "srcset": srcset,
+        "ogimg": og_img(dest), "locality": (dest.get("location") or {}).get("locality") or "Nashik", "src": src, "srcset": srcset,
         "alt": dest["alt"], "name": dest["name"], "name_plain": plain(dest["name"]),
         "kicker": dest["kicker"], "lede": dest["lede"], "lede_plain": plain(dest["lede"]),
-        "why": why, "see": dest["see"], "significance": dest["significance"],
+        "why": why, "see": dest["see"] if dest["see"].lstrip().startswith("<") else "<p>%s</p>" % dest["see"], "significance": dest["significance"],
         "tips": tips, "nearby": nearby, "related": related, "faqs": faqs,
         "sidebar_related": sidebar_related, "breadcrumb": breadcrumb_json,
         "faq_schema": faq_schema,
@@ -834,9 +834,9 @@ PLAN_ROWS = [
     ("When should I visit?", "How the seasons run, and which months suit which kind of trip.", "/blog/best-time-to-visit-nashik/"),
     ("How many days are enough?", "A worked two-day itinerary across temples, caves and vineyards.", "/blog/nashik-2-day-itinerary/"),
     ("Where should I stay?", "Which areas suit which trip, from Panchavati to the vineyard side.", "/blog/where-to-stay-nashik-kumbh-mela/"),
-    ("What will it cost?", "A budget breakdown for travel, stay, food and getting around.", "/blog/nashik-kumbh-mela-budget-2027/"),
+    ("What will it cost?", "A budget breakdown for travel, stay, food and getting around.", "/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027"),
     ("What should I actually see?", "Fifteen places worth your time, temples and vineyards to quieter corners.", "/blog/is-nashik-worth-visiting/"),
-    ("What do I pack?", "A practical packing list, written with Kumbh Mela crowds in mind.", "/blog/nashik-kumbh-mela-packing-list/"),
+    ("What do I pack?", "A practical packing list, written with Kumbh Mela crowds in mind.", "/kumbh-mela-2027/#what-to-pack"),
     ("What about Kumbh Mela 2027?", "Dates, ghats, crowds and how the Mela reshapes a Nashik trip.", "/kumbh-mela-2027/"),
 ]
 
@@ -998,7 +998,7 @@ def build_plan_hub():
       <li>Decide your travel mode first &mdash; train, bus, flight or self-drive &mdash; because it shapes everything else. See <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">how to reach Nashik</a>.</li>
       <li>Pick the zone you want to stay in before you pick a hotel. Panchavati and Trimbakeshwar suit very different trips: <a href="/blog/where-to-stay-nashik-kumbh-mela/">where to stay</a>.</li>
       <li>Book accommodation early if your dates fall near the Amrit Snan dates &mdash; see the <a href="/kumbh-mela-2027/">Kumbh Mela 2027 guide</a>.</li>
-      <li>Carry ID, emergency contacts and a light day bag for ghat visits. Our <a href="/blog/nashik-kumbh-mela-packing-list/">packing list</a> goes further.</li>
+      <li>Carry ID, emergency contacts and a light day bag for ghat visits. Our <a href="/kumbh-mela-2027/#what-to-pack">packing list</a> goes further.</li>
       <li>Confirm timings and any festival arrangements close to your travel date &mdash; they change, and Kumbh Mela plans in particular are still being finalised.</li>
     </ul>
   </section>
@@ -1040,6 +1040,8 @@ def main():
         print("  wrote %-46s %6d bytes" % (out.replace(ROOT + os.sep, ""), len(html)))
 
     for dest in DESTINATIONS:
+        if dest.get("custom"):   # page is generated elsewhere (tools/build-guides.py); still listed on the hub
+            continue
         out = os.path.join(ROOT, "discover-nashik", dest["slug"], "index.html")
         os.makedirs(os.path.dirname(out), exist_ok=True)
         html = build(dest)

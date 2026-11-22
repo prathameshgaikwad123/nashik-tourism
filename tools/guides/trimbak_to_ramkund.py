@@ -1,0 +1,76 @@
+"""/transport/trimbakeshwar-to-panchavati-ramkund/ — Trimbakeshwar <-> Panchavati / Ramkund."""
+from nt import aeo, articlekit
+from nt.render import ext_link
+
+from . import common
+
+PATH = "/transport/trimbakeshwar-to-panchavati-ramkund/"
+TITLE = "Trimbakeshwar to Panchavati and Ramkund: Distance and Options"
+H1 = "Trimbakeshwar to Panchavati and Ramkund: Distance, Bus, Jeep and Cab Options"
+DESC = "Trimbakeshwar to Ramkund and Panchavati is about 28–30 km by road (reported). Bus, jeep and cab options and what changes during Kumbh Mela 2027."
+
+
+def build():
+    h = common.distances()["headline"]
+    quick = ("Trimbakeshwar is about %s km from Panchavati and Ramkund by road, close to the Nashik city figure, because the two are only "
+             "a short way apart. Go by MSRTC bus via the CBS, shared jeep or cab. We have no verified time, fare or last-bus time; "
+             "on Kumbh days allow far longer." % h["cbsKm"])
+    body = """
+    <p>Panchavati and Ramkund, on the Godavari in Nashik, and Trimbakeshwar (also written Trimbak or Tryambakeshwar), are the two sites of Kumbh Mela 2027, and many pilgrims visit both. This guide covers the journey between them. The full distance table for other starting points is in the <a href="/blog/trimbakeshwar-to-nashik-distance-route/">Nashik to Trimbakeshwar distance guide</a>.</p>
+
+    <h2 id="how-far-is-ramkund-from-trimbakeshwar">How far is Ramkund from Trimbakeshwar?</h2>
+    %(table)s
+    %(measured)s
+    <p>We have not found a separate published figure for Ramkund or Panchavati. Ramkund is reported to be about 2 km from the Nashik CBS, so the city figure (about %(cbs)s km) is a reasonable guide. The distance is the same from Ramkund to Trimbakeshwar as from Trimbakeshwar to Ramkund. Tapovan and Kapaleshwar temple are in the same part of the city.</p>
+
+    <h2 id="how-do-you-travel-between-ramkund-and-trimbakeshwar">How do you travel between Ramkund and Trimbakeshwar?</h2>
+    <ul>
+      <li><strong>MSRTC bus:</strong> MSRTC buses are reported to run to Trimbakeshwar from the Nashik CBS (%(erail)s). Our <a href="/blog/ramkund-ghat-nashik-guide/">Ramkund guide</a> and the transport hub note that the Panchavati bus stand is nearer Ramkund; whether Trimbakeshwar buses call there has not been verified. Timings, fares and the last bus back are not verified.</li>
+      <li><strong>Shared jeep:</strong> a common way to make the trip; pickup points, frequency and fare are not verified. Ask locally.</li>
+      <li><strong>Cab or taxi:</strong> door-to-door from your hotel in Panchavati. Agree the fare, and whether it includes waiting and the return, before you set off.</li>
+      <li><strong>Self-drive:</strong> use a maps app for the route; do not assume parking close to Ramkund or the temple on busy days.</li>
+    </ul>
+
+    <h2 id="how-long-does-it-take">How long does the journey take?</h2>
+    <p>The drive from the city is estimated at %(drive)s in normal traffic (not yet verified). We have no verified time specifically from Ramkund. Plan on more at peak hours, and much more on festival and Amrit Snan days.</p>
+
+    <h2 id="what-about-the-two-kumbh-sites">Can you do both Kumbh sites on the same day?</h2>
+    <p>The reported third Amrit Snan has the Vaishnava akharas at Ramkund on 11 September 2027 and the Shaiva akharas at Trimbakeshwar on 12 September 2027 (reported, not confirmed; see the <a href="/kumbh-mela-2027/#dates">dates table on the Kumbh hub</a>). No official traffic, parking or shuttle plan between the two has been located. On a busy date, consider seeing one site per day rather than both, and check <a href="/kumbh-mela-2027/live-updates/">live updates</a> first.</p>
+
+    <h2 id="what-to-see-next">What to see next</h2>
+    <ul>
+      <li><a href="/discover-nashik/panchavati/">Panchavati and Ramkund guide</a></li>
+      <li><a href="/discover-nashik/trimbakeshwar/">Trimbakeshwar Temple guide</a></li>
+      <li><a href="/transport/nashik-road-station-to-trimbakeshwar/">Nashik Road station to Trimbakeshwar</a></li>
+      <li><a href="/blog/nashik-2-day-itinerary/">Nashik two-day itinerary</a></li>
+    </ul>
+""" % {"table": common.matrix(["ramkund", "cbs", "tapovan", "kapaleshwar"], "Road distance to Trimbakeshwar from Ramkund, Panchavati and nearby"),
+       "measured": common.how_we_measured(), "cbs": h["cbsKm"], "drive": h["driveTime"],
+       "erail": ext_link("https://erail.in/info/nasik-road-railway-station-NK", "erail", item="erail-nashik-road")}
+    body += aeo.source_list([
+        ("City distance used as a guide for Ramkund", ["nashik-district"]),
+        ("Ramkund being about 2 km from the CBS", [("Trawell: Nashik itineraries", "https://www.trawell.in/itineraries/nashik/2-day-trip/nashik-trimbakeshwar-brahmagiri-hill")]),
+        ("MSRTC bus services", ["msrtc"]),
+        ("Kumbh dates and arrangements", ["ntka"]),
+    ])
+    faq = [
+        ("How far is Trimbakeshwar from Ramkund?",
+         "About %s km by road, using the Nashik city figure as a guide (reported; no separate Ramkund figure found)." % h["cbsKm"]),
+        ("How do I get from Ramkund to Trimbakeshwar?",
+         "By MSRTC bus from the CBS, shared jeep or cab. We publish no timetable or fares because none is verified."),
+        ("How far is Trimbakeshwar from Panchavati?",
+         "About the same as from Ramkund, roughly %s km (reported guide figure; not separately confirmed)." % h["cbsKm"]),
+        ("Can I visit Ramkund and Trimbakeshwar on the same day during Kumbh?",
+         "It is possible on quiet days, but no traffic or shuttle plan has been announced. On busy dates see one site per day and allow far longer."),
+    ]
+    side = articlekit.sidebar(
+        articlekit.side_card("Key facts (reported)", '<ul class="date-list"><li><span class="dl">By road</span><span class="dv">About %s km</span></li><li><span class="dl">Drive time</span><span class="dv">%s (est.)</span></li></ul>' % (h["cbsKm"], h["driveTime"])),
+        articlekit.side_links("Related", [("/blog/trimbakeshwar-to-nashik-distance-route/", "Nashik to Trimbakeshwar distance"),
+                                          ("/transport/nashik-road-station-to-trimbakeshwar/", "Nashik Road station to Trimbakeshwar"),
+                                          ("/discover-nashik/panchavati/", "Panchavati and Ramkund"),
+                                          ("/kumbh-mela-2027/", "Kumbh Mela 2027 hub")]))
+    articlekit.build(PATH, title=TITLE, h1=H1,
+                     lede="Between the two Kumbh Mela sites: distance, options and what to check.",
+                     description=DESC, crumbs=articlekit.crumbs_for("Trimbakeshwar to Panchavati and Ramkund", ("Transport", "/transport/")),
+                     body=body, side=side, faq=faq, quick=quick, published="2026-11-22", topic_label="Transport",
+                     about={"@type": "TouristAttraction", "name": "Ramkund, Panchavati", "url": "https://nashiktourism.com/discover-nashik/panchavati/"})

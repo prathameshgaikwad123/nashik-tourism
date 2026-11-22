@@ -15,7 +15,8 @@
         "dgipr",
         "pib"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "This page is a short pointer to our main Nashik Kumbh Mela 2027 guide. The Simhastha is reported to run from 31 October 2026 to 24 July 2028, but dates and arrangements are not all confirmed. Use the Kumbh hub, live updates and sources, where every fact shows its status and source."
     },
     "/blog/how-to-reach-nashik-for-kumbh-mela/": {
       "template": "article",
@@ -32,7 +33,8 @@
         "aai",
         "nashik-district-how-to-reach"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "You can reach Nashik by train to Nashik Road station, by MSRTC or private bus, by road from Mumbai and Pune, or by air to Nashik (Ozar) airport. Journey figures here are approximate and unverified, and no special-train or traffic plans have been announced, so check the operators before you travel."
     },
     "/blog/where-to-stay-nashik-kumbh-mela/": {
       "template": "article",
@@ -46,9 +48,10 @@
         "maharashtra-tourism",
         "ntka"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "For Kumbh Mela 2027, look for stays near Ramkund and Panchavati in Nashik, in Trimbakeshwar, or elsewhere in the city with road access. Rooms may be limited around the reported Amrit Snan dates, so booking early with a refundable option is sensible. We have not verified rates or availability; check each property directly."
     },
-    "/blog/nashik-kumbh-mela-packing-list/": {
+    "/kumbh-mela-2027/#what-to-pack": {
       "template": "article",
       "topic": "guide",
       "notice": "general",
@@ -61,7 +64,8 @@
         "maharashtra-tourism",
         "imd"
       ],
-      "showDates": false
+      "showDates": false,
+      "quickAnswer": "Pack light and organised: comfortable footwear, a change of clothes for the ghat, a water bottle, a small day bag, essential medicines and your documents. This is general advice from an independent site, not an official list; we have not found published rules on what may be carried into the Mela area."
     },
     "/blog/ramkund-ghat-nashik-guide/": {
       "template": "article",
@@ -76,9 +80,10 @@
         "nashik-district",
         "ntka"
       ],
-      "showDates": false
+      "showDates": false,
+      "quickAnswer": "Ramkund is a sacred bathing ghat on the Godavari in Nashik's Panchavati area, traditionally believed to be where Lord Rama bathed during his exile. It is reported to be a main Kumbh Mela 2027 bathing site. Opening hours, aarti times and Kumbh-day arrangements have not been verified; confirm locally."
     },
-    "/blog/nashik-kumbh-mela-budget-2027/": {
+    "/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027": {
       "template": "article",
       "topic": "guide",
       "notice": "accommodation",
@@ -90,24 +95,28 @@
         "maharashtra-tourism",
         "ntka"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "Your Kumbh Mela 2027 budget depends on your travel style and starting point. Plan for travel, accommodation, food and local transport, and keep a buffer, since prices may rise around the reported Amrit Snan dates. We give no verified prices or totals; estimate each cost from current quotes before you book."
     },
     "/blog/trimbakeshwar-to-nashik-distance-route/": {
       "template": "article",
       "topic": "transport",
-      "notice": "transport",
+      "notice": "claims",
       "published": "2026-04-12",
       "lastReviewed": null,
       "lastVerified": null,
-      "verificationStatus": "not_verified",
+      "verificationStatus": "reported",
       "sources": [
-        "central-railway",
+        "nashik-district",
+        "nashik-district-how-to-reach",
         "msrtc",
-        "nhai",
+        "central-railway",
+        "ntes",
         "aai",
-        "nashik-district-how-to-reach"
+        "nhai"
       ],
-      "showDates": true
+      "showDates": true,
+      "generated": true
     },
     "/blog/kumbh-mela-2027-all-snan-dates/": {
       "template": "article",
@@ -123,7 +132,8 @@
         "dgipr",
         "pib"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "The Amrit Snan dates reported for Nashik Kumbh Mela 2027 are 2 August, 31 August, 11 September (Nashik) and 12 September (Trimbakeshwar) 2027. They come from media reports of the state announcement and are not yet confirmed against the Authority's own notice. Other bathing days have not been confirmed."
     },
     "/blog/nashik-2-day-itinerary/": {
       "template": "article",
@@ -138,7 +148,8 @@
         "maharashtra-tourism",
         "imd"
       ],
-      "showDates": false
+      "showDates": false,
+      "quickAnswer": "A good two-day Nashik plan covers Ramkund ghat and Panchavati, Pandavleni Caves, Sula Vineyards and Trimbakeshwar temple, with local food between. The clock times are pacing suggestions, not opening hours. Opening hours, entry fees, prices and aarti times are not verified here, so check each place locally."
     },
     "/blog/best-time-to-visit-nashik/": {
       "template": "article",
@@ -153,21 +164,8 @@
         "maharashtra-tourism",
         "imd"
       ],
-      "showDates": false
-    },
-    "/blog/sula-vineyards-nashik-complete-guide/": {
-      "template": "article",
-      "topic": "destination",
-      "notice": "place",
-      "published": "2026-04-16",
-      "lastReviewed": null,
-      "lastVerified": null,
-      "verificationStatus": "not_verified",
-      "sources": [
-        "sula",
-        "nashik-district"
-      ],
-      "showDates": false
+      "showDates": false,
+      "quickAnswer": "In general terms, the cooler months, roughly October to March, suit comfortable sightseeing and vineyard visits, July to September brings monsoon scenery, and April to June is hot. The Kumbh Mela is reported to run from 31 October 2026 to 24 July 2028. Dates and prices change; weather varies by year."
     },
     "/blog/nashik-kumbh-mela-vs-prayagraj-kumbh/": {
       "template": "article",
@@ -183,7 +181,8 @@
         "dgipr",
         "pib"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "Nashik's Kumbh is held on the Godavari, while Prayagraj's is at the Triveni Sangam, the confluence of three rivers. The two share a tradition but differ in geography, number of sites and local setting. We make no crowd or price forecasts for Nashik because no confirmed figures exist."
     },
     "/blog/naga-sadhus-kumbh-mela-nashik-2027/": {
       "template": "article",
@@ -199,7 +198,8 @@
         "dgipr",
         "pib"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "Naga Sadhus are initiated ascetics who have renounced worldly life and traditionally lead the Amrit Snan processions at a Kumbh Mela. Reported 2027 dates are 2 August, 31 August, 11 September (Nashik) and 12 September (Trimbakeshwar), not yet confirmed. Procession timings and viewing arrangements have not been announced; be respectful and ask before photographing."
     },
     "/blog/is-nashik-worth-visiting/": {
       "template": "article",
@@ -214,9 +214,10 @@
         "maharashtra-tourism",
         "imd"
       ],
-      "showDates": false
+      "showDates": false,
+      "quickAnswer": "Yes, for travellers interested in temples, river ghats, caves, vineyards and hill country. This editors' selection lists 15 places, from the Trimbakeshwar Jyotirlinga to quieter sunset spots. Opening hours, entry fees, access and conditions have not been verified for any of them, so check locally before you go."
     },
-    "/blog/what-to-eat-near-ramkund-nashik-food-guide/": {
+    "/discover-nashik/panchavati/#what-to-eat-near-ramkund": {
       "template": "article",
       "topic": "destination",
       "notice": "place",
@@ -228,7 +229,8 @@
         "nashik-district",
         "maharashtra-tourism"
       ],
-      "showDates": false
+      "showDates": false,
+      "quickAnswer": "Food near Ramkund and in Panchavati is largely vegetarian by custom. Try sabudana khichdi, Nashik misal pav and other local dishes, and prefer freshly cooked, hot food on crowded days. Prices and opening hours are not verified, and Kumbh Mela food-stall arrangements have not been announced; ask locally if you have dietary needs."
     },
     "/blog/nashik-kumbh-mela-for-women-solo-travellers/": {
       "template": "article",
@@ -243,7 +245,8 @@
         "maharashtra-tourism",
         "imd"
       ],
-      "showDates": false
+      "showDates": false,
+      "quickAnswer": "Whether to travel alone is your decision. Busy, well-populated areas are generally more comfortable than isolated ones, and bathing days carry real crowd risks. Women-specific arrangements at the Mela, such as help desks or women-only areas, have not been announced in sources we located, so plan without relying on them. This is not an official notice."
     },
     "/blog/nashik-kumbh-mela-for-international-tourists/": {
       "template": "article",
@@ -257,7 +260,8 @@
         "ntka",
         "maharashtra-tourism"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "International visitors should check visa, e-visa and registration rules with official Government of India sources, as they change and we cannot verify them here. The Mela is reported to run from 31 October 2026 to 24 July 2028. This guide covers reaching Nashik, safety, etiquette and what to check before you fly."
     },
     "/blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide/": {
       "template": "article",
@@ -273,7 +277,8 @@
         "dgipr",
         "pib"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "Sadhugram is the temporary township where akharas, Naga Sadhus and saints stay during a Kumbh Mela. For Nashik 2027, its size, location, layout and rules for visitors have not been announced in sources we could locate. Check live updates and official notices before planning a visit around it."
     },
     "/blog/nashik-kumbh-mela-for-senior-citizens-2027/": {
       "template": "article",
@@ -289,7 +294,8 @@
         "dgipr",
         "pib"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "Older pilgrims can attend with careful planning, but Amrit Snan days are likely to be very challenging for anyone with limited mobility or heart or respiratory conditions. Facilities for senior citizens, such as ramps, help desks and medical camps, have not been announced, so plan to manage without them. This is not medical advice."
     },
     "/blog/nashik-kumbh-mela-helicopter-tour-2027/": {
       "template": "article",
@@ -304,7 +310,8 @@
         "aai",
         "dgipr"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "A helicopter service for Nashik Kumbh Mela 2027 has been reported as under planning, including proposed helipads on a Jyotirlinga circuit that includes Trimbakeshwar. No operator, routes, prices, launch date or booking system has been located. Treat anything beyond planning as unconfirmed and do not pay for a booking."
     },
     "/blog/pind-daan-nashik-kumbh-mela-2027/": {
       "template": "article",
@@ -320,14 +327,15 @@
         "dgipr",
         "pib"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "Pind Daan is a Hindu ritual offering pindas, sesame and water to departed ancestors, and Nashik on the Godavari is traditionally regarded as significant for it, notably at Ramkund in Panchavati. Fees are not listed here; agree any fee with your priest beforehand and confirm ritual details with them."
     },
     "/blog/nashik-kumbh-mela-e-pass-registration-2027/": {
       "template": "article",
       "topic": "kumbh",
       "notice": "passes",
       "published": "2026-04-26",
-      "lastReviewed": null,
+      "lastReviewed": "2026-11-22",
       "lastVerified": null,
       "verificationStatus": "not_verified",
       "sources": [
@@ -335,7 +343,62 @@
         "divcom-gr",
         "divcom-approvals"
       ],
-      "showDates": true
+      "showDates": true,
+      "quickAnswer": "No e-pass or mandatory registration for general visitors to Nashik Kumbh Mela 2027 has been announced in the sources we checked on 22 November 2026. Registration so far covers religious organisations and student volunteers. The Authority's official website is reported live; check it, and do not pay anyone for a pass.",
+      "officialStatus": {
+        "asOf": "2026-11-22",
+        "html": "<p><strong>No general-visitor e-pass or mandatory registration has been announced</strong> in the sources we checked on 22 November 2026.</p><p><strong>Official website.</strong> Free Press Journal (4 Nov 2026) and Punekar News report that the Authority&rsquo;s official Simhastha website is live and is the place for announcements; the address reported is <a href=\"https://simhasthamahakumbh.maharashtra.gov.in/\" rel=\"noopener noreferrer\" data-track=\"official_source_click\" data-track-item=\"ntka-portal\">simhasthamahakumbh.maharashtra.gov.in</a>. Check that any link you are given matches the address on the Authority&rsquo;s own channels. Sources: <a href=\"https://www.freepressjournal.in/pune/nashik-official-website-for-2027-simhastha-kumbh-goes-live-offers-pilgrim-information\" rel=\"noopener noreferrer\" data-track=\"official_source_click\" data-track-item=\"epass-status\">Free Press Journal</a>; <a href=\"https://www.punekarnews.in/?p=249172\" rel=\"noopener noreferrer\" data-track=\"official_source_click\" data-track-item=\"epass-status\">Punekar News</a>.</p><p><strong>What has opened.</strong> Online registration for religious and charitable organisations (84 had completed it by early September 2026, per <a href=\"https://www.freepressjournal.in/pune/nashik-84-religious-organisations-complete-online-registration-for-simhastha-kumbh-2027\" rel=\"noopener noreferrer\" data-track=\"official_source_click\" data-track-item=\"epass-status\">Free Press Journal</a>) and student &ldquo;Kumbhdoot&rdquo; volunteer registration (<a href=\"https://www.punekarnews.in/?p=240955\" rel=\"noopener noreferrer\" data-track=\"official_source_click\" data-track-item=\"epass-status\">Punekar News</a>).</p><p><strong>Digital Kumbh Pass.</strong> The &ldquo;KumbhDoot&rdquo; AI framework is reported to include an optional, consent-based Kumbh Pass stored in DigiLocker, with a pilot planned before wider rollout (<a href=\"https://www.punekarnews.in/kumbhdoot-ai-agent-for-every-pilgrimage-app-launched-to-support-devotees-at-nashik-simhastha-2027/\" rel=\"noopener noreferrer\" data-track=\"official_source_click\" data-track-item=\"epass-status\">Punekar News</a>). It is not described as a requirement to attend. Whether a mobile app is live has not been confirmed.</p>"
+      }
+    },
+    "/transport/nashik-road-station-to-trimbakeshwar/": {
+      "template": "article",
+      "generated": true,
+      "notice": "claims",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "reported",
+      "showDates": false,
+      "topic": "transport",
+      "published": "2026-11-22",
+      "sources": [
+        "nashik-district",
+        "nashik-district-how-to-reach",
+        "msrtc",
+        "central-railway",
+        "ntes"
+      ]
+    },
+    "/transport/trimbakeshwar-to-panchavati-ramkund/": {
+      "template": "article",
+      "generated": true,
+      "notice": "claims",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "reported",
+      "showDates": true,
+      "topic": "transport",
+      "published": "2026-11-22",
+      "sources": [
+        "nashik-district",
+        "msrtc",
+        "ntka"
+      ]
+    },
+    "/discover-nashik/bhandardara/": {
+      "template": "article",
+      "generated": true,
+      "notice": "claims",
+      "lastReviewed": null,
+      "lastVerified": null,
+      "verificationStatus": "reported",
+      "showDates": false,
+      "topic": "destination",
+      "published": "2026-11-22",
+      "sources": [
+        "maharashtra-tourism",
+        "nashik-district",
+        "imd"
+      ]
     }
   }
 }

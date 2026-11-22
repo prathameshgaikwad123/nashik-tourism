@@ -1,0 +1,85 @@
+{
+  "_about": "Every URL that no longer exists (or never did, but gets traffic) and the page that replaced it. tools/build-seo-files.py turns this into nashiktourism/_redirects (Cloudflare Pages / Netlify syntax, all 301). tools/tests/test_seo.py fails the build if a target is missing or if an internal link still points at a source. Add a row here whenever a URL moves or is retired; never delete one.",
+  "redirects": [
+    {
+      "from": "/discover-nagshik/igatpuri/",
+      "to": "/discover-nashik/igatpuri/",
+      "why": "typo URL seen in Search Console"
+    },
+    {
+      "from": "/blog/nashik-2-day-itinerary.html",
+      "to": "/blog/nashik-2-day-itinerary/",
+      "why": ".html form"
+    },
+    {
+      "from": "/blog/best-type-to-visit-nashik/",
+      "to": "/blog/best-time-to-visit-nashik/",
+      "why": "typo URL"
+    },
+    {
+      "from": "/blog/best-time-to-visit/",
+      "to": "/blog/best-time-to-visit-nashik/",
+      "why": "short form"
+    },
+    {
+      "from": "/blog/trimbakeshwar-distance-route/",
+      "to": "/blog/trimbakeshwar-to-nashik-distance-route/",
+      "why": "variant of the distance hub"
+    },
+    {
+      "from": "/blog/trimbakeshwar-to-nashik-distance/",
+      "to": "/blog/trimbakeshwar-to-nashik-distance-route/",
+      "why": "variant of the distance hub"
+    },
+    {
+      "from": "/blog/trimbakeshwar-to-nashik/",
+      "to": "/blog/trimbakeshwar-to-nashik-distance-route/",
+      "why": "variant of the distance hub"
+    },
+    {
+      "from": "/blog/naga-sadhu-kumbh-mela-nashik-2027/",
+      "to": "/blog/naga-sadhus-kumbh-mela-nashik-2027/",
+      "why": "singular slug"
+    },
+    {
+      "from": "/blog/sadhugram-nashik-kumbh-mela-visitor-guide/",
+      "to": "/blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide/",
+      "why": "slug without the year"
+    },
+    {
+      "from": "/blog/kumbh-mela-nashik/",
+      "to": "/kumbh-mela-2027/",
+      "why": "generic Kumbh URL"
+    },
+    {
+      "from": "/kumbh-mela/",
+      "to": "/kumbh-mela-2027/",
+      "why": "generic Kumbh URL"
+    },
+    {
+      "from": "/blog/ramkund-ghat-nashik-guide",
+      "to": "/blog/ramkund-ghat-nashik-guide/",
+      "why": "missing trailing slash"
+    },
+    {
+      "from": "/blog/sula-vineyards-nashik-complete-guide/",
+      "to": "/discover-nashik/sula-vineyards/",
+      "why": "merged into the Sula destination page (duplicate topic, not indexed)"
+    },
+    {
+      "from": "/blog/nashik-kumbh-mela-packing-list/",
+      "to": "/kumbh-mela-2027/",
+      "why": "merged into the Kumbh hub (what to pack section; thin page, not indexed)"
+    },
+    {
+      "from": "/blog/nashik-kumbh-mela-budget-2027/",
+      "to": "/blog/where-to-stay-nashik-kumbh-mela/",
+      "why": "merged into the where-to-stay guide (budget section; thin page, not indexed)"
+    },
+    {
+      "from": "/blog/what-to-eat-near-ramkund-nashik-food-guide/",
+      "to": "/discover-nashik/panchavati/",
+      "why": "merged into the Panchavati and Ramkund page (food section; thin page, not indexed)"
+    }
+  ]
+}

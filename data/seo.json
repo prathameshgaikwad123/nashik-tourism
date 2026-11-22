@@ -1,0 +1,117 @@
+{
+  "_about": "Site-level SEO / AEO configuration read by tools/build-seo-files.py and tools/build-schema.py. Nothing here is a fact about Nashik; it is how the site presents itself to crawlers.",
+  "organization": {
+    "name": "NashikTourism.com",
+    "sameAs": [],
+    "_sameAs": "TODO(Prathamesh): add the site's real social profile URLs (Instagram, YouTube, X, Facebook, LinkedIn) once they exist. Leave empty rather than guess; an empty array is omitted from the JSON-LD.",
+    "publishingPrinciples": "/editorial-policy/"
+  },
+  "author": {
+    "id": "prathamesh",
+    "name": "Prathamesh Gaikwad",
+    "path": "/about/prathamesh/",
+    "jobTitle": "Editor",
+    "homeLocation": "Nashik, Maharashtra, India",
+    "sameAs": [],
+    "_sameAs": "TODO(Prathamesh): add LinkedIn / other profile URLs you are happy to publish.",
+    "bioApproved": false,
+    "bio": null,
+    "_bio": "TODO(Prathamesh): write and approve the bio. Until bioApproved is true the author page shows a clearly marked placeholder and no personal claims."
+  },
+  "bing": {
+    "verificationEnvVar": "NT_MSVALIDATE",
+    "_note": "Set NT_MSVALIDATE=<code from Bing Webmaster Tools> when building to emit <meta name=\"msvalidate.01\">. Unset = no tag."
+  },
+  "indexnow": {
+    "keyFile": "data/indexnow-key.txt"
+  },
+  "llms": {
+    "tagline": "An independent, source-checked guide to Nashik, Trimbakeshwar and the Simhastha Kumbh Mela 2026-28.",
+    "stance": "NashikTourism.com is an independent publisher. It is not affiliated with, endorsed by, or operated by any government body, temple trust, the Nashik-Trimbakeshwar Kumbh Mela Authority or any tourism board. Every factual claim carries its own status (Verified, Reported or Not yet verified) with a named source; unconfirmed figures are labelled rather than stated as fact.",
+    "sections": [
+      {
+        "title": "Distances & transport",
+        "pages": [
+          "/blog/trimbakeshwar-to-nashik-distance-route/",
+          "/transport/nashik-road-station-to-trimbakeshwar/",
+          "/transport/trimbakeshwar-to-panchavati-ramkund/",
+          "/transport/",
+          "/blog/how-to-reach-nashik-for-kumbh-mela/"
+        ]
+      },
+      {
+        "title": "Kumbh Mela 2027",
+        "pages": [
+          "/kumbh-mela-2027/",
+          "/kumbh-mela-2027/live-updates/",
+          "/blog/kumbh-mela-2027-all-snan-dates/",
+          "/blog/nashik-kumbh-mela-e-pass-registration-2027/",
+          "/blog/where-to-stay-nashik-kumbh-mela/",
+          "/blog/naga-sadhus-kumbh-mela-nashik-2027/",
+          "/blog/sadhugram-nashik-kumbh-mela-2027-visitor-guide/",
+          "/blog/pind-daan-nashik-kumbh-mela-2027/",
+          "/blog/nashik-kumbh-mela-vs-prayagraj-kumbh/",
+          "/blog/nashik-kumbh-mela-for-senior-citizens-2027/",
+          "/blog/nashik-kumbh-mela-for-women-solo-travellers/",
+          "/blog/nashik-kumbh-mela-for-international-tourists/",
+          "/blog/nashik-kumbh-mela-helicopter-tour-2027/"
+        ]
+      },
+      {
+        "title": "Destinations",
+        "pages": [
+          "/discover-nashik/",
+          "/discover-nashik/trimbakeshwar/",
+          "/discover-nashik/panchavati/",
+          "/blog/ramkund-ghat-nashik-guide/",
+          "/discover-nashik/igatpuri/",
+          "/discover-nashik/bhandardara/",
+          "/discover-nashik/sula-vineyards/",
+          "/discover-nashik/pandavleni-caves/"
+        ]
+      },
+      {
+        "title": "Plan your trip",
+        "pages": [
+          "/plan-your-trip/",
+          "/blog/best-time-to-visit-nashik/",
+          "/blog/nashik-2-day-itinerary/",
+          "/blog/is-nashik-worth-visiting/",
+          "/accessible-nashik/",
+          "/events/",
+          "/nashik-now/",
+          "/updates/"
+        ]
+      },
+      {
+        "title": "Sources & policy",
+        "pages": [
+          "/editorial-policy/",
+          "/sources/",
+          "/about/",
+          "/about/prathamesh/",
+          "/disclaimer/",
+          "/contact/",
+          "/advertise/"
+        ]
+      }
+    ],
+    "full": [
+      "/blog/trimbakeshwar-to-nashik-distance-route/",
+      "/transport/nashik-road-station-to-trimbakeshwar/",
+      "/transport/trimbakeshwar-to-panchavati-ramkund/",
+      "/kumbh-mela-2027/",
+      "/blog/kumbh-mela-2027-all-snan-dates/",
+      "/blog/nashik-kumbh-mela-e-pass-registration-2027/",
+      "/blog/how-to-reach-nashik-for-kumbh-mela/",
+      "/blog/where-to-stay-nashik-kumbh-mela/",
+      "/blog/ramkund-ghat-nashik-guide/",
+      "/discover-nashik/trimbakeshwar/",
+      "/discover-nashik/panchavati/",
+      "/discover-nashik/igatpuri/",
+      "/discover-nashik/bhandardara/",
+      "/discover-nashik/sula-vineyards/",
+      "/editorial-policy/"
+    ]
+  }
+}

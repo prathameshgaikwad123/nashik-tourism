@@ -32,7 +32,8 @@ def event_ld(e):
                           "rescheduled": "https://schema.org/EventRescheduled"}.get(e["status"], "https://schema.org/EventScheduled"),
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {"@type": "Place", "name": e["location"], "address": {"@type": "PostalAddress", "addressLocality": "Nashik", "addressRegion": "Maharashtra", "addressCountry": "IN"}},
-          "description": e["description"], "url": e["sourceUrl"]}
+          "description": e["description"], "url": e["sourceUrl"],
+          "image": [pagekit.OG_DEFAULT], "@id": SITE + "/events/#" + e["id"]}
     if e.get("endDate"):
         ld["endDate"] = e["endDate"]
     return ld
@@ -87,6 +88,9 @@ def main():
 </section>
 """ % {"up": up_html, "earlier": earlier}
     ld = [x for x in (event_ld(e) for e in upcoming) if x]
+    skipped = [e["id"] for e in upcoming if not event_ld(e)]
+    if skipped:
+        print("  Event schema skipped (date not verified by an editor): %s" % ", ".join(skipped))
     html = pagekit.render(
         "/events/", "Events in Nashik: dates with their sources",
         "Events in Nashik and the Kumbh Mela, each with a named source, a verification status and its last-checked date. Nothing is listed without a credible source.",

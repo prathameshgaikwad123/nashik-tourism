@@ -287,6 +287,26 @@
       }
     }, true);
 
+    /* AI referral channel: visits arriving from an AI answer engine are tagged with an
+       `ai_referral` event (and an `ai_referrer` user property) so they can be segmented
+       as their own channel in GA4. Referrer hostname only; nothing personal is read.
+       ChatGPT also appends ?utm_source=chatgpt.com to links it opens. */
+    (function aiReferral() {
+      var AI = ['chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'gemini.google.com', 'claude.ai',
+                'copilot.microsoft.com', 'deepseek.com', 'chat.deepseek.com', 'you.com'];
+      var host = '';
+      try { host = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '') : ''; } catch (e) { /* none */ }
+      var utm = '';
+      try { utm = (new URLSearchParams(location.search).get('utm_source') || '').toLowerCase(); } catch (e) { /* none */ }
+      var hit = '';
+      AI.forEach(function (d) { if (!hit && (host === d || host.slice(-d.length - 1) === '.' + d || utm === d)) hit = d; });
+      if (!hit || typeof window.gtag !== 'function') return;
+      try {
+        window.gtag('set', 'user_properties', { ai_referrer: hit });
+        send('ai_referral', { ai_source: hit, page_path: location.pathname });
+      } catch (e) { /* optional */ }
+    })();
+
     // Engagement on the sections the site is built around.
     var meta = document.querySelector('meta[name="nt-section"]');
     var section = meta ? meta.getAttribute('content') : (/^\/kumbh-mela-2027\//.test(location.pathname) ? 'kumbh' : '');
@@ -585,6 +605,12 @@
      ───────────────────────────────────────────────────────────────────────── */
   (function contactForm() {
     var form = $('#contactForm');
+    // /contact/?topic=advertising (or content, kumbh_updates...) preselects the enquiry type.
+    try {
+      var topic = new URLSearchParams(location.search).get('topic');
+      var sel = form && form.querySelector('#subject');
+      if (topic && sel && sel.querySelector('option[value="' + topic.replace(/[^a-z_]/g, '') + '"]')) sel.value = topic.replace(/[^a-z_]/g, '');
+    } catch (e) { /* optional */ }
     if (!form || !window.fetch) return;
     var success = $('#formSuccess');
     var note = $('#formError');

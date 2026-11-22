@@ -42,6 +42,15 @@ python3 tools/qa/serve.py 8099    # serve nashiktourism/ like production (real 4
 Python 3.11, standard library only. The optional browser QA (`tools/qa/*.js`) needs
 Node and Playwright.
 
+## SEO and answer-engine layer
+
+`data/seo.json` (author, Organization links, llms.txt sections), `data/redirects.json` (every 301),
+`data/distances.json` (distance table, each row with a status and sources), `data/monetization.json`
+(advertise page, signup, affiliate partners; audience stats ship empty). `VERIFY.md` lists every figure
+that is not yet marked Verified; `docs/aeo-tracking.md` is the monthly citation check. Reusable
+components (quick answer, key facts, source list, claim chips, sponsored label, affiliate link, signup)
+are in `tools/nt/aeo.py`.
+
 ## Day-to-day editing (no HTML)
 
 ```bash
@@ -72,7 +81,12 @@ the reason. Details: `data/README.md`.
 | `/search/`, `/search-index.json` | `build-search.py` | everything above + `posts.json` |
 | guides under `/blog/` | hand-written; `apply-verification.py` adds the status notice and verification block | pages, facts |
 | header and footer on every page | `chrome.py` via `apply-chrome.py` | — |
-| `sitemap.xml` | `build-sitemap.py` | changelog, verification dates |
+| `/blog/trimbakeshwar-to-nashik-distance-route/`, `/transport/nashik-road-station-to-trimbakeshwar/`, `/transport/trimbakeshwar-to-panchavati-ramkund/`, `/discover-nashik/bhandardara/` | `build-guides.py` (`tools/guides/`) | distances, facts, sources |
+| `/about/prathamesh/`, `/advertise/` | `build-about-pages.py` | seo, monetization |
+| quick answer, byline, Article / FAQ / breadcrumb JSON-LD on the other guides | `apply-aeo.py` | pages (front-matter), changelog |
+| booking-link rel and affiliate parameters, every page | `apply-affiliate.py` | monetization, env |
+| `sitemap.xml` | `build-sitemap.py` | changelog, front-matter dates |
+| `robots.txt`, `_redirects`, `llms.txt`, `llms-full.txt`, IndexNow key file | `build-seo-files.py` | redirects, seo |
 
 ## Kumbh lifecycle
 

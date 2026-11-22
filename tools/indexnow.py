@@ -6,8 +6,9 @@ Tell participating search engines (Bing, Yandex and others via IndexNow) which U
     INDEXNOW_KEY=<key> python3 tools/indexnow.py --submit [--since HEAD~1]
     python3 tools/indexnow.py --submit --urls /updates/ /events/
 
-Setup (once): pick a random key of 8-128 letters/digits, save it as the file
-nashiktourism/<key>.txt containing just the key, set INDEXNOW_KEY, deploy.
+Setup: the key lives in data/indexnow-key.txt and tools/build-seo-files.py writes
+nashiktourism/<key>.txt from it on every build, so nothing else is needed. INDEXNOW_KEY
+overrides it. Run after the deploy has finished (.github/workflows/indexnow.yml does).
 
 Google does not use IndexNow, and its sitemap 'ping' endpoint was retired in
 2023. For Google, submit /sitemap.xml once in Search Console and keep <lastmod>
@@ -28,6 +29,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from nt.paths import REPO, ROOT, SITE  # noqa: E402
 
 ENDPOINT = "https://api.indexnow.org/indexnow"
+
+
+def default_key():
+    """The IndexNow key is public by design (it is served at /<key>.txt), so it lives in the repo."""
+    try:
+        return open(os.path.join(REPO, "data", "indexnow-key.txt"), encoding="utf-8").read().strip()
+    except OSError:
+        return None
 
 
 def changed_urls(since):
@@ -57,9 +66,9 @@ def main():
     if not a.submit:
         print("dry run — add --submit (and set INDEXNOW_KEY) to send")
         return 0
-    key = os.environ.get("INDEXNOW_KEY")
+    key = os.environ.get("INDEXNOW_KEY") or default_key()
     if not key:
-        print("INDEXNOW_KEY is not set; nothing sent")
+        print("No IndexNow key (set INDEXNOW_KEY or add data/indexnow-key.txt); nothing sent")
         return 0
     if not os.path.isfile(os.path.join(ROOT, key + ".txt")):
         print("warning: %s.txt is missing from the web root; the engines will reject the key" % key)

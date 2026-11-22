@@ -26,7 +26,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from nt import content, lifecycle, pagekit, render, store  # noqa: E402
+from nt import aeo, content, lifecycle, pagekit, render, store  # noqa: E402
 from nt.paths import ROOT, SITE  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -231,13 +231,8 @@ def main():
 
     css = HOME_CSS_EXTRA % HERO_IMG + "\n" + open(os.path.join(TPL, "home.css"), encoding="utf-8").read()
     ld = [
-        {"@type": "Organization", "@id": SITE + "/#organization", "name": "NashikTourism.com", "url": SITE + "/",
-         "logo": {"@type": "ImageObject", "url": SITE + "/logo-purple.png", "width": 512, "height": 512},
-         "description": "An independent travel and information guide to Nashik, Maharashtra. Not affiliated with any government body or official tourism authority."},
-        {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Nashik Tourism",
-         "description": "An independent, continuously verified guide to Nashik, Maharashtra: temples, vineyards, the Simhastha Kumbh Mela, transport, accessibility and events.",
-         "publisher": {"@id": SITE + "/#organization"}, "inLanguage": "en-IN",
-         "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": SITE + "/search/?q={search_term_string}"}, "query-input": "required name=search_term_string"}},
+        aeo.organization_ld(),
+        aeo.website_ld(),
         {"@type": "TouristDestination", "@id": SITE + "/#destination", "name": "Nashik",
          "description": "A city on the Godavari river in Maharashtra, India, known for its temples and river ghats, for hosting the Simhastha Kumbh Mela, for the vineyards in the surrounding hills, and for the Western Ghats hill country nearby.",
          "url": SITE + "/", "image": pagekit.OG_DEFAULT,

@@ -110,7 +110,7 @@ def load_sitemap():
 
 
 def main():
-    pages, errors, warnings, page_text = {}, [], [], {}
+    pages, errors, warnings, page_text, raw_pages = {}, [], [], {}, {}
     for dirpath, _d, files in os.walk(ROOT):
         for n in files:
             if n.endswith(".html") and n not in SKIP_FILES:
@@ -119,6 +119,7 @@ def main():
                 raw_html = open(full, encoding="utf-8").read()
                 p.feed(raw_html)
                 pages[page_url(full)] = p
+                raw_pages[page_url(full)] = raw_html
                 page_text[page_url(full)] = re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style).*?</\1>", " ", raw_html, flags=re.S))
 
     def err(path, msg):
@@ -194,6 +195,31 @@ def main():
                             warn(path, "FAQ question not found in visible text: %s" % q.get("name", "")[:50])
                 if typ == "Article" and not (node.get("headline") and node.get("datePublished")):
                     err(path, "Article structured data needs headline and datePublished")
+                if typ in ("Article", "BlogPosting"):
+                    if not node.get("dateModified"):
+                        err(path, "Article needs dateModified")
+                    elif node["dateModified"][:10] < node["datePublished"][:10]:
+                        err(path, "dateModified is before datePublished")
+                    graph = data.get("@graph") or []
+                    ids = {n.get("@id"): n.get("@type") for n in graph}
+                    auth = node.get("author")
+                    aid = auth.get("@id") if isinstance(auth, dict) else None
+                    if not ((isinstance(auth, dict) and auth.get("@type") == "Person") or ids.get(aid) == "Person"):
+                        err(path, "Article author must be a Person")
+                    if not node.get("publisher"):
+                        err(path, "Article needs a publisher")
+                    if not node.get("mainEntityOfPage"):
+                        err(path, "Article needs mainEntityOfPage")
+                    if "data-byline" not in raw_pages[path]:
+                        err(path, "Article page has no visible byline with last-updated / last-verified dates")
+                    if not any(n.get("@type") == "BreadcrumbList" for n in graph):
+                        err(path, "Article page has no BreadcrumbList")
+                if typ == "Event":
+                    for k in ("name", "startDate", "location", "eventStatus", "eventAttendanceMode"):
+                        if not node.get(k):
+                            err(path, "Event structured data missing %s" % k)
+                    if not (node.get("location") or {}).get("address"):
+                        err(path, "Event location needs an address")
                 if node.get("@type") == "BreadcrumbList":
                     items = node.get("itemListElement", [])
                     if [i["position"] for i in items] != list(range(1, len(items) + 1)):
@@ -208,6 +234,30 @@ def main():
                 err(path, "img without width/height: %s" % src[:60])
         if noindex and path in sitemap:
             err(path, "noindex page listed in sitemap.xml")
+
+    # Quick answers: 40-60 words, and every guide has one.
+    for path, raw in sorted(raw_pages.items()):
+        m = re.search(r'data-quick-answer>.*?<p class="qa-text">(.*?)</p>', raw, re.S)
+        if m:
+            n = len(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", m.group(1))).split())
+            if not 40 <= n <= 60:
+                err(path, "quick answer is %d words (must be 40-60)" % n)
+        elif "data-reading-body" in raw and "noindex" not in raw[:6000]:
+            err(path, "guide has no quick answer")
+
+    # Redirect integrity: targets exist, sources do not, nothing internal points at a source.
+    redirect_src = {}
+    try:
+        for r in json.load(open(os.path.join(os.path.dirname(ROOT), "data", "redirects.json"), encoding="utf-8"))["redirects"]:
+            redirect_src[r["from"]] = r["to"]
+            if r["to"] not in pages:
+                err(r["from"], "redirect target %s does not exist" % r["to"])
+            if r["from"] in pages:
+                err(r["from"], "redirect source is still a live page")
+            if r["from"] in sitemap:
+                err(r["from"], "redirected URL is listed in sitemap.xml")
+    except (OSError, ValueError):
+        pass
 
     for t, ps in titles.items():
         if len(ps) > 1:
@@ -254,6 +304,9 @@ def main():
                         target = os.path.normpath(base + target).replace(os.sep, "/")
                         if not target.endswith("/") and "." not in os.path.basename(target):
                             target += "/"
+            if target in redirect_src or (target + "/" in redirect_src and False):
+                err(path, "internal link %s points at a redirected URL; link to %s" % (href, redirect_src[target]))
+                continue
             if target in static_files:
                 continue
             if target not in pages:

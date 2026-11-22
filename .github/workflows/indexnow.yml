@@ -1,0 +1,32 @@
+name: IndexNow
+# Tell Bing / Yandex (and, through Bing, ChatGPT search and Copilot) which pages changed.
+# Runs after a push to main, once the host has had time to deploy. Google does not use
+# IndexNow: resubmit sitemap.xml in Search Console instead.
+on:
+  push:
+    branches: [main]
+    paths: ["nashiktourism/**"]
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Space-separated paths to submit (default: pages changed in the last commit)"
+        required: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Wait for the deploy
+        run: sleep 180
+      - name: Submit changed URLs
+        env:
+          URLS: ${{ github.event.inputs.urls }}
+        run: |
+          if [ -n "$URLS" ]; then python3 tools/indexnow.py --submit --urls $URLS
+          else python3 tools/indexnow.py --submit --since HEAD~1; fi
