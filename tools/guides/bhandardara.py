@@ -33,6 +33,7 @@ def build():
              "156 km from Pune and 177 km from Mumbai. Its highlights are Arthur Lake, Randha Falls and, in the monsoon, "
              "Umbrella Falls; fireflies are reported from about May to June. These details are reported, not yet verified.")
     facts = aeo.key_facts([
+        {"label": "Where it is", "value": "Akole taluka, Ahilyanagar (formerly Ahmednagar) district, Maharashtra; close to the Nashik district boundary", "status": "reported", "source": WIKI},
         {"label": "What it is", "value": "A lake and waterfall area around Arthur Lake, formed by Wilson Dam on the Pravara river", "status": "reported", "source": MT},
         {"label": "From Nashik", "value": "About 70&ndash;73 km by road", "status": "reported", "source": TRAWELL},
         {"label": "From Mumbai / Pune", "value": "About 177 km / 156 km (other sources give 165&ndash;185 km and 156&ndash;191 km)", "status": "disputed", "source": MT},
@@ -43,8 +44,9 @@ def build():
 
     compare = """<div class="table-scroll" tabindex="0" role="region" aria-label="Table: Igatpuri compared with Bhandardara">
     <table class="key-facts"><caption>Igatpuri compared with Bhandardara</caption>
-      <thead><tr><th scope="col"></th><th scope="col">Igatpuri</th><th scope="col">Bhandardara</th></tr></thead>
+      <thead><tr><th scope="col"><span class="sr-only">Aspect</span></th><th scope="col">Igatpuri</th><th scope="col">Bhandardara</th></tr></thead>
       <tbody>
+        <tr><th scope="row">District</th><td>Nashik</td><td>Ahilyanagar (formerly Ahmednagar), Akole taluka</td></tr>
         <tr><th scope="row">What it is</th><td>Hill town in the Western Ghats, on the Mumbai&ndash;Nashik corridor %(c)s</td><td>Lake and waterfall area around Arthur Lake %(c)s</td></tr>
         <tr><th scope="row">From Nashik</th><td>About 45 km %(c)s</td><td>About 70&ndash;73 km %(c)s</td></tr>
         <tr><th scope="row">Nearest railway station</th><td>Igatpuri has its own station on the Mumbai&ndash;Nashik line %(c)s</td><td>Igatpuri, about 35&ndash;45 km away %(c)s</td></tr>
@@ -53,8 +55,8 @@ def build():
       </tbody></table></div>""" % {"c": chip()}
 
     body = """
-    <!-- VERIFY: every Bhandardara figure is 'reported' from Maharashtra Tourism and travel guides (distances, Randha Falls 10 km, Kalsubai 12 km, nearest station Igatpuri 35-45 km, fireflies May-June, district boundary). See VERIFY.md -->
-    <p>Bhandardara sits in the Western Ghats close to the Nashik district boundary, and is a common weekend trip from Mumbai and Pune. It has been covered inside our <a href="/discover-nashik/igatpuri/">Igatpuri guide</a>; this page gives it a guide of its own. Every figure below shows its status: <strong>Reported</strong> means published by the sources named, not yet confirmed by our editor.</p>
+    <!-- VERIFY: every Bhandardara figure is 'reported' from Maharashtra Tourism and travel guides (distances, Randha Falls 10 km, Kalsubai 12 km, nearest station Igatpuri 35-45 km, fireflies May-June). District (Akole taluka, Ahilyanagar) confirmed by the site owner. See VERIFY.md -->
+    <p>Bhandardara is in the Western Ghats, in <strong>Akole taluka of Ahilyanagar (formerly Ahmednagar) district</strong>, Maharashtra. It lies close to the Nashik district boundary, not inside Nashik district, and is a common weekend trip from Mumbai, Pune and Nashik. It is often combined with <a href="/discover-nashik/igatpuri/">Igatpuri</a>, which is in Nashik district. Every figure below shows its status: <strong>Reported</strong> means published by the sources named, not yet confirmed by our editor.</p>
     %(facts)s
 
     <h2 id="what-is-bhandardara">What is Bhandardara known for?</h2>
@@ -126,6 +128,8 @@ def build():
          "The monsoon for waterfalls and greenery, October to February for pleasant temperatures, and about May to June for fireflies. Conditions vary by year; these are reported, not verified."),
         ("How far is Bhandardara from Nashik, Mumbai and Pune?",
          "About 70&ndash;73 km from Nashik, 156 km from Pune and 177 km from Mumbai by the Maharashtra Tourism figures; other sources give wider ranges (165&ndash;185 km from Mumbai, 156&ndash;191 km from Pune)."),
+        ("Which district is Bhandardara in?",
+         "Akole taluka, Ahilyanagar (formerly Ahmednagar) district, Maharashtra. It is close to the Nashik district boundary but is not in Nashik district; Igatpuri is."),
         ("Is Igatpuri or Bhandardara better for a weekend trip?",
          "Igatpuri is closer to the Mumbai&ndash;Nashik road and rail line; Bhandardara is further in but has the lake and waterfalls. See the comparison table above."),
         ("When is the fireflies season at Bhandardara?",
@@ -137,12 +141,13 @@ def build():
         articlekit.side_links("Nearby guides", [("/discover-nashik/igatpuri/", "Igatpuri"), ("/discover-nashik/trimbakeshwar/", "Trimbakeshwar Temple"),
                                                  ("/blog/best-time-to-visit-nashik/", "Best time to visit Nashik"), ("/transport/", "Transport hub")]))
     articlekit.build(PATH, title=TITLE, h1=H1,
-                     lede="The lake, the falls and the fireflies in the Western Ghats, with honest labels on every figure.",
+                     lede="The lake, the falls and the fireflies in Akole taluka, Ahilyanagar district, with honest labels on every figure.",
                      description=DESC, crumbs=[("Home", "/"), ("Discover Nashik", "/discover-nashik/"), ("Bhandardara", None)],
                      body=body, side=side, faq=faq, quick=quick, published="2026-11-22", topic_label="Nature and weekend trips",
                      extra_ld=[{"@type": "TouristAttraction", "@id": "https://nashiktourism.com" + PATH + "#attraction", "name": "Bhandardara",
-                                "description": "Lake and waterfall area in the Western Ghats around Arthur Lake, close to the Nashik district boundary.",
+                                "description": "Lake and waterfall area in the Western Ghats around Arthur Lake, in Akole taluka, Ahilyanagar district, close to the Nashik district boundary.",
                                 "url": "https://nashiktourism.com" + PATH,
                                 "address": {"@type": "PostalAddress", "addressLocality": "Bhandardara", "addressRegion": "Maharashtra", "addressCountry": "IN"},
+                                "containedInPlace": {"@type": "AdministrativeArea", "name": "Akole taluka, Ahilyanagar district, Maharashtra"},
                                 "touristType": ["Nature tourism", "Weekend trips"]}],
                      about={"@id": "https://nashiktourism.com" + PATH + "#attraction"})

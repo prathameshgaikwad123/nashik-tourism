@@ -294,6 +294,13 @@ def check_changelog(r, data):
             r.warn(w, "path %s does not exist yet" % p)
 
 
+def check_pages(r, data):
+    """A page flagged sponsored can never carry a Verified status."""
+    for path, meta in data["pages"].items():
+        if meta.get("sponsored") and (meta.get("verificationStatus") == "verified" or meta.get("lastVerified")):
+            r.err("pages.json[%s]" % path, "a sponsored page cannot be marked verified or carry a lastVerified date")
+
+
 def check_candidates(r):
     d = os.path.join(store.DATA if hasattr(store, "DATA") else "", "pipeline", "candidates")
     from .paths import DATA
@@ -324,5 +331,6 @@ def validate_all():
     check_accessibility(r, store.load("accessibility"), dests, facts)
     check_transport(r, store.load("transport"), sources, facts)
     check_changelog(r, store.load("changelog"))
+    check_pages(r, store.load("pages"))
     check_candidates(r)
     return r

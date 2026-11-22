@@ -83,7 +83,8 @@ def main():
   <p>The site is supported by display advertising, affiliate links to booking sites and, where offered, sponsored content. How we keep that separate from editorial work:</p>
   <ul>
     <li><strong>Sponsored content is always labelled.</strong> It carries a visible <span class="sponsored-label">Sponsored</span> tag and a disclosure line on the page, and every outbound link in it uses <code>rel="sponsored nofollow"</code>.</li>
-    <li><strong>Sponsorship does not buy editorial coverage.</strong> A sponsor cannot pay for a recommendation, a ranking, a verification status or a change to a fact. Editorial guides follow the sourcing and approval rules above whether or not a sponsor is mentioned.</li>
+    <li><strong>Sponsors never control the facts.</strong> A sponsor cannot pay for a recommendation, a ranking, a verification status or a change to a fact, and gets no preview or veto of editorial pages. Editorial guides follow the sourcing and approval rules above whether or not a sponsor is mentioned.</li>
+    <li><strong>A sponsored page is never marked Verified.</strong> Sponsored pages and sections carry no &ldquo;Verified&rdquo; status. Claims in them are the sponsor&rsquo;s own, shown as such, and the site&rsquo;s build fails if a sponsored block carries a Verified label.</li>
     <li><strong>Affiliate links</strong> to hotel and booking sites are marked as sponsored in the page code. We may earn a commission at no extra cost to you. The surrounding text says they are external sites with their own prices and terms, and we do not take bookings or handle payments.</li>
     <li><strong>No unmeasured claims.</strong> Advertising pages quote audience figures only when they come from a named measurement.</li>
   </ul>

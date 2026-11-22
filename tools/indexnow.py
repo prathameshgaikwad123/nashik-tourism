@@ -44,6 +44,8 @@ def changed_urls(since):
                          capture_output=True, text=True).stdout.split()
     urls = []
     for f in out:
+        if not os.path.isfile(os.path.join(REPO, f)):
+            continue   # deleted or renamed pages are redirected now; never submit them as changed
         rel = f[len("nashiktourism/"):]
         if rel == "index.html":
             urls.append("/")

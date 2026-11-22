@@ -18,8 +18,8 @@ The contents of `nashiktourism/` — static files, no server code. Any static ho
   (Rules > Redirect Rules): hostname equals `www.nashiktourism.com` -> dynamic redirect to
   `concat("https://nashiktourism.com", http.request.uri.path)`, status 301, preserve the query string.
 * **robots.txt** is generated (`tools/build-seo-files.py`) and allows every search and AI
-  retrieval crawler. **Keep Cloudflare's "Managed robots.txt" and "Block AI bots" OFF**, or
-  Cloudflare prepends a block that disallows GPTBot, ClaudeBot, Google-Extended, CCBot and others.
+  retrieval crawler. Cloudflare's "Managed robots.txt" and "Block AI bots" are switched off and must stay off,
+  or Cloudflare prepends a block that disallows GPTBot, ClaudeBot, Google-Extended, CCBot and others.
 * **llms.txt / llms-full.txt** are generated at the web root on every build (sections in `data/seo.json`).
 * **IndexNow:** `data/indexnow-key.txt` holds the public key; the build writes `<key>.txt` to the web root.
   `.github/workflows/indexnow.yml` pings Bing after a push to `main`; run it by hand with
@@ -78,10 +78,9 @@ Search engines: `sitemap.xml` carries honest `lastmod` (the newest of a page's f
 
 ## Outside the repo: do these after the pull request merges
 
-1. **Cloudflare:** turn OFF Managed robots.txt and AI-bot blocking; add the www -> apex Redirect Rule above; purge the cache so `/robots.txt`, `/llms.txt`, `/_redirects` effects and the rebuilt pages are served fresh.
+1. **Cloudflare:** add the www -> apex Redirect Rule described above (hostname equals `www.nashiktourism.com` -> `concat("https://nashiktourism.com", http.request.uri.path)`, 301, preserve the query string). Nothing else in Cloudflare needs to change.
 2. **Bing Webmaster Tools:** add and verify the site (set `NT_MSVALIDATE`, rebuild), submit `sitemap.xml`, and confirm IndexNow submissions are accepted.
-3. **Google Search Console:** resubmit `sitemap.xml`; use URL Inspection > Request indexing on the rebuilt distance hub, the two new transport guides, the Bhandardara guide, the refreshed e-pass guide and the Kumbh hub; confirm the old 404 URLs now redirect (Validate fix on the 404 report).
+3. **Google Search Console:** resubmit `sitemap.xml`; use URL Inspection > Request indexing on the rebuilt distance hub, the two new transport guides, the Bhandardara guide, the refreshed e-pass guide and the Kumbh hub; use Validate fix on the 404 report.
 4. **Set the repository variables** listed above (signup provider, affiliate parameters, analytics) when ready.
 5. **Work through `VERIFY.md`** so figures can move from *Reported* to *Verified*; verifying the Kumbh dates unlocks `Event` rich results.
-6. Approve the author bio, social profiles and the sponsored-content wording (see `VERIFY.md` section 7).
-7. Add the real social profile URLs to `data/seo.json`.
+6. Add the real social profile URLs to `data/seo.json` when they exist.

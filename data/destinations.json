@@ -489,19 +489,19 @@
     {
       "slug": "igatpuri",
       "where": "Western Ghats, west of Nashik",
-      "cta": "Explore Igatpuri &amp; Bhandardara",
-      "name": "Igatpuri &amp; Bhandardara",
-      "title": "Igatpuri &amp; Bhandardara – Visitor Guide",
+      "cta": "Explore Igatpuri",
+      "name": "Igatpuri",
+      "title": "Igatpuri – Visitor Guide",
       "kicker": "Nature &middot; Weekend",
       "img": "v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg",
       "alt": "Green hills and low cloud in the Western Ghats near Igatpuri",
-      "lede": "Igatpuri and Bhandardara sit in the Western Ghats near Nashik &mdash; hills, reservoirs and, through the monsoon, a great deal of water and green. This is the part of the district people come to for the landscape rather than the temples.",
+      "lede": "Igatpuri sits in the Western Ghats in Nashik district &mdash; hills, reservoirs and, through the monsoon, a great deal of water and green. This is the part of the district people come to for the landscape rather than the temples.",
       "why": [
         "The Ghats change completely with the season here. Through the monsoon and just after, the hills are green, the streams are running and the cloud sits low over everything. It is a genuinely different landscape from the plain around Nashik city.",
         "It is also the reason Nashik works as a weekend trip from Mumbai and Pune. A lot of people come out this way for the hills first and only discover the rest of the district afterwards."
       ],
-      "see": "This is a landscape rather than a list of sights. Most visits mean driving between viewpoints, walking where the weather allows, and stopping at the reservoirs. It rewards an unhurried pace more than a checklist.",
-      "significance": "Igatpuri and Bhandardara sit on the edge of the Western Ghats, where the plateau drops away westward. That escarpment is what makes the monsoon here so dramatic, and what has made this stretch a long-standing escape from the cities on the coast.",
+      "see": "This is a landscape rather than a list of sights. Most visits mean driving between viewpoints, walking where the weather allows, and stopping at the reservoirs. It rewards an unhurried pace more than a checklist. Bhandardara, with Arthur Lake and its waterfalls, is a separate trip just beyond the district line: see our <a href=\"/discover-nashik/bhandardara/\">Bhandardara guide</a> (it is in Akole taluka, Ahilyanagar district, not Nashik district).",
+      "significance": "Igatpuri sits on the edge of the Western Ghats, where the plateau drops away westward. That escarpment is what makes the monsoon here so dramatic, and what has made this stretch a long-standing escape from the cities on the coast.",
       "tips": [
         "The monsoon is the draw and also the difficulty &mdash; roads are wetter, visibility is lower, and paths are slippery. Plan accordingly.",
         "Weekends in season are busy. A weekday is a very different experience.",
@@ -541,8 +541,12 @@
       ],
       "faqs": [
         [
-          "Where are Igatpuri and Bhandardara?",
-          "Both are in the Western Ghats near Nashik, in Maharashtra, between Nashik and the coast."
+          "Where is Igatpuri?",
+          "Igatpuri is a hill town in the Western Ghats in Nashik district, Maharashtra, between Nashik and the coast."
+        ],
+        [
+          "Is Bhandardara part of Igatpuri or Nashik district?",
+          "No. Bhandardara is in Akole taluka of Ahilyanagar (formerly Ahmednagar) district. It is close to the Nashik district boundary and is often combined with Igatpuri; see the <a href=\"/discover-nashik/bhandardara/\">Bhandardara guide</a>."
         ],
         [
           "When is the best time to go?",
@@ -556,7 +560,7 @@
       "category": [
         "nature"
       ],
-      "description": "A guide to Igatpuri and Bhandardara, the Western Ghats hill country near Nashik and a common monsoon weekend trip from Mumbai and Pune.",
+      "description": "A guide to Igatpuri, the Western Ghats hill town in Nashik district and a common monsoon weekend trip from Mumbai and Pune. Bhandardara, just beyond the district line, has its own guide.",
       "coordinates": null,
       "lastVerified": null,
       "verificationStatus": "not_verified",
@@ -598,8 +602,7 @@
       ],
       "kumbhRole": null,
       "tags": [
-        "igatpuri",
-        "bhandardara"
+        "igatpuri"
       ],
       "nearbyPlaces": [
         "bhandardara",
@@ -610,63 +613,46 @@
     },
     {
       "slug": "bhandardara",
-      "where": "Western Ghats, close to the Nashik district boundary",
+      "where": "Akole taluka, Ahilyanagar district, Western Ghats",
       "cta": "Explore Bhandardara",
       "name": "Bhandardara",
       "title": "Bhandardara – Arthur Lake, Randha Falls and Fireflies",
       "kicker": "Nature &middot; Weekend",
       "img": "v1775450992/rajesh-kumar-D4dUzlj2LXk-unsplash_1_tinvb7.jpg",
       "alt": "Green hills and low cloud in the Western Ghats near Igatpuri",
-      "lede": "Bhandardara is a lake and waterfall area in the Western Ghats &mdash; Arthur Lake, Randha Falls, Umbrella Falls in the monsoon and a firefly season before it. A common weekend trip from Mumbai and Pune.",
+      "lede": "Bhandardara is a lake and waterfall area in the Western Ghats, in Akole taluka of Ahilyanagar district just beyond the Nashik district line &mdash; Arthur Lake, Randha Falls, Umbrella Falls in the monsoon and a firefly season before it.",
       "why": [
-        "The Ghats change completely with the season here. Through the monsoon and just after, the hills are green, the streams are running and the cloud sits low over everything. It is a genuinely different landscape from the plain around Nashik city.",
-        "It is also the reason Nashik works as a weekend trip from Mumbai and Pune. A lot of people come out this way for the hills first and only discover the rest of the district afterwards."
+        "Bhandardara is the lake-and-waterfall counterpart to Igatpuri's hills: Arthur Lake, Randha Falls, Umbrella Falls in the monsoon and, before it, a firefly season.",
+        "It is a common weekend trip from Mumbai, Pune and Nashik, and is often combined with Igatpuri."
       ],
-      "see": "This is a landscape rather than a list of sights. Most visits mean driving between viewpoints, walking where the weather allows, and stopping at the reservoirs. It rewards an unhurried pace more than a checklist.",
-      "significance": "Igatpuri and Bhandardara sit on the edge of the Western Ghats, where the plateau drops away westward. That escarpment is what makes the monsoon here so dramatic, and what has made this stretch a long-standing escape from the cities on the coast.",
+      "see": "Arthur Lake, Randha Falls, Umbrella Falls (monsoon) and the Kalsubai area are the usual stops. Every figure in the guide is labelled reported or not yet verified.",
+      "significance": "Bhandardara sits on the edge of the Western Ghats, where Arthur Lake, formed by Wilson Dam on the Pravara river, fills in the monsoon and the waterfalls run. It is in Akole taluka of Ahilyanagar district, close to the Nashik district boundary.",
       "tips": [
-        "The monsoon is the draw and also the difficulty &mdash; roads are wetter, visibility is lower, and paths are slippery. Plan accordingly.",
-        "Weekends in season are busy. A weekday is a very different experience.",
-        "This is hill country with limited public transport between points. Consider how you will move around before you commit to a route."
+        "The monsoon is the draw and also the difficulty: roads are wetter, visibility is lower and rock is slippery. Plan accordingly.",
+        "Weekends in season are busy. A weekday is a very different experience."
       ],
       "related": [
         [
+          "Places",
+          "Igatpuri",
+          "The hill town on the way from Mumbai.",
+          "/discover-nashik/igatpuri/"
+        ],
+        [
           "Timing",
           "Best time to visit Nashik",
-          "How the seasons run, and when the hills are greenest.",
+          "How the seasons run.",
           "/blog/best-time-to-visit-nashik/"
-        ],
-        [
-          "Itinerary",
-          "Nashik in two days",
-          "Fitting the hills around the rest of the district.",
-          "/blog/nashik-2-day-itinerary/"
-        ],
-        [
-          "Places",
-          "15 best places to visit in Nashik",
-          "The wider list across the district.",
-          "/blog/is-nashik-worth-visiting/"
-        ],
-        [
-          "Getting there",
-          "Nashik to Trimbakeshwar distance and routes",
-          "Distance table by starting point, with bus, jeep, cab and Kumbh 2027 notes.",
-          "/blog/trimbakeshwar-to-nashik-distance-route/"
         ]
       ],
       "faqs": [
         [
-          "Where are Igatpuri and Bhandardara?",
-          "Both are in the Western Ghats near Nashik, in Maharashtra, between Nashik and the coast."
+          "Which district is Bhandardara in?",
+          "Akole taluka, Ahilyanagar (formerly Ahmednagar) district, Maharashtra, close to the Nashik district boundary."
         ],
         [
-          "When is the best time to go?",
-          "The hills are at their greenest during and just after the monsoon. Our <a href=\"/blog/best-time-to-visit-nashik/\">month-by-month guide</a> covers how Nashik's seasons run."
-        ],
-        [
-          "Is it a good weekend trip from Mumbai or Pune?",
-          "It is one of the more common weekend destinations from both. Our <a href=\"/blog/nashik-2-day-itinerary/\">two-day itinerary</a> shows how it fits with the rest of Nashik."
+          "When is the best time to visit Bhandardara?",
+          "The monsoon for waterfalls and greenery, October to February for pleasant temperatures, and about May to June for fireflies (reported). See the <a href=\"/discover-nashik/bhandardara/\">Bhandardara guide</a>."
         ]
       ],
       "category": [
@@ -691,9 +677,9 @@
         }
       ],
       "location": {
-        "summary": "Western Ghats, close to the Nashik district boundary",
+        "summary": "Akole taluka, Ahilyanagar (formerly Ahmednagar) district, Maharashtra",
         "locality": "Bhandardara",
-        "district": null,
+        "district": "Ahilyanagar",
         "state": "Maharashtra",
         "country": "IN"
       },

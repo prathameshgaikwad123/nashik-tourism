@@ -30,7 +30,7 @@ async function ctx(b,w=1280,h=900,mobile=false,opts={}){
    p.on('pageerror',e=>errs.push('discover: '+e.message));
    await p.goto(B+'/discover-nashik/',{waitUntil:'load'}); await p.waitForTimeout(600);
    const visible=async()=>p.$$eval('[data-filter-items] [data-tags]',els=>els.filter(e=>!e.hidden).length);
-   ok('all 5 shown initially', await visible()===5, 'got '+await visible());
+   ok('all 6 shown initially', await visible()===6, 'got '+await visible());
    await p.evaluate(()=>window.scrollTo(0,document.body.scrollHeight)); await p.waitForTimeout(900);
    await p.evaluate(()=>window.scrollTo(0,0)); await p.waitForTimeout(400);
    ok('all cards reveal after scrolling (was the opacity:0 blocker)', await p.$$eval('.dest-card',els=>els.every(e=>+getComputedStyle(e).opacity>0.9)),
@@ -43,7 +43,7 @@ async function ctx(b,w=1280,h=900,mobile=false,opts={}){
    await p.click('#cat-wine'); await p.waitForTimeout(200);
    ok('wine filters to 1', await visible()===1, 'got '+await visible());
    await p.click('[data-filter="all"]'); await p.waitForTimeout(200);
-   ok('all restores 5', await visible()===5);
+   ok('all restores 6', await visible()===6);
    await c.close(); }
 
  // ── Deep link from a destination page CTA
@@ -80,12 +80,12 @@ async function ctx(b,w=1280,h=900,mobile=false,opts={}){
    await p.goto(B+'/blog/',{waitUntil:'load'}); await p.waitForTimeout(600);
    const vis=async()=>p.$$eval('[data-filter-items] [data-tags]',els=>els.filter(e=>!e.hidden).length);
    const total=await p.$$eval('[data-filter-items] [data-tags]',e=>e.length);
-   ok('all 22 guides participate in filtering', total===22, 'got '+total);
+   ok('all 18 guides participate in filtering', total===18, 'got '+total);
    await p.click('#cat-kumbh-mela'); await p.waitForTimeout(200);
    ok('Kumbh filter -> 9', await vis()===9, 'got '+await vis());
    await p.click('[data-filter="all"]');
    await p.fill('[data-filter-search]','vineyard'); await p.waitForTimeout(320);
-   const n=await vis(); ok('search "vineyard" narrows', n>0 && n<22, 'got '+n);
+   const n=await vis(); ok('search "vineyard" narrows', n>0 && n<18, 'got '+n);
    await p.fill('[data-filter-search]','zzzzqqq'); await p.waitForTimeout(320);
    ok('no-match shows empty state', await p.$eval('[data-filter-empty]',e=>!e.hidden) && await vis()===0);
    await c.close(); }

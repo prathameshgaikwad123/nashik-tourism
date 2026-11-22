@@ -122,6 +122,42 @@ class Distances(unittest.TestCase):
         self.assertIn(d["headline"]["stationKm"], rows["station"]["km"])
 
 
+class NoPersonalNames(unittest.TestCase):
+    def test_no_personal_name_in_source_or_data(self):
+        banned = ("prath" + "amesh", "gaik" + "wad")
+        for root in ("data", "tools", "nashiktourism", "docs"):
+            for dp, _d, files in os.walk(os.path.join(REPO, root)):
+                if "__pycache__" in dp:
+                    continue
+                for f in files:
+                    if f.endswith((".json", ".py", ".html", ".md", ".txt", ".js", ".xml", ".yml")) and f != "test_seo.py":
+                        t = open(os.path.join(dp, f), encoding="utf-8", errors="ignore").read().lower()
+                        for b in banned:
+                            self.assertNotIn(b, t, "%s contains %r" % (os.path.join(dp, f), b))
+
+    def test_png_assets_carry_no_author_metadata(self):
+        for f in ("logo-purple.png", "logo-white.png"):
+            data = open(os.path.join(REPO, "nashiktourism", f), "rb").read().lower()
+            self.assertNotIn(b"pdf:author", data)
+
+
+class SponsoredRules(unittest.TestCase):
+    def test_sponsored_page_cannot_be_verified(self):
+        from nt import validate
+        r = validate.Report()
+        validate.check_pages(r, {"pages": {"/x/": {"sponsored": True, "verificationStatus": "verified", "lastVerified": "2026-11-01"}}})
+        self.assertTrue(r.errors)
+        r = validate.Report()
+        validate.check_pages(r, {"pages": {"/x/": {"sponsored": True, "verificationStatus": "not_verified", "lastVerified": None}}})
+        self.assertFalse(r.errors)
+
+    def test_sponsored_block_is_labelled_and_never_verified(self):
+        out = aeo.sponsored_block("<p>Stay with us</p>", "Example Hotel")
+        self.assertIn("Sponsored", out)
+        self.assertNotIn("st-verified", out)
+        self.assertIn("not marked Verified", out)
+
+
 class Components(unittest.TestCase):
     def test_claim_chip_only_says_verified_for_verified(self):
         self.assertIn("Verified 22 Nov 2026", aeo.claim("verified", "NTKA", "https://x.example/", "2026-11-22"))
@@ -129,9 +165,10 @@ class Components(unittest.TestCase):
         self.assertIn("Reported, not confirmed", aeo.claim("reported"))
 
     def test_json_ld_nodes(self):
-        self.assertEqual(aeo.person_ld()["@type"], "Person")
         art = aeo.article_ld("/x/", "H", "D", "2026-04-01", "2026-05-01")
-        self.assertEqual(art["author"], {"@id": aeo.author_id()})
+        self.assertEqual(art["author"]["@type"], "Organization")
+        self.assertEqual(art["author"]["name"], "NashikTourism.com Editorial Team")
+        self.assertFalse(hasattr(aeo, "person_ld"))
         self.assertNotIn("sameAs", aeo.organization_ld() if not aeo.seo()["organization"]["sameAs"] else {})
 
     def test_sponsored_label_is_visible_text(self):

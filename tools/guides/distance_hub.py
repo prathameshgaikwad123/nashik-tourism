@@ -100,7 +100,8 @@ def build():
       <li><a href="/discover-nashik/panchavati/">Panchavati and Ramkund</a> and the <a href="/blog/ramkund-ghat-nashik-guide/">Ramkund Ghat guide</a>: the Nashik bathing site</li>
       <li><a href="/discover-nashik/sula-vineyards/">Sula Vineyards</a>: wine tasting near Nashik</li>
       <li><a href="/discover-nashik/pandavleni-caves/">Pandavleni Caves</a>: the Buddhist caves</li>
-      <li><a href="/discover-nashik/igatpuri/">Igatpuri</a> and <a href="/discover-nashik/bhandardara/">Bhandardara</a>: hill country and Arthur Lake</li>
+      <li><a href="/discover-nashik/igatpuri/">Igatpuri</a>: hill country on the Mumbai&ndash;Nashik corridor</li>
+      <li><a href="/discover-nashik/bhandardara/">Bhandardara</a> (Ahilyanagar district): Arthur Lake and waterfalls</li>
     </ul>
 
     <div class="cta-strip">
