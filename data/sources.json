@@ -497,15 +497,15 @@
     },
     {
       "id": "ntka-portal",
-      "name": "Official Simhastha Kumbh website (Government of Maharashtra), address as reported",
+      "name": "Official Simhastha Kumbh website (Nashik-Trimbakeshwar Kumbh Mela Authority)",
       "url": "https://simhasthamahakumbh.maharashtra.gov.in/",
       "category": "kumbh",
       "reliability": "official",
       "checkFrequency": "daily",
       "active": true,
-      "urlStatus": "to_be_confirmed",
-      "scope": "Official announcements and pilgrim information. Reported live in early November 2026; the address comes from press reports and should be matched to the Authority's own channels.",
-      "notes": "Could not be opened from the build environment; confirm the address and what the site publishes (passes, app, notices), then set urlStatus to ok.",
+      "urlStatus": "ok",
+      "scope": "Official dates, FAQ, announcements and the Authority's social handles. FAQ page last updated 17 Nov 2026.",
+      "notes": "Confirmed live on 22 Nov 2026. A maharashtra.gov.in domain that lists the Authority's official social handles (X @NTKMA_official, Facebook ntkmaofficial).",
       "monitor": {
         "type": "html"
       }

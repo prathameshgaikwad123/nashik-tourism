@@ -16,7 +16,7 @@
         "pib"
       ],
       "showDates": true,
-      "quickAnswer": "This page is a short pointer to our main Nashik Kumbh Mela 2027 guide. The Simhastha is reported to run from 31 October 2026 to 24 July 2028, but dates and arrangements are not all confirmed. Use the Kumbh hub, live updates and sources, where every fact shows its status and source."
+      "quickAnswer": "This page is a short pointer to our main Nashik Kumbh Mela 2027 guide. The Simhastha runs from 31 October 2026 to 24 July 2028, per the Authority's official FAQ, but many arrangements are not yet announced. Use the Kumbh hub, live updates and sources, where every fact shows its status and source."
     },
     "/blog/how-to-reach-nashik-for-kumbh-mela/": {
       "template": "article",
@@ -49,23 +49,7 @@
         "ntka"
       ],
       "showDates": true,
-      "quickAnswer": "For Kumbh Mela 2027, look for stays near Ramkund and Panchavati in Nashik, in Trimbakeshwar, or elsewhere in the city with road access. Rooms may be limited around the reported Amrit Snan dates, so booking early with a refundable option is sensible. We have not verified rates or availability; check each property directly."
-    },
-    "/kumbh-mela-2027/#what-to-pack": {
-      "template": "article",
-      "topic": "guide",
-      "notice": "general",
-      "published": "2026-04-12",
-      "lastReviewed": null,
-      "lastVerified": null,
-      "verificationStatus": "not_verified",
-      "sources": [
-        "nashik-district",
-        "maharashtra-tourism",
-        "imd"
-      ],
-      "showDates": false,
-      "quickAnswer": "Pack light and organised: comfortable footwear, a change of clothes for the ghat, a water bottle, a small day bag, essential medicines and your documents. This is general advice from an independent site, not an official list; we have not found published rules on what may be carried into the Mela area."
+      "quickAnswer": "For Kumbh Mela 2027, look for stays near Ramkund and Panchavati in Nashik, in Trimbakeshwar, or elsewhere in the city with road access. Rooms may be limited around the Amrut Snan dates, so booking early with a refundable option is sensible. We have not verified rates or availability; check each property directly."
     },
     "/blog/ramkund-ghat-nashik-guide/": {
       "template": "article",
@@ -83,28 +67,13 @@
       "showDates": false,
       "quickAnswer": "Ramkund is a sacred bathing ghat on the Godavari in Nashik's Panchavati area, traditionally believed to be where Lord Rama bathed during his exile. It is reported to be a main Kumbh Mela 2027 bathing site. Opening hours, aarti times and Kumbh-day arrangements have not been verified; confirm locally."
     },
-    "/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027": {
-      "template": "article",
-      "topic": "guide",
-      "notice": "accommodation",
-      "published": "2026-04-12",
-      "lastReviewed": null,
-      "lastVerified": null,
-      "verificationStatus": "not_verified",
-      "sources": [
-        "maharashtra-tourism",
-        "ntka"
-      ],
-      "showDates": true,
-      "quickAnswer": "Your Kumbh Mela 2027 budget depends on your travel style and starting point. Plan for travel, accommodation, food and local transport, and keep a buffer, since prices may rise around the reported Amrit Snan dates. We give no verified prices or totals; estimate each cost from current quotes before you book."
-    },
     "/blog/trimbakeshwar-to-nashik-distance-route/": {
       "template": "article",
       "topic": "transport",
       "notice": "claims",
       "published": "2026-04-12",
-      "lastReviewed": null,
-      "lastVerified": null,
+      "lastReviewed": "2026-11-22",
+      "lastVerified": "2026-11-22",
       "verificationStatus": "reported",
       "sources": [
         "nashik-district",
@@ -123,9 +92,9 @@
       "topic": "kumbh",
       "notice": "kumbh",
       "published": "2026-04-12",
-      "lastReviewed": null,
-      "lastVerified": null,
-      "verificationStatus": "not_verified",
+      "lastReviewed": "2026-11-22",
+      "lastVerified": "2026-11-22",
+      "verificationStatus": "verified",
       "sources": [
         "ntka",
         "divcom-gr",
@@ -133,7 +102,7 @@
         "pib"
       ],
       "showDates": true,
-      "quickAnswer": "The Amrit Snan dates reported for Nashik Kumbh Mela 2027 are 2 August, 31 August, 11 September (Nashik) and 12 September (Trimbakeshwar) 2027. They come from media reports of the state announcement and are not yet confirmed against the Authority's own notice. Other bathing days have not been confirmed."
+      "quickAnswer": "The official Amrut Snan (also spelled Amrit Snan) dates for Nashik Kumbh Mela 2027 are 2 August, 31 August, 11 September (Ramtirth, Nashik) and 12 September (Kushavarta Tirth, Trimbakeshwar) 2027, verified on 22 November 2026 against the Authority's official FAQ. Other bathing days have not been announced."
     },
     "/blog/nashik-2-day-itinerary/": {
       "template": "article",
@@ -165,7 +134,7 @@
         "imd"
       ],
       "showDates": false,
-      "quickAnswer": "In general terms, the cooler months, roughly October to March, suit comfortable sightseeing and vineyard visits, July to September brings monsoon scenery, and April to June is hot. The Kumbh Mela is reported to run from 31 October 2026 to 24 July 2028. Dates and prices change; weather varies by year."
+      "quickAnswer": "In general terms, the cooler months, roughly October to March, suit comfortable sightseeing and vineyard visits, July to September brings monsoon scenery, and April to June is hot. The Kumbh Mela runs from 31 October 2026 to 24 July 2028. Dates and prices change; weather varies by year."
     },
     "/blog/nashik-kumbh-mela-vs-prayagraj-kumbh/": {
       "template": "article",
@@ -199,7 +168,7 @@
         "pib"
       ],
       "showDates": true,
-      "quickAnswer": "Naga Sadhus are initiated ascetics who have renounced worldly life and traditionally lead the Amrit Snan processions at a Kumbh Mela. Reported 2027 dates are 2 August, 31 August, 11 September (Nashik) and 12 September (Trimbakeshwar), not yet confirmed. Procession timings and viewing arrangements have not been announced; be respectful and ask before photographing."
+      "quickAnswer": "Naga Sadhus are initiated ascetics who have renounced worldly life and traditionally lead the Amrut Snan processions at a Kumbh Mela. The official 2027 dates are 2 August, 31 August, 11 September (Nashik) and 12 September (Trimbakeshwar). Procession timings and viewing arrangements have not been announced; be respectful and ask before photographing."
     },
     "/blog/is-nashik-worth-visiting/": {
       "template": "article",
@@ -216,21 +185,6 @@
       ],
       "showDates": false,
       "quickAnswer": "Yes, for travellers interested in temples, river ghats, caves, vineyards and hill country. This editors' selection lists 15 places, from the Trimbakeshwar Jyotirlinga to quieter sunset spots. Opening hours, entry fees, access and conditions have not been verified for any of them, so check locally before you go."
-    },
-    "/discover-nashik/panchavati/#what-to-eat-near-ramkund": {
-      "template": "article",
-      "topic": "destination",
-      "notice": "place",
-      "published": "2026-04-20",
-      "lastReviewed": null,
-      "lastVerified": null,
-      "verificationStatus": "not_verified",
-      "sources": [
-        "nashik-district",
-        "maharashtra-tourism"
-      ],
-      "showDates": false,
-      "quickAnswer": "Food near Ramkund and in Panchavati is largely vegetarian by custom. Try sabudana khichdi, Nashik misal pav and other local dishes, and prefer freshly cooked, hot food on crowded days. Prices and opening hours are not verified, and Kumbh Mela food-stall arrangements have not been announced; ask locally if you have dietary needs."
     },
     "/blog/nashik-kumbh-mela-for-women-solo-travellers/": {
       "template": "article",
@@ -295,7 +249,7 @@
         "pib"
       ],
       "showDates": true,
-      "quickAnswer": "Older pilgrims can attend with careful planning, but Amrit Snan days are likely to be very challenging for anyone with limited mobility or heart or respiratory conditions. Facilities for senior citizens, such as ramps, help desks and medical camps, have not been announced, so plan to manage without them. This is not medical advice."
+      "quickAnswer": "Older pilgrims can attend with careful planning, but Amrut Snan days are likely to be very challenging for anyone with limited mobility or heart or respiratory conditions. Facilities for senior citizens, such as ramps, help desks and medical camps, have not been announced, so plan to manage without them. This is not medical advice."
     },
     "/blog/nashik-kumbh-mela-helicopter-tour-2027/": {
       "template": "article",
@@ -354,8 +308,8 @@
       "template": "article",
       "generated": true,
       "notice": "claims",
-      "lastReviewed": null,
-      "lastVerified": null,
+      "lastReviewed": "2026-11-22",
+      "lastVerified": "2026-11-22",
       "verificationStatus": "reported",
       "showDates": false,
       "topic": "transport",
@@ -372,8 +326,8 @@
       "template": "article",
       "generated": true,
       "notice": "claims",
-      "lastReviewed": null,
-      "lastVerified": null,
+      "lastReviewed": "2026-11-22",
+      "lastVerified": "2026-11-22",
       "verificationStatus": "reported",
       "showDates": true,
       "topic": "transport",

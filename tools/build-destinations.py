@@ -59,6 +59,9 @@ def _load_destinations():
     return out
 
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "guides"))
+from guides import places as PLACES_PAGE  # noqa: E402  (the "Places to visit in Nashik" section)
+
 DESTINATIONS = _load_destinations()
 # Category assignments and the contextual next step are fields of the record.
 DEST_CATEGORIES = {d["slug"]: d["category"] for d in DESTINATIONS}
@@ -507,7 +510,7 @@ def build(dest):
         <h3>Kumbh Mela 2027</h3>
         <ul class="toc-list">
           <li><a href="/kumbh-mela-2027/">Complete guide</a></li>
-          <li><a href="/kumbh-mela-2027/#dates">Amrit Snan dates</a></li>
+          <li><a href="/kumbh-mela-2027/#dates">Amrut Snan dates</a></li>
         </ul>
       </div>
     </aside>
@@ -599,7 +602,7 @@ HUB_HEAD = """<!DOCTYPE html>
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "%(site)s/" },
           { "@type": "ListItem", "position": 2, "name": "%(crumb)s", "item": "%(url)s" }
         ]
-      }
+      }%(extra_ld)s
     ]
   }
   </script>
@@ -619,10 +622,10 @@ HUB_HEAD = """<!DOCTYPE html>
 """
 
 
-def hub_page(title, meta, url, crumb, ogimg, css, nav, body):
+def hub_page(title, meta, url, crumb, ogimg, css, nav, body, extra_ld=""):
     return (HUB_HEAD % {
         "title": title, "title_plain": plain(title), "meta": meta, "url": url,
-        "crumb": crumb, "ogimg": ogimg, "site": SITE, "css": css, "nav": nav,
+        "crumb": crumb, "ogimg": ogimg, "site": SITE, "css": css, "nav": nav, "extra_ld": extra_ld,
     }) + body + "\n</main>\n\n" + footer_html(url.replace(SITE, "")) + "\n\n" + SCRIPT + "\n</body>\n</html>\n"
 
 
@@ -740,7 +743,7 @@ DAY_SACRED = ("The sacred city", "spiritual heritage", [
 DAY_WINE = ("Trimbakeshwar and the vineyards", "spiritual wine nature", [
     ("Morning", [
         ("6:00 AM &middot; Trimbakeshwar Temple", "Spiritual", "Allow the morning",
-         "28 km and 45&ndash;60 minutes out; arrive before 8 AM for the shortest queues. Kushavarta Kund is beside it.",
+         "about 29&ndash;30 km (roughly 55&ndash;60 minutes) out; arrive before 8 AM for the shortest queues. Kushavarta Kund is beside it.",
          "/discover-nashik/trimbakeshwar/"),
     ]),
     ("Afternoon", [
@@ -890,27 +893,27 @@ def build_discover_hub():
   <section class="hub-hero">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a> <span aria-hidden="true">&rsaquo;</span>
-      <span aria-current="page">Discover Nashik</span>
+      <span aria-current="page">Places to visit in Nashik</span>
     </nav>
-    <h1>Discover Nashik</h1>
-    <p class="lede">Five very different places, all within reach of one city &mdash; a Jyotirlinga in the hills, an old riverside quarter, a vineyard estate, a hillside of rock-cut caves, and the Western Ghats.</p>
+    <h1>%(h1)s</h1>
+    <p class="lede">%(lede)s</p>
   </section>
-
+%(places)s
   <section aria-labelledby="places-h" data-filter-group="dest">
-    <p class="section-eyebrow">Where to Go</p>
-    <h2 class="section-title" id="places-h" style="margin-bottom:0.4rem;">Places to visit in Nashik</h2>
+    <p class="section-eyebrow">Destination guides</p>
+    <h2 class="section-title" id="places-h" style="margin-bottom:0.4rem;">Browse the destination guides by interest</h2>
     <p class="section-sub">Each guide covers why the place is worth your time, how it fits into a trip, and what to read next.</p>
 
     <div class="explorer-bar">
       <div class="chips" role="group" aria-label="Filter destinations by the kind of place">
-%s
+%(chips)s
       </div>
-      <p class="explorer-count"><span data-filter-count>%d</span> destination guides</p>
+      <p class="explorer-count"><span data-filter-count>%(count)d</span> destination guides</p>
       <p class="sr-only" data-filter-status role="status"></p>
     </div>
 
     <div class="dest-cards" data-filter-items>
-%s
+%(cards)s
     </div>
     <p class="guide-empty" data-filter-empty hidden>No destinations match that filter.</p>
   </section>
@@ -925,14 +928,16 @@ def build_discover_hub():
       <a href="/blog/" class="btn btn-outline">All Travel Guides</a>
     </div>
   </section>
-""" % ("\n".join(chips), len(DESTINATIONS), "\n".join(cards))
+""" % {"h1": PLACES_PAGE.H1, "lede": PLACES_PAGE.LEDE, "places": PLACES_PAGE.section_html(),
+       "chips": "\n".join(chips), "count": len(DESTINATIONS), "cards": "\n".join(cards)}
 
-    return hub_page(
-        "Discover Nashik – Temples, Heritage, Vineyards &amp; Nature",
-        "Places to visit in Nashik: Trimbakeshwar, Panchavati and Ramkund, Sula Vineyards, the Pandavleni Caves and the Western Ghats at Igatpuri.",
-        SITE + "/discover-nashik/", "Discover Nashik",
+    ld = "".join(",\n      " + json.dumps(n, ensure_ascii=False).replace("%", "%%") for n in PLACES_PAGE.extra_ld())
+    html = hub_page(
+        PLACES_PAGE.TITLE, PLACES_PAGE.DESC,
+        SITE + "/discover-nashik/", "Places to visit in Nashik",
         "%s/f_auto,q_auto,c_fill,g_auto,w_1200,h_630/%s" % (CLD, DESTINATIONS[0]["img"]),
-        DISCOVER_CSS, nav_html("__hub__"), body)
+        DISCOVER_CSS + "\n" + PLACES_PAGE.CSS, nav_html("__hub__"), body, ld)
+    return html
 
 
 def build_plan_hub():
@@ -964,7 +969,7 @@ def build_plan_hub():
   <section id="itineraries" class="planner" data-planner aria-labelledby="itin-h">
     <p class="section-eyebrow">Plan Your Nashik Trip</p>
     <h2 class="section-title" id="itin-h" style="margin-bottom:0.4rem;">How many days do you need in Nashik?</h2>
-    <p class="section-sub">Two days is the short answer. Our own itinerary puts it plainly: <em>&ldquo;Nashik rewards travellers who stay at least two nights. One day is enough to touch the surface.&rdquo;</em> Below are suggested itineraries for one, two and three days, all built from that published guide.</p>
+    <p class="section-sub">Two days is the short answer. Our own itinerary puts it plainly: <em>&ldquo;Nashik rewards travellers who stay at least two nights. One day is enough to touch the surface.&rdquo;</em> Below are suggested itineraries for one, two and three days, all built from that published guide. For the full list of sights, see <a href="/discover-nashik/">places to visit in Nashik</a>.</p>
 
     <div class="planner-controls">
       <div class="pc-group">
@@ -997,7 +1002,7 @@ def build_plan_hub():
     <ul class="checklist">
       <li>Decide your travel mode first &mdash; train, bus, flight or self-drive &mdash; because it shapes everything else. See <a href="/blog/how-to-reach-nashik-for-kumbh-mela/">how to reach Nashik</a>.</li>
       <li>Pick the zone you want to stay in before you pick a hotel. Panchavati and Trimbakeshwar suit very different trips: <a href="/blog/where-to-stay-nashik-kumbh-mela/">where to stay</a>.</li>
-      <li>Book accommodation early if your dates fall near the Amrit Snan dates &mdash; see the <a href="/kumbh-mela-2027/">Kumbh Mela 2027 guide</a>.</li>
+      <li>Book accommodation early if your dates fall near the Amrut Snan dates &mdash; see the <a href="/kumbh-mela-2027/">Kumbh Mela 2027 guide</a>.</li>
       <li>Carry ID, emergency contacts and a light day bag for ghat visits. Our <a href="/kumbh-mela-2027/#what-to-pack">packing list</a> goes further.</li>
       <li>Confirm timings and any festival arrangements close to your travel date &mdash; they change, and Kumbh Mela plans in particular are still being finalised.</li>
     </ul>

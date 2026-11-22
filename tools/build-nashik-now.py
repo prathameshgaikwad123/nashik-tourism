@@ -45,7 +45,7 @@ def kumbh_status_card():
             render.esc(render.fmt_date(nxt["date"], weekday=True)), render.esc(nxt["title"]),
             ("This date is reported but not yet confirmed against the Authority&rsquo;s own notice."
              if nxt.get("verificationStatus") != "verified" else "")))
-    body += '<p class="nc-stamp">Phase set by the editors from the reported Mela dates &middot; <a class="nc-link" href="/kumbh-mela-2027/#dates">Dates and sources</a></p>'
+    body += '<p class="nc-stamp">Phase set by the editors from the official Mela dates &middot; <a class="nc-link" href="/kumbh-mela-2027/#dates">Dates and sources</a></p>'
     return '<div class="now-card">%s</div>' % body
 
 

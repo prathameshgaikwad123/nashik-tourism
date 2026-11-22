@@ -1222,3 +1222,6 @@ h1, h2, h3 { overflow-wrap: break-word; }
 .fact-card { min-width: 0; overflow-wrap: anywhere; }
 .signup-block h2, .k-sec .signup-block h2 { color: var(--accent-warm); }
 .signup-block p, .k-sec .signup-block p { color: var(--on-dark); }
+.places-list h3 a, .pl-src a { display: inline-block; padding-block: 0.7rem; }
+.pl-src a, .sec-sub a, .k-sec .sec-sub a { overflow-wrap: anywhere; }
+.places-wrap .key-facts th a, .places-wrap .key-facts td a { display: inline-block; padding-block: 0.7rem; }

@@ -52,9 +52,9 @@ CSS = """    .k-sec h2 { font-family: var(--font-display); font-size: clamp(1.3r
 
 SOURCES = ["ntka", "divcom-gr", "divcom-approvals", "dgipr", "pib"]
 
-QUICK_ANSWER = ("The Nashik Kumbh Mela 2027 (Simhastha) is reported to open on 31 October 2026 and end on 24 July 2028, with Amrit Snan "
-                "on 2 and 31 August and 11 and 12 September 2027 at Ramkund and Trimbakeshwar. These dates are reported, not yet "
-                "confirmed by the Authority, and no general-visitor pass has been announced.")
+QUICK_ANSWER = ("The Nashik Kumbh Mela 2027 (Simhastha) opens with the Dhwajarohan (flag-hoisting) on 31 October 2026 and ends on 24 July 2028. "
+                "The Amrut Snan (also spelled Amrut Snan) dates are 2 August, 31 August, 11 September (Ramtirth, Nashik) and 12 September "
+                "2027 (Trimbakeshwar), per the Authority&rsquo;s official FAQ. No general-visitor pass has been announced.")
 
 GUIDES = [
     ("First-time pilgrims", "Nashik Kumbh Mela 2027: the complete guide", "Start here: what the Mela is and how a visit works.", "/blog/nashik-kumbh-mela-2027-complete-guide/"),
@@ -80,7 +80,7 @@ FAQS = [
     ("What does Simhastha mean?",
      "The Simhastha Kumbh is held when Jupiter (Guru) is in Leo (Simha Rashi). In the traditional account, drops of amrit fell at Nashik, and bathing in the Godavari during this period is held to be spiritually meritorious."),
     ("When is the Nashik Kumbh Mela?",
-     "The Mela is reported to open with a flag-hoisting on 31 October 2026 and to conclude on 24 July 2028, with the main Amrit Snan dates reported for 2 August, 31 August and 11&ndash;12 September 2027. These dates are <strong>reported, not yet confirmed</strong> against the Authority&rsquo;s own notice &mdash; see <a href=\"#dates\">dates and sources</a>."),
+     "The Mela opens with the Dhwajarohan (flag-hoisting) on 31 October 2026 and concludes with the Dhwajavatarana (flag-lowering) on 24 July 2028. The main Amrut Snan dates are 2 August, 31 August and 11&ndash;12 September 2027. These dates are <strong>verified against the Authority&rsquo;s official FAQ</strong> (last updated 17 November 2026) &mdash; see <a href=\"#dates\">dates and sources</a>."),
     ("Is there a charge to attend the Kumbh Mela?",
      "We have not been able to confirm. Earlier versions of this guide said there is no charge; we have not found an official statement either way. Ask the Authority &mdash; see <a href=\"/sources/\">our sources</a>."),
     ("Do I need a pass or to register?",
@@ -143,21 +143,21 @@ def hub():
     glance = """<section class="sec k-sec" id="at-a-glance" aria-labelledby="h-glance"><div class="inner">
   %(qa)s
   <div class="status-notice" role="note"><p class="sn-title">What is confirmed, and what is not</p>
-  <p>No date or figure on this page has yet been verified by our editors against an official notice. Items marked <strong>Reported</strong> come from credible reporting or an official page we have located but not yet re-read; items marked <strong>Sources differ</strong> show every figure with what it counts. The Authority&rsquo;s own announcements are the source of truth &mdash; see <a href="/sources/">our sources</a>.</p></div>
+  <p>The Mela dates on this page were verified by our editors on 22 November 2026 against the Authority&rsquo;s official FAQ. Other figures, such as attendance and spending, have not been verified. Items marked <strong>Reported</strong> come from credible reporting or an official page we have located but not yet re-read; items marked <strong>Sources differ</strong> show every figure with what it counts. The Authority&rsquo;s own announcements are the source of truth &mdash; see <a href="/sources/">our sources</a>.</p></div>
   <h2 id="h-glance">The Kumbh at a glance</h2>
   <p class="sec-sub">Short answers first; the detail follows.</p>
   <div class="glance">
     <div class="answer"><p class="a-q">What is it?</p><p>The Simhastha Kumbh Mela, one of the four Kumbh Melas held in rotation in India, held at Nashik and Trimbakeshwar on the Godavari when Jupiter is in Leo.</p></div>
     <div class="answer"><p class="a-q">Where is it?</p><p>Ramkund in Nashik city (Panchavati) and Kushavarta Tirtha at Trimbakeshwar, %(dist)s &mdash; <a href="#locations">the two locations</a>.</p></div>
-    <div class="answer"><p class="a-q">When is it?</p><p>Reported to open on %(open)s and conclude on %(close)s. Main bathing dates: <a href="#dates">see the calendar</a>.</p></div>
+    <div class="answer"><p class="a-q">When is it?</p><p>Opens on %(open)s and concludes on %(close)s. Main bathing dates: <a href="#dates">see the calendar</a>.</p></div>
     <div class="answer"><p class="a-q">Do I need a pass?</p><p>No general-visitor pass has been announced that we could locate. <a href="#passes">Passes and registration</a>.</p></div>
     <div class="answer"><p class="a-q">How do I get there?</p><p>By rail to Nashik Road, by road, or via Nashik (Ozar) Airport. <a href="#getting-here">Getting here</a> and the <a href="/transport/">transport hub</a>.</p></div>
     <div class="answer"><p class="a-q">What has changed recently?</p><p>%(recent)s</p></div>
   </div>
 </div></section>""" % {
-        "dist": render.esc(f_("dest.trimbakeshwar.distance")["display"].lower() + " from Nashik city centre (not yet verified)"),
-        "open": render.fact_inline("kumbh.mela.opening", facts, flag=False) + " (reported)",
-        "close": render.fact_inline("kumbh.mela.closing", facts, flag=False) + " (reported)",
+        "dist": "about 30&ndash;31 km (Google Maps, 22 Nov 2026)",
+        "open": render.fact_inline("kumbh.mela.opening", facts, flag=False),
+        "close": render.fact_inline("kumbh.mela.closing", facts, flag=False),
         "qa": qa, "recent": (('<a href="/updates/#u-%s">%s</a> (%s).' % (render.esc(kumbh_live[0]["id"]), render.esc(kumbh_live[0]["title"]), render.esc(render.fmt_date(kumbh_live[0]["publishedAt"], short=True))))
                    if kumbh_live else "Nothing new is published. See <a href=\"/kumbh-mela-2027/live-updates/\">live updates</a>.")}
 
@@ -167,16 +167,18 @@ def hub():
             label, render.fact_value_html(f), render.fact_badge(f["status"], f.get("verifiedAt")), render.fact_source_html(f), render.esc(note))
     date_rows = "".join([
         date_tr("Mela opens (flag-hoisting)", "kumbh.mela.opening", "Reported as a simultaneous ceremony at Ramkund and Kushavarta."),
-        date_tr("First Amrit Snan", "kumbh.snan.1"),
-        date_tr("Second Amrit Snan", "kumbh.snan.2", "Earlier site copy called this date a Monday; it is a Tuesday."),
-        date_tr("Third Amrit Snan: Nashik", "kumbh.snan.3.nashik"),
-        date_tr("Third Amrit Snan: Trimbakeshwar", "kumbh.snan.3.trimbak"),
-        date_tr("Mela concludes (flag lowered)", "kumbh.mela.closing")])
+        date_tr("First Amrut Snan", "kumbh.snan.1"),
+        date_tr("Second Amrut Snan", "kumbh.snan.2"),
+        date_tr("Third Amrut Snan: Nashik (Ramtirth, Ramkund)", "kumbh.snan.3.nashik"),
+        date_tr("Third Amrut Snan: Trimbakeshwar (Kushavarta Tirth)", "kumbh.snan.3.trimbak"),
+        date_tr("Mela concludes (flag lowered)", "kumbh.mela.closing"),
+        date_tr("Major Mela period", "kumbh.major-period"),
+        date_tr("Nagar Pradakshina (Nashik)", "kumbh.nagar-pradakshina")])
     dates = """<section class="sec sec-alt k-sec" id="dates" aria-labelledby="h-dates"><div class="inner">
   <h2 id="h-dates">When is the Nashik Kumbh Mela 2027? Dates and calendar</h2>
-  <p class="sec-sub">All of these dates are <strong>reported, not yet confirmed</strong> against the Authority&rsquo;s own notice. They were announced after a meeting of the Chief Minister with the akharas and reported by several publications; we will mark each one <strong>Verified</strong> when an editor has read the Authority&rsquo;s notice. Nothing in this table is marked Verified today.</p>
+  <p class="sec-sub">All of these dates are <strong>Verified</strong>: our editors checked them on 22 November 2026 against the Authority&rsquo;s official FAQ (<a href="https://simhasthamahakumbh.maharashtra.gov.in/faqs" rel="noopener noreferrer" data-track="official_source_click" data-track-item="ntka-faq">simhasthamahakumbh.maharashtra.gov.in/faqs</a>, last updated 17 November 2026). The official term is <strong>Amrut Snan</strong>; the spelling Amrut Snan is also common. Arrangements for each day have not been announced.</p>
   <div class="table-scroll" tabindex="0" role="region" aria-label="Table: Kumbh Mela 2027 dates with their status and source">
-  <table class="key-facts"><caption>Kumbh Mela 2027 dates: reported or confirmed, and the source of each</caption>
+  <table class="key-facts"><caption>Kumbh Mela 2027 dates: verified status and the source of each</caption>
     <thead><tr><th scope="col">Event</th><th scope="col">Date</th><th scope="col">Status</th><th scope="col">Source</th><th scope="col">Note</th></tr></thead>
     <tbody>%(rows)s</tbody></table></div>
   <p class="prose" style="margin-top:var(--s-5);">Other bathing days (Parva Snan) fall between these dates; our <a href="/blog/kumbh-mela-2027-all-snan-dates/">full calendar guide</a> lists them, and it is being re-checked. Dates also appear as <a href="/events/">events</a>.</p>
@@ -189,7 +191,7 @@ def hub():
     <div class="loc"><h3>Ramkund, Nashik (Panchavati)</h3><p>The principal bathing ghat on the Nashik side, associated with the Vaishnava akharas. In the Ramayana tradition, Rama bathed here during his exile.</p><a class="nc-link" href="/discover-nashik/panchavati/">Panchavati and Ramkund guide</a></div>
     <div class="loc"><h3>Kushavarta Tirtha, Trimbakeshwar</h3><p>The sacred bathing tank at the source of the Godavari, beside the Trimbakeshwar Jyotirlinga temple, associated with the Shaiva akharas.</p><a class="nc-link" href="/discover-nashik/trimbakeshwar/">Trimbakeshwar guide</a></div>
   </div>
-</div></section>""" % {"dist": render.esc(f_("dest.trimbakeshwar.distance")["display"] + " (not yet verified)")}
+</div></section>""" % {"dist": "30&ndash;31 km by road (Google Maps, 22 Nov 2026)"}
 
     getting = """<section class="sec sec-alt k-sec" id="getting-here" aria-labelledby="h-get"><div class="inner"><span id="how-to-reach" class="anchor-alias"></span>
   <h2 id="h-get">Getting to the Kumbh</h2>
@@ -275,7 +277,7 @@ def hub():
         pk("Clothes", ["2&ndash;3 sets of light cotton clothing, plus one extra set for after the holy dip", "A light jacket or shawl for early mornings and after bathing", "Comfortable walking sandals or rubber chappals rather than shoes; rubber slippers for the ghat area", "Leave at home: jeans, leather shoes, expensive or sentimental clothing, heavy woollens (unless it is cold), synthetic fabrics that do not breathe"],
            "Expect standing in water, long walks and crowds. Light colours reflect heat and make you easier to spot for your group."),
         pk("Documents and phone", ["Government photo ID (original and a photocopy) in a waterproof pouch", "Accommodation booking confirmation and a printed train or bus ticket", "Emergency contacts written on paper as well as saved offline; 112 is India&rsquo;s single emergency number", "Phone fully charged, a power bank, a charging cable, offline Google Maps for Nashik and a waterproof phone pouch", "Some cash, but not a large amount"],
-           "Never keep documents in a back pocket or loose bag in a crowd. Mobile data may be slow on Amrit Snan days."),
+           "Never keep documents in a back pocket or loose bag in a crowd. Mobile data may be slow on Amrut Snan days."),
         pk("Health and hygiene", ["ORS sachets, paracetamol, an antacid, antiseptic cream and bandages", "Personal prescription medicines (carry extra), sunscreen, mosquito repellent, eye drops", "A reusable water bottle, hand sanitiser, wet wipes, tissues and a small quick-dry towel"],
            "Ask your doctor or pharmacist what is suitable for you."),
         pk("Ghat day bag", ["One change of clothes in a waterproof bag, and a plastic bag for wet clothes", "ID in a waterproof pouch, a small amount of cash, phone and power bank", "Water bottle, ORS sachets and a few biscuits, a small towel, rubber chappals", "Leave at the hotel: laptop, camera, valuables, jewellery, excess cash and a heavy backpack"])])}
@@ -287,7 +289,7 @@ def hub():
 </div></section>""" % faq_items
 
     signup = '<section class="sec k-sec" id="updates-signup"><div class="inner">%s</div></section>' % aeo.signup_block("kumbh-hub")
-    verify = render.verify_block("/kumbh-mela-2027/", "reported", None, stamp, SOURCES,
+    verify = render.verify_block("/kumbh-mela-2027/", "reported", "2026-11-22", stamp, SOURCES,
                                  caveat="Kumbh information may evolve. Check with the official authority before travelling.", updated_at=stamp)
     updates_block = ('<div class="update-list">%s</div>' % "".join(render.update_card(u, tag="h3", compact=True) for u in kumbh_live)) if kumbh_live else \
         '<p class="none">No live Kumbh updates right now. <a href="/kumbh-mela-2027/live-updates/">Kumbh live updates</a> will show verified notices as they are published.</p>'
@@ -305,7 +307,7 @@ def hub():
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": render.plain(a)}} for q, a in FAQS]}
     html = pagekit.render(
         "/kumbh-mela-2027/", "Nashik Kumbh Mela 2027: Dates, Guide, Stay and Passes",
-        "Nashik Simhastha Kumbh Mela 2027 guide: reported dates, where to stay, passes, roads and safety, each marked verified, reported or unconfirmed, with sources.",
+        "Nashik Simhastha Kumbh Mela 2027 guide: official dates, where to stay, passes, roads and safety, each marked verified, reported or unconfirmed, with sources.",
         body, crumbs=[("Home", "/"), ("Kumbh Mela 2027", "/kumbh-mela-2027/")], css=CSS, jsonld=[faq_ld], raw_title=True,
         modified=stamp)
     html = html.replace("</head>", '  <meta name="nt-section" content="kumbh" />\n</head>', 1)
@@ -331,8 +333,8 @@ def live_updates_page():
   <h2 class="sec-title">Live now</h2>
   <p class="sec-sub">Kumbh items archive automatically when they expire, and all live Kumbh items move to the <a href="/updates/archive/">archive</a> after the Mela closes.</p>
   %s
-  <h2 class="sec-title" style="margin-top:var(--s-10);">Next reported dates</h2>
-  <p class="sec-sub">Reported, not yet confirmed against the Authority&rsquo;s own notice.</p>
+  <h2 class="sec-title" style="margin-top:var(--s-10);">Next dates</h2>
+  <p class="sec-sub">Verified against the Authority&rsquo;s official FAQ on 22 November 2026.</p>
   %s
   <p class="link-row"><a class="btn btn-outline" href="/kumbh-mela-2027/">Kumbh hub</a><a class="btn btn-outline" href="/updates/">All updates</a><a class="btn btn-outline" href="/sources/">Our sources</a></p>
 </div></section>

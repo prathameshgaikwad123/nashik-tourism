@@ -12,41 +12,41 @@ from . import common
 PATH = "/blog/trimbakeshwar-to-nashik-distance-route/"
 TITLE = "Nashik to Trimbakeshwar Distance (and Back): km & Time"
 H1 = "Nashik to Trimbakeshwar Distance (and Back): km, Time & Routes from Station, CBS and Ramkund"
-DESC = "Trimbakeshwar is about 28–30 km from Nashik city (CBS) and 36–40 km from Nashik Road station, reported. Distance table, bus, jeep, cab and Kumbh 2027 notes."
+DESC = "Trimbakeshwar is about 29–30 km from Nashik CBS (55–60 min) and 37–39 km from Nashik Road station. Google Maps, 22 Nov 2026. Distance table, bus, jeep, cab."
 
 
 def build():
     D = common.distances()
     h = D["headline"]
     cbs, station = common.row("cbs"), common.row("station")
-    quick = ("Trimbakeshwar is about %s km from Nashik city (CBS) by road and about %s km from Nashik Road railway station, "
-             "the same in both directions. The drive is estimated at %s in normal traffic. These figures are reported by "
-             "the sources named in the table, not yet measured by our editor." % (h["cbsKm"], h["stationKm"], h["driveTime"]))
+    quick = ("Trimbakeshwar is about %s km from Nashik city (CBS) by road, roughly %s, and about %s km (roughly %s) from Nashik Road "
+             "railway station, the same in both directions. Measured on Google Maps on 22 November 2026; times vary with traffic."
+             % (h["cbsKm"], h["cbsTime"], h["stationKm"], h["stationTime"]))
 
     sources_cbs = "; ".join(common.src_links(cbs))
     body = """
-    <!-- VERIFY: 28-30 km (CBS), 36-40 km (Nashik Road) and the 45-60 minute drive time are reported, not measured. MSRTC departure point, jeep pickup, app-cab availability, last bus: unverified. See VERIFY.md -->
+    <!-- VERIFY: CBS, Nashik Road and Ramkund distances are verified (Google Maps, 22 Nov 2026). Every other row is still reported. MSRTC departure point, jeep pickup, app-cab availability, last bus: unverified. See VERIFY.md -->
     <p>Nashik to Trimbakeshwar and Trimbakeshwar to Nashik are the same road, so the distance is the same whichever way you travel. Trimbakeshwar, with its Jyotirlinga temple and the Kushavarta Kund, is also written <strong>Trimbak</strong>, <strong>Tryambakeshwar</strong>, <strong>Tryambakam</strong>, <strong>Trayambakam</strong> or <strong>Trambakeshwar</strong>; this guide covers all of them.</p>
 
     <h2 id="how-far-is-trimbakeshwar-from-nashik">How far is Trimbakeshwar from Nashik, by starting point?</h2>
-    <p>The distance depends on where in Nashik you start. Nashik Road railway station is further than the city centre. Every figure below shows its own status: <strong>Reported</strong> means the named sources publish it but our editor has not measured it; <strong>Sources differ</strong> means the published figures disagree and we show all of them; <strong>Not yet verified</strong> means we have no supporting source yet.</p>
+    <p>The distance depends on where in Nashik you start. Nashik Road railway station is further than the city centre. Every figure below shows its own status: <strong>Verified</strong> means our editor measured it on Google Maps (driving, 22 November 2026; times vary with traffic); <strong>Reported</strong> means the named sources publish it but our editor has not measured it; <strong>Sources differ</strong> means the published figures disagree and we show all of them; <strong>Not yet verified</strong> means we have no supporting source yet.</p>
     %(matrix)s
     %(measured)s
     <p>For two of the most-searched starting points we have a full guide: <a href="/transport/nashik-road-station-to-trimbakeshwar/">Nashik Road railway station to Trimbakeshwar</a> and <a href="/transport/trimbakeshwar-to-panchavati-ramkund/">Trimbakeshwar to Panchavati and Ramkund</a>.</p>
 
     <h2 id="is-the-distance-the-same-in-both-directions">Is Nashik to Trimbakeshwar the same distance as Trimbakeshwar to Nashik?</h2>
-    <p>Yes. Both journeys use the same road, so the kilometres are the same. The <em>time</em> can differ, because it depends on traffic, the time of day and where in Nashik you start or finish. On busy festival and Amrit Snan days, allow far longer in either direction.</p>
+    <p>Yes. Both journeys use the same road, so the kilometres are the same. The <em>time</em> can differ, because it depends on traffic, the time of day and where in Nashik you start or finish. On busy festival and Amrut Snan days, allow far longer in either direction.</p>
 
     <h2 id="quick-answers-in-hindi-and-marathi">Quick answers in Hindi and Marathi</h2>
     <div class="lang-block" lang="mr">
       <h3 lang="mr">नाशिक ते त्र्यंबकेश्वर अंतर (मराठी)</h3>
-      <p><strong>नाशिक ते त्र्यंबकेश्वर किती किलोमीटर?</strong> नाशिक शहर (CBS) पासून रस्त्याने सुमारे %(cbs)s किमी, आणि नाशिक रोड रेल्वे स्थानकापासून सुमारे %(st)s किमी. सामान्य वाहतुकीत प्रवासाला साधारण ४५–६० मिनिटे लागतील असा अंदाज आहे (अद्याप पडताळलेले नाही).</p>
-      <p>त्र्यंबकेश्वर ते नाशिक हे अंतरही तेच आहे. हे आकडे प्रकाशित स्रोतांवर आधारित आहेत; आम्ही ते स्वतः मोजलेले नाहीत, त्यामुळे निघण्यापूर्वी नकाशा अ‍ॅपवर तपासा.</p>
+      <p><strong>नाशिक ते त्र्यंबकेश्वर किती किलोमीटर?</strong> नाशिक शहर (CBS) पासून रस्त्याने सुमारे %(cbs)s किमी (साधारण ५५–६० मिनिटे), आणि नाशिक रोड रेल्वे स्थानकापासून सुमारे %(st)s किमी (साधारण १ तास १५ मिनिटे). Google Maps वर २२ नोव्हेंबर २०२६ रोजी मोजलेले; वाहतुकीनुसार वेळ बदलते.</p>
+      <p>त्र्यंबकेश्वर ते नाशिक हे अंतरही तेच आहे. निघण्यापूर्वी नकाशा अ‍ॅपवर सध्याची वाहतूक तपासा.</p>
     </div>
     <div class="lang-block" lang="hi">
       <h3 lang="hi">नासिक से त्र्यंबकेश्वर की दूरी (हिंदी)</h3>
-      <p><strong>नासिक से त्र्यंबकेश्वर कितने किलोमीटर है?</strong> नासिक शहर (CBS) से सड़क मार्ग से लगभग %(cbs)s किमी, और नासिक रोड रेलवे स्टेशन से लगभग %(st)s किमी। सामान्य ट्रैफिक में सफ़र में लगभग 45–60 मिनट लगने का अनुमान है (अभी सत्यापित नहीं)।</p>
-      <p>त्र्यंबकेश्वर से नासिक की दूरी भी यही है। ये आंकड़े प्रकाशित स्रोतों पर आधारित हैं और हमने स्वयं नापे नहीं हैं, इसलिए निकलने से पहले मैप ऐप पर जाँच लें।</p>
+      <p><strong>नासिक से त्र्यंबकेश्वर कितने किलोमीटर है?</strong> नासिक शहर (CBS) से सड़क मार्ग से लगभग %(cbs)s किमी (करीब 55–60 मिनट), और नासिक रोड रेलवे स्टेशन से लगभग %(st)s किमी (करीब 1 घंटा 15 मिनट)। Google Maps पर 22 नवंबर 2026 को मापा गया; ट्रैफिक के अनुसार समय बदलता है।</p>
+      <p>त्र्यंबकेश्वर से नासिक की दूरी भी यही है। निकलने से पहले मैप ऐप पर मौजूदा ट्रैफिक जाँच लें।</p>
     </div>
 
     <h2 id="how-to-travel-between-nashik-and-trimbakeshwar">How do you get from Nashik to Trimbakeshwar?</h2>
@@ -66,10 +66,10 @@ def build():
     <p>A private cab gives door-to-door travel from anywhere in Nashik, including Nashik Road station and the airport. App-based intercity cabs list a Nashik to Trimbakeshwar route (%(uber)s); availability and fares vary by day and demand, and we publish no fares. Ask your hotel or a local operator, and agree the fare (one way, or for a full day with waiting time) before you travel.</p>
 
     <h3 id="by-road-self-drive">By road (self-drive)</h3>
-    <p>Use a current maps app for the route; the normal journey is estimated at 45&ndash;60 minutes (not yet verified) and can take much longer on busy days. Traffic and parking arrangements for the Mela have not been announced in sources we could locate, so check notices before you set out, and do not assume you can park close to the temple or the Kushavarta Kund on busy days.</p>
+    <p>Use a current maps app for the route; from the CBS the drive was roughly 55&ndash;60 minutes on Google Maps in late-morning traffic on 22 November 2026, and it can take much longer on busy days. Traffic and parking arrangements for the Mela have not been announced in sources we could locate, so check notices before you set out, and do not assume you can park close to the temple or the Kushavarta Kund on busy days.</p>
 
     <h2 id="is-there-a-train-to-trimbakeshwar">Is there a train to Trimbakeshwar?</h2>
-    <p>We have not found a direct rail service to Trimbakeshwar. The nearest major station is <strong>Nashik Road</strong> (about 36&ndash;40 km by road, reported; see the table). The usual approach is to reach Nashik, by train to Nashik Road or by road, and continue to Trimbakeshwar by bus, jeep or cab. Confirm services on the railways&rsquo; own systems (<a href="/sources/">Indian Railways, Central Railway and NTES</a>). The full station-to-temple guide is at <a href="/transport/nashik-road-station-to-trimbakeshwar/">Nashik Road station to Trimbakeshwar</a>.</p>
+    <p>We have not found a direct rail service to Trimbakeshwar. The nearest major station is <strong>Nashik Road</strong> (about 37&ndash;39 km by road, measured on Google Maps on 22 November 2026; see the table). The usual approach is to reach Nashik, by train to Nashik Road or by road, and continue to Trimbakeshwar by bus, jeep or cab. Confirm services on the railways&rsquo; own systems (<a href="/sources/">Indian Railways, Central Railway and NTES</a>). The full station-to-temple guide is at <a href="/transport/nashik-road-station-to-trimbakeshwar/">Nashik Road station to Trimbakeshwar</a>.</p>
 
     <h2 id="what-you-pass-on-the-way">What do you pass between Nashik and Trimbakeshwar?</h2>
     <p>Places commonly mentioned along or near the route include:</p>
@@ -105,7 +105,7 @@ def build():
     </ul>
 
     <div class="cta-strip">
-      <div><h3>Staying in Trimbakeshwar?</h3><p>Rooms may be limited around the Amrit Snan dates, so booking early is sensible. External site, with its own prices and terms.</p></div>
+      <div><h3>Staying in Trimbakeshwar?</h3><p>Rooms may be limited around the Amrut Snan dates, so booking early is sensible. External site, with its own prices and terms.</p></div>
       %(hotel)s
     </div>
 """ % {
@@ -128,24 +128,24 @@ def build():
 
     faq = [
         ("How far is Trimbakeshwar from Nashik Road railway station?",
-         "About %s km by road, according to the sources named in the table (Nashik District tourism site, Housing.com and DistancesFrom). This is reported, not yet measured by our editor. Allow more time than the city figure, because Nashik Road is further from the Trimbakeshwar road than the city centre." % h["stationKm"]),
+         "About %s km by road, roughly %s (Google Maps driving routes of 37.3, 38.0 and 38.8 km, measured on 22 November 2026; times vary with traffic). Allow more time than the city figure, because Nashik Road is further from the city centre." % (h["stationKm"], h["stationTime"])),
         ("How far is Trimbakeshwar from Nashik CBS?",
-         "About %s km by road (reported). The Nashik District tourism site gives about 30 km from the city; our earlier guide gave 28 km without a source. Typical drive time is estimated at %s in normal traffic (not yet verified)." % (h["cbsKm"], h["driveTime"])),
+         "About %s km by road, roughly %s (Google Maps driving routes of 29.3, 29.4 and 29.6 km, fastest 56 minutes, measured on 22 November 2026 in late-morning traffic; times vary). The Nashik District tourism site also gives about 30 km from the city." % (h["cbsKm"], h["cbsTime"])),
         ("How far is Trimbakeshwar from Ramkund or Panchavati?",
-         "We have no separate published figure. Ramkund is reported to be about 2 km from the CBS, so the city figure of about %s km is a reasonable guide. See <a href=\"/transport/trimbakeshwar-to-panchavati-ramkund/\">Trimbakeshwar to Panchavati and Ramkund</a>." % h["cbsKm"]),
+         "About %s km by road, roughly %s (Google Maps, Ramkund in Panchavati to Trimbakeshwar Jyotirling Mandir, measured 22 November 2026; routes of 30.3, 30.5 and 31.1 km). See <a href=\"/transport/trimbakeshwar-to-panchavati-ramkund/\">Trimbakeshwar to Panchavati and Ramkund</a>." % (h["ramkundKm"], h["ramkundTime"])),
         ("How far is Trimbakeshwar from Nashik (Ozar) airport?",
          "Sources differ: most listings say about 40 km, one says about 55 km. Confirm which flights are operating before you plan around this airport, and pre-book a taxi."),
         ("What is the last bus from Trimbakeshwar to Nashik?",
          "We have no verified last-bus time and do not publish one. Ask at the Trimbakeshwar bus stand or check with MSRTC on the day, and do not assume a late-evening return bus. A shared jeep or cab is the fallback."),
         ("Is there a train to Trimbakeshwar?",
-         "We have not found a direct rail service. The nearest major station is Nashik Road, about 36&ndash;40 km away (reported). Continue by bus, shared jeep or cab."),
+         "We have not found a direct rail service. The nearest major station is Nashik Road, about 37&ndash;39 km away by road (Google Maps, 22 November 2026). Continue by bus, shared jeep or cab."),
         ("How long will the journey take during Kumbh Mela 2027?",
-         "No verified figure exists. No official traffic or parking plan has been located, and the journey may take much longer than normal on Amrit Snan and other busy days. Allow generous extra time and check the <a href=\"/kumbh-mela-2027/live-updates/\">live updates</a> before you set out."),
+         "No verified figure exists. No official traffic or parking plan has been located, and the journey may take much longer than normal on Amrut Snan (Amrut Snan) and other busy days. Allow generous extra time and check the <a href=\"/kumbh-mela-2027/live-updates/\">live updates</a> before you set out."),
         ("What is the cheapest way to get from Nashik to Trimbakeshwar?",
          "We have not verified fares for any option. An MSRTC bus from the CBS is the usual low-cost choice (reported); check fares with MSRTC, ask locally for shared vehicles, and agree any cab fare before you travel."),
     ]
     side = articlekit.sidebar(
-        articlekit.side_card("Key facts (reported)", '<ul class="date-list"><li><span class="dl">From CBS</span><span class="dv">About %s km</span></li><li><span class="dl">From Nashik Road</span><span class="dv">About %s km</span></li><li><span class="dl">Drive time</span><span class="dv">%s (est.)</span></li></ul>' % (h["cbsKm"], h["stationKm"], h["driveTime"])),
+        articlekit.side_card("Key facts (Google Maps, 22 Nov 2026)", '<ul class="date-list"><li><span class="dl">From CBS</span><span class="dv">About %s km, %s</span></li><li><span class="dl">From Nashik Road</span><span class="dv">About %s km, %s</span></li><li><span class="dl">From Ramkund</span><span class="dv">About %s km, %s</span></li></ul>' % (h["cbsKm"], h["cbsTime"], h["stationKm"], h["stationTime"], h["ramkundKm"], h["ramkundTime"])),
         articlekit.side_links("Transport guides", [
             ("/transport/nashik-road-station-to-trimbakeshwar/", "Nashik Road station to Trimbakeshwar"),
             ("/transport/trimbakeshwar-to-panchavati-ramkund/", "Trimbakeshwar to Panchavati and Ramkund"),

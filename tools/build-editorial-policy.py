@@ -67,7 +67,7 @@ def main():
   <p>When we do not know something, we say <em>Information not yet confirmed</em> and point you to the official source. We do not fill gaps with a plausible guess: no invented dates, prices, timings, transport schedules, parking details, hotel availability, crowd numbers, rules, passes or official statistics.</p>
 
   <h2 id="dates">Dates and arrangements can change</h2>
-  <p>The Simhastha Kumbh Mela is being planned in public and details evolve. Dates we show are labelled <em>reported</em> until the Authority&rsquo;s own notice is linked. Timings at temples and ghats can change on festival days. Please confirm anything you are relying on, close to your travel date, with the official source.</p>
+  <p>The Simhastha Kumbh Mela is being planned in public and details evolve. Dates we show are labelled <em>reported</em> until an editor has checked the Authority&rsquo;s own notice, and <em>verified</em> after (the Kumbh Mela dates were verified on 22 November 2026). Timings at temples and ghats can change on festival days. Please confirm anything you are relying on, close to your travel date, with the official source.</p>
 
   <h2 id="approval">A person approves anything that could hurt you if it is wrong</h2>
   <p>Some information is high-stakes. Anything touching these areas is published only after a named human editor has approved it, whoever or whatever drafted it: %(high)s. Software that monitors sources may suggest an item, but it cannot publish one that falls in these areas, and it publishes nothing without review unless the site owner has explicitly changed that setting.</p>

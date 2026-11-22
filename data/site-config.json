@@ -26,7 +26,7 @@
         "label": "Mela open",
         "from": "2026-10-31",
         "to": "2027-07-18",
-        "basis": "Mela reported to open with dhwajarohan on 31 Oct 2026; peak bathing dates have not begun.",
+        "basis": "Mela opens with dhwajarohan on 31 Oct 2026 (Authority FAQ); peak bathing dates have not begun.",
         "profile": {
           "homeKumbhEmphasis": "standard",
           "liveBand": false,
@@ -39,7 +39,7 @@
         "label": "Peak Kumbh period",
         "from": "2027-07-19",
         "to": "2027-09-19",
-        "basis": "Editorial planning window of roughly two weeks before the first and two weeks after the last reported Amrit Snan date (2 Aug – 12 Sep 2027). Move it when the Authority confirms dates.",
+        "basis": "Editorial planning window of roughly two weeks before the first and two weeks after the last Amrut Snan date (2 Aug – 12 Sep 2027). Move it if the Authority changes the dates.",
         "profile": {
           "homeKumbhEmphasis": "live",
           "liveBand": true,
@@ -52,7 +52,7 @@
         "label": "Mela continues",
         "from": "2027-09-20",
         "to": "2028-07-24",
-        "basis": "The Mela is reported to conclude with the flag coming down on 24 Jul 2028.",
+        "basis": "The Mela concludes with the flag coming down on 24 Jul 2028 (Authority FAQ).",
         "profile": {
           "homeKumbhEmphasis": "standard",
           "liveBand": false,

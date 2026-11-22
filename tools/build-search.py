@@ -44,7 +44,7 @@ CSS = """    .sp-form { display: flex; align-items: stretch; max-width: 680px; b
 
 KUMBH_SECTIONS = [
     ("at-a-glance", "Kumbh Mela at a glance", "What the Simhastha is, where, when, whether you need a pass and how to get there.", "kumbh simhastha mela overview what is when where"),
-    ("dates", "Kumbh 2027 dates and calendar", "Reported opening, closing and Amrit Snan dates, each marked as reported until the Authority's notice is linked.", "kumbh dates calendar snan amrit shahi schedule 2027 2 august 31 august 11 september"),
+    ("dates", "Kumbh 2027 dates and calendar", "Official opening, closing and Amrut Snan dates, verified against the Authority's official FAQ, with sources.", "kumbh dates calendar snan amrit shahi schedule 2027 2 august 31 august 11 september"),
     ("locations", "Ramkund and Kushavarta: the two Kumbh locations", "The Mela spans Ramkund in Nashik and Kushavarta Tirtha at Trimbakeshwar.", "ramkund kushavarta trimbakeshwar locations ghat"),
     ("getting-here", "Getting to the Kumbh", "Rail, road and air, and what special services have and have not been announced.", "kumbh transport reach trains buses special trains shuttle how to reach"),
     ("passes", "Kumbh passes and registration", "No general-visitor pass has been announced in sources we could locate; what has been reported.", "kumbh pass epass e-pass registration permit entry free charge"),

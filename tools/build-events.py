@@ -68,7 +68,7 @@ def main():
 
     head = pagekit.page_head(
         "Events in Nashik",
-        "What is on, and when &mdash; with the source for every date. Kumbh Mela dates currently show as <em>reported</em> until the Authority&rsquo;s own notice is linked.",
+        "What is on, and when &mdash; with the source for every date. The Kumbh Mela dates were verified against the Authority&rsquo;s official FAQ on 22 November 2026.",
         crumbs=[("Home", "/"), ("Events", None)], eyebrow="Events",
         extra='<p class="ph-stamp"><span>Last checked: <strong>%s</strong></span><span>%d upcoming</span></p>'
               % (render.esc(render.fmt_dt(stamp) if stamp else "not yet"), len(upcoming)))
