@@ -51,7 +51,7 @@ Goal: move items in `VERIFY.md` from *Reported* to *Verified*, with a human edit
 
 ## D. Technical backlog
 
-1. **Merge the live-check tooling.** `tools/verify-live.py` and `.github/workflows/verify-live.yml` are on the sprint branch only. Open a PR to add them to `main`, and change the push trigger to `workflow_dispatch` only.
+1. **Live-check tooling is merged.** `tools/verify-live.py` runs via the "Verify live site" workflow (manual dispatch); it checks pages, redirects, www, deliberate 404s, robots, llms and the IndexNow key.
 2. **Run `verify-live` after every deploy** until the owner is comfortable. It checks every sitemap URL (200), every redirect (301 to 200), robots.txt, llms files and the IndexNow key file.
 3. **Add `Last-Modified` correctness check:** confirm sitemap `lastmod` equals each page's `dateModified` in a test (`tools/tests/test_seo.py`).
 4. **Image sitemap:** only Cloudinary images inside `<main>` are listed. Consider adding alt text checks for them.
