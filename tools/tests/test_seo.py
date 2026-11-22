@@ -102,6 +102,20 @@ class Redirects(unittest.TestCase):
             self.assertTrue(r["to"].startswith("/") and r["to"].endswith("/"), r["to"])
 
 
+class DeliberateNotFounds(unittest.TestCase):
+    def test_pages_with_no_equivalent_stay_404(self):
+        rows = json.load(open(os.path.join(REPO, "data", "redirects.json"), encoding="utf-8"))["redirects"]
+        srcs = {r["from"].rstrip("/") for r in rows}
+        for gone in ("/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
+            self.assertNotIn(gone, srcs)
+            self.assertFalse(os.path.isfile(os.path.join(REPO, "nashiktourism", gone.strip("/"), "index.html")))
+
+    def test_requested_search_console_redirects_exist(self):
+        rows = {r["from"]: r["to"] for r in json.load(open(os.path.join(REPO, "data", "redirects.json"), encoding="utf-8"))["redirects"]}
+        self.assertEqual(rows["/blog/best-places-to-visit-in-nashik/"], "/discover-nashik/")
+        self.assertEqual(rows["/sita-guha"], "/discover-nashik/panchavati/")
+
+
 class Distances(unittest.TestCase):
     def test_statuses_and_verification_rules(self):
         d = json.load(open(os.path.join(REPO, "data", "distances.json"), encoding="utf-8"))

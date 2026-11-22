@@ -50,6 +50,7 @@ def main():
     ap.add_argument("--base", default="https://nashiktourism.com")
     base = ap.parse_args().base.rstrip("/")
     fails = []
+    www = "https://www." + base.split("//", 1)[1]
 
     def check(ok, what, detail=""):
         print("%s  %s %s" % ("PASS" if ok else "FAIL", what, detail))
@@ -99,8 +100,23 @@ def main():
     check(st in (404, 410), "old author URL is gone", "HTTP %d" % st)
     st, _h, b = get(base + "/about/editorial-team/")
     check(st == 200, "/about/editorial-team/", "HTTP %d" % st)
-    st, h, _b = get("https://www." + base.split("//", 1)[1] + "/")
-    print("INFO  www host: HTTP %d %s" % (st, h.get("Location", "")))
+    print("\n-- deliberate 404s (no page covers them) --")
+    for gone in ("/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
+        st, _h, _b = get(base + gone)
+        check(st == 404, gone, "HTTP %d" % st)
+        st, h, _b = get(www + gone)
+        loc = urljoin(www + gone, h.get("Location") or "")
+        st2 = get(loc)[0] if loc else 0
+        print("INFO  www%s -> HTTP %d %s then %d (a 404 here is expected)" % (gone, st, loc, st2))
+
+    print("\n-- www host: every path 301s to the same path on the apex, query kept --")
+    www_paths = ["/", "/blog/trimbakeshwar-to-nashik-distance-route/", "/discover-nashik/bhandardara/", "/robots.txt", "/sitemap.xml",
+                 "/sita-guha", "/blog/best-places-to-visit-in-nashik/", "/blog/trimbakeshwar-distance-route/", "/blog/ramkund-ghat-nashik-guide",
+                 "/blog/nashik-2-day-itinerary.html", "/this-path-does-not-exist/", "/discover-nashik/?a=1&b=2"]
+    for p in www_paths:
+        st, h, _b = get(www + p)
+        loc = h.get("Location") or h.get("location") or ""
+        check(st == 301 and loc == base + p, "www%s" % p, "[%d -> %s]" % (st, loc or "no Location"))
 
     print("\n%d failure(s)" % len(fails))
     return 1 if fails else 0

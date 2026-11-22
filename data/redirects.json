@@ -80,6 +80,22 @@
       "from": "/blog/what-to-eat-near-ramkund-nashik-food-guide/",
       "to": "/discover-nashik/panchavati/",
       "why": "merged into the Panchavati and Ramkund page (food section; thin page, not indexed)"
+    },
+    {
+      "from": "/blog/best-places-to-visit-in-nashik/",
+      "to": "/discover-nashik/",
+      "why": "URL reported by Search Console; the destinations hub is the closest page"
+    },
+    {
+      "from": "/sita-guha",
+      "to": "/discover-nashik/panchavati/",
+      "why": "URL reported by Search Console (Sita Gufa is covered on the Panchavati page)"
+    },
+    {
+      "from": "/sita-guha/",
+      "to": "/discover-nashik/panchavati/",
+      "why": "trailing-slash form of /sita-guha"
     }
-  ]
+  ],
+  "_noRedirect": "Deliberately left as 404 (no page covers them): /buddha-vihar, /radha-nikunj, /gayatri-mata-mandir. tools/tests/test_seo.py and tools/check-redirects.py fail if any of them gains a redirect or a page."
 }
