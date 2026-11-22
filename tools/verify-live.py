@@ -100,6 +100,18 @@ def main():
     check(st in (404, 410), "old author URL is gone", "HTTP %d" % st)
     st, _h, b = get(base + "/about/editorial-team/")
     check(st == 200, "/about/editorial-team/", "HTTP %d" % st)
+    print("\n-- content spot-checks (the deployed build is the current one) --")
+    spot = [("/discover-nashik/", ["Places to Visit in Nashik: Top Tourist Places List", '"ItemList"', "places-faq"]),
+            ("/events/", ['"@type": "Event"', "Amrut Snan"]),
+            ("/kumbh-mela-2027/", ["Dhwajarohan", "12:02 PM", "Verified"]),
+            ("/blog/trimbakeshwar-to-nashik-distance-route/", ["29–30 km", "37–39 km"]),
+            ("/transport/trimbakeshwar-to-panchavati-ramkund/", ["30–31 km"]),
+            ("/blog/kumbh-mela-2027-all-snan-dates/", ["Official Amrut Snan Calendar"])]
+    for path, needles in spot:
+        st, _h, body = get(base + path)
+        for n in needles:
+            check(st == 200 and n in body, "%s contains %r" % (path, n))
+
     print("\n-- deliberate 404s (no page covers them) --")
     for gone in ("/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
         st, _h, _b = get(base + gone)
