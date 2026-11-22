@@ -363,7 +363,7 @@ def build(dest):
         "image": "%(ogimg)s",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Nashik",
+          "addressLocality": "%(locality)s",
           "addressRegion": "Maharashtra",
           "addressCountry": "IN"
         }
@@ -424,7 +424,7 @@ def build(dest):
 
       <section id="see-do">
         <h2>Things to see and do</h2>
-        <p>%(see)s</p>
+        %(see)s
       </section>
 
       <section id="significance">
@@ -523,10 +523,10 @@ def build(dest):
 """ % {
         "title": dest["title"], "title_plain": plain(dest["title"]),
         "meta": dest["meta"], "url": url, "site": SITE,
-        "ogimg": og_img(dest), "src": src, "srcset": srcset,
+        "ogimg": og_img(dest), "locality": (dest.get("location") or {}).get("locality") or "Nashik", "src": src, "srcset": srcset,
         "alt": dest["alt"], "name": dest["name"], "name_plain": plain(dest["name"]),
         "kicker": dest["kicker"], "lede": dest["lede"], "lede_plain": plain(dest["lede"]),
-        "why": why, "see": dest["see"], "significance": dest["significance"],
+        "why": why, "see": dest["see"] if dest["see"].lstrip().startswith("<") else "<p>%s</p>" % dest["see"], "significance": dest["significance"],
         "tips": tips, "nearby": nearby, "related": related, "faqs": faqs,
         "sidebar_related": sidebar_related, "breadcrumb": breadcrumb_json,
         "faq_schema": faq_schema,
@@ -1040,6 +1040,8 @@ def main():
         print("  wrote %-46s %6d bytes" % (out.replace(ROOT + os.sep, ""), len(html)))
 
     for dest in DESTINATIONS:
+        if dest.get("custom"):   # page is generated elsewhere (tools/build-guides.py); still listed on the hub
+            continue
         out = os.path.join(ROOT, "discover-nashik", dest["slug"], "index.html")
         os.makedirs(os.path.dirname(out), exist_ok=True)
         html = build(dest)

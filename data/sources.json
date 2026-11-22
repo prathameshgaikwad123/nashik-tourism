@@ -494,6 +494,21 @@
       "monitor": {
         "type": "manual"
       }
+    },
+    {
+      "id": "ntka-portal",
+      "name": "Official Simhastha Kumbh website (Government of Maharashtra), address as reported",
+      "url": "https://simhasthamahakumbh.maharashtra.gov.in/",
+      "category": "kumbh",
+      "reliability": "official",
+      "checkFrequency": "daily",
+      "active": true,
+      "urlStatus": "to_be_confirmed",
+      "scope": "Official announcements and pilgrim information. Reported live in early November 2026; the address comes from press reports and should be matched to the Authority's own channels.",
+      "notes": "Could not be opened from the build environment; confirm the address and what the site publishes (passes, app, notices), then set urlStatus to ok.",
+      "monitor": {
+        "type": "html"
+      }
     }
   ]
 }

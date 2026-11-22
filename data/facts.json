@@ -373,7 +373,9 @@
         "url": "https://divcomnashik.maharashtra.gov.in/en/about-nashik-trimbakeshwar-authority/"
       },
       "leads": [
-        "https://www.freepressjournal.in/pune/nashik-84-religious-organisations-complete-online-registration-for-simhastha-kumbh-2027"
+        "https://www.freepressjournal.in/pune/nashik-84-religious-organisations-complete-online-registration-for-simhastha-kumbh-2027",
+        "https://www.punekarnews.in/kumbhdoot-ai-agent-for-every-pilgrimage-app-launched-to-support-devotees-at-nashik-simhastha-2027/",
+        "https://www.punekarnews.in/?p=240955"
       ],
       "alternatives": [],
       "verifyWith": [
@@ -383,9 +385,9 @@
       ],
       "verifiedAt": null,
       "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "What has been reported: online registration for religious and charitable organisations (QR single-window) and for student volunteers ('Kumbhdoot'), and administrative approval for a web portal and mobile app. A general-pilgrim e-pass has not been announced in any source we could locate. Until the Authority says otherwise, do not tell visitors a pass is required or that none is.",
+      "notes": "What has been reported: online registration for religious and charitable organisations (QR single-window) and for student volunteers ('Kumbhdoot'), and administrative approval for a web portal and mobile app. A general-pilgrim e-pass has not been announced in any source we could locate. Until the Authority says otherwise, do not tell visitors a pass is required or that none is. Update 22 Nov 2026: the KumbhDoot AI framework is reported to include an optional, consent-based Kumbh Pass in DigiLocker (pilot planned); it is not described as a requirement.",
       "appliesTo": [
         "/blog/nashik-kumbh-mela-e-pass-registration-2027/"
       ]
@@ -394,25 +396,27 @@
       "id": "kumbh.portal.status",
       "subject": "Kumbh Mela passes and registration",
       "fact": "Official Simhastha web portal and mobile app",
-      "value": "approved, not confirmed live",
-      "display": "Approved; launch not yet confirmed",
+      "value": "website reported live; app not confirmed",
+      "display": "Official website reported live in early November 2026; mobile app launch not confirmed",
       "status": "reported",
       "source": {
-        "sourceId": "divcom-approvals",
-        "name": "Nashik Divisional Commissioner — Administrative Approvals",
-        "url": "https://divcomnashik.maharashtra.gov.in/en/administrative-approvals/"
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal (4 Nov 2026) and Punekar News",
+        "url": "https://www.freepressjournal.in/pune/nashik-official-website-for-2027-simhastha-kumbh-goes-live-offers-pilgrim-information"
       },
-      "leads": [],
+      "leads": [
+        "https://www.punekarnews.in/?p=249172"
+      ],
       "alternatives": [],
       "verifyWith": [
         "ntka",
-        "divcom-approvals"
+        "ntka-portal"
       ],
       "verifiedAt": null,
       "verifiedBy": null,
-      "lastCheckedAt": "2026-10-04",
+      "lastCheckedAt": "2026-11-22",
       "topic": "kumbh",
-      "notes": "Administrative approval for a web portal and Android/iOS app was reported. Add the portal to data/sources.json when it launches.",
+      "notes": "Press reports say the website is live (reported address simhasthamahakumbh.maharashtra.gov.in). An editor should open it, confirm the address against the Authority's own channels, and check whether it lists any pass, registration or app.",
       "appliesTo": [
         "/kumbh-mela-2027/"
       ]
@@ -504,14 +508,13 @@
       "id": "dest.trimbakeshwar.distance",
       "subject": "Trimbakeshwar Temple",
       "fact": "Distance from Nashik city centre",
-      "value": "28 km",
-      "display": "28 km",
-      "status": "not_verified",
+      "value": "28–30 km",
+      "display": "About 28–30 km",
+      "status": "reported",
       "source": {
-        "sourceId": "editorial",
-        "name": "NashikTourism.com earlier guide copy (no source cited)",
-        "url": null,
-        "path": "/blog/trimbakeshwar-to-nashik-distance-route/"
+        "sourceId": "nashik-district",
+        "name": "Nashik District tourism site (Trimbakeshwar page: about 30 km); earlier site copy said 28 km",
+        "url": "https://nashik.gov.in/tourist-place/trimbakeshwar/"
       },
       "leads": [],
       "alternatives": [],
@@ -522,7 +525,7 @@
       "verifiedBy": null,
       "lastCheckedAt": null,
       "topic": "default",
-      "notes": "Carried over from this site's earlier guide copy, which gave no source. Shown with a 'not yet verified' label until an editor confirms it against the official source.",
+      "notes": "The district tourism page gives about 30 km from the city; this site's earlier copy gave 28 km with no source. Not yet measured by an editor on a map. The distance table on the distance guide shows other starting points and every source.",
       "appliesTo": []
     },
     {
@@ -587,7 +590,7 @@
         "sourceId": "editorial",
         "name": "NashikTourism.com earlier guide copy (no source cited)",
         "url": null,
-        "path": "/blog/sula-vineyards-nashik-complete-guide/"
+        "path": "/discover-nashik/sula-vineyards/"
       },
       "leads": [],
       "alternatives": [],
@@ -612,7 +615,7 @@
         "sourceId": "editorial",
         "name": "NashikTourism.com earlier guide copy (no source cited)",
         "url": null,
-        "path": "/blog/sula-vineyards-nashik-complete-guide/"
+        "path": "/discover-nashik/sula-vineyards/"
       },
       "leads": [],
       "alternatives": [],
@@ -637,7 +640,7 @@
         "sourceId": "editorial",
         "name": "NashikTourism.com earlier guide copy (no source cited)",
         "url": null,
-        "path": "/blog/sula-vineyards-nashik-complete-guide/"
+        "path": "/discover-nashik/sula-vineyards/"
       },
       "leads": [],
       "alternatives": [],

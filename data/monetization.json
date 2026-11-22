@@ -1,0 +1,73 @@
+{
+  "_about": "Monetization and audience configuration. NOTHING here is a measured number unless you put it here yourself: the audience stats ship empty and the /advertise/ page renders them only when filled. Never hard-code a traffic figure anywhere else.",
+  "audienceStats": {
+    "_note": "Fill from Search Console / GA4 and set asOf + source. Leave a value null to hide it. Example: {\"label\": \"Monthly organic clicks\", \"value\": \"12,400\", \"period\": \"last 28 days\", \"source\": \"Google Search Console\"}",
+    "asOf": null,
+    "items": []
+  },
+  "advertise": {
+    "contact": "/contact/?topic=advertising",
+    "formats": [
+      {
+        "id": "sponsored-guide",
+        "name": "Sponsored guide",
+        "text": "A clearly labelled guide or section written with your input about a place, service or experience in Nashik. Published with a visible \"Sponsored\" label, a disclosure line, and rel=\"sponsored nofollow\" on every outbound link."
+      },
+      {
+        "id": "featured-listing",
+        "name": "Featured listing",
+        "text": "A labelled listing for a hotel, tour, restaurant or vineyard on a relevant page. Listings are never mixed into editorial rankings or \"best of\" picks."
+      },
+      {
+        "id": "newsletter",
+        "name": "Newsletter sponsorship",
+        "text": "A labelled sponsor slot in the Kumbh 2027 updates channel, once that channel has subscribers to report."
+      },
+      {
+        "id": "kumbh-banner",
+        "name": "Kumbh-season banner",
+        "text": "A labelled banner placement on selected Kumbh pages during the peak period."
+      }
+    ]
+  },
+  "signup": {
+    "_note": "Provider wiring is read from the environment at build time: NT_SIGNUP_FORM_ACTION (a form POST URL from Buttondown / Mailchimp / Formspree / Google Forms) and/or NT_WHATSAPP_CHANNEL_URL. With neither set, the block links to the contact form so it never shows a dead button.",
+    "heading": "Kumbh 2027 updates",
+    "text": "Get a short message when a verified Kumbh notice changes: dates, passes, roads or transport. No spam, and you can leave at any time.",
+    "fallbackHref": "/contact/?topic=kumbh_updates"
+  },
+  "affiliates": {
+    "_note": "Affiliate parameters per partner host. Set via environment, e.g. NT_AFFILIATE_MAKEMYTRIP='affid=123&utm_source=nt' (querystring, no leading ?). Unset = plain link. Hosts listed here get rel=\"sponsored nofollow noopener\" either way.",
+    "partners": {
+      "makemytrip": {
+        "hosts": [
+          "makemytrip.com"
+        ],
+        "env": "NT_AFFILIATE_MAKEMYTRIP"
+      },
+      "goibibo": {
+        "hosts": [
+          "goibibo.com"
+        ],
+        "env": "NT_AFFILIATE_GOIBIBO"
+      },
+      "booking": {
+        "hosts": [
+          "booking.com"
+        ],
+        "env": "NT_AFFILIATE_BOOKING"
+      },
+      "agoda": {
+        "hosts": [
+          "agoda.com"
+        ],
+        "env": "NT_AFFILIATE_AGODA"
+      }
+    }
+  },
+  "analytics": {
+    "plausibleDomainEnv": "NT_PLAUSIBLE_DOMAIN",
+    "cloudflareBeaconEnv": "NT_CF_BEACON_TOKEN",
+    "_note": "GA4 already runs. These add a cookieless counter only when the env var is set at build time."
+  }
+}

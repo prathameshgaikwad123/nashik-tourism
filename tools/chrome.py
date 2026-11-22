@@ -296,6 +296,7 @@ def footer_html(page="/"):
           <li><a href="/sources/">Our Sources</a></li>
           <li><a href="/disclaimer/">Disclaimer</a></li>
           <li><a href="/contact/">Contact</a></li>
+          <li><a href="/advertise/">Advertise</a></li>
           <li><a href="/sitemap.xml">Sitemap</a></li>
         </ul>
       </div>

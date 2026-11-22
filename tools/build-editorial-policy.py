@@ -79,8 +79,15 @@ def main():
   <p>When we find a mistake, we correct it, say so, and keep a record. If you find one, <a href="/contact/">please tell us</a> and, if you can, point us to the official source. Corrections we have made:</p>
   <ul class="clog">%(clog)s</ul>
 
-  <h2 id="sponsored">Sponsored content and affiliate links</h2>
-  <p>We do not accept paid editorial content or sponsored recommendations. The site is supported by display advertising and by affiliate links to booking sites. Those links are marked as sponsored in the page code, and the surrounding text says that they are external sites with their own prices and terms. If we ever publish sponsored content, it will be labelled as sponsored on the page.</p>
+  <h2 id="sponsored">Sponsored content, advertising and affiliate links</h2>
+  <p>The site is supported by display advertising, affiliate links to booking sites and, where offered, sponsored content. How we keep that separate from editorial work:</p>
+  <ul>
+    <li><strong>Sponsored content is always labelled.</strong> It carries a visible <span class="sponsored-label">Sponsored</span> tag and a disclosure line on the page, and every outbound link in it uses <code>rel="sponsored nofollow"</code>.</li>
+    <li><strong>Sponsorship does not buy editorial coverage.</strong> A sponsor cannot pay for a recommendation, a ranking, a verification status or a change to a fact. Editorial guides follow the sourcing and approval rules above whether or not a sponsor is mentioned.</li>
+    <li><strong>Affiliate links</strong> to hotel and booking sites are marked as sponsored in the page code. We may earn a commission at no extra cost to you. The surrounding text says they are external sites with their own prices and terms, and we do not take bookings or handle payments.</li>
+    <li><strong>No unmeasured claims.</strong> Advertising pages quote audience figures only when they come from a named measurement.</li>
+  </ul>
+  <p>Advertising enquiries: <a href="/advertise/">Advertise with us</a>.</p>
 
   <h2 id="ai">AI-assisted work</h2>
   <p>We may use AI tools to help draft, summarise, classify or extract information from sources. AI output is never treated as a source and never publishes anything on its own in the high-stakes areas above. Every item that appears on the site has been reviewed by a person; an AI summary of an official page is checked against the page itself before it is shown.</p>

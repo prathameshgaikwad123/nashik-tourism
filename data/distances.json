@@ -1,0 +1,203 @@
+{
+  "_about": "Road distances to Trimbakeshwar, behind the distance hub and the two transport pages. status uses the same vocabulary as facts.json: verified needs verifiedBy + verifiedAt + a source an editor read; reported = published by the named sources but not yet measured by an editor; disputed = the sources disagree (every figure is shown); not_verified = no supporting source yet. Every row ships 'reported', 'disputed' or 'not_verified' because the official pages could not be opened from the build environment on 2026-11-22 (search-result snippets only). To verify a row: measure the shortest common road route on a maps service, set status verified, verifiedBy, verifiedAt, source and measuredOn.",
+  "checkedOn": "2026-11-22",
+  "method": "Compiled on 22 Nov 2026 from the published sources named in each row. Not yet measured on a map by our editor, so no figure here is marked Verified.",
+  "headline": {
+    "cbsKm": "28–30",
+    "stationKm": "36–40",
+    "driveTime": "45–60 minutes"
+  },
+  "rows": [
+    {
+      "id": "cbs",
+      "origin": "Nashik CBS (Central Bus Stand) / Old CBS",
+      "km": "About 28–30 km",
+      "status": "reported",
+      "time": "About 45–60 min",
+      "timeStatus": "not_verified",
+      "cheapest": "MSRTC bus from the CBS (reported; confirm the platform and timings with MSRTC)",
+      "notes": "The usual reference point for \"Nashik to Trimbakeshwar\". We have no separate figure for Old CBS; use this one as a guide and check a maps app from where you are standing.",
+      "sources": [
+        {
+          "name": "Nashik District tourism site: Trimbakeshwar page (about 30 km from the city)",
+          "url": "https://nashik.gov.in/tourist-place/trimbakeshwar/"
+        },
+        {
+          "name": "NashikTourism.com earlier guide copy (28 km, no source cited)",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "station",
+      "origin": "Nashik Road railway station",
+      "km": "About 36–40 km",
+      "status": "reported",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Bus or auto to the CBS, then an MSRTC bus to Trimbakeshwar (reported); or a taxi direct",
+      "notes": "Nashik Road is Nashik's main railhead, several kilometres from the city centre, so it is further than the city figure. See the dedicated station guide.",
+      "sources": [
+        {
+          "name": "Nashik District tourism site (approx. 40 km)",
+          "url": "https://nashik.gov.in/tourist-place/trimbakeshwar/"
+        },
+        {
+          "name": "Housing.com: nearest railway station to Trimbakeshwar (about 36 km)",
+          "url": "https://housing.com/news/nearest-railway-station-to-trimbakeshwar-shiva-temple"
+        },
+        {
+          "name": "DistancesFrom: Trimbakeshwar Temple to Nashik Road station (37 km driving)",
+          "url": "https://www.distancesfrom.com/in/distance-from-Trimbakeshwar-Temple-to-Nashik-Road-Railway-Station-Nashik/DistanceHistory/4808378.aspx"
+        }
+      ]
+    },
+    {
+      "id": "ramkund",
+      "origin": "Panchavati / Ramkund",
+      "km": "Roughly the city figure, about 28–30 km",
+      "status": "not_verified",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "MSRTC bus from the CBS or Panchavati stand (reported; confirm with MSRTC)",
+      "notes": "We have not found a separate published figure for Ramkund. It is reported to be about 2 km from the CBS, so the city figure is a reasonable guide. See the Panchavati and Ramkund guide.",
+      "sources": []
+    },
+    {
+      "id": "tapovan",
+      "origin": "Tapovan",
+      "km": "Not yet confirmed",
+      "status": "not_verified",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed",
+      "notes": "Near Panchavati. No published figure found; check a maps app.",
+      "sources": []
+    },
+    {
+      "id": "kapaleshwar",
+      "origin": "Kapaleshwar temple",
+      "km": "Not yet confirmed",
+      "status": "not_verified",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed",
+      "notes": "In the Panchavati area, so expect a figure close to the Ramkund one. No published figure found.",
+      "sources": []
+    },
+    {
+      "id": "sula",
+      "origin": "Sula Vineyards",
+      "km": "Not yet confirmed",
+      "status": "not_verified",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed",
+      "notes": "Sula is reported to be about 15 km west of Nashik. No direct published road figure to Trimbakeshwar found; check a maps app.",
+      "sources": []
+    },
+    {
+      "id": "airport",
+      "origin": "Nashik (Ozar) airport",
+      "km": "About 40–55 km (sources differ)",
+      "status": "disputed",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed; a pre-booked taxi is the usual choice",
+      "notes": "Most listings say about 40 km; one says about 55 km. Confirm which flights are operating before you plan around this airport.",
+      "sources": [
+        {
+          "name": "Ixigo: Trimbak (airport about 40 km)",
+          "url": "https://ixigo.com/plan/trimbak"
+        },
+        {
+          "name": "Maharashtra Planet: How to reach Trimbakeshwar (about 40 km)",
+          "url": "https://maharashtraplanet.com/?p=2959"
+        },
+        {
+          "name": "EaseIndiaTrip: How to reach Trimbakeshwar (about 55 km)",
+          "url": "https://www.easeindiatrip.com/blog/?p=4766"
+        }
+      ]
+    },
+    {
+      "id": "igatpuri",
+      "origin": "Igatpuri",
+      "km": "Not yet confirmed",
+      "status": "not_verified",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed",
+      "notes": "No direct published road figure found. Igatpuri is reported at roughly 45 km from Nashik; do not add or subtract figures, because the roads differ. Check a maps app.",
+      "sources": []
+    },
+    {
+      "id": "mumbai",
+      "origin": "Mumbai",
+      "km": "About 166–193 km (sources differ)",
+      "status": "disputed",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed",
+      "notes": "See the guide to reaching Nashik for the Mumbai leg.",
+      "sources": [
+        {
+          "name": "Rome2Rio: Mumbai to Trimbak (166 km by road)",
+          "url": "https://www.rome2rio.com/s/Mumbai/Trimbak"
+        },
+        {
+          "name": "Ghumakkar: Trimbakeshwar Jyotirling yatra (193 km)",
+          "url": "https://www.ghumakkar.com/?p=94917"
+        }
+      ]
+    },
+    {
+      "id": "pune",
+      "origin": "Pune",
+      "km": "About 209–240 km (sources differ)",
+      "status": "disputed",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed",
+      "notes": "Estimates run from about 209 km to about 240 km depending on the route counted.",
+      "sources": [
+        {
+          "name": "Rome2Rio: Pune to Trimbakeshwar (about 231 km by road)",
+          "url": "https://www.rome2rio.com/s/Pune/Trimbakeshwar"
+        },
+        {
+          "name": "Maharashtra Planet: How to reach Trimbakeshwar (about 209 km)",
+          "url": "https://maharashtraplanet.com/?p=2959"
+        },
+        {
+          "name": "Ghumakkar: Trimbakeshwar Jyotirling yatra (240 km)",
+          "url": "https://www.ghumakkar.com/?p=94917"
+        }
+      ]
+    },
+    {
+      "id": "shirdi",
+      "origin": "Shirdi",
+      "km": "About 76–125 km (sources differ widely)",
+      "status": "disputed",
+      "time": "Not yet confirmed",
+      "timeStatus": "not_verified",
+      "cheapest": "Not yet confirmed",
+      "notes": "The spread is too wide to use for planning. Measure it on a maps app for your route.",
+      "sources": [
+        {
+          "name": "Savaari: Shirdi to Trimbakeshwar (about 125 km)",
+          "url": "https://www.savaari.com/blog/shirdi/shirdi-to-trimbakeshwar/"
+        },
+        {
+          "name": "Kiomoi: distance in Trimbakeshwar (about 90 km)",
+          "url": "https://www.kiomoi.com/attractions/trimbakeshwar-in-nashik/distance-1972"
+        },
+        {
+          "name": "Maharashtra Planet: How to reach Trimbakeshwar (about 76 km)",
+          "url": "https://maharashtraplanet.com/?p=2959"
+        }
+      ]
+    }
+  ]
+}

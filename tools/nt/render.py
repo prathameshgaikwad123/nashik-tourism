@@ -369,11 +369,13 @@ def tier_label(reliability):
 
 
 def verify_block(path, status="not_verified", verified_at=None, reviewed_at=None, source_ids=(),
-                 caveat=None, heading="How current is this page?", published_at=None):
+                 caveat=None, heading="How current is this page?", published_at=None, updated_at=None):
     caveat_html = '<p class="verify-caveat">%s</p>' % esc(caveat) if caveat else ""
     rows = [("Information status", fact_badge(status, verified_at))]
     if published_at:
         rows.append(("Published", time_tag(published_at)))
+    if updated_at:
+        rows.append(("Last updated", time_tag(updated_at)))
     rows.append(("Last verified", time_tag(verified_at) if verified_at else "Not yet verified against official sources"))
     if reviewed_at:
         rows.append(("Last reviewed", time_tag(reviewed_at)))

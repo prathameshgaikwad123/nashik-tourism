@@ -22,6 +22,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 STEPS = [
     ("validate-data.py", "editorial data against the verification policy"),
     ("build-destinations.py", "destination pages and the Discover / Plan hubs"),
+    ("build-guides.py", "distance hub, transport guides and Bhandardara"),
+    ("build-about-pages.py", "author page and /advertise/"),
     ("build-blog.py", "the static guide index"),
     ("build-disclaimer.py", "the disclaimer page"),
     ("build-updates.py", "/updates/, the archive and the feeds"),
@@ -34,12 +36,14 @@ STEPS = [
     ("build-nashik-now.py", "/nashik-now/"),
     ("build-home.py", "the homepage"),
     ("build-article-nav.py", "in-article contents and reading progress"),
+    ("apply-aeo.py", "quick answer, byline, Article/FAQ/Breadcrumb JSON-LD on hand-written guides"),
     ("apply-verification.py", "status notice + verification block on every guide"),
     ("apply-seo.py", "social tags, image sizes and sponsored-link marking on hand-written pages"),
     ("apply-chrome.py", "shared header, footer and /site.js on every page"),
     ("build-home-guides.py", "the homepage's latest-guide cards"),
     ("build-search.py", "search index and /search/"),
-    ("build-sitemap.py", "sitemap.xml and robots.txt"),
+    ("build-sitemap.py", "sitemap.xml"),
+    ("build-seo-files.py", "robots.txt, _redirects, llms.txt, llms-full.txt, IndexNow key"),
 ]
 
 failed = 0

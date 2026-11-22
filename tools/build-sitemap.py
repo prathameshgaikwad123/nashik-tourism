@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+from html import escape, unescape
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                      "..", "nashiktourism"))
@@ -46,6 +47,20 @@ def url_for(path):
     return "/" + rel[:-len("index.html")]
 
 
+def page_images(html, limit=8):
+    """Absolute https images that are part of the page's content (inside <main>), plus its own
+    og:image when that is not the site-wide default. Order kept, duplicates dropped."""
+    i, j = html.find("<main"), html.rfind("</main>")
+    body = html[i:j] if 0 <= i < j else ""
+    found = []
+    og = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+    for u in ([og.group(1)] if og else []) + re.findall(r'<img[^>]+\bsrc="(https://[^"]+)"', body):
+        u = unescape(u)
+        if u not in found and "rishu-bhosale-LO0KOsgTEA0" not in u:   # site-wide default share image
+            found.append(u)
+    return found[:limit]
+
+
 def newest(*dates):
     ds = [str(d)[:10] for d in dates if d]
     return max(ds) if ds else None
@@ -64,8 +79,9 @@ def data_lastmods():
 
     for e in store.load("changelog")["entries"]:
         bump(e["path"].split("#")[0], e["date"])
+    from nt import aeo
     for path, meta in store.load("pages")["pages"].items():
-        bump(path, meta.get("lastVerified"), meta.get("lastReviewed"))
+        bump(path, meta.get("lastVerified"), meta.get("lastReviewed"), aeo.modified_for(path, meta))
     live = content.live_updates()
     bump("/updates/", *[x for u in live for x in (u["publishedAt"], u.get("verifiedAt"), u.get("lastCheckedAt"))])
     bump("/updates/archive/", *[u["publishedAt"] for u in content.archived_updates()])
@@ -103,7 +119,7 @@ def main():
             base = posts.get(loc.strip("/").split("/")[-1])
         else:
             base = PRIOR.get(loc)
-        entries.append((loc, newest(base, derived.get(loc))))
+        entries.append((loc, newest(base, derived.get(loc)), page_images(html)))
 
     def sort_key(entry):
         loc = entry[0]
@@ -112,12 +128,14 @@ def main():
     entries.sort(key=sort_key)
 
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for loc, lastmod in entries:
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
+    for loc, lastmod, images in entries:
         out.append("  <url>")
         out.append("    <loc>%s%s</loc>" % (SITE, loc))
         if lastmod:
             out.append("    <lastmod>%s</lastmod>" % lastmod)
+        for img in images:
+            out.append("    <image:image><image:loc>%s</image:loc></image:image>" % escape(img))
         out.append("  </url>")
     out.append("</urlset>")
     out.append("")
@@ -125,10 +143,10 @@ def main():
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(out))
 
-    with_date = sum(1 for _, d in entries if d)
+    with_date = sum(1 for _, d, _i in entries if d)
     print("sitemap.xml: %d URLs (%d with lastmod, %d without)"
           % (len(entries), with_date, len(entries) - with_date))
-    for loc, d in entries:
+    for loc, d, _i in entries:
         print("  %-62s %s" % (loc, d or "-"))
 
 

@@ -12,7 +12,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import chrome  # noqa: E402
 
-from . import store
+from . import aeo, store
 from .paths import ROOT, SITE
 from .render import esc
 
@@ -88,6 +88,7 @@ def render(path, title, description, body, *, crumbs=None, css="", jsonld=None, 
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
     ld = ld.replace("</", "<\\/")
 
+    extra_head = "\n  ".join(x for x in (extra_head, aeo.bing_meta(), aeo.analytics_head()) if x)
     style = "\n  <style>\n%s\n  </style>" % css if css else ""
     scripts = chrome.SITE_JS + ("\n\n" + chrome.GA if (analytics and ga_enabled()) else "")
     return """<!DOCTYPE html>
