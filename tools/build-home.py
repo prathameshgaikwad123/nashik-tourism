@@ -26,6 +26,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import chrome  # noqa: E402
 from nt import aeo, content, lifecycle, pagekit, render, store  # noqa: E402
 from nt.paths import ROOT, SITE  # noqa: E402
 
@@ -185,8 +186,9 @@ def main():
       <li><a href="/search/?q=Nashik+airport">Nashik airport</a></li>
       <li><a href="/search/?q=Kumbh+2027+dates">Kumbh 2027 dates</a></li>
     </ul>
+    %s
   </div>
-</section>"""
+</section>""" % chrome.social_html("hh-social")
     kb = importlib.util.spec_from_file_location("bk", os.path.join(HERE, "build-kumbh.py"))
     bk = importlib.util.module_from_spec(kb)
     kb.loader.exec_module(bk)
