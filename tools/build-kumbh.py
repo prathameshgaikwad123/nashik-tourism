@@ -336,6 +336,7 @@ def live_updates_page():
   <h2 class="sec-title" style="margin-top:var(--s-10);">Next dates</h2>
   <p class="sec-sub">Verified against the Authority&rsquo;s official FAQ on 22 November 2026.</p>
   %s
+  <p class="sec-sub">Moving between the two Kumbh sites? See the <a href="/blog/trimbakeshwar-to-nashik-distance-route/">distance from Nashik to Trimbakeshwar by road</a>.</p>
   <p class="link-row"><a class="btn btn-outline" href="/kumbh-mela-2027/">Kumbh hub</a><a class="btn btn-outline" href="/updates/">All updates</a><a class="btn btn-outline" href="/sources/">Our sources</a></p>
 </div></section>
 """ % (lst, ev) + phase_json()

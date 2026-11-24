@@ -19,8 +19,8 @@ def build():
     D = common.distances()
     h = D["headline"]
     cbs, station = common.row("cbs"), common.row("station")
-    quick = ("Trimbakeshwar is about %s km from Nashik city (CBS) by road, roughly %s, and about %s km (roughly %s) from Nashik Road "
-             "railway station, the same in both directions. Measured on Google Maps on 22 November 2026; times vary with traffic."
+    quick = ("Nashik to Trimbakeshwar is about %s km by road from Nashik city (CBS), roughly %s, and about %s km (roughly %s) from Nashik Road "
+             "railway station; Trimbakeshwar to Nashik is the same distance in the other direction. Measured on Google Maps on 22 November 2026; times vary with traffic."
              % (h["cbsKm"], h["cbsTime"], h["stationKm"], h["stationTime"]))
 
     sources_cbs = "; ".join(common.src_links(cbs))
@@ -28,7 +28,7 @@ def build():
     <!-- VERIFY: CBS, Nashik Road and Ramkund distances are verified (Google Maps, 22 Nov 2026). Every other row is still reported. MSRTC departure point, jeep pickup, app-cab availability, last bus: unverified. See VERIFY.md -->
     <p>Nashik to Trimbakeshwar and Trimbakeshwar to Nashik are the same road, so the distance is the same whichever way you travel. Trimbakeshwar, with its Jyotirlinga temple and the Kushavarta Kund, is also written <strong>Trimbak</strong>, <strong>Tryambakeshwar</strong>, <strong>Tryambakam</strong>, <strong>Trayambakam</strong> or <strong>Trambakeshwar</strong>; this guide covers all of them.</p>
 
-    <h2 id="how-far-is-trimbakeshwar-from-nashik">How far is Trimbakeshwar from Nashik, by starting point?</h2>
+    <h2 id="how-far-is-trimbakeshwar-from-nashik">How far is it from Nashik to Trimbakeshwar, by starting point?</h2>
     <p>The distance depends on where in Nashik you start. Nashik Road railway station is further than the city centre. Every figure below shows its own status: <strong>Verified</strong> means our editor measured it on Google Maps (driving, 22 November 2026; times vary with traffic); <strong>Reported</strong> means the named sources publish it but our editor has not measured it; <strong>Sources differ</strong> means the published figures disagree and we show all of them; <strong>Not yet verified</strong> means we have no supporting source yet.</p>
     %(matrix)s
     %(measured)s
