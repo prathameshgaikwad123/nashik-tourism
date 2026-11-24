@@ -112,17 +112,20 @@ def main():
         for n in needles:
             check(st == 200 and n in body, "%s contains %r" % (path, n))
 
-    print("\n-- old flat URLs (Search Console 404 report): 301 on the apex, then 200 --")
-    for old, target in (("/sita-guha", "/discover-nashik/panchavati/"), ("/buddha-vihar", "/discover-nashik/"),
-                        ("/radha-nikunj", "/discover-nashik/"), ("/gayatri-mata-mandir", "/discover-nashik/"),
-                        ("/blog/best-places-to-visit-in-nashik/", "/discover-nashik/")):
-        st, h, _b = get(base + old)
-        loc = urljoin(base + old, h.get("Location") or h.get("location") or "")
+    print("\n-- best-places URL: 301 on the apex, then 200 --")
+    st, h, _b = get(base + "/blog/best-places-to-visit-in-nashik/")
+    loc = urljoin(base, h.get("Location") or h.get("location") or "")
+    st2 = get(loc)[0] if loc else 0
+    check(st == 301 and loc == base + "/discover-nashik/" and st2 == 200, "/blog/best-places-to-visit-in-nashik/", "[%d -> %s -> %d]" % (st, loc or "no Location", st2))
+
+    print("\n-- deliberate 404s (no page covers them) --")
+    for gone in ("/sita-guha", "/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
+        st, _h, _b = get(base + gone)
+        check(st == 404, gone, "HTTP %d" % st)
+        st, h, _b = get(www + gone)
+        loc = urljoin(www + gone, h.get("Location") or "")
         st2 = get(loc)[0] if loc else 0
-        check(st == 301 and loc == base + target and st2 == 200, old, "[%d -> %s -> %d]" % (st, loc or "no Location", st2))
-        st, h, _b = get(www + old)
-        loc = h.get("Location") or h.get("location") or ""
-        print("INFO  www%s -> HTTP %d %s (host rule first, then the path rule above)" % (old, st, loc))
+        print("INFO  www%s -> HTTP %d %s then %d (a 404 here is expected)" % (gone, st, loc, st2))
 
     print("\n-- www host: every path 301s to the same path on the apex, query kept --")
     www_paths = ["/", "/blog/trimbakeshwar-to-nashik-distance-route/", "/discover-nashik/bhandardara/", "/robots.txt", "/sitemap.xml",
