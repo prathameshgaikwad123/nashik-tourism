@@ -458,6 +458,11 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
   font-size: 0.8rem; color: var(--on-dark-soft);
 }
 
+.footer-follow { margin-top: var(--s-4); font-family: var(--font-display); font-size: var(--t-eyebrow); font-weight: 700; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--accent-warm); }
+.footer-social { list-style: none; display: flex; gap: var(--s-3); margin-top: var(--s-2); }
+.footer-social a, .hh-social a { display: inline-flex; align-items: center; justify-content: center; width: var(--tap); height: var(--tap); border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; color: #fff; background: rgba(255,255,255,0.06); transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease), background var(--dur) var(--ease); }
+.footer-social a:hover, .hh-social a:hover { color: var(--accent-warm); border-color: var(--accent-warm); background: rgba(255,255,255,0.12); }
+
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr; gap: var(--s-8); }
   .footer-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1060,6 +1065,10 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
 .hh-try { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-4); }
 .hh-try a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--s-4); border: 1px solid rgba(255,255,255,0.4); border-radius: var(--r-pill); color: #fff; font-family: var(--font-display); font-size: 0.78rem; font-weight: 600; background: rgba(255,255,255,0.08); }
 .hh-try a:hover { border-color: var(--accent-warm); color: var(--accent-warm); }
+/* Social icons: desktop only, bottom-right of the hero. On phones they live in the footer. */
+.hh-inner { position: relative; }
+.hh-social { display: none; list-style: none; }
+@media (min-width: 1024px) { .hh-social { display: flex; gap: var(--s-3); position: absolute; right: 0; bottom: 0; } }
 @media (min-width: 640px) { .hh-search .hh-btn-label { display: inline; } .home-hero { padding-bottom: var(--s-12); } }
 
 /* ── Nashik Now strip + dashboard ── */

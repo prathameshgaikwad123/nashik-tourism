@@ -111,6 +111,25 @@ SEARCH_ICON = ('<svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria
                '<path fill="currentColor" d="M10.5 3a7.5 7.5 0 1 0 4.7 13.3l4.5 4.5 1.4-1.4-4.5-4.5A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Z"/></svg>')
 
 
+# Social profiles. One definition, used by the footer (every page, the mobile
+# home for these links) and by the home hero (desktop only).
+SOCIAL_LINKS = [
+    ("Facebook", "https://www.facebook.com/share/p/18o8PQRXUV/",
+     '<svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.8S15.6 3.5 14.3 3.5c-2.7 0-4.4 1.6-4.4 4.5v2.5H7v3.3h2.9V22h3.6Z"/></svg>'),
+    ("Instagram", "https://www.instagram.com/nashiktrvl/",
+     '<svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>'),
+]
+
+
+def social_html(cls, label="Follow Nashik Tourism"):
+    """Icon links to the social profiles. Real <a> elements with an accessible
+    name; they open in a new tab so a visitor never loses their place."""
+    links = "".join(
+        '<li><a href="%s" target="_blank" rel="noopener noreferrer me" aria-label="%s on %s (opens in a new tab)">%s</a></li>'
+        % (url, "Nashik Tourism", name, icon) for name, url, icon in SOCIAL_LINKS)
+    return '<ul class="%s" aria-label="%s">%s</ul>' % (cls, label, links)
+
+
 def section_of(page):
     for prefix, section in SECTION_OF_PREFIX:
         if page == prefix or page.startswith(prefix):
@@ -252,6 +271,8 @@ def footer_html(page="/"):
       <img src="/logo-white-96.png" alt="Nashik Tourism" width="64" height="64" loading="lazy" />
       <p class="footer-brand-name">Nashik Tourism</p>
       <p>An independent, continuously verified guide to Nashik &mdash; the Godavari ghats, Trimbakeshwar, the vineyards, the Western Ghats and Simhastha Kumbh Mela 2026&ndash;28.</p>
+      <p class="footer-follow">Follow us</p>
+      %(social)s
     </div>
     <nav class="footer-cols" aria-label="Footer">
       <h2 class="sr-only">Site navigation</h2>
@@ -310,7 +331,7 @@ def footer_html(page="/"):
     <span>&copy; 2026 NashikTourism.com &mdash; an independent travel guide. Not affiliated with any government body or official tourism authority.</span>
     <span>Made with &hearts; for Nashik</span>
   </div>
-</footer>""" % {"dest": dest, "kl": kl}
+</footer>""" % {"dest": dest, "kl": kl, "social": social_html("footer-social")}
 
 
 # The shared behaviour lives in one cached file instead of a copy inlined into
