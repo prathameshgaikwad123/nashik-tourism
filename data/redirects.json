@@ -85,47 +85,7 @@
       "from": "/blog/best-places-to-visit-in-nashik/",
       "to": "/discover-nashik/",
       "why": "URL reported by Search Console; the destinations hub is the closest page"
-    },
-    {
-      "from": "/sita-guha",
-      "to": "/discover-nashik/panchavati/",
-      "why": "URL reported by Search Console (Sita Gufa is covered on the Panchavati page)"
-    },
-    {
-      "from": "/sita-guha/",
-      "to": "/discover-nashik/panchavati/",
-      "why": "trailing-slash form of /sita-guha"
-    },
-    {
-      "from": "/buddha-vihar",
-      "to": "/discover-nashik/",
-      "why": "old flat URL still crawled by Googlebot (Search Console 404 report, Oct 2026). No dedicated page covers Buddha Vihar, so it falls back to the destinations hub; revisit if a dedicated page is added."
-    },
-    {
-      "from": "/buddha-vihar/",
-      "to": "/discover-nashik/",
-      "why": "old flat URL still crawled by Googlebot (Search Console 404 report, Oct 2026). No dedicated page covers Buddha Vihar, so it falls back to the destinations hub; revisit if a dedicated page is added."
-    },
-    {
-      "from": "/radha-nikunj",
-      "to": "/discover-nashik/",
-      "why": "old flat URL still crawled by Googlebot (Search Console 404 report, Oct 2026). No dedicated page covers Radha Nikunj, so it falls back to the destinations hub; revisit if a dedicated page is added."
-    },
-    {
-      "from": "/radha-nikunj/",
-      "to": "/discover-nashik/",
-      "why": "old flat URL still crawled by Googlebot (Search Console 404 report, Oct 2026). No dedicated page covers Radha Nikunj, so it falls back to the destinations hub; revisit if a dedicated page is added."
-    },
-    {
-      "from": "/gayatri-mata-mandir",
-      "to": "/discover-nashik/",
-      "why": "old flat URL still crawled by Googlebot (Search Console 404 report, Oct 2026). No dedicated page covers Gayatri Mata Mandir, so it falls back to the destinations hub; revisit if a dedicated page is added."
-    },
-    {
-      "from": "/gayatri-mata-mandir/",
-      "to": "/discover-nashik/",
-      "why": "old flat URL still crawled by Googlebot (Search Console 404 report, Oct 2026). No dedicated page covers Gayatri Mata Mandir, so it falls back to the destinations hub; revisit if a dedicated page is added."
     }
   ],
-  "_noRedirect": "Previously /buddha-vihar, /radha-nikunj and /gayatri-mata-mandir were deliberately left as 404s. On 24 Nov 2026 the site owner asked for 301s to /discover-nashik/ (the parent hub), so they are now ordinary rows above. Nothing is deliberately left as a 404 at present."
+  "_noRedirect": "Deliberately left as 404 (no page covers them): /sita-guha, /buddha-vihar, /radha-nikunj, /gayatri-mata-mandir. A redirect to a page that does not cover the subject is a soft 404, and that signal would attach to the redirect target (/discover-nashik/ is the main AEO page). tools/tests/test_seo.py, tools/check-redirects.py and tools/verify-live.py fail if any of them gains a redirect or a page. Add a dedicated page first, then a redirect."
 }

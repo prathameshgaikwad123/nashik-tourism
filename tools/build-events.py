@@ -34,8 +34,11 @@ def event_ld(e):
           "location": {"@type": "Place", "name": e["location"], "address": {"@type": "PostalAddress", "addressLocality": "Nashik", "addressRegion": "Maharashtra", "addressCountry": "IN"}},
           "description": e["description"], "url": e["sourceUrl"],
           "image": [pagekit.OG_DEFAULT], "@id": SITE + "/events/#" + e["id"]}
-    if e.get("endDate"):
-        ld["endDate"] = e["endDate"]
+    # Single-day dates: endDate = startDate, as the editor asked. Organizer is the Authority named by the
+    # official source these dates were verified against (data/sources.json, ntka-portal).
+    ld["endDate"] = e.get("endDate") or ld["startDate"]
+    ld["organizer"] = {"@type": "Organization", "name": "Nashik-Trimbakeshwar Kumbh Mela Authority",
+                       "url": "https://simhasthamahakumbh.maharashtra.gov.in/"}
     return ld
 
 

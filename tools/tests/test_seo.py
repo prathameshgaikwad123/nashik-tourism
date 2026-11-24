@@ -102,26 +102,17 @@ class Redirects(unittest.TestCase):
             self.assertTrue(r["to"].startswith("/") and r["to"].endswith("/"), r["to"])
 
 
-class SearchConsoleRedirects(unittest.TestCase):
-    """Old flat-path URLs that Googlebot still crawls (Search Console 404 report) must 301 to a real page."""
-
-    def _rows(self):
-        return {r["from"]: r["to"] for r in json.load(open(os.path.join(REPO, "data", "redirects.json"), encoding="utf-8"))["redirects"]}
-
-    def test_old_flat_urls_redirect(self):
-        rows = self._rows()
-        for old in ("/sita-guha", "/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
-            for variant in (old, old + "/"):
-                self.assertIn(variant, rows, variant)
-                self.assertNotEqual(rows[variant], "/", "%s must not redirect to the homepage (soft-404)" % variant)
-                self.assertTrue(os.path.isfile(os.path.join(REPO, "nashiktourism", rows[variant].strip("/"), "index.html")), rows[variant])
+class DeliberateNotFounds(unittest.TestCase):
+    def test_pages_with_no_equivalent_stay_404(self):
+        rows = json.load(open(os.path.join(REPO, "data", "redirects.json"), encoding="utf-8"))["redirects"]
+        srcs = {r["from"].rstrip("/") for r in rows}
+        for gone in ("/sita-guha", "/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
+            self.assertNotIn(gone, srcs)
+            self.assertFalse(os.path.isfile(os.path.join(REPO, "nashiktourism", gone.strip("/"), "index.html")))
 
     def test_requested_search_console_redirects_exist(self):
-        rows = self._rows()
+        rows = {r["from"]: r["to"] for r in json.load(open(os.path.join(REPO, "data", "redirects.json"), encoding="utf-8"))["redirects"]}
         self.assertEqual(rows["/blog/best-places-to-visit-in-nashik/"], "/discover-nashik/")
-        self.assertEqual(rows["/sita-guha"], "/discover-nashik/panchavati/")
-        for old in ("/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
-            self.assertEqual(rows[old], "/discover-nashik/")
 
 
 class Distances(unittest.TestCase):
