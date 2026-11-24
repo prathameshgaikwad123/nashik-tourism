@@ -144,6 +144,37 @@ def kumbh_label():
         return "Kumbh 2027"
 
 
+# Photo cards for the desktop "Discover" panel. Same images the destination
+# pages already use; decorative here (the visible label names the place).
+_CLD = "https://res.cloudinary.com/duhuxaukd/image/upload/f_auto,q_auto,c_fill,g_auto,ar_3:2,w_360/"
+MEGA_CARDS = [
+    ("/discover-nashik/trimbakeshwar/", "Trimbakeshwar Temple", _CLD + "v1775379429/steptodown.com223977_zhfdrg.jpg"),
+    ("/discover-nashik/panchavati/", "Panchavati &amp; Ramkund", _CLD + "v1775367941/steptodown.com803697_wj0xe2.jpg"),
+    ("/discover-nashik/sula-vineyards/", "Sula Vineyards", "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=360&amp;h=240&amp;q=70&amp;auto=format&amp;fit=crop"),
+    ("/discover-nashik/pandavleni-caves/", "Pandavleni Caves", _CLD + "v1775450823/dhanashree-chavan-UY0FS2_ehh4-unsplash_rsicgk.jpg"),
+]
+MEGA_MORE = [
+    ("/discover-nashik/", "All destinations"),
+    ("/discover-nashik/igatpuri/", "Igatpuri"),
+    ("/discover-nashik/bhandardara/", "Bhandardara"),
+]
+
+
+def _mega(key="discover"):
+    cards = "\n".join(
+        '          <a class="mega-card" href="%s"><span class="mc-img"><img src="%s" alt="" width="360" height="240" loading="lazy" decoding="async" /></span><span class="mc-t">%s</span></a>' % (h, img, l)
+        for h, l, img in MEGA_CARDS)
+    more = "\n".join('          <a href="%s">%s</a>' % (h, l) for h, l in MEGA_MORE)
+    return """        <div class="dropdown mega" id="dd-%s">
+        <div class="mega-grid">
+%s
+        </div>
+        <div class="mega-more">
+%s
+        </div>
+        </div>""" % (key, cards, more)
+
+
 def _dd(items, indent=10):
     pad = " " * indent
     return "\n".join('%s<a href="%s">%s</a>' % (pad, href, label) for href, label in items)
@@ -162,13 +193,17 @@ def nav_html(page="/"):
     def item(href, label, links, key):
         if not links:
             return "      <li>%s</li>" % top(href, label)
+        if key == "discover":
+            panel = _mega(key)
+        else:
+            panel = """        <div class="dropdown" id="dd-%s">
+%s
+        </div>""" % (key, _dd(links))
         return """      <li>
         %s
         <button class="chevron-btn" type="button" aria-expanded="false" aria-controls="dd-%s" aria-label="%s submenu"><span class="chevron" aria-hidden="true">&#9662;</span></button>
-        <div class="dropdown" id="dd-%s">
 %s
-        </div>
-      </li>""" % (top(href, label), key, label, key, _dd(links))
+      </li>""" % (top(href, label), key, label, panel)
 
     kl = kumbh_label()
     items = "\n".join([
@@ -207,11 +242,12 @@ def nav_html(page="/"):
 
     return """<nav class="nav solid" id="mainNav" aria-label="Primary">
   <div class="nav-inner">
+    <span class="nav-glass" aria-hidden="true"></span>
     <a href="/" class="nav-logo">
-      <img src="/logo-white-96.png" alt="Nashik Tourism" width="48" height="48" />
-      <span class="nav-logo-text">Nashik Tourism<small>Independent Travel Guide</small></span>
+      <img src="/logo-nav-240.webp" srcset="/logo-nav-160.webp 190w, /logo-nav-240.webp 284w, /logo-nav-320.webp 379w" sizes="(min-width: 1200px) 95px, 71px" alt="Nashik Tourism" width="95" height="80" />
     </a>
     <ul class="nav-menu">
+      <li class="nav-pill-li" aria-hidden="true"><span class="nav-pill"></span></li>
 %(items)s
     </ul>
     <div class="nav-tools">
