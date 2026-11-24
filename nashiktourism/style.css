@@ -186,6 +186,7 @@ a { text-decoration: none; color: inherit; }
   background: #fff; box-shadow: 0 1px 0 rgba(45,27,105,0.10), 0 4px 18px rgba(45,27,105,0.06);
 }
 .nav-inner { position: relative; z-index: 1; width: 100%; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: var(--s-2); }
+.nav-glass { display: none; }
 .nav-logo { display: flex; align-items: center; gap: 0.55rem; min-width: 0; text-decoration: none; }
 .nav-logo img { height: 60px; width: auto; aspect-ratio: 95 / 80; object-fit: contain; flex: none; }
 .nav-logo-text { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: white; letter-spacing: 0.01em; line-height: 1.1; white-space: nowrap; }
@@ -285,7 +286,7 @@ a { text-decoration: none; color: inherit; }
 
   /* The glass bar itself */
   .nav-glass {
-    position: absolute; left: var(--s-6); right: var(--s-6); top: 50%; height: 88px; transform: translateY(-50%);
+    display: block; position: absolute; left: var(--s-6); right: var(--s-6); top: 50%; height: 88px; transform: translateY(-50%);
     border-radius: 20px; pointer-events: none; z-index: 1;
     background: #fff; border: 1px solid var(--glass-edge); box-shadow: var(--glass-shadow);
     transition: height .35s var(--ease, ease), box-shadow .35s var(--ease, ease);
@@ -523,7 +524,7 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
   max-width: var(--wrap); margin: 0 auto var(--s-8);
   padding-bottom: var(--s-10); border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.footer-brand img { height: 56px; width: 56px; object-fit: contain; margin-bottom: var(--s-3); }
+.footer-brand img { height: 112px; width: 112px; object-fit: contain; margin: -10px 0 -16px -14px; }
 .footer-brand-name { font-family: var(--font-display); font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: var(--s-2); letter-spacing: -0.01em; }
 .footer-brand p { font-size: var(--t-small); line-height: var(--lh-body); max-width: 34ch; }
 .footer-cols { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--s-6); }

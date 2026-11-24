@@ -87,12 +87,6 @@
     .trust-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem; }
     .trust-item h3 { font-family:var(--font-display); font-size:0.74rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--saffron-deep); margin-bottom:0.5rem; }
     .trust-item p { font-size:0.92rem; color:var(--body-clr); line-height:1.7; }
-    .hotel-cta { background:linear-gradient(135deg, var(--primary) 0%, #180c3e 100%); padding:5.5rem 5vw; text-align:center; }
-    .hotel-cta-inner { max-width: 640px; margin: 0 auto; }
-    .hotel-cta h2 { font-family:var(--font-display); font-size:clamp(1.7rem,3.5vw,2.8rem); font-weight:900; color:white; letter-spacing:-0.02em; margin-bottom:0.9rem; }
-    .hotel-cta p { font-size:1rem; color:var(--on-dark); max-width:480px; margin:0 auto 2rem; line-height:1.7; }
-    .hotel-cta-btns { display:flex; gap:0.9rem; justify-content:center; flex-wrap:wrap; }
-    .hotel-cta-note { font-size:0.78rem; color:var(--on-dark-muted); margin-top:1.5rem; }
     @media(max-width:1024px){
       .dur-inner{grid-template-columns:1fr;gap:var(--s-8);}
       .split-inner{grid-template-columns:1fr;gap:var(--s-8);}

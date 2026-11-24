@@ -227,7 +227,7 @@ def main():
     body = "\n".join([
         live_band, hero, now_strip(built), k_top, intent, latest_updates_block(),
         tpl("explore.html"), tpl("plan.html"), tpl("dur.html"), guides_hdr, k_reduced,
-        tpl("about.html"), tpl("split.html"), trust, tpl("hotel.html"),
+        tpl("about.html"), tpl("split.html"), trust,
         '<script type="application/json" id="nt-phases">%s</script>' % json.dumps(lifecycle.client_payload()).replace("</", "<\\/"),
         '<script src="/now.js" defer></script>'])
 
