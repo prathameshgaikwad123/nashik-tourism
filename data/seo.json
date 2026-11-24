@@ -2,8 +2,11 @@
   "_about": "Site-level SEO / AEO configuration read by tools/build-seo-files.py and tools/build-schema.py. Nothing here is a fact about Nashik; it is how the site presents itself to crawlers.",
   "organization": {
     "name": "NashikTourism.com",
-    "sameAs": [],
-    "_sameAs": "TODO(site owner): add the site's real social profile URLs (Instagram, YouTube, X, Facebook, LinkedIn) once they exist. Leave empty rather than guess; an empty array is omitted from the JSON-LD.",
+    "sameAs": [
+      "https://www.facebook.com/nashiktourismdotcom",
+      "https://www.instagram.com/nashiktrvl/"
+    ],
+    "_sameAs": "The site's real social profile URLs. Facebook and Instagram are set; add YouTube, X or LinkedIn here once they exist. Never guess a URL; an empty array is omitted from the JSON-LD.",
     "publishingPrinciples": "/editorial-policy/"
   },
   "author": {
