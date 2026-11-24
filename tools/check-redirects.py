@@ -28,12 +28,11 @@ def main():
         rules.append((src, dst, code))
     srcs = {s for s, _d, _c in rules}
     bad = []
-    for gone in ("/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):   # deliberately 404
-        for variant in (gone, gone + "/"):
-            if variant in srcs:
-                bad.append("%s must stay a 404 (no page covers it) but has a redirect" % variant)
-            if exists(variant if variant.endswith("/") else variant + "/"):
-                bad.append("%s must stay a 404 but a page exists" % variant)
+    # Old flat URLs from an earlier site structure (Search Console 404 report) must stay redirected.
+    for old in ("/sita-guha", "/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
+        for variant in (old, old + "/"):
+            if variant not in srcs:
+                bad.append("%s must 301 (old URL still crawled by Googlebot) but has no redirect" % variant)
     for src, dst, code in rules:
         if code != "301":
             bad.append("%s: status %s, expected 301" % (src, code))

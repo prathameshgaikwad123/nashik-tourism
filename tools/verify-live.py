@@ -112,18 +112,21 @@ def main():
         for n in needles:
             check(st == 200 and n in body, "%s contains %r" % (path, n))
 
-    print("\n-- deliberate 404s (no page covers them) --")
-    for gone in ("/buddha-vihar", "/radha-nikunj", "/gayatri-mata-mandir"):
-        st, _h, _b = get(base + gone)
-        check(st == 404, gone, "HTTP %d" % st)
-        st, h, _b = get(www + gone)
-        loc = urljoin(www + gone, h.get("Location") or "")
+    print("\n-- old flat URLs (Search Console 404 report): 301 on the apex, then 200 --")
+    for old, target in (("/sita-guha", "/discover-nashik/panchavati/"), ("/buddha-vihar", "/discover-nashik/"),
+                        ("/radha-nikunj", "/discover-nashik/"), ("/gayatri-mata-mandir", "/discover-nashik/"),
+                        ("/blog/best-places-to-visit-in-nashik/", "/discover-nashik/")):
+        st, h, _b = get(base + old)
+        loc = urljoin(base + old, h.get("Location") or h.get("location") or "")
         st2 = get(loc)[0] if loc else 0
-        print("INFO  www%s -> HTTP %d %s then %d (a 404 here is expected)" % (gone, st, loc, st2))
+        check(st == 301 and loc == base + target and st2 == 200, old, "[%d -> %s -> %d]" % (st, loc or "no Location", st2))
+        st, h, _b = get(www + old)
+        loc = h.get("Location") or h.get("location") or ""
+        print("INFO  www%s -> HTTP %d %s (host rule first, then the path rule above)" % (old, st, loc))
 
     print("\n-- www host: every path 301s to the same path on the apex, query kept --")
     www_paths = ["/", "/blog/trimbakeshwar-to-nashik-distance-route/", "/discover-nashik/bhandardara/", "/robots.txt", "/sitemap.xml",
-                 "/sita-guha", "/blog/best-places-to-visit-in-nashik/", "/blog/trimbakeshwar-distance-route/", "/blog/ramkund-ghat-nashik-guide",
+                 "/sita-guha", "/buddha-vihar", "/blog/best-places-to-visit-in-nashik/", "/blog/trimbakeshwar-distance-route/", "/blog/ramkund-ghat-nashik-guide",
                  "/blog/nashik-2-day-itinerary.html", "/this-path-does-not-exist/", "/discover-nashik/?a=1&b=2"]
     for p in www_paths:
         st, h, _b = get(www + p)
