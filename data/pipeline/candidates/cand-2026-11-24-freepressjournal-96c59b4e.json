@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-24-freepressjournal-96c59b4e",
+  "createdAt": "2026-11-24T15:19:48.449402+05:30",
+  "origin": "monitor",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal — Pune / Nashik coverage",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune",
+  "extracted": {
+    "title": "Change detected on Free Press Journal — Pune / Nashik coverage",
+    "summary": "2 Killed, 17 Injured As Private Bus Overturns On Samruddhi Expressway",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "2 Killed, 17 Injured As Private Bus Overturns On Samruddhi Expressway\nEducation Officers Held Liable For Salary Recovery In Beed Teacher Recruitment Scam\nPolice Crack Down On Illegal Activities In Chhatrapati Sambhajinagar District, Seize Property Worth ₹11.89 Lakh\nNashik: ₹1,400-Cr Road Projects Lag Behind Schedule, NMC Issues Notices To 18 Contractors\nNashik: Uncle And Nephew Seriously Injured After Falling Under Moving Panchavati Express, Boy Loses Leg\n₹1,800 Crore Jal Jeevan Mission Remains On Paper In Beed, Allege Protesters; Over 6.3 Lakh Residents Rely On Tankers\nPune: Public Toilet At Khadki Railway Station's Platform 4 Found Locked, Passengers Face Inconvenience\nRailway officials say the platform is primarily reserved for future services and the toilet may be... Read More\nPune: MPSC Renames Assistant Agriculture Officer Post As Krishi Sevak, Clarifies YCMOU Eligibility\nActing on a specific tip-off, a team from Crime Branch Unit 3 (Ambad) laid a trap at Mendhale Wasti... Read More\nNashik: Absconding Fake Godman Arun Patil Arrested In ₹7.5 Lakh Cheating Case\nNashik: HC Gets List Of 199 Officials Linked To Godavari Pollution, Accountability Under Scrutiny\nThe list reportedly ",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

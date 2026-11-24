@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-24-newsonair-b465a0f8",
+  "createdAt": "2026-11-24T15:19:48.449402+05:30",
+  "origin": "monitor",
+  "sourceId": "newsonair",
+  "sourceName": "All India Radio News (Prasar Bharati)",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.newsonair.gov.in/",
+  "extracted": {
+    "title": "Change detected on All India Radio News (Prasar Bharati)",
+    "summary": "BJP and Shiromani Akali Dal to contest 2027 Punjab Assembly polls together",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "18 mins ago | National\nBJP and Shiromani Akali Dal to contest 2027 Punjab Assembly polls together\nBJP and Shiromani Akali Dal (SAD) will contest the upcoming 2027 Punjab Assembly polls together. Announcing the alliance at BJP party headquarters in New Delhi today, senior BJP leader and Home Minister Amit Shah said the senior leaders of both the parties sat together and took the decision that the next Punjab Assembly elections will be contested jointly. He expressed confidence that the NDA will come to power in Punjab assembly polls, saying that this alliance will be a symbol of Hindu-Sikh br...\nPM Modi says Sikh tradition symbolises spirit of sacrifice for nation; Extend greetings on Guru N...\nIFFI’s fifth day to feature films, discussions and learning sessions\n2 hours ago | Uttar Pradesh\nDev Deepawali and Kartik Purnima being celebrated across the nation with religious fervor\n5.6 magnitude earthquake hits Nepal; tremors felt in North Bengal, Sikkim\nIndian Railways operates 18,000 additional trains during festive season\nPM Modi says Sikh tradition symbolises spirit of sacrifice for nation; Extend greetings on Guru Nanak Jayanti\nIndia highlights Global South’s food insecurity concer",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}
