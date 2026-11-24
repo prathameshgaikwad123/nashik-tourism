@@ -26,6 +26,12 @@
 /blog/best-places-to-visit-in-nashik/ /discover-nashik/ 301
 /sita-guha /discover-nashik/panchavati/ 301
 /sita-guha/ /discover-nashik/panchavati/ 301
+/buddha-vihar /discover-nashik/ 301
+/buddha-vihar/ /discover-nashik/ 301
+/radha-nikunj /discover-nashik/ 301
+/radha-nikunj/ /discover-nashik/ 301
+/gayatri-mata-mandir /discover-nashik/ 301
+/gayatri-mata-mandir/ /discover-nashik/ 301
 
 # --- no trailing slash -> slash (every real page) ---
 /about /about/ 301

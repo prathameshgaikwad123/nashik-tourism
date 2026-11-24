@@ -72,6 +72,26 @@ To see AI referrals as one channel in GA4:
 
 Cookieless counters can be switched on at build time with `NT_PLAUSIBLE_DOMAIN` (Plausible) or `NT_CF_BEACON_TOKEN` (Cloudflare Web Analytics); see `docs/DEPLOYMENT.md`. Neither needs a cookie banner.
 
+## Pages to watch (Google AI features, Search Console, 90 days to 24 Nov 2026)
+
+Search Console's generative-AI performance report showed **7,580 impressions in Google's AI features**
+(about 8.5% of all impressions) across 49 pages. These five lead; re-check their AI impressions monthly
+and note any page that drops out of the list.
+
+| Page | AI impressions (90 days to 24 Nov 2026) |
+|---|---|
+| `/blog/trimbakeshwar-to-nashik-distance-route/` | 3,677 |
+| `/blog/ramkund-ghat-nashik-guide/` | 779 |
+| `/discover-nashik/igatpuri/` | 646 |
+| `/blog/nashik-kumbh-mela-e-pass-registration-2027/` | 408 |
+| `/blog/nashik-kumbh-mela-vs-prayagraj-kumbh/` | 307 |
+
+Gap to close: `/discover-nashik/` (the Places to Visit in Nashik page) is **not in the top 10**, although Bing/Copilot
+grounding queries for "Nashik tourist places" style questions (about 6.4K citations) are the highest-volume
+queries we track. It also had only 62 Google impressions at the time. Watch it first.
+
+Source: owner-supplied Search Console figures, 24 Nov 2026. Not independently verified in this repo.
+
 ## Also check each month
 
 * Bing Webmaster Tools: pages indexed, IndexNow submissions accepted (Bing feeds ChatGPT search and Copilot).

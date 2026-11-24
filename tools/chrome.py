@@ -69,6 +69,7 @@ PLAN_LINKS = [
     ("/plan-your-trip/", "Trip planner"),
     ("/plan-your-trip/#itineraries", "1, 2 &amp; 3-day itineraries"),
     ("/transport/", "Transport hub"),
+    ("/blog/trimbakeshwar-to-nashik-distance-route/", "Nashik to Trimbakeshwar distance"),
     ("/accessible-nashik/", "Accessible Nashik"),
     ("/blog/best-time-to-visit-nashik/", "Best time to visit"),
     ("/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027", "Budget guide"),
@@ -176,6 +177,7 @@ def nav_html(page="/"):
     ])
     more = "\n    ".join('<li><a href="%s">%s</a></li>' % (h, l) for h, l in [
         ("/transport/", "Transport hub"),
+        ("/blog/trimbakeshwar-to-nashik-distance-route/", "Nashik to Trimbakeshwar distance"),
         ("/accessible-nashik/", "Accessible Nashik"),
         ("/blog/", "All travel guides"),
         ("/sources/", "Our sources"),
@@ -262,6 +264,7 @@ def footer_html(page="/"):
         <ul>
           <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
           <li><a href="/transport/">Transport Hub</a></li>
+          <li><a href="/blog/trimbakeshwar-to-nashik-distance-route/">Nashik to Trimbakeshwar Distance</a></li>
           <li><a href="/accessible-nashik/">Accessible Nashik</a></li>
           <li><a href="/blog/best-time-to-visit-nashik/">Best Time to Visit</a></li>
           <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to Stay</a></li>

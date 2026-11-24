@@ -498,6 +498,7 @@ def build(dest):
           <li><a href="/blog/best-time-to-visit-nashik/">Best time to visit</a></li>
           <li><a href="/blog/where-to-stay-nashik-kumbh-mela/">Where to stay</a></li>
           <li><a href="/blog/nashik-2-day-itinerary/">Two-day itinerary</a></li>
+          <li><a href="/blog/trimbakeshwar-to-nashik-distance-route/">Trimbakeshwar from Nashik: distance and route</a></li>
           <li><a href="/blog/where-to-stay-nashik-kumbh-mela/#how-to-budget-for-kumbh-mela-2027">Budget guide</a></li>
         </ul>
         <a href="/plan-your-trip/" class="btn btn-purple">Plan Your Trip</a>
@@ -987,6 +988,7 @@ def build_plan_hub():
         </div>
       </div>
       <p class="pc-hint">Every itinerary below stays on the page &mdash; choosing simply narrows what is shown.</p>
+      <p class="pc-hint">Adding Trimbakeshwar to an itinerary? See <a href="/blog/trimbakeshwar-to-nashik-distance-route/">how to get from Nashik to Trimbakeshwar</a>, with distances from CBS, Nashik Road station and Ramkund.</p>
       <p class="sr-only" data-planner-status role="status"></p>
     </div>
 

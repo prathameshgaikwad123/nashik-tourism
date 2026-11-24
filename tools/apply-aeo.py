@@ -18,6 +18,7 @@ replaced, so the markup always matches what is on the page.
     python3 tools/apply-aeo.py [--check]
 """
 import html as htmllib
+import hashlib
 import json
 import os
 import re
@@ -35,7 +36,35 @@ BY_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-BYLINE -->.*?<!-- END:NT-BYLINE -->\n?"
 LD_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-LD[^>]*-->.*?<!-- END:NT-LD -->\n?", re.S)
 HD_RE = re.compile(r"[ \t]*<!-- BEGIN:NT-HEAD[^>]*-->.*?<!-- END:NT-HEAD -->\n?", re.S)
 SCRIPT_RE = re.compile(r'[ \t]*<script type="application/ld\+json">(.*?)</script>\n?', re.S)
-LINK_TOPICS = {"kumbh", "transport", "destination", "accommodation"}
+LINK_TOPICS = {"kumbh", "transport", "destination", "accommodation", "guide"}
+
+# Anchor text for the link to the distance hub. One exact anchor repeated site-wide reads as
+# over-optimised, so each page gets one of these, chosen by a stable hash of its path.
+HUB_ANCHORS = [
+    "Nashik to Trimbakeshwar distance, bus, jeep and cab",
+    "how far Trimbakeshwar is from Nashik",
+    "distance from Nashik to Trimbakeshwar by road",
+    "how to get from Nashik to Trimbakeshwar",
+    "Trimbakeshwar to Nashik distance and route",
+    "Nashik&ndash;Trimbakeshwar route, kilometres and travel time",
+]
+
+
+PLACES_ANCHORS = [
+    "places to visit in Nashik",
+    "top tourist places in Nashik",
+    "a list of Nashik tourist places, with a comparison table",
+    "the best places to see in Nashik",
+    "Nashik sightseeing: temples, ghats, caves and vineyards",
+]
+
+
+def places_anchor(path):
+    return PLACES_ANCHORS[int(hashlib.sha1(("places" + path).encode()).hexdigest(), 16) % len(PLACES_ANCHORS)]
+
+
+def hub_anchor(path):
+    return HUB_ANCHORS[int(hashlib.sha1(path.encode()).hexdigest(), 16) % len(HUB_ANCHORS)]
 STRIP_TYPES = {"Article", "BlogPosting", "FAQPage", "BreadcrumbList", "WebPage"}
 
 
@@ -119,10 +148,13 @@ def apply(html, path, meta):
         if n != 1:
             raise SystemExit("ERROR: %s has no article body for the quick answer" % path)
     if meta.get("topic") in LINK_TOPICS:
+        lead = ("Planning to include Trimbakeshwar?" if meta.get("topic") == "guide" else "Both Kumbh Mela sites are on one route.")
         block = ('<!-- BEGIN:NT-LINKS -->\n<aside class="related-links" aria-label="Between Nashik and Trimbakeshwar"><h2 id="between-nashik-and-trimbakeshwar">Travelling between Nashik and Trimbakeshwar</h2>'
-                 '<p>Both Kumbh Mela sites are on one route. See <a href="/blog/trimbakeshwar-to-nashik-distance-route/">Nashik to Trimbakeshwar distance, bus, jeep and cab</a>, '
+                 '<p>%s See <a href="/blog/trimbakeshwar-to-nashik-distance-route/">%s</a>, '
                  '<a href="/transport/nashik-road-station-to-trimbakeshwar/">from Nashik Road railway station to Trimbakeshwar</a> and '
-                 '<a href="/transport/trimbakeshwar-to-panchavati-ramkund/">between Trimbakeshwar and Ramkund</a>.</p></aside>\n<!-- END:NT-LINKS -->')
+                 '<a href="/transport/trimbakeshwar-to-panchavati-ramkund/">between Trimbakeshwar and Ramkund</a>.</p>'
+                 '<p>Deciding what to see? Browse <a href="/discover-nashik/">%s</a>.</p></aside>\n<!-- END:NT-LINKS -->'
+                 % (lead, hub_anchor(path), places_anchor(path)))
         if "<!-- BEGIN:NT-VERIFY" in html:
             html = html.replace("<!-- BEGIN:NT-VERIFY", block + "\n<!-- BEGIN:NT-VERIFY", 1)
         else:
