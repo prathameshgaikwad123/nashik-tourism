@@ -80,6 +80,58 @@
       if (openDd && !openDd.menu.contains(e.target) && !openDd.btn.contains(e.target)) closeDd();
     });
 
+    // Desktop header polish: a highlight that glides between menu items, and a
+    // bar that tightens on scroll and tucks away while reading down the page.
+    // Purely visual; the menu works the same without it.
+    (function desktopNav() {
+      if (!bar || !window.matchMedia) return;
+      var wideMq = window.matchMedia('(min-width: 1200px)');
+      var menu = $('.nav-menu', bar), pill = $('.nav-pill', bar);
+      var links = $$('.nav-menu > li > a', bar);
+      var active = null;
+      links.forEach(function (a) { if (a.classList.contains('active')) active = a; });
+
+      function moveTo(el) {
+        if (!pill || !menu || !wideMq.matches) return;
+        var m = menu.getBoundingClientRect(), r = el.getBoundingClientRect();
+        pill.style.width = r.width + 'px';
+        pill.style.transform = 'translateX(' + Math.round(r.left - m.left) + 'px)';
+        pill.style.opacity = '1';
+      }
+      function rest() {
+        if (!pill) return;
+        if (active) moveTo(active); else pill.style.opacity = '0';
+      }
+      if (pill && menu) {
+        links.forEach(function (a) {
+          a.addEventListener('mouseenter', function () { moveTo(a); });
+          a.addEventListener('focus', function () { moveTo(a); });
+        });
+        menu.addEventListener('mouseleave', rest);
+        menu.addEventListener('focusout', function () { setTimeout(function () { if (!menu.contains(document.activeElement)) rest(); }, 0); });
+        window.addEventListener('resize', rest);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(rest);
+        rest();
+      }
+
+      var root = document.documentElement, lastY = window.scrollY, ticking = false;
+      function onScroll() {
+        ticking = false;
+        var y = window.scrollY;
+        root.classList.toggle('nav-scrolled', y > 24);
+        if (wideMq.matches) {
+          var busy = bar.matches(':hover') || bar.matches(':focus-within') || document.querySelector('.dropdown.open');
+          if (y > lastY + 4 && y > 320 && !busy) bar.classList.add('nav-hidden');
+          else if (y < lastY - 4 || y <= 320) bar.classList.remove('nav-hidden');
+        } else {
+          bar.classList.remove('nav-hidden');
+        }
+        lastY = y;
+      }
+      window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+      onScroll();
+    })();
+
     // The header is solid on every page now, so there is no scroll state to
     // manage. If the sheet is open when the window grows into the desktop bar
     // (rotating a tablet), close it so the page is never left scroll-locked.
