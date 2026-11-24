@@ -1156,6 +1156,21 @@ footer { background: var(--dark); padding: var(--s-16) var(--gutter) var(--s-8);
 .hh-inner { position: relative; }
 .hh-social { display: none; list-style: none; }
 @media (min-width: 1024px) { .hh-social { display: flex; gap: var(--s-3); position: absolute; right: 0; bottom: 0; } }
+/* Hero social icons: same frosted glass as the header bar (footer icons keep their own style) */
+.hh-social a {
+  width: 52px; height: 52px; border-radius: 16px; color: var(--primary);
+  border: 1px solid rgba(255,255,255,0.65);
+  background: #fff;
+  box-shadow: 0 10px 32px rgba(15,10,30,0.28), inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.25);
+  transition: transform .3s cubic-bezier(.3,1.35,.5,1), box-shadow .3s ease;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .hh-social a { background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.70) 55%, rgba(236,230,255,0.76) 100%); -webkit-backdrop-filter: blur(20px) saturate(1.8); backdrop-filter: blur(20px) saturate(1.8); }
+}
+.hh-social a:hover, .hh-social a:focus-visible { color: var(--primary); border-color: rgba(255,255,255,0.9); background-color: #fff; transform: translateY(-3px); box-shadow: 0 16px 38px rgba(15,10,30,0.36), inset 0 1px 0 rgba(255,255,255,0.9); }
+.hh-social a svg { transition: transform .3s cubic-bezier(.3,1.35,.5,1); }
+.hh-social a:hover svg { transform: scale(1.12); }
+@media (prefers-reduced-motion: reduce) { .hh-social a, .hh-social a svg { transition: none; } .hh-social a:hover { transform: none; } }
 @media (min-width: 640px) { .hh-search .hh-btn-label { display: inline; } .home-hero { padding-bottom: var(--s-12); } }
 
 /* ── Nashik Now strip + dashboard ── */
