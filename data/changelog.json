@@ -372,6 +372,12 @@
       "path": "/discover-nashik/",
       "type": "restructured",
       "summary": "Rebuilt as the Places to visit in Nashik page: answer-first summary, a numbered list of 14 places with type, best-for and time-needed tags and a status on each, an at-a-glance table, FAQ and ItemList structured data. The destination guide cards and filter are kept below it."
+    },
+    {
+      "date": "2026-11-25",
+      "path": "/blog/where-to-stay-nashik-kumbh-mela/",
+      "type": "updated",
+      "summary": "Added the reported NTKMA tent city rules (Free Press Journal and Punekar News, 29 September 2026) and a tent city FAQ; retitled the page around Kumbh Mela 2027 accommodation."
     }
   ]
 }
