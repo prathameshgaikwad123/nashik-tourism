@@ -115,18 +115,31 @@
       }
 
       var root = document.documentElement, lastY = window.scrollY, ticking = false;
+      // Thin reading-progress line pinned to the top; stays visible when the bar hides.
+      var progress = document.createElement('div');
+      progress.className = 'nav-progress';
+      progress.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(progress);
       function onScroll() {
         ticking = false;
         var y = window.scrollY;
         root.classList.toggle('nav-scrolled', y > 24);
-        if (wideMq.matches) {
-          var busy = bar.matches(':hover') || bar.matches(':focus-within') || document.querySelector('.dropdown.open');
-          if (y > lastY + 4 && y > 320 && !busy) bar.classList.add('nav-hidden');
-          else if (y < lastY - 4 || y <= 320) bar.classList.remove('nav-hidden');
-        } else {
-          bar.classList.remove('nav-hidden');
+        // Hide while reading down, return on any upward scroll. Same on every
+        // screen size; stays put while the mobile sheet or a dropdown is open.
+        var menuOpen = mm && mm.classList.contains('open');
+        var busy = menuOpen || bar.matches(':focus-within') || document.querySelector('.dropdown.open') ||
+          (wideMq.matches && bar.matches(':hover'));
+        var minY = wideMq.matches ? 320 : 120;
+        var step = wideMq.matches ? 4 : 8;
+        if (busy) bar.classList.remove('nav-hidden');
+        else if (y > lastY + step && y > minY) bar.classList.add('nav-hidden');
+        else if (y < lastY - step || y <= minY) bar.classList.remove('nav-hidden');
+        if (Math.abs(y - lastY) > step || y <= minY) lastY = y;
+
+        if (progress) {
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          progress.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, Math.max(0, y / h)) : 0) + ')';
         }
-        lastY = y;
       }
       window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
       onScroll();
