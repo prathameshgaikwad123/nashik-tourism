@@ -995,15 +995,16 @@
       "subject": "Kumbh Mela roads, traffic and parking",
       "fact": "Official parking and traffic plan for the Mela",
       "value": null,
-      "display": "No official plan located",
-      "status": "not_verified",
+      "display": "Three-tier plan reported: on Amrut Snan days private vehicles stop at outer parking; about 4,500 MSRTC shuttle buses carry pilgrims onward (planning figures)",
+      "status": "reported",
       "source": {
-        "sourceId": "nashik-city-police",
-        "name": "Nashik City / Rural Police (official URL to be confirmed)",
-        "url": null
+        "sourceId": "freepressjournal",
+        "name": "Free Press Journal — 4,500 buses planned for Simhastha Kumbh Mela 2027",
+        "url": "https://www.freepressjournal.in/pune/nashik-4500-buses-planned-for-simhastha-kumbh-mela-2027-over-33-lakh-devotees-to-get-daily-transport"
       },
       "leads": [
-        "https://www.freepressjournal.in/pune/nashik-maha-aarti-traffic-parking-and-security-arrangements-prioritised-for-simhastha-flag-hoisting"
+        "https://www.punekarnews.in/?p=237236",
+        "https://www.punekarnews.in/46-parking-hubs-5-railway-stations-4500-buses-inside-nashiks-kumbh-mela-2027-transport-blueprint/"
       ],
       "alternatives": [],
       "verifyWith": [
@@ -1013,12 +1014,13 @@
       ],
       "verifiedAt": null,
       "verifiedBy": null,
-      "lastCheckedAt": null,
+      "lastCheckedAt": "2026-11-25",
       "topic": "transport",
-      "notes": "Parking areas, one-way systems and vehicle restrictions will be set by the police and the Authority and may change from day to day. Reported press coverage says traffic and parking arrangements for the flag-hoisting were being prepared; no plan has been published that we could locate.",
+      "notes": "Press reports (June 2026) of the Authority's planning: outer, outer 1 and inner parking tiers; 46 parking locations in Nashik and 26 in Trimbakeshwar; only outer tiers on Amrut Snan days. Figures are planning estimates. Parking locations and fares not published. No official notice opened by an editor.",
       "appliesTo": [
         "/transport/",
-        "/kumbh-mela-2027/"
+        "/kumbh-mela-2027/",
+        "/blog/nashik-kumbh-mela-2027-parking-shuttle-bus/"
       ]
     },
     {

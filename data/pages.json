@@ -353,6 +353,21 @@
         "nashik-district",
         "imd"
       ]
+    },
+    "/blog/nashik-kumbh-mela-2027-parking-shuttle-bus/": {
+      "template": "article",
+      "topic": "kumbh",
+      "notice": "claims",
+      "published": "2026-11-25",
+      "lastReviewed": "2026-11-25",
+      "lastVerified": null,
+      "verificationStatus": "not_verified",
+      "sources": [
+        "ntka",
+        "freepressjournal"
+      ],
+      "showDates": true,
+      "quickAnswer": "On Amrut Snan days you reportedly cannot drive to Ramkund or the Trimbakeshwar temple. The Kumbh Mela Authority's reported plan keeps private vehicles at outer parking areas, with about 4,500 MSRTC buses carrying pilgrims onward. Parking locations and fares have not been published; check official notices before you travel."
     }
   }
 }

@@ -646,7 +646,7 @@ Kumbh hub
 
 A guide to the Simhastha Kumbh Mela at Nashik and Trimbakeshwar. Dates and arrangements are still being confirmed, so every fact here shows how sure we are and where it comes from.
 
-Facts last checked: 22 November 2026Phase: Mela open
+Facts last checked: 25 November 2026Phase: Mela open
 
 Nashik — Live
 Latest: We removed an unsourced Kumbh infrastructure figure
@@ -850,19 +850,25 @@ Our e-pass and registration guide was written before any official scheme was ann
 Parking areas, one-way systems and vehicle restrictions will be set by the police and the Authority and may change from day to day.
 
 Official parking and traffic plan for the Mela
-○Not yet verified
+◐Reported, not yet confirmed
 
-No official plan located
+Three-tier plan reported: on Amrut Snan days private vehicles stop at outer parking; about 4,500 MSRTC shuttle buses carry pilgrims onward (planning figures)
 
-Parking areas, one-way systems and vehicle restrictions will be set by the police and the Authority and may change from day to day. Reported press coverage says traffic and parking arrangements for the flag-hoisting were being prepared; no plan has been published that we could locate.
+Press reports (June 2026) of the Authority's planning: outer, outer 1 and inner parking tiers; 46 parking locations in Nashik and 26 in Trimbakeshwar; only outer tiers on Amrut Snan days. Figures are planning estimates. Parking locations and fares not published. No official notice opened by an editor.
 
 Source
 
-Nashik City / Rural Police (official URL to be confirmed)
+Free Press Journal — 4,500 buses planned for Simhastha Kumbh Mela 2027
 
 Verified
 
 Not yet verified by our editors
+
+Last checked
+
+25 Nov 2026
+
+Kumbh parking and shuttle bus guide: what the reported plan says
 
 ### Latest road and transport notices
 
@@ -1124,7 +1130,7 @@ Information status
 
 Last updated
 
-22 Nov 2026
+25 Nov 2026
 
 Last verified
 
@@ -1132,7 +1138,7 @@ Last verified
 
 Last reviewed
 
-22 Nov 2026
+25 Nov 2026
 
 Sources to check
 
@@ -1454,7 +1460,7 @@ Is registration mandatory? Is there an e-pass? What has been reported so far, wh
 
 Kumbh Mela8 min read
 
-By the NashikTourism.com Editorial Team · Last updated 22 Nov 2026 · Published 26 Apr 2026 · Last verified: Not yet verified against official sources
+By the NashikTourism.com Editorial Team · Last updated 25 Nov 2026 · Published 26 Apr 2026 · Last verified: Not yet verified against official sources
 
 Quick answer
 
@@ -1530,15 +1536,15 @@ Large events can attract scam websites and messages that claim to sell passes, r
 
 ## Vehicle Entry Rules on Amrut Snan Days
 
-No official parking, traffic or vehicle-restriction plan for the Mela has been located. Parking areas, one-way systems and vehicle restrictions are expected to be set by the police and the Authority and may change from day to day. What we can say from the sources we located:
+The Kumbh Mela Authority’s parking plan was reported in June 2026, but no final official notice has been published that we could locate. What has been reported:
 
-- No distance limit for private vehicles near Ramkund, and no parking-zone or check-post arrangement, has been announced.
+- On Amrut Snan days, private vehicles are to stop at outer parking areas on the edge of Nashik and Trimbakeshwar, with MSRTC shuttle buses carrying pilgrims onward and the ghat and temple areas mainly pedestrian.
 
-- The Railways say special trains are planned; no numbers, routes or dates have been published that we could locate.
+- About 4,500 MSRTC buses are planned, including shuttles from five railway stations.
 
-- No shuttle-bus plan, from Nashik Road station, the bus stands or anywhere else, has been found in any source we could locate.
+- No vehicle pass for private cars has been announced, and the parking locations and fares have not been published.
 
-The practical advice: do not assume you will be able to drive close to the ghats on Amrut Snan days. Plan on public transport or parking far away, and expect to walk some distance. Check parking and roads and the latest notices before you travel.
+The practical advice: do not plan on driving close to the ghats on Amrut Snan days. See our Kumbh parking and shuttle bus guide for the details and sources.
 
 ## Step-by-Step: What to Do Now for Registration
 
@@ -1570,7 +1576,7 @@ An authority to plan and coordinate the Simhastha has been reported as establish
 
 ### Will there be an e-pass for vehicles during Amrut Snan?
 
-Nothing has been announced. No vehicle pass, parking plan or traffic plan has been located. Parking areas and vehicle restrictions are expected to be set by the police and the Authority and may change from day to day, so check the latest notices before you travel.
+No vehicle pass has been announced. The parking plan reported in June 2026 keeps private vehicles at outer parking areas on Amrut Snan days, with shuttle buses onward; see our parking and shuttle bus guide.
 
 ### Can I get an e-pass from a third-party website?
 
@@ -1596,7 +1602,7 @@ Published
 
 Last updated
 
-22 Nov 2026
+25 Nov 2026
 
 Last verified
 
@@ -1617,6 +1623,8 @@ Sources to check
 Details can change. Confirm before travelling.
 
 Change history
+
+- 25 Nov 2026 — Replaced 'no parking plan located' with the reported three-tier parking and shuttle-bus plan, linked to the new parking guide.
 
 - 22 Nov 2026 — Added an 'Official status as of 22 Nov 2026' box: the Authority's website is reported live, registration so far covers organisations and student volunteers, and an optional digital Kumbh Pass is described in the KumbhDoot framework. No general-visitor pass has been announced.
 
@@ -1822,7 +1830,7 @@ If you're driving from Mumbai, the drive is about 167 km and takes about 2.5–3
 
 ⚠️ Kumbh Traffic Warning
 
-Roads into Nashik may be very congested on the Amrut Snan dates. Traffic and parking arrangements have not been announced in any source we could locate; they are expected to be set by the police and the Authority and may change from day to day. Consider arriving a day or more before, follow police instructions and check local news before travelling.
+Roads into Nashik may be very congested on the Amrut Snan dates. The Kumbh Mela Authority’s reported plan keeps private vehicles at outer parking areas on Amrut Snan days, with MSRTC shuttle buses onward; the parking locations have not been published yet. See our parking and shuttle bus guide. Consider arriving a day or more before, follow police instructions and check local news before travelling.
 
 ## Top Travel Tips for Kumbh Mela 2027
 
