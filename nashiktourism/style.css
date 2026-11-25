@@ -517,6 +517,10 @@ section { padding: 5.5rem 5vw; }
 .read-progress {
   position: fixed; top: var(--nav-h); left: 0; right: 0; height: 3px;
   z-index: calc(var(--z-nav) - 1); pointer-events: none; background: transparent;
+  /* Superseded by the global .nav-progress line (site.js), which stays pinned at
+     the top. This one sits at var(--nav-h), so once the nav hides on scroll it
+     floated across the article text like a strikethrough. */
+  display: none;
 }
 .read-progress > span {
   display: block; height: 100%; width: var(--progress, 0%);
