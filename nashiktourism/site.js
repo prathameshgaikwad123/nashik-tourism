@@ -134,6 +134,7 @@
         if (busy) bar.classList.remove('nav-hidden');
         else if (y > lastY + step && y > minY) bar.classList.add('nav-hidden');
         else if (y < lastY - step || y <= minY) bar.classList.remove('nav-hidden');
+        root.classList.toggle('nav-off', bar.classList.contains('nav-hidden'));
         if (Math.abs(y - lastY) > step || y <= minY) lastY = y;
 
         if (progress) {
