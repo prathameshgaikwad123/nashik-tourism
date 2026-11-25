@@ -213,6 +213,7 @@ def hub():
   <h2 id="h-park">Parking, roads and traffic</h2>
   <p class="sec-sub">Parking areas, one-way systems and vehicle restrictions will be set by the police and the Authority and may change from day to day.</p>
   <div class="fact-list">%(card)s</div>
+  <p><a href="/blog/nashik-kumbh-mela-2027-parking-shuttle-bus/">Kumbh parking and shuttle bus guide: what the reported plan says</a></p>
   <h3>Latest road and transport notices</h3>
   %(roads)s
 </div></section>""" % {"card": render.fact_card(f_("kumbh.parking.plan")), "roads": roads_block}
