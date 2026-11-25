@@ -54,7 +54,7 @@ CSS = """    .blog-hero { background: var(--dark); padding: 8rem var(--gutter) 3
     .feature-body p { color:var(--muted); line-height:var(--lh-body); font-size:var(--t-small); }
 
     /* Filter + search bar */
-    .guide-bar { background:var(--cream); border-bottom:1px solid var(--border); position:sticky; top:var(--nav-h); z-index:var(--z-sticky); }
+    .guide-bar { background:var(--cream); border-bottom:1px solid var(--border); position:sticky; top:var(--stick-top); transition:top .35s ease; z-index:var(--z-sticky); }
     .guide-bar-inner { max-width:var(--wrap); margin:0 auto; padding:var(--s-3) var(--gutter); display:flex; align-items:center; gap:var(--s-3); flex-wrap:wrap; }
     .chips { display:flex; gap:var(--s-2); overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; flex:1 1 auto; }
     .chips::-webkit-scrollbar { display:none; }
