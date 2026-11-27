@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-28-lokmat-times-nashik-6c45a1b7",
+  "createdAt": "2026-11-28T02:42:55.667712+05:30",
+  "origin": "monitor",
+  "sourceId": "lokmat-times-nashik",
+  "sourceName": "Lokmat Times — Nashik",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.lokmattimes.com/nashik/",
+  "extracted": {
+    "title": "Change detected on Lokmat Times — Nashik",
+    "summary": "Nashik : Nashik: Over 7 Lakh Vehicles Still Without HSRP Plates, RTO Fines 12,683 Owners",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Nashik : Nashik: Over 7 Lakh Vehicles Still Without HSRP Plates, RTO Fines 12,683 Owners\nLakhs of vehicle owners in Nashik district are yet to install mandatory High Security Registration Plates (HSRP), prompting the ... ...\nNashik :Nashik: NMC Approves ₹166.22 Crore Water Infrastructure Project For Kumbh Mela",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}

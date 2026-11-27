@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-28-freepressjournal-11bcbe98",
+  "createdAt": "2026-11-28T02:42:55.667712+05:30",
+  "origin": "monitor",
+  "sourceId": "freepressjournal",
+  "sourceName": "Free Press Journal — Pune / Nashik coverage",
+  "sourceTier": "reliable_news",
+  "sourceUrl": "https://www.freepressjournal.in/pune",
+  "extracted": {
+    "title": "Change detected on Free Press Journal — Pune / Nashik coverage",
+    "summary": "Pune's Mega Anti-Encroachment Drive Clears 14.50 Lakh Sq Ft In 11 Days, PMC Warns Repeat Offenders",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "Pune's Mega Anti-Encroachment Drive Clears 14.50 Lakh Sq Ft In 11 Days, PMC Warns Repeat Offenders\nRegulate Hospital Bills Or Face Statewide Agitation, Health Rights Activists Warn Maharashtra Govt\nSky Is Not The Limit: IAF's Dazzling Aerial Displays Leave Pune Spectators Spellbound\nCM Devendra Fadnavis Lauds Pune Civic Body's Anti-Flex Drive, Says 'Name Me Too If My Hoarding Is Illegal'\nPune: PMC's 'Bhau Flex Kadha' Initiative Gets 2,500 Complaints In 4 Days\nMera Yuva Bharat Organises 'Vande Mataram Camp' At North Maharashtra University, 150 Youths From 6 States To Participate\nJalgaon: Safety Pin Used To Clean Teeth Gets Stuck In 18-Year-Old Woman’s Oesophagus\nRemoving the sharp, pointed safety pin from the oesophagus posed a significant challenge for the... Read More\nNashik: Onion Prices Fall Below ₹4,000; Sharp Decline Of ₹2,032 Per Quintal In Just 10 Days\nOnion prices have fallen by Rs 2,032 per quintal in just 10 days, slipping below the Rs 4,000 mark.... Read More\nRTO Cracks Down On Vehicles Without HSRP; Only 4.18 Lakh Of 11.20 Lakh Vehicles in Nashik Have Mandated Number Plates\nA special drive to check vehicles without HSRPs is underway. So far, action has been taken agains",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. This is a news source: treat it as a lead, and confirm against an official source before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}
