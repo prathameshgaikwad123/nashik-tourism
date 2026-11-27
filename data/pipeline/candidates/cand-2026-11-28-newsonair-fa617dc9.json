@@ -1,0 +1,32 @@
+{
+  "id": "cand-2026-11-28-newsonair-fa617dc9",
+  "createdAt": "2026-11-28T02:42:55.667712+05:30",
+  "origin": "monitor",
+  "sourceId": "newsonair",
+  "sourceName": "All India Radio News (Prasar Bharati)",
+  "sourceTier": "official",
+  "sourceUrl": "https://www.newsonair.gov.in/",
+  "extracted": {
+    "title": "Change detected on All India Radio News (Prasar Bharati)",
+    "summary": "PM Modi meets IORA Foreign Ministers, Heads of Delegation in New Delhi",
+    "category": "Local",
+    "status": "developing",
+    "tags": [],
+    "publishedAt": null
+  },
+  "confidence": 0.2,
+  "risk": {
+    "high_risk": false,
+    "reasons": []
+  },
+  "excerpt": "PM Modi meets IORA Foreign Ministers, Heads of Delegation in New Delhi\nPrime Minister Narendra Modi today met the Foreign Ministers and Heads of Delegation of the 23 Indian Ocean Rim Association Member-States participating in the 25th Meeting of the IORA Council of Ministers in New Delhi.\nIn a social media post, Mr Modi said that the Indian Ocean has connected the people for millennia. He noted that as Chair of IORA, India looks forward to working closely with all partners to advance its vision of MAHASAGAR (Mutual and Holistic Advancement for Security and Growth ...\nUnion Minister Kiren Rijiju urges MPs to engage in meaningful debate during Parliament session\nSC summons Tamil Nadu Chief Secretary over non-compliance with Deepam order\n6 hours ago | Regional News\nAllahabad High Court quashes UPPSC PCS-2025 preliminary exam result\nIndian Railways achieves breakthrough in 6.59-km tunnel in Uttarakhand\nIndia, EU hold 12th round of foreign policy and security talks\nCBI secures deportation of Vikas Agarwal from UAE\nAnesthesia filmmakers share creative journey at IFFI\nKuwait summons Iranian envoy over continued attacks\nUN agencies warn hunger to worsen in 16 countries over next six months",
+  "quotes": [],
+  "extractionNote": "Machine-extracted from the text that changed on the source page. An editor must open the source, check every detail, and set the publication date before approving. No AI classification configured or it was unusable. The text shown is the first new line on the page; an editor must read the source.",
+  "review": {
+    "state": "pending",
+    "by": null,
+    "at": null,
+    "note": null
+  },
+  "fastTrackEligible": false
+}
